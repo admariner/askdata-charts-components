@@ -1,26 +1,35 @@
-{	
-	"widget": 
-	[
-		{
-			"code":"soccer_match_radar_chart", 
-			"name" : "Soccer Match with Radar Chart",
-			"variables" : ["{{variable1}}",
-			 "{{variable2}}"],
-			"icon" : "_lib/icons/test.png",
+{
+	"widget": [{
+			"code": "soccer-match-radar-chart",
+			"name": "Soccer Match with Radar Chart",
+			"variables": ["{{variable1}}",
+				"{{variable2}}"
+			],
+			"icon": "_lib/icons/test.png",
 			"description": "description 1"
 		},
 		{
-			"code":"card_with_2_circles", 
-			"name" : "Card with 2 KPIs",
-			"variables" : ["{{variable1}}", "{{variable2}}"],
-			"icon" : "_lib/icons/test.png",
+			"code": "card-with-3-measures",
+			"name": "Card with 3 measures",
+			"variables": ["{{variable1}}", "{{variable2}}"],
+			"icon": "_lib/icons/test.png",
 			"description": "description 2"
 		},
 		{
-			"code": "card_with_6_kpis", 
-			"name" : "Card with 6 KPIs",
-			"description" : "Donut Chart",
-			"variables" : ["{{variable1}}", "{{variable2}}"],
-			"icon" : "_lib/icons/test.png"
-		}], "background-color" : "#CCCCCC"
+			"code": "card-with-2-circles",
+			"name": "Card with 2 KPIs",
+			"variables": ["{{variable1}}", "{{variable2}}"],
+			"icon": "_lib/icons/test.png",
+			"description": "description 2"
+		},
+
+		{
+			"code": "card-with-6-kpis",
+			"name": "Card with 6 KPIs",
+			"description": "Donut Chart",
+			"variables": ["{{variable1}}", "{{variable2}}"],
+			"icon": "_lib/icons/test.png"
+		}
+	],
+	"background-color": "#CCCCCC"
 }
