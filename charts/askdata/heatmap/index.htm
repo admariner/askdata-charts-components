@@ -1,228 +1,89 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Askdata - Heatmap Chart</title>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
 <!-- Beginning Include Header -->
 <!--# include virtual="/charts/askdata/_includes/header.html" -->
 <!-- End Include Header -->
-	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
-
-<style>
-
-rect {
-        stroke: #E6E6E6;
-        stroke-width: 1.5px;
-      }
-
-.axis text {
-  font-size: 9pt;
-  font-family: Consolas, courier;
-  fill: #000;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: none;
-}
-
-.d3-tip {
-  line-height: 1;
-  font: 14px sans-serif;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: rgb(185, 185, 185);
-  border-radius: 2px;
-}
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
-
-/* Style northward tooltips differently */
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
-}
-
-#chart {
-  width: 100%;
-  height: 100%;
-  min-width: 300px;
-  min-height: 300px;
-  position: absolute;
-}
-
-</style>
-
 </head>
 <body>
 <!-- Beginning Include Watermak -->
 <!--# include virtual="/charts/askdata/_includes/watermark.html" -->
 <!-- End Include Watermak -->
-<div id="container">
-	<svg id="chart"></svg>
-</div>
-<script type="text/javascript">
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
 
-function prepareData(data, replace_null) {
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 
-  var str = 'year';
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
 
-  for (i in data.resultSet.dimension.labels) {
+var option;
 
-      str += ','
-      str += data.resultSet.dimension.labels[i];
+var dimension1 = ['12a', '1a', '2a', '3a', '4a', '5a', '6a',
+        '7a', '8a', '9a','10a','11a',
+        '12p', '1p', '2p', '3p', '4p', '5p',
+        '6p', '7p', '8p', '9p', '10p', '11p'];
+var dimension2 = ['Juventus', 'Napoli'];
 
-  }
+var data = [[9,9,5],[0,1,1],[0,2,0],[0,3,0],[4,4,0],[0,5,0],[0,6,0],[0,7,0],[0,8,0],[0,9,0],[0,10,0],[0,11,2],[0,12,4],[0,13,1],[0,14,1],[0,15,3],[0,16,4],[0,17,6],[0,18,4],[0,19,4],[0,20,3],[0,21,3],[0,22,2],[0,23,5],[1,0,7],[1,1,0],[1,2,0],[1,3,0],[1,4,0],[1,5,0],[1,6,0],[1,7,0],[1,8,0],[1,9,0],[1,10,5],[1,11,2],[1,12,2],[1,13,6],[1,14,9],[1,15,11],[1,16,6],[1,17,7],[1,18,8],[1,19,12],[1,20,5],[1,21,5],[1,22,7],[1,23,2],[2,0,1],[2,1,1],[2,2,0],[2,3,0],[2,4,0],[2,5,0],[2,6,0],[2,7,0],[2,8,0],[2,9,0],[2,10,3],[2,11,2],[2,12,1],[2,13,9],[2,14,8],[2,15,10],[2,16,6],[2,17,5],[2,18,5],[2,19,5],[2,20,7],[2,21,4],[2,22,2],[2,23,4],[3,0,7],[3,1,3],[3,2,0],[3,3,0],[3,4,0],[3,5,0],[3,6,0],[3,7,0],[3,8,1],[3,9,0],[3,10,5],[3,11,4],[3,12,7],[3,13,14],[3,14,13],[3,15,12],[3,16,9],[3,17,5],[3,18,5],[3,19,10],[3,20,6],[3,21,4],[3,22,4],[3,23,1],[4,0,1],[4,1,3],[4,2,0],[4,3,0],[4,4,0],[4,5,1],[4,6,0],[4,7,0],[4,8,0],[4,9,2],[4,10,4],[4,11,4],[4,12,2],[4,13,4],[4,14,4],[4,15,14],[4,16,12],[4,17,1],[4,18,8],[4,19,5],[4,20,3],[4,21,7],[4,22,3],[4,23,0],[5,0,2],[5,1,1],[5,2,0],[5,3,3],[5,4,0],[5,5,0],[5,6,0],[5,7,0],[5,8,2],[5,9,0],[5,10,4],[5,11,1],[5,12,5],[5,13,10],[5,14,5],[5,15,7],[5,16,11],[5,17,6],[5,18,0],[5,19,5],[5,20,3],[5,21,4],[5,22,2],[5,23,0],[6,0,1],[6,1,0],[6,2,0],[6,3,0],[6,4,0],[6,5,0],[6,6,0],[6,7,0],[6,8,0],[6,9,0],[6,10,1],[6,11,0],[6,12,2],[6,13,1],[6,14,3],[6,15,4],[6,16,0],[6,17,0],[6,18,0],[6,19,0],[6,20,1],[6,21,2],[6,22,2],[6,23,6]];
 
-  str += '\n'; 
+data = data.map(function (item) {
+    return [item[1], item[0], item[2] || '-'];
+});
 
-  for (i in data.resultSet.measures) {
-
-    var line = '' + i;
-    
-    for (var index in data.resultSet.measures[i].numericValues) {
-      
-      if (line != '') {line += ','}
-        
-        // Replace null value with the input
-        if (replace_null && (typeof data.resultSet.measures[i].numericValues[index] == 'undefined') || (data.resultSet.measures[i].numericValues[index] == null)) {
-          line += '' + replace_null
-        } else {
-          line += data.resultSet.measures[i].numericValues[index];
+option = {
+    tooltip: {
+        position: 'top'
+    },
+    grid: {
+        height: '50%',
+        top: '10%'
+    },
+    xAxis: {
+        type: 'category',
+        data: dimension1,
+        splitArea: {
+            show: true
         }
+    },
+    yAxis: {
+        type: 'category',
+        data: dimension2,
+        splitArea: {
+            show: true
+        }
+    },
+    visualMap: {
+        min: 0,
+        max: 10,
+        calculable: true,
+        orient: 'horizontal',
+        left: 'center',
+        bottom: '15%'
+    },
+    series: [{
+        name: 'Goals',
+        type: 'heatmap',
+        data: data,
+        label: {
+            show: true
+        },
+        emphasis: {
+            itemStyle: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    }]
+};
 
-    }
-
-    str += line + '\n';
-
-  }
-
-  return str
-
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
 }
 
-function displayChart(dataviz) {
-
-	//Look and Feel
-    var margin = { top: 100, right: 50, bottom: 50, left: 100 },
-        dim = Math.min(parseInt(d3.select("#chart").style("width")), parseInt(d3.select("#chart").style("height"))),
-       	width = dim - margin.left - margin.right,
-        height = dim - margin.top - margin.bottom,
-        categories = 17,
-        categories_second_dimension = 17,
-        gridSize = width / categories,
-        gridSize_second_dimension = width / categories_second_dimension,
-        colors = ['rgb(84,48,5)','rgb(140,81,10)','rgb(191,129,45)','rgb(223,194,125)','rgb(246,232,195)','rgb(245,245,245)','rgb(199,234,229)','rgb(128,205,193)','rgb(53,151,143)','rgb(1,102,94)','rgb(0,60,48)'];
-
-    var chartMargin = ((window.innerWidth - width) / 2) - 100;
-
-    //Settings
-    var xScale = d3.scale.ordinal().rangeBands([0, width]);
-    var yScale = d3.scale.ordinal().rangeBands([0, height]);
-    var xAxis = d3.svg.axis().orient("top");
-    var yAxis = d3.svg.axis().orient("left");
-
-    // Create the svg canvas
-    var svg = d3.select("#chart")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .attr("style","margin-left:"+chartMargin+"px")
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    var tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .offset([-10, 0])
-        .html(function(d) {
-          return  "<div><span>Relationship:</span> <span style='color:white'>" + d.axis2 + " and " + d.axis1 + "</span></div>" +
-                  "<div><span>Correlation:</span> <span style='color:white'>" + d3.round(d.value, 3) + "</span></div>";
-        })
-
-    svg.call(tip);
-
-
-///// for each
-
-  //d3.csv("data.csv", format, function(error, data){
-  var data = d3.csvParse(prepareData(dataviz,"0"));
-
-  var color = d3.scale.quantile()
-                  .domain([-0.05, 0.105])
-                  .range(colors);
-
-  // Create the heatmap visualization
-  var viz = svg.selectAll(".correlation")
-              .data(data)
-              .enter().append("rect")
-                  .attr("class", "correlation")
-                  .attr("x", function(d, i) {return gridSize * Math.floor(i / categories) ; })
-                  .attr("y", function(d, i) {return gridSize_second_dimension * (i % categories) ; })
-                  .attr("width",gridSize)
-                  .attr("height", gridSize_second_dimension)
-                  .style("fill", function(d){return color(d.value) ; })
-                  .on('mouseover', tip.show)
-                  .on('mouseout', tip.hide);
-
-    var names = [];
-    data.slice(0, categories).forEach(function(d){
-      names.push(d.axis2);
-    });
-
-    // Add the horizontal labels
-    xScale.domain(names);
-
-    xAxis.scale(xScale);
-
-    svg.append("g")
-          .attr("class", "x axis")
-          .call(xAxis)
-          .selectAll("text")
-              .attr("y", -10)
-              .attr("dy", ".5em")
-              .attr("x", 0)
-              .attr("transform", "rotate(-45)")
-              .style("text-anchor", "start")
-              .style("font-weight", "bold");
-
-    // Add the vertical labels
-    yScale.domain(names);
-
-    yAxis.scale(yScale);
-
-    svg.append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-          .selectAll("text")
-              .style("text-anchor", "end");
-
-	//});
-
-}
-
-function format(d) {
-  d.value = +d.value;
-  return d;
-}
-
-// Beinning include Request-data
-<!--# include virtual="/charts/askdata/_includes/request-data.js" -->
-// End include Request-data
-
-	//d3.select(window).on('resize', resize);
-
-</script>
-</body>
+        </script>
+    </body>
+</html>
+    
