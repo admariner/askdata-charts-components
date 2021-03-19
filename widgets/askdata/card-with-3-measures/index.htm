@@ -2,6 +2,37 @@
 <HEAD>
 
      <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+     <script type="text/javascript">
+          var getUrlParameter = function getUrlParameter(sParam) {
+              var sPageURL = window.location.search.substring(1),
+                  sURLVariables = sPageURL.split('&'),
+                  sParameterName,
+                  i;
+
+              for (i = 0; i < sURLVariables.length; i++) {
+                  sParameterName = sURLVariables[i].split('=');
+
+                  if (sParameterName[0] === sParam) {
+                      return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                  }
+              }
+          };
+          if (getUrlParameter('token') != undefined){
+            var token = getUrlParameter('token');
+          }else{
+            var token = Cookies.get('access_token')
+          }
+          // Request charting data
+          $.ajax({
+                   url: environment_data + "/widgets/" + getUrlParameter('widgetId'),
+                   type: "GET",
+                   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
+                    ).setRequestHeader('Content-Type','application/json')},
+                   success: function(data) { 
+                        return data;
+          }
+          });  
+</script>
 
 </HEAD>
 
