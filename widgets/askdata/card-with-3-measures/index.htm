@@ -2,7 +2,8 @@
 <HEAD>
 
      <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-     
+     <script src="/lib/scripts/utils.js"></script>
+     <script src="/lib/scripts/env.js"></script>
 </HEAD>
 
 <body>
@@ -94,7 +95,8 @@
             var token = Cookies.get('access_token')
           }
           // Request charting data
-          console.log("https://api-dev.askdata.com/smartinsight")
+          console.log("https://api-dev.askdata.com/smartinsight");
+          console.log(enviroment_data);
           $.ajax({
                    url: "https://api-dev.askdata.com/smartinsight" + "/widgets/" + getUrlParameter('widgetId'),
                    type: "GET",
