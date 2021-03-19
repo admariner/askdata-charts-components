@@ -29,15 +29,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
   <script>
 
-
-  
-  function renderTemplate(data) {
-    console.log(data)
-  var template = document.getElementById('template').innerHTML;
-  var rendered = Mustache.render(template, data);
-  document.getElementById('target').innerHTML = rendered;
-}
-
 // Retrieve auth token for URL of from the Cookies
 if (getUrlParameter('token') != undefined){
   var token = getUrlParameter('token');
@@ -54,7 +45,7 @@ if (getUrlParameter('token') != undefined){
 </HEAD>
 
 
-<body onload="">
+<body>
 <div id="target">Loading...</div>
     <script id="template" type="x-tmpl-mustache">
  
@@ -136,7 +127,9 @@ $.ajax({
           ).setRequestHeader('Content-Type','application/json')},
          success: function(data) { 
 
-         renderTemplate(data);
+          var template = document.getElementById('template').innerHTML;
+          var rendered = Mustache.render(template, data);
+          document.getElementById('target').innerHTML = rendered;
 
 }
 });  
