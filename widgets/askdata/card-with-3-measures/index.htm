@@ -3,6 +3,7 @@
 
      <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
      <script type="text/javascript">
+          console.log("Test")
           var getUrlParameter = function getUrlParameter(sParam) {
               var sPageURL = window.location.search.substring(1),
                   sURLVariables = sPageURL.split('&'),
@@ -23,6 +24,7 @@
             var token = Cookies.get('access_token')
           }
           // Request charting data
+          console.log(environment_data)
           $.ajax({
                    url: environment_data + "/widgets/" + getUrlParameter('widgetId'),
                    type: "GET",
