@@ -9,6 +9,7 @@
 <script src="/lib/scripts/jquery.min.js"></script>
 <link href="/lib/styles/css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+<script src="https://unpkg.com/mustache@latest"></script>
 <script type="text/javascript">
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
@@ -47,7 +48,8 @@ if (getUrlParameter('token') != undefined){
 
 <body>
 <div id="target">Loading...</div>
-    <script id="template" type="x-tmpl-mustache">
+
+  <script id="template" type="x-tmpl-mustache">
  
 <svg width="100%" viewBox="0 0 1194 320" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="7.5" y="7.5" width="1179" height="305" rx="22.5" fill="#E9F2FF" stroke="#F2994A" stroke-width="5"/>
@@ -63,12 +65,12 @@ if (getUrlParameter('token') != undefined){
 <rect x="805" y="80" width="346" height="153" rx="16" fill="white"/>
 <rect x="805.5" y="80.5" width="345" height="152" rx="15.5" stroke="url(#paint2_linear)"/>
 </g>
-<text fill="#219653" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="50" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="226" y="162.172">{{fields.4.value.data.0.cells.0.rawValue}}</tspan></text>
+<text fill="#219653" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="50" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="226" y="162.172">{{fields.code.data.0.cells.0.rawValue}}</tspan></text>
 <text fill="#EB5757" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="64" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="606" y="162.172">{{sq1Result.0.[tempo ripristino in hr]}}</tspan></text>
 <text fill="#282C32" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="50" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="978" y="162.172">{{sq1Result.0.[numero interventi]}}</tspan></text>
 <text fill="#4E5461" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="23" letter-spacing="0em"><tspan x="830.166" y="265.361">More Info https://askdata.com</tspan></text>
-<text fill="#929BA7" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="226" y="211">{{fields.4.value.schema.0.name}}</tspan></text>
-<text fill="#929BA7" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="606" y="211">MEDIA TEMPO RIPRISTINO</tspan></text>
+<text fill="#929BA7" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="226" y="211">{{fields.3.value.schema.1.name}}</tspan></text>
+<text fill="#929BA7" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="606" y="211">{{fields.4.value.schema.1.name}}</tspan></text>
 <text fill="#929BA7" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan text-anchor="middle" x="978" y="211">INTERVENTI</tspan></text>
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-style="italic" font-weight="300" letter-spacing="0em"><tspan x="53" y="62.2031">{{sq1Result.0.quadrimestre}} - {{sq1Result.0.servizio_ict}}</tspan></text>
 <rect x="7.5" y="7.5" width="1179" height="305" rx="22.5" stroke="white" stroke-width="15"/>
@@ -116,23 +118,28 @@ if (getUrlParameter('token') != undefined){
 </svg>
     </script>
 
-    <script src="https://unpkg.com/mustache@latest"></script>
 
     <script>
+
+
+
 // Request charting data
 $.ajax({
-         url: "https://api-dev.askdata.com"+"/smartinsight/widgets/" + getUrlParameter('widgetId'),
-         type: "GET",
-         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
-          ).setRequestHeader('Content-Type','application/json')},
-         success: function(data) { 
+       url: "https://api-dev.askdata.com"+"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+       type: "GET",
+       async: false,
+       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
+        ).setRequestHeader('Content-Type','application/json')},
+       success: function(data) { 
 
-          var template = document.getElementById('template').innerHTML;
-          var rendered = Mustache.render(template, data);
-          document.getElementById('target').innerHTML = rendered;
+        var template = document.getElementById('template').innerHTML;
+        var rendered = Mustache.render(template, data);
+        document.getElementById('target').innerHTML = rendered;
 
-}
-});  
+  }
+  }); 
+
+
 /*
 // Redirect to login if not authenticated 
 $(document).ajaxError(function( event, jqxhr, settings, exception ) {
