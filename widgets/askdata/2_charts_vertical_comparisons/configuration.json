@@ -1,0 +1,32 @@
+{
+	"configuration": [{
+		"code": "m1_id",
+		"label": "M1",
+		"type": "queries",
+		"viewType": "text",
+		"readOnly": false,
+		"mandatory": false,
+		"tooltip": "Use {{P}} to show the difference in percentage - Use {{AV}} to show the difference in absolute value",
+		"settings": {
+			"fireEvent" : "loadColumns"
+		}
+	},
+			 {
+		"code": "m2_id",
+		"label": "M2",
+		"type": "params",
+		"viewType": "text",
+		"readOnly": false,
+		"mandatory": false,
+		"tooltip": "Use {{P}} to show the difference in percentage - Use {{AV}} to show the difference in absolute value"
+	},
+			 {
+		"code": "m3_id",
+		"label": "M3",
+		"type": "string",
+		"viewType": "text",
+		"readOnly": false,
+		"mandatory": false,
+		"tooltip": "Use {{P}} to show the difference in percentage - Use {{AV}} to show the difference in absolute value"
+	}]
+}

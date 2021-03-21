@@ -16,6 +16,13 @@
 			"description": "description 2"
 		},
 		{
+			"code": "2_charts_vertical_comparisons",
+			"name": "2 Charts Vertical Comparison",
+			"variables": ["{{variable1}}", "{{variable2}}"],
+			"icon": "_lib/icons/test.png",
+			"description": "Vertical Chart comparison"
+		},
+		{
 			"code": "card-with-2-circles",
 			"name": "Card with 2 KPIs",
 			"variables": ["{{variable1}}", "{{variable2}}"],
