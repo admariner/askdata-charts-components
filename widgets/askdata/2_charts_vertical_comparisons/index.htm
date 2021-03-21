@@ -1,5 +1,5 @@
 <html>
-<HEAD>
+<head>
 <!-- Beginning Include Header -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -41,18 +41,13 @@ if (getUrlParameter('token') != undefined){
 
      <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-
-
-</HEAD>
+</head>
 
 
 <body>
 <div id="target">Failed Loading widget. Check your inputs.</div>
 
-
     <script>
-
-
 
 // Request charting data
 $.ajax({
@@ -63,11 +58,12 @@ $.ajax({
         ).setRequestHeader('Content-Type','application/json')},
        success: function(data) { 
 
-        $( "#target" ).append( "<iframe border="0" scr="https://chart-dev.askdata.com/charts/askdata/horizontal_bar/index.htm?chartId=5fa032b053ceb555c449ebc7"></iframe><iframe border="0" scr="https://chart-dev.askdata.com/charts/askdata/horizontal_bar/index.htm?chartId=5fa032b053ceb555c449ebc7"></iframe>" );
+        $( "#target" ).replaceWith( '<div style="width:100%" id="first_chart"><iframe style="width:50%;border:0;height:100%" src="https://chart-dev.askdata.com/charts/askdata/horizontal_bar/index.htm?chartId=5fa032b053ceb555c449ebc7"></iframe></div>' );
+
+        $( "#first_chart" ).append('<iframe style="width:50%;border:0;height:100%" src="https://chart-dev.askdata.com/charts/askdata/horizontal_bar/index.htm?chartId=5fa032b053ceb555c449ebc7"></iframe>')
 
   }
   }); 
-
 
 /*
 // Redirect to login if not authenticated 
@@ -78,6 +74,7 @@ $(document).ajaxError(function( event, jqxhr, settings, exception ) {
     }
 });
 */
+
   </script>
 </body>
 
