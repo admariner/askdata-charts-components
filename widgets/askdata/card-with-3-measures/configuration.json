@@ -23,14 +23,14 @@
     }, {
         "code": "queryIds",
         "label": "Queries",
-        "type": "string",
+        "type": "queryIds",
         "readOnly": false,
         "viewType": "dropdown",
         "mandatory": true
     }, {
         "code": "settings.m1_id",
         "label": "Measure1",
-        "type": "string",
+        "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
@@ -38,7 +38,7 @@
     }, {
         "code": "settings.m2_id",
         "label": "Measure1",
-        "type": "string",
+        "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
@@ -46,7 +46,7 @@
     }, {
         "code": "settings.m3_id",
         "label": "Measure1",
-        "type": "string",
+        "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
