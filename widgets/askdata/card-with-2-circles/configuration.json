@@ -1,4 +1,5 @@
-[{
+{
+	"configuration": [{
         "code": "code",
         "label": "Chart Name",
         "type": "string",
@@ -49,3 +50,4 @@
             "role": "CHART_CONFIG"
         }
     }]
+}
