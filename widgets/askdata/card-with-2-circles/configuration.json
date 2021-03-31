@@ -1,11 +1,51 @@
-{
-	"configuration": [{
-		"code": "itemA.description",
-		"label": "Description",
-		"type": "string",
-		"viewType": "text",
-		"readOnly": false,
-		"mandatory": false,
-		"tooltip": "Use {{P}} to show the difference in percentage - Use {{AV}} to show the difference in absolute value"
-	}]
-}
+[{
+        "code": "code",
+        "label": "Chart Name",
+        "type": "string",
+        "viewType": "hidden",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "name",
+        "label": "Name",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "description",
+        "label": "Description",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
+        "readOnly": false,
+        "viewType": "dropdown",
+        "mandatory": true
+    }, {
+        "code": "main_chart",
+        "label": "Main Chart",
+        "type": "button",
+        "viewType": "button",
+        "readOnly": false,
+        "mandatory": false,
+        "settings": {
+            "label": "Chart config",
+            "role": "CHART_CONFIG"
+        }
+    }, {
+        "code": "bottom_left_chart",
+        "label": "Bottom left Chart",
+        "type": "button",
+        "viewType": "button",
+        "readOnly": false,
+        "mandatory": false,
+        "settings": {
+            "label": "Chart config",
+            "role": "CHART_CONFIG"
+        }
+    }]
