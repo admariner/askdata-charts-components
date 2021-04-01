@@ -128,11 +128,11 @@ $.ajax({
        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
         ).setRequestHeader('Content-Type','application/json')},
        success: function(data) { 
-
+        console.log(data)
         var template = document.getElementById('template').innerHTML;
         var rendered = Mustache.render(template, data);
         document.getElementById('target').innerHTML = rendered;
-
+        console.log(rendered)
   }
   }); 
 
