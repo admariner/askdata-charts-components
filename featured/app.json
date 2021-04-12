@@ -1,8 +1,12 @@
 {
-	"workspaces": [{
-			"workspace_slug": "sales_demo"}, {
-			"workspace_slug": "nytimes"}
-	], "data_cards": [{
-			              "workspace_slug": "sales_demo", "data_card_slug": "metric_one"},
-                    {"workspace_slug": "sales_demo", "data_card_slug": "nytimes"}]
+	"workspaces": ["sales_demo", "nytimes"],
+	"data_cards": [{
+			"workspace": "sales_demo",
+			"data_card": "metric_one"
+		},
+		{
+			"workspace": "sales_demo",
+			"data_card": "nytimes"
+		}
+	]
 }
