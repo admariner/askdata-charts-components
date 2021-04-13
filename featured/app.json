@@ -7,6 +7,10 @@
 		{
 			"workspace": "sales_demo",
 			"data_card": "nytimes"
+		},
+		       {
+			"workspace": "20210326_trend_datacard",
+			"data_card": "trend_deceduti_denominazione_regione_lazio_e_lombardia_14"
 		}
 	]
 }
