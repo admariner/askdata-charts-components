@@ -1,5 +1,5 @@
 {
-	"workspaces": ["sales_demo", "nytimes", "20201118_all_datasets"],
+	"workspaces": ["sales_demo", "nytimes", "20201118_all_datasets", "20210326_trend_datacard"],
 	"data_cards": [{
 			"workspace": "sales_demo",
 			"data_card": "metric_one"
