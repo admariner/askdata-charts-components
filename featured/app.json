@@ -1,5 +1,5 @@
 {
-	"workspaces": ["sales_demo", "nytimes", "20201118_all_datasets", "20210326_trend_datacard"],
+	"workspaces": ["sales_demo", "nytimes", "20201118_all_datasets", "20210326_trend_datacard", "deceduti_denominazione_regione_as_chart_2"],
 	"data_cards": [{
 			"workspace": "sales_demo",
 			"data_card": "metric_one"
