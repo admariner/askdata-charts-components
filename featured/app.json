@@ -1,5 +1,5 @@
 {
-	"workspaces": ["sales_demo", "nytimes", "20201118_all_datasets", "20210326_trend_datacard", "deceduti_denominazione_regione_as_chart_2"],
+	"workspaces": ["sales_demo", "nytimes", "20201118_all_datasets", "20210326_trend_datacard", "askdata_covid_qa"],
 	"data_cards": [{
 			"workspace": "sales_demo",
 			"data_card": "metric_one"
@@ -8,9 +8,13 @@
 			"workspace": "sales_demo",
 			"data_card": "nytimes"
 		},
-		       {
+		{
 			"workspace": "20210326_trend_datacard",
 			"data_card": "trend_deceduti_denominazione_regione_lazio_e_lombardia_14"
+		},
+		{
+			"workspace": "askdata_covid_qa",
+			"data_card": "deceduti_denominazione_regione_as_chart_2"
 		}
 	]
 }
