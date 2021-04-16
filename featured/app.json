@@ -14,7 +14,7 @@
 		},
 		{
 			"workspace": "askdata_covid_qa",
-			"data_card": "deceduti_denominazione_regione"
+			"data_card": "positivi_denominazione_regione_as_chart"
 		}
 	]
 }
