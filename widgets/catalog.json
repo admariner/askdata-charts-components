@@ -2,16 +2,20 @@
 	"widget": [{
 			"code": "card-with-3-measures",
 			"name": "Card with 3 measures",
-			"variables": ["{{variable1}}", "{{variable2}}"],
 			"icon": "_lib/icons/test.png",
-			"description": "description 2"
+			"description": "Card with 3 KPIs"
 		},
 		{
 			"code": "card-with-2-circles",
 			"name": "Card with 2 KPIs",
-			"variables": ["{{variable1}}", "{{variable2}}"],
 			"icon": "_lib/icons/test.png",
-			"description": "description 2"
+			"description": "Card with 2 KPIs"
+		},
+		{
+			"code": "leatherboard-red",
+			"name": "LeatherBoard Red",
+			"icon": "_lib/icons/test.png",
+			"description": "Leatherboard with Red Background"
 		}
 	],
 	"background-color": "#CCCCCC"

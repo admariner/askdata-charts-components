@@ -1,5 +1,5 @@
 {
-	"workspaces": ["sales_demo", "nytimes", "20201118_all_datasets", "20210326_trend_datacard", "askdata_covid_qa"],
+	"workspaces": ["sales_demo", "askdatacovid", "nytimes", "20201118_all_datasets", "20210326_trend_datacard", "askdata_covid_qa"],
 	"data_cards": [{
 			"workspace": "sales_demo",
 			"data_card": "metric_one"
