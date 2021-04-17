@@ -1,4 +1,7 @@
 // Retrieve auth token
+console.log("Environment: " + environment);
+console.log("Data Environment: " + environment_data);
+
 if (getUrlParameter('token') != undefined){
   var token = getUrlParameter('token');
 }else{
