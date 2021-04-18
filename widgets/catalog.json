@@ -24,7 +24,7 @@
 			"description": "Rose Chart Blue"
 		},
 		{
-			"code": "pair-comparisonse",
+			"code": "pair-comparisons",
 			"name": "Pair Comparisons",
 			"icon": "_lib/icons/test.png",
 			"description": "Re-arrange entities split by an attribute sorted by one dimension"
@@ -34,8 +34,13 @@
 			"name": "Table Light",
 			"icon": "_lib/icons/test.png",
 			"description": "Responsive table up to 5 elements"
+		},
+		{
+			"code": "gauge-metric",
+			"name": "Gauge Metric",
+			"icon": "gauge-metric/icon.png",
+			"description": "Single Gauge"
 		}
-		
 	],
 	"background-color": "#CCCCCC"
 }
