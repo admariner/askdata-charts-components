@@ -40,6 +40,18 @@
 			"name": "Gauge Metric",
 			"icon": "gauge-metric/icon.png",
 			"description": "Single Gauge"
+		},
+		{
+			"code": "chart-trend-cumulative-run",
+			"name": "Trend Comulative Run",
+			"icon": "_lib/icons/test.png",
+			"description": "Trend Cumulative Value"
+		},
+		{
+			"code": "vertical-bar-with-trendline",
+			"name": "Chart Vertical Bar with Trandline",
+			"icon": "_lib/icons/test.png",
+			"description": "Chart Vertical Bar with Trandline"
 		}
 	],
 	"background-color": "#CCCCCC"
