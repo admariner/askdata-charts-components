@@ -16,6 +16,12 @@
 			"name": "LeatherBoard Red",
 			"icon": "_lib/icons/test.png",
 			"description": "Leatherboard with Red Background"
+		},
+		{
+			"code": "rose-chart-blue",
+			"name": "Rose Chart Blue",
+			"icon": "_lib/icons/test.png",
+			"description": "Rose Chart Blue"
 		}
 	],
 	"background-color": "#CCCCCC"

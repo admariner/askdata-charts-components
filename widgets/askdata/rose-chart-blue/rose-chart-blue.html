@@ -1,0 +1,117 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=pie-custom
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
+        -->
+        <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+        -->
+
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+option = {
+    backgroundColor: '#E9F2FF',
+
+    title: {
+        text: 'Titolo del mio album',
+        show: false,
+        left: 'center',
+        top: 10,
+        textStyle: {
+            color: '#FFFFFF'
+        }
+    },
+
+    tooltip: {
+        trigger: 'item'
+    },
+
+    visualMap: {
+        show: false,
+        min: 0,
+        max: 500,
+        inRange: {
+            colorLightness: [0, 1]
+        }
+    },
+    series: [
+        {
+            name: 'Features',
+            type: 'pie',
+            radius: '80%',
+            center: ['50%', '50%'],
+            data: [
+                {value: 335, name: 'Velocità'},
+                {value: 310, name: 'Sicurezza'},
+                {value: 274, name: 'Agilità'},
+                {value: 235, name: 'Competenza'},
+                {value: 400, name: 'Aiuto'}
+            ].sort(function (a, b) { return a.value - b.value; }),
+            roseType: 'radius',
+            label: {
+                show: true,
+                formatter : function (params){
+                              return  params.name  + ' (' + params.value + ')'
+                        },
+                color: 'rgba(0, 0, 0, 1)',
+                fontSize:18
+            },
+            labelLine: {
+                lineStyle: {
+                    color: 'rgba(0, 0, 0, 0.3)'
+                },
+                smooth: 0.2,
+                length: 30,
+                length2: 20
+            },
+            itemStyle: {
+                color: '#266ff2',
+                shadowBlur: 10,
+                shadowColor: 'rgba(0, 0, 0, 0.2)'
+            },
+
+            animationType: 'scale',
+            animationEasing: 'elasticOut',
+            animationDelay: function (idx) {
+                return Math.random() * 200;
+            }
+        }
+    ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    
