@@ -29,27 +29,27 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Measure1",
+        "label": "Main Dimension",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the first measure"
+        "tooltip": "Choose the main dimension"
     }, {
         "code": "settings.m2_id",
-        "label": "Measure2",
+        "label": "Sequence Dimension",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "Choose the second measure"
+        "tooltip": "Choose the sequence dimension. Eg: match day, hour of the day"
     }, {
         "code": "settings.m3_id",
-        "label": "Measure3",
+        "label": "Measure",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "Choose the third measure"
+        "tooltip": "Choose the measure to analyze"
     }]
 }
