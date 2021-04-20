@@ -1,148 +1,157 @@
-<!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=bar-rich-text
--->
+  
 <!DOCTYPE html>
 <html style="height: 100%">
     <head>
-        <meta charset="utf-8">
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+        <!-- Beginning Include Header -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src="/lib/scripts/utils.js"></script>
+<script src="/lib/scripts/env.js"></script>
+<script src="/lib/scripts/jquery.min.js"></script>
+<link href="/lib/styles/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+<script src="https://unpkg.com/mustache@latest"></script>
+
+<!-- End Include Header -->
     </head>
     <body style="height: 100%; margin: 0">
         <div id="container" style="height: 100%"></div>
     </body>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-        <script src="/lib/scripts/utils.js"></script>
-        <script src="/lib/scripts/env.js"></script>
-        <script src="/lib/scripts/jquery.min.js"></script>
-        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
-        <script src="https://unpkg.com/mustache@latest"></script>
 
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-        <script type="text/javascript">
+    <script>
 
+//remove me
+environment_widget = "https://api-dev.askdata.com";
+
+// Request charting data
 $.ajax({
-    url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
-    type: "GET",
-    async: false,
-    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
-    ).setRequestHeader('Content-Type','application/json')},
-    success: function(data) 
-    { 
-            console.log(data)
 
-            var dom = document.getElementById("container");
-            var myChart = echarts.init(dom);
-            var app = {};
+       url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+       type: "GET",
+       async: false,
+       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+        ).setRequestHeader('Content-Type','application/json')},
+       success: function(data) { 
+        console.log(data)
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
 
-            var option;
-            var weatherIcons = {
-                'alfa': '/alfa.png',
-                'fiat': '/Fiat.png',
-                'fiatp': '/Fiatp.png',
-                'jeep': '/jeep.png',
-                'lancia': '/Lancia.png'
-            };
+var option;
 
-            var seriesLabel = {
-                show: true
-            }
-            option =
-            {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'shadow'
-                    }
-                },
-                grid: {
-                    left: 150
-                },
-                toolbox: {
-                    show: true,
-                    feature: {
-                        saveAsImage: {}
-                    }
-                },
-                xAxis: {
-                    type: 'value',
-                    name: 'Total Leads',
-                    axisLabel: {
-                        formatter: '{value}'
-                    }
-                },
-                yAxis: {
-                    type: 'category',
-                    inverse: true,
-                    data: ['Fiat', 'Jeep', 'Fiat_Professional', 'Alfa_Romeo', 'Lancia'],
-                    axisLabel: {
-                        formatter: function (value) {
-                            return '{' + value + '| }';
-                        },
-                        margin: 3,
-                        rich: {
-                            value: {
-                                align: 'center'
-                            },
-                            Alfa_Romeo: {
-                                height: 100,
-                                align: 'center',
-                                backgroundColor: {
-                                    image: weatherIcons.alfa
-                                }
-                            },
-                            Fiat_Professional: {
-                                height:100,
-                                align: 'center',
-                                color : '#fff',
-                                backgroundColor: {
-                                    image: weatherIcons.fiatp
-                                }
-                            },
-                            Lancia: {
-                                height: 100,
-                                align: 'center',
-                                backgroundColor: {
-                                    image: weatherIcons.lancia
-                                }
-                            },
-                            Jeep: {
-                                height: 100,
-                                align: 'center',
-                                backgroundColor: {
-                                    image: weatherIcons.jeep
-                                }
-                            },
-                            Fiat: {
-                                height: 100,
-                                align: 'center',
-                                backgroundColor: {
-                                    image: weatherIcons.fiat
-                                }
-                            }
-                        }
-                    }
-                },
-                series: [
-                            {
-                                name: 'Lead',
-                                type: 'bar',
-                                data: [773, 185, 106, 82, 31],
-                                label: seriesLabel,
-                                color: "#243882"
-                            
-                            }
-                        ]
-            }
-        if (option && typeof option === 'object') {
-            myChart.setOption(option);
+
+
+var weatherIcons = {
+    'alfa': '/alfa.png',
+    'fiat': '/Fiat.png',
+    'fiatp': '/Fiatp.png',
+    'jeep': '/jeep.png',
+    'lancia': '/Lancia.png'
+};
+
+var seriesLabel = {
+    show: true
+}
+
+option = {
+   
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
         }
+    },
+    grid: {
+        left: 150
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'value',
+        name: 'Total Leads',
+        axisLabel: {
+            formatter: '{value}'
+        }
+    },
+    yAxis: {
+        type: 'category',
+        inverse: true,
+        data: ['Fiat', 'Jeep', 'Fiat_Professional', 'Alfa_Romeo', 'Lancia'],
+        axisLabel: {
+            formatter: function (value) {
+                return '{' + value + '| }';
+            },
+            margin: 3,
+            rich: {
+                value: {
+                    align: 'center'
+                },
+                Alfa_Romeo: {
+                    height: 100,
+                    align: 'center',
+                    backgroundColor: {
+                        image: weatherIcons.alfa
+                    }
+                },
+                Fiat_Professional: {
+                    height:100,
+                    align: 'center',
+                    color : '#fff',
+                    backgroundColor: {
+                        image: weatherIcons.fiatp
+                    }
+                },
+                Lancia: {
+                    height: 100,
+                    align: 'center',
+                    backgroundColor: {
+                        image: weatherIcons.lancia
+                    }
+                },
+                Jeep: {
+                    height: 100,
+                    align: 'center',
+                    backgroundColor: {
+                        image: weatherIcons.jeep
+                    }
+                },
+                Fiat: {
+                    height: 100,
+                    align: 'center',
+                    backgroundColor: {
+                        image: weatherIcons.fiat
+                    }
+                }
+            }
+        }
+    },
+    series: [
+        {
+            name: 'Lead',
+            type: 'bar',
+            data: [773, 185, 106, 82, 31],
+            label: seriesLabel,
+            color: "#243882"
+        
+        }
+    ]
+};
 
-  }
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+}
   });
 
         </script>
-    
 </html>
     
