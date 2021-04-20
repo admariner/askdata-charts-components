@@ -52,6 +52,12 @@
 			"name": "Chart Vertical Bar with Trandline",
 			"icon": "_lib/icons/test.png",
 			"description": "Chart Vertical Bar with Trandline"
+		},
+		{
+			"code": "bar-chart-with-icons",
+			"name": "Bar Chart with custom icons",
+			"icon": "_lib/icons/test.png",
+			"description": "Horizontal Bar Chart with custom icons"
 		}
 	],
 	"background-color": "#CCCCCC"
