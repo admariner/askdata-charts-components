@@ -18,15 +18,6 @@
 
 function displayChart(data) {
 
-    // theme handling
-    if (theme.length > 0) {
-      item.color = theme.palette[i]
-    } else {
-      item.color = data.resultSet.color.palette[i];
-      if (i==0) {item.color = data.resultSet.color.accent; }
-    }
-
-
     console.log(data);
 
     var MONTHS = [data.resultSet.dimension.labels];
@@ -34,15 +25,6 @@ function displayChart(data) {
     var measures = [];
     for(var i in data.resultSet.measures) {
         var item = data.resultSet.measures[i];
-    
-   // theme handling
-    if (window.theme.palette) {
-      console.log("set theme")
-      item.color = window.theme.palette[i]
-    } else {
-      item.color = data.resultSet.color.palette[i];
-      if (i==0) {item.color = data.resultSet.color.accent; }
-    }
     
       measures.push({ 
           "label" : item.name,
