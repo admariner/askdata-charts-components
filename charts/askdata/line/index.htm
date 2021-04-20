@@ -7,7 +7,6 @@
 <!-- End Include Header -->
 </head>
 <body>
-
 <!-- Beginning Include Watermak -->
 <!--# include virtual="/charts/askdata/_includes/watermark.html" -->
 <!-- End Include Watermak -->
@@ -17,6 +16,12 @@
 <script>
 
 function displayChart(data) {
+
+// Beinning include prepare-layout
+<!--# include virtual="/charts/askdata/_includes/prepare-layout.js" -->
+// End include prepare-layout
+
+    console.log(data);
 
     var color = Chart.helpers.color;
     var measures = [];
