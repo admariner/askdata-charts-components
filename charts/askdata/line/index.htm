@@ -18,22 +18,32 @@
 
 function displayChart(data) {
 
-    console.log(data);
-
-    var MONTHS = [data.resultSet.dimension.labels];
     var color = Chart.helpers.color;
     var measures = [];
-    for(var i in data.resultSet.measures) {
+    for(var i in data.resultSet.measures) {  
         var item = data.resultSet.measures[i];
-
-        item.color = data.resultSet.color.palette[i];
-        if (i==0) {item.color = data.resultSe.color.accent}
     
-      measures.push({ 
-          "label" : item.name,
-          "data" : item.numericValues,
-          "borderColor": item.color
-      });
+    // theme handling
+    if (theme.length > 0) {
+      item.color = theme.palette[i]
+    } else {
+      item.color = data.resultSet.color.palette[i];
+      if (i==0) {item.color = data.resultSet.color.accent; }
+    }
+
+    for (let i = 0; i < item.numericValues.length; i++) {
+
+      if(typeof item.numericValues[i] != 'number'){ 
+        console.log("Warning: numericValues Not numeric!")
+      }
+    }
+    
+    measures.push({ 
+        "label" : item.name,
+        "data" : item.numericValues,
+        "backgroundColor": item.color,
+        "borderColor": item.color
+    });
 
     }
 
