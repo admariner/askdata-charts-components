@@ -25,6 +25,9 @@ function displayChart(data) {
     var measures = [];
     for(var i in data.resultSet.measures) {
         var item = data.resultSet.measures[i];
+
+        item.color = data.resultSet.color.palette[i];
+        if (i==0) {item.color = data.resultSe.color.accent}
     
       measures.push({ 
           "label" : item.name,
