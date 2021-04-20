@@ -28,9 +28,13 @@ function displayChart(data) {
     for(var i in data.resultSet.measures) {  
         var item = data.resultSet.measures[i];
     
-    // Beinning include apply-theme
-<!--# include virtual="/charts/askdata/_includes/apply-theme.js" -->
-    // End include apply-theme
+    // theme handling
+    if (theme.length > 0) {
+      item.color = theme.palette[i]
+    } else {
+      item.color = data.resultSet.color.palette[i];
+      if (i==0) {item.color = data.resultSet.color.accent; }
+    }
 
     for (let i = 0; i < item.numericValues.length; i++) {
 

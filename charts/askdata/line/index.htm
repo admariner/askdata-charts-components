@@ -18,9 +18,13 @@
 
 function displayChart(data) {
 
-  // Beinning include prepare-layout
-<!--# include virtual="/charts/askdata/_includes/prepare-layout.js" -->
-// End include prepare-layout
+    // theme handling
+    if (theme.length > 0) {
+      item.color = theme.palette[i]
+    } else {
+      item.color = data.resultSet.color.palette[i];
+      if (i==0) {item.color = data.resultSet.color.accent; }
+    }
 
 
     console.log(data);
