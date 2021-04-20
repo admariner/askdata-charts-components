@@ -29,19 +29,19 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Measure1",
+        "label": "Measure",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the first measure"
+        "tooltip": "Choose the measure"
     }, {
         "code": "settings.m2_id",
-        "label": "Measure2",
+        "label": "Dimension",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "Choose the second measure"
+        "tooltip": "Choose the dimension"
     }]
 }
