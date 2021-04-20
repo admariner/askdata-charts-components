@@ -85,7 +85,7 @@ option = {
     yAxis: {
         type: 'category',
         inverse: true,
-        data: ['Fiat', 'Jeep', 'Fiat_Professional', 'Alfa_Romeo', 'Lancia'],
+        data: data.fields.m2_id.data,
         axisLabel: {
             formatter: function (value) {
                 return '{' + value + '| }';
@@ -103,6 +103,13 @@ option = {
                     }
                 },
                 Fiat_Professional: {
+                    height: 35,
+                    align: 'center',
+                    backgroundColor: {
+                        image: weatherIcons.fiatp
+                    }
+                },
+                SPEECHINESS: {
                     height: 35,
                     align: 'center',
                     backgroundColor: {
@@ -137,7 +144,7 @@ option = {
         {
             name: 'Lead',
             type: 'bar',
-            data: [773, 185, 106, 82, 31],
+            data: data.fields.m1_id.data,
             label: seriesLabel,
             color: "#243882"
         
