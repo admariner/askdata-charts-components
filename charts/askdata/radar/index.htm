@@ -26,20 +26,21 @@ function displayChart(data) {
     var color = Chart.helpers.color;
     var measures = [];
 
-    for(var i in data.resultSet.dimension.labels) {  
-        
+    for(var i in data.resultSet.measures[i]) {  
+
         var item = data.resultSet.measures[i];
     
-    // theme handling
-    if (theme.length > 0) {
-      item.color = theme.palette[i]
-    } else {
-      
-      if (i==0) {item.color = data.resultSet.color.accent; }
-      
+        // theme handling
+        if (theme.length > 0) {
+          item.color = theme.palette[i]
+        } else {
+          
+          if (i==0) {item.color = data.resultSet.color.accent; }
+          
 //      if (i<= data.resultSet.color.palette.length) {
 //        item.color = data.resultSet.color.palette[i];
 //      }
+
     }
     
     measures.push({ 
@@ -48,7 +49,7 @@ function displayChart(data) {
         "borderColor": item.color
     });
 
-}
+  }
 
     // Show legend if measures more than one
     var displayLegend = true
