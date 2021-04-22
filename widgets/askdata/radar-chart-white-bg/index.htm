@@ -49,71 +49,47 @@ var app = {};
 var option;
 
 option = {
-    backgroundColor: '#E9F2FF',
-
-    title: {
-        text: 'Tile of the widget',
-        show: false,
-        left: 'center',
-        top: 10,
-        textStyle: {
-            color: '#FFFFFF'
-        }
+    title: {},
+    tooltip: {},
+    legend: {
+        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
     },
-
-    tooltip: {
-        trigger: 'item'
-    },
-
-    visualMap: {
-        show: false,
-        min: 0,
-        max: 500,
-        inRange: {
-            colorLightness: [0, 1]
-        }
-    },
-    series: [
-        {
-            name: 'Features',
-            type: 'pie',
-            radius: '80%',
-            center: ['50%', '50%'],
-            data: [
-                {value: 664, name: 'Gol di testa'},
-                {value: 1252, name: 'Gol col sinistro'},
-                {value: 2057, name: 'Gol col destro'}
-            ].sort(function (a, b) { return a.value - b.value; }),
-            roseType: 'radius',
-            label: {
-                show: true,
-                formatter : function (params){
-                              return  params.name  + ' (' + params.value + ')'
-                        },
-                color: 'rgba(0, 0, 0, 1)',
-                fontSize:18
-            },
-            labelLine: {
-                lineStyle: {
-                    color: 'rgba(0, 0, 0, 0.3)'
-                },
-                smooth: 0.2,
-                length: 30,
-                length2: 20
-            },
-            itemStyle: {
-                color: '#266ff2',
-                shadowBlur: 10,
-                shadowColor: 'rgba(0, 0, 0, 0.2)'
-            },
-
-            animationType: 'scale',
-            animationEasing: 'elasticOut',
-            animationDelay: function (idx) {
-                return Math.random() * 200;
+    radar: {
+        // shape: 'circle',
+        name: {
+            textStyle: {
+                color: '#fff',
+                backgroundColor: '#999',
+                borderRadius: 3,
+                padding: [3, 5]
             }
-        }
-    ]
+        },
+        indicator: [
+            { name: 'Contrasti vinti',max: 254},
+            { name: 'Falli commessi', max:63},
+            { name: 'Palle recuperate', max: 273},
+            { name: 'Tackle vinti', max: 53},
+            { name: 'Passaggi riusciti', max: 1960}
+            ]
+    },
+    series: [{
+        name: 'Players',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data: [
+            {
+                value: [141, 52, 211, 22, 1380],
+                name: 'Kessié Franck'
+            },
+            {
+                value: [206, 48, 169, 31.0, 1133],
+                name: 'Milinkovic-Savic Sergej'
+            },{
+                value: [42, 11,  48,  7, 313],
+                name: 'Media Serie A'
+            }
+        ]
+    }]
 };
 
 if (option && typeof option === 'object') {

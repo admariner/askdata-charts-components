@@ -4,7 +4,7 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 
-        <!-- Beginning Include Header -->
+<!-- Beginning Include Header -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
@@ -18,15 +18,10 @@
 <!-- End Include Header -->
     </head>
     <body style="height: 100%; margin: 0">
-        <div id="container" style="height: 100%"></div>
+        <div id="container"><img src="soccer_front.svg" style="max-width: 100%" /></div>
     </body>
-
-
     <script>
-
-//remove me
-environment_widget = "https://api.askdata.com";
-
+/*
 // Request charting data
 $.ajax({
 
@@ -38,12 +33,12 @@ $.ajax({
        success: function(data) { 
         console.log(data)
 
-        /*
-        var template = document.getElementById('template').innerHTML;
-        var rendered = Mustache.render(template, data);
-        document.getElementById('target').innerHTML = rendered;
-        console.log(rendered)
-        */
+        
+        //var template = document.getElementById('template').innerHTML;
+        //var rendered = Mustache.render(template, data);
+        //document.getElementById('target').innerHTML = rendered;
+        //console.log(rendered)
+        
 
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
@@ -128,7 +123,7 @@ if (option && typeof option === 'object') {
   }
   });
 
-/*
+
 // Redirect to login if not authenticated 
 $(document).ajaxError(function( event, jqxhr, settings, exception ) {
     if ( jqxhr.status== 401 ) {

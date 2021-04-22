@@ -18,55 +18,82 @@
 function displayChart(data) {
 
 // Beinning include prepare-layout
-<!--# include virtual="/charts/askdata/_includes/prepare-layout.js" -->
+  function calculateScreen() {
+    var w = window.innerWidth;
+    var h = w/2;
+    document.getElementById("container").style.width =  w + "px";
+    document.getElementById("container").style.height = h + "px";
+
+  }
+
+  calculateScreen()
 // End include prepare-layout
 
     console.log(data);
 
+    var MONTHS = [data.resultSet.dimension.labels];
     var color = Chart.helpers.color;
-    var measures = [];
-
-    for(var i in data.resultSet.measures[i]) {  
-
-        var item = data.resultSet.measures[i];
     
+// delete
+data = temp1;
+
+    var datasets = [];
+    var labels = [];
+    var labelMap = {};
+
+    // iterate measures
+    for(var j in data.resultSet.measures) {
+
+      var item = data.resultSet.measures[j];
+
+      // creaate label for each datasest/measure
+      labels.push(item.name)
+
+        var subItemData = [];
+        var subItemLabel = [];
+        var subItemColor = [];
+
+      // iterate label of the dimension
+      for(var i in data.resultSet.dimension.labels) {
+
+
         // theme handling
         if (theme.length > 0) {
           item.color = theme.palette[i]
         } else {
-          
+          item.color = data.resultSet.color.palette[i];
           if (i==0) {item.color = data.resultSet.color.accent; }
-          
-//      if (i<= data.resultSet.color.palette.length) {
-//        item.color = data.resultSet.color.palette[i];
-//      }
+        }
+        
+        // Add element for label
+        labelMap[data.resultSet.dimension.labels[i]].push(data.resultSet.measures[j].numericValues[i]);
 
     }
-    
-    measures.push({ 
-        "label" : item.name,
-        "data" : item.numericValues,
-        "borderColor": item.color
-    });
 
   }
+
+    datasets.push({ 
+            "label" : subItemLabel,
+            "data" : subItemData
+        });
 
     // Show legend if measures more than one
     var displayLegend = true
     
-    if (measures.length == 1) {
+    if (datasets.length == 1) {
       displayLegend = false;
 
     }
 
     var chartData = {
-      labels: data.resultSet.dimension.labels,
-      datasets: measures,
+      labels: labels,
+      datasets: datasets,
     };
 
     // Todo - replace with dynamic locale, rounding, currency and measurement units
     // Scales should be aggregated by measurement units
     // Color is used as 3rd axis if the measurements units are greaten than 2
+
     var labelNumberRoundTo = 2;
     var labelNumberLocale = 'en-US';
     var labelFontSize = 20;
@@ -113,7 +140,63 @@ function displayChart(data) {
 }
 
 // Beinning include Request-data
-<!--# include virtual="/charts/askdata/_includes/request-data.js" -->
+// Retrieve auth token
+console.log("Environment: " + environment);
+console.log("Data Environment: " + environment_data);
+
+if (getUrlParameter('token') != undefined){
+  var token = getUrlParameter('token');
+}else{
+  var token = Cookies.get('access_token')
+}
+
+var theme = []
+
+// Retrieve theme
+if (getUrlParameter('theme')) {
+
+    $.getJSON( environment + "/charts/"+getUrlParameter('theme')+"/catalog.json", function( data ) {
+      
+      console.log("retrieving theme")
+      console.log(data)
+      
+      window.theme = data;
+
+  })
+
+} else {
+
+      $.getJSON( environment + "/charts/askdata/catalog.json", function( data ) {
+      
+      console.log("retrieving theme")
+      console.log(data)
+      
+      window.theme = data;
+
+     })
+}
+
+// Request charting data
+$.ajax({
+         url: environment_data + "/charts/" + getUrlParameter('chartId'),
+         type: "GET",
+         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
+          ).setRequestHeader('Content-Type','application/json')},
+         success: function(data) { 
+
+         displayChart(data);
+
+}
+});  
+
+// Redirect to login if not authenticated 
+$( document ).ajaxError(function( event, jqxhr, settings, exception ) {
+    if ( jqxhr.status== 401 ) {
+      location.replace(environment_auth+"/login");
+
+    }
+});
+
 // End include Request-data
 
 </script>
