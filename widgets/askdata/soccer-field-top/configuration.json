@@ -1,0 +1,50 @@
+{
+	"configuration": [{
+        "code": "code",
+        "label": "Chart code",
+        "type": "string",
+        "viewType": "hidden",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
+        "readOnly": false,
+        "viewType": "dropdown",
+        "mandatory": true
+    }, {
+        "code": "settings.m1_id",
+        "label": "Player",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the first measure"
+    }, {
+        "code": "settings.m2_id",
+        "label": "Left - Right",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the second measure"
+    }, {
+        "code": "settings.m3_id",
+        "label": "Top - Down",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the third measure"
+    }
+    , {
+        "code": "settings.m3_id",
+        "label": "Event Type",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Support event: Goal"
+    }]
+}

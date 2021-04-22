@@ -58,7 +58,19 @@
 			"name": "Bar Chart with custom icons",
 			"icon": "_lib/icons/test.png",
 			"description": "Horizontal Bar Chart with custom icons"
+		},
+		{
+			"code": "soccer-goal-front",
+			"name": "Soccer Target Chart (front)",
+			"icon": "_lib/icons/test.png",
+			"description": "Soccer Front"
+		},{
+			"code": "soccer-field-top",
+			"name": "Soccer Field Chart (top)",
+			"icon": "_lib/icons/test.png",
+			"description": "Soccer field"
 		}
+		
 	],
 	"background-color": "#CCCCCC"
 }

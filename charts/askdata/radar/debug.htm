@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Askdata - Radar Chart</title>
+<!-- Beginning Include Header -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="/lib/scripts/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src="/lib/scripts/utils.js"></script>
+<script src="/lib/scripts/env.js"></script>
+<script src="/lib/scripts/jquery.min.js"></script>
+<link href="/lib/styles/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+<script type="text/javascript">
+
+  environment_data = "api-dev.askdata.com";
+  environment = "app-dev.askdata.com";
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+</script>
+<!-- End Include Header -->
+</head>
+<body>
+<!-- Beginning Include Watermak -->
+<div id="watermark"><img src="/lib/assets/askdata-logo.svg"></div>
+<!-- End Include Watermak -->
+
+<div id="container">
+  <canvas id="canvas"></canvas></div>
+<script>
+
+function displayChart(data) {
+
+// Beinning include prepare-layout
+  function calculateScreen() {
+    var w = window.innerWidth;
+    var h = w/2;
+    document.getElementById("container").style.width =  w + "px";
+    document.getElementById("container").style.height = h + "px";
+
+  }
+
+  calculateScreen()
+// End include prepare-layout
+
+    console.log(data);
+
+    var color = Chart.helpers.color;
+    var measures = [];
+
+    for(var i in data.resultSet.measures[i]) {  
+
+        var item = data.resultSet.measures[i];
+    
+        // theme handling
+        if (theme.length > 0) {
+          item.color = theme.palette[i]
+        } else {
+          
+          if (i==0) {item.color = data.resultSet.color.accent; }
+          
+//      if (i<= data.resultSet.color.palette.length) {
+//        item.color = data.resultSet.color.palette[i];
+//      }
+
+    }
+    
+    measures.push({ 
+        "label" : item.name,
+        "data" : item.numericValues,
+        "borderColor": item.color
+    });
+
+  }
+
+    // Show legend if measures more than one
+    var displayLegend = true
+    
+    if (measures.length == 1) {
+      displayLegend = false;
+
+    }
+
+    var chartData = {
+      labels: data.resultSet.dimension.labels,
+      datasets: measures,
+    };
+
+    // Todo - replace with dynamic locale, rounding, currency and measurement units
+    // Scales should be aggregated by measurement units
+    // Color is used as 3rd axis if the measurements units are greaten than 2
+    var labelNumberRoundTo = 2;
+    var labelNumberLocale = 'en-US';
+    var labelFontSize = 20;
+    var labelFontFamily = "'Helvetica', sans-serif";
+    var lebelNumberCurrency = null;
+    var lebelNumberMeasurmenentUnit = null;
+
+      var ctx = document.getElementById('canvas').getContext('2d');
+      window.myHorizontalBar = new Chart(ctx, {
+        type: 'radar',
+        data: chartData,
+        options: {
+          // Elements options apply to all of the options unless overridden in a dataset
+          // In this case, we are setting the border of each horizontal bar to be 2px wide
+          elements: {
+            rectangle: {
+              borderWidth: 2,
+            }
+          },
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+            display : displayLegend,
+            position: 'top',
+            align: 'center',
+            fontSize:30,
+            padding: 5,
+          },
+          title: {
+            display: true,
+            text: data.title,
+            fontSize: 30,
+            fontSize: titleSize(data.title),
+          },
+          elements: {
+                        line: {
+                                fill: false
+                        }
+              }
+        }
+      });
+    var colorNames = Object.keys(window.chartColors);
+
+}
+
+// Beinning include Request-data
+// Retrieve auth token
+console.log("Environment: " + environment);
+console.log("Data Environment: " + environment_data);
+
+if (getUrlParameter('token') != undefined){
+  var token = getUrlParameter('token');
+}else{
+  var token = Cookies.get('access_token')
+}
+
+var theme = []
+
+// Retrieve theme
+if (getUrlParameter('theme')) {
+
+    $.getJSON( environment + "/charts/"+getUrlParameter('theme')+"/catalog.json", function( data ) {
+      
+      console.log("retrieving theme")
+      console.log(data)
+      
+      window.theme = data;
+
+  })
+
+} else {
+
+      $.getJSON( environment + "/charts/askdata/catalog.json", function( data ) {
+      
+      console.log("retrieving theme")
+      console.log(data)
+      
+      window.theme = data;
+
+     })
+}
+
+// Request charting data
+$.ajax({
+         url: environment_data + "/charts/" + getUrlParameter('chartId'),
+         type: "GET",
+         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
+          ).setRequestHeader('Content-Type','application/json')},
+         success: function(data) { 
+
+         displayChart(data);
+
+}
+});  
+
+// Redirect to login if not authenticated 
+$( document ).ajaxError(function( event, jqxhr, settings, exception ) {
+    if ( jqxhr.status== 401 ) {
+      location.replace(environment_auth+"/login");
+
+    }
+});
+
+// End include Request-data
+
+</script>
+
+</body>
+</html>
