@@ -27,8 +27,9 @@
 <!-- Beginning Include Data Request -->
  <script>
 
-//remove me :-D
-environment_widget = "https://api-dev.askdata.com";
+
+//environment_widget = "https://api-dev.askdata.com";
+//environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
 // Request charting data
 $.ajax({
@@ -39,8 +40,17 @@ $.ajax({
        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
         ).setRequestHeader('Content-Type','application/json')},
        success: function(data) { 
-        
-            console.log(data)
+
+            
+            var result1 = data.fields.m2_id.data.map(function (x) { 
+            return parseInt(x, 10); 
+            });
+ 
+            var datasets = data.fields.m1_id.data.map(function(v,i) {
+                    return {'dimension':v, 'sequence':result1[i],'measure':data.fields.m3_id.data[i]};
+                });  
+          
+          
 
             var dom = document.getElementById("container");
             var myChart = echarts.init(dom);
@@ -49,24 +59,79 @@ $.ajax({
             var option;
 
             // Load from the main dimension the series
-            var datasets;
+    
+            
 
-            // Resequencing of the seondary dimension as integer asc
+            console.log(datasets);
+            
+
+            /* sorting by match_day */
+  
+            datasets.sort((a, b) => (a.sequence > b.sequence) ? 1 : -1)
+
+           
+            var labelAxes = [];
+            var namesAxes = [];
+            //iterate through sequence and dimension
+            datasets.forEach(function(item) {
+                  //get the value of name
+                  var val = item.dimension
+                  var val2 = item.sequence
+                  labelAxes.push(val)
+                  namesAxes.push(val2);
+            });
+            
+            //Array.from(new Set(namesAxes));
+            $.unique(labelAxes);
+            var labelAxesUnique = Array.from(new Set(labelAxes));
+            var namesAxesUnique = Array.from(new Set(namesAxes));
+ 
+           
+           
+                
+            var y1 = [];
+            var y2 = [];
+            datasets.forEach(function(item) {
+                    if (item.dimension == labelAxesUnique[0]){
+                        y1.push(item.measure)
+                    }
+            });
+
+            datasets.forEach(function(item) {
+                    if (item.dimension == labelAxesUnique[1]){
+                        y2.push(item.measure)
+                    }
+
+                
+
+     
+                  });
+            y1 = y1.filter(function( element ) {
+                           return element !== undefined;
+                        });
+            y2 = y2.filter(function( element ) {
+                           return element !== undefined;
+                        });
+
+            console.log(y1);
+            console.log(datasets);
+
+            //prints ["1", "2", "3"]
 
             option = { 
                 legend: {
-                    data: ['Napoli', 'Inter']
+                    data: labelAxesUnique, 
                 },
                 xAxis: {
                     type: 'category',
-                    data: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
+                    data: namesAxesUnique,
                 },
                 yAxis: {
                     type: 'value'
                 },
                 series: [{
-                    name: 'Napoli',
-                    data: [0, 1, 1, 4, 5, 5, 5, 18, 0, 3, 6, 6, 12, 15, 18, 20, 21, 26, 30, 35, 40, 45, 48, 40, 12, 15, 180, 3, 6, 6, 12, 15],
+                    name: labelAxesUnique[0],
+                    data: y1,
                     type: 'line',
                     showSymbol: false,
                     smooth: false,
@@ -79,8 +144,8 @@ $.ajax({
                         color: '#02a1db'
                     }
                 },{
-                    name: 'Inter',
-                    data: [0, 3, 6, 6, 12, 15, 18, 0, 3, 6, 6, 12, 15, 180, 3, 6, 6, 12, 15, 180, 3, 6, 6, 12, 15, 180, 3, 6, 6, 12, 15],
+                    name: labelAxesUnique[1],
+                    data: y2,
                     type: 'line',
                     showSymbol: false,
                     smooth: false,
