@@ -24,9 +24,11 @@ function displayChart(data) {
     console.log(data);
 
     var color = Chart.helpers.color;
-    var dimensions = [];
-    for(var i in data.resultSet.dimension) {  
-        var item = data.resultSet.dimension[i];
+    var measures = [];
+
+    for(var i in data.resultSet.dimension.labels) {  
+        
+        var item = data.resultSet.measures[i];
     
     // theme handling
     if (theme.length > 0) {
@@ -38,10 +40,9 @@ function displayChart(data) {
       if (i<= data.resultSet.color.palette.length) {
         item.color = data.resultSet.color.palette[i];
       }
-      
     }
     
-    dimensions.push({ 
+    measures.push({ 
         "label" : item.name,
         "data" : item.numericValues,
         "borderColor": item.color
@@ -52,14 +53,14 @@ function displayChart(data) {
     // Show legend if measures more than one
     var displayLegend = true
     
-    if (dimensions.length == 1) {
+    if (measures.length == 1) {
       displayLegend = false;
 
     }
 
     var chartData = {
-      labels: data.resultSet.measures.labels,
-      datasets: dimensions,
+      labels: data.resultSet.dimension.labels,
+      datasets: measures,
     };
 
     // Todo - replace with dynamic locale, rounding, currency and measurement units
