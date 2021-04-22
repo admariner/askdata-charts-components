@@ -69,8 +69,12 @@
 			"name": "Soccer Field Chart (top)",
 			"icon": "_lib/icons/test.png",
 			"description": "Soccer field"
-		}
-		
+		},{
+			"code": "radar-chart-normalized",
+			"name": "Radar Chart Normalized",
+			"icon": "_lib/icons/test.png",
+			"description": "Soccer field"
+		}		
 	],
 	"background-color": "#CCCCCC"
 }
