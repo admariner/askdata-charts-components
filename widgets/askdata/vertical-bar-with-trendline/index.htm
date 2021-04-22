@@ -43,8 +43,8 @@ $.ajax({
         var option;
 
  
-        var datasets = data.fields.m2_id.data.map(function(v,i) {
-                    return {'interval':v, 'measure':data.fields.m3_id.data[i],'dimension':data.fields.m1_id.data[i]};
+        var datasets = data.fields.s1_id.data.map(function(v,i) {
+                    return {'interval':v, 'measure':data.fields.m1_id.data[i],'dimension':data.fields.d1_id.data[i]};
                 }); 
         
         
