@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+        <!-- Beginning Include Header -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src="/lib/scripts/utils.js"></script>
+<script src="/lib/scripts/env.js"></script>
+<script src="/lib/scripts/jquery.min.js"></script>
+<link href="/lib/styles/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+<script src="https://unpkg.com/mustache@latest"></script>
+
+<!-- End Include Header -->
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+    </body>
+
+
+    <script>
+
+//remove me
+environment_widget = "https://api.askdata.com";
+
+// Request charting data
+$.ajax({
+
+       url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+       type: "GET",
+       async: false,
+       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+        ).setRequestHeader('Content-Type','application/json')},
+       success: function(data) { 
+        console.log(data)
+
+        /*
+        var template = document.getElementById('template').innerHTML;
+        var rendered = Mustache.render(template, data);
+        document.getElementById('target').innerHTML = rendered;
+        console.log(rendered)
+        */
+
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+option = {
+    backgroundColor: '#E9F2FF',
+
+    title: {
+        text: 'Tile of the widget',
+        show: false,
+        left: 'center',
+        top: 10,
+        textStyle: {
+            color: '#FFFFFF'
+        }
+    },
+
+    tooltip: {
+        trigger: 'item'
+    },
+
+    visualMap: {
+        show: false,
+        min: 0,
+        max: 500,
+        inRange: {
+            colorLightness: [0, 1]
+        }
+    },
+    series: [
+        {
+            name: 'Features',
+            type: 'pie',
+            radius: '80%',
+            center: ['50%', '50%'],
+            data: [
+                {value: 335, name: 'Velocità'},
+                {value: 310, name: 'Sicurezza'},
+                {value: 274, name: 'Agilità'},
+                {value: 235, name: 'Competenza'},
+                {value: 400, name: 'Aiuto'}
+            ].sort(function (a, b) { return a.value - b.value; }),
+            roseType: 'radius',
+            label: {
+                show: true,
+                formatter : function (params){
+                              return  params.name  + ' (' + params.value + ')'
+                        },
+                color: 'rgba(0, 0, 0, 1)',
+                fontSize:18
+            },
+            labelLine: {
+                lineStyle: {
+                    color: 'rgba(0, 0, 0, 0.3)'
+                },
+                smooth: 0.2,
+                length: 30,
+                length2: 20
+            },
+            itemStyle: {
+                color: '#266ff2',
+                shadowBlur: 10,
+                shadowColor: 'rgba(0, 0, 0, 0.2)'
+            },
+
+            animationType: 'scale',
+            animationEasing: 'elasticOut',
+            animationDelay: function (idx) {
+                return Math.random() * 200;
+            }
+        }
+    ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+  }
+  });
+
+/*
+// Redirect to login if not authenticated 
+$(document).ajaxError(function( event, jqxhr, settings, exception ) {
+    if ( jqxhr.status== 401 ) {
+      location.replace(environment_auth+"/login");
+
+    }
+});
+*/
+
+  </script>
+</html>
+    
