@@ -28,28 +28,28 @@
         "viewType": "dropdown",
         "mandatory": true
     }, {
-        "code": "settings.m1_id",
-        "label": "Measure1",
+        "code": "settings.d1_id",
+        "label": "Dimension",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the first measure"
+        "tooltip": "Choose the dimension"
     }, {
-        "code": "settings.m2_id",
-        "label": "Measure2",
+        "code": "settings.s1_id",
+        "label": "Sequence",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the second measure"
+        "mandatory": true,
+        "tooltip": "Choose the intervall"
     }, {
-        "code": "settings.m3_id",
-        "label": "Measure3",
+        "code": "settings.m1_id",
+        "label": "Measure",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the third measure"
+        "mandatory": true,
+        "tooltip": "Choose the measure"
     }]
 }

@@ -41,7 +41,7 @@ $.ajax({
         ).setRequestHeader('Content-Type','application/json')},
        success: function(data) { 
 
-            
+            console.log(data)
             var result1 = data.fields.m2_id.data.map(function (x) { 
             return parseInt(x, 10); 
             });
@@ -62,7 +62,7 @@ $.ajax({
     
             
 
-            console.log(datasets);
+     
             
 
             /* sorting by match_day */
