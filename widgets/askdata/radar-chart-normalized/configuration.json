@@ -28,8 +28,16 @@
         "viewType": "dropdown",
         "mandatory": true
     }, {
+        "code": "settings.d1_id",
+        "label": "Dimension",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the dimension"
+    }, {
         "code": "settings.m1_id",
-        "label": "Measure1",
+        "label": "Measure 1",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
@@ -37,19 +45,36 @@
         "tooltip": "Choose the first measure"
     }, {
         "code": "settings.m2_id",
-        "label": "Measure2",
+        "label": "Measure 2",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
+        "mandatory": true,
         "tooltip": "Choose the second measure"
-    }, {
+    },
+{
         "code": "settings.m3_id",
-        "label": "Measure3",
+        "label": "Measure 3",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
+        "mandatory": true,
         "tooltip": "Choose the third measure"
+    }, {
+        "code": "settings.m4_id",
+        "label": "Measure 4",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the fourth measure"
+    }, {
+        "code": "settings.m5_id",
+        "label": "Measure 5",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the fifth measure"
     }]
 }
