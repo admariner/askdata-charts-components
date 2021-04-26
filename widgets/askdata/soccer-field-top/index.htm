@@ -4,7 +4,7 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 
-        <!-- Beginning Include Header -->
+<!-- Beginning Include Header -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
@@ -18,12 +18,10 @@
 <!-- End Include Header -->
     </head>
     <body style="height: 100%; margin: 0">
-        <div id="container" style="height: 100%"></div>
+        <div id="container"><img src="soccer_top.svg" style="max-width: 100%" /></div>
     </body>
-
-
     <script>
-
+/*
 // Request charting data
 $.ajax({
 
@@ -35,12 +33,12 @@ $.ajax({
        success: function(data) { 
         console.log(data)
 
-        /*
-        var template = document.getElementById('template').innerHTML;
-        var rendered = Mustache.render(template, data);
-        document.getElementById('target').innerHTML = rendered;
-        console.log(rendered)
-        */
+        
+        //var template = document.getElementById('template').innerHTML;
+        //var rendered = Mustache.render(template, data);
+        //document.getElementById('target').innerHTML = rendered;
+        //console.log(rendered)
+        
 
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
@@ -68,7 +66,7 @@ option = {
     visualMap: {
         show: false,
         min: 0,
-        max: 3000,
+        max: 500,
         inRange: {
             colorLightness: [0, 1]
         }
@@ -80,9 +78,11 @@ option = {
             radius: '80%',
             center: ['50%', '50%'],
             data: [
-                {value: 664, name: 'Gol di testa'},
-                {value: 1252, name: 'Sinistro'},
-                {value: 2057, name: 'Destro'}
+                {value: 335, name: 'Velocità'},
+                {value: 310, name: 'Sicurezza'},
+                {value: 274, name: 'Agilità'},
+                {value: 235, name: 'Competenza'},
+                {value: 400, name: 'Aiuto'}
             ].sort(function (a, b) { return a.value - b.value; }),
             roseType: 'radius',
             label: {
@@ -123,7 +123,7 @@ if (option && typeof option === 'object') {
   }
   });
 
-/*
+
 // Redirect to login if not authenticated 
 $(document).ajaxError(function( event, jqxhr, settings, exception ) {
     if ( jqxhr.status== 401 ) {
