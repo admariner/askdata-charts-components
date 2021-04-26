@@ -29,88 +29,124 @@ environment_widget = "https://api-dev.askdata.com";
 // Request charting data
 $.ajax({
 
-       url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
-       type: "GET",
-       async: false,
-       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+        url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+        type: "GET",
+        async: false,
+        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
         ).setRequestHeader('Content-Type','application/json')},
-       success: function(data) { 
-        console.log(data)
+        success: function(data) { 
+     
+
+        //data.fields = data.fields.filter(function( obj ) {
+        // take the length of array results
+        measures_list =[]
+        keys_data = $.map(data.fields, function(v, i){
+                            if (v.type != 'query') {
+                                measures_list.push(v)
+                                return i; 
+                            }
+                        }
+                    );
+
+
+        // d1_id is a dimension
+
+        dimension_array = data.fields.d1_id.data  
+        console.log(data.fields[keys_data[0]].data)
+
+        var datasets = data.fields.d1_id.data.map(function(v,i) {
+                    return {'dimension': v, 
+                            'measure': [data.fields.m1_id.data[i], data.fields.m2_id.data[i],data.fields.m3_id.data[i], data.fields.m4_id.data[i],data.fields.m5_id.data[i]]}
+                           });
+     
+        console.log(dimension_array)
+
+        list_of_measures = [data.fields.m1_id.name, data.fields.m2_id.name, data.fields.m3_id.name, data.fields.m4_id.name, data.fields.m5_id.name]
+
+        var massimo_ar = [];
+        datasets.forEach(function(item) {
+                    if (item.dimension == 'Massimo Serie A'){
+                        massimo_ar = item.measure
+                    }
+                });
+
+        var indicator_ar_1 = list_of_measures.map(e => ({name: e}))
+
+        var indicator_ar_2= massimo_ar.map(e => ({max: e}))
+        
+        var indicator_ar = indicator_ar_1.map((o, i) => ({name: o.name, max: indicator_ar_2[i].max}))
+
+
+        
+
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var app = {};
+
+        var option;
+
+
+        option = {
+            title: {},
+            tooltip: {},
+            legend: {
+                data: dimension_array
+            },
+            radar: {
+                shape: 'circle',
+                name: {
+                    textStyle: {
+                        color: '#000000',
+                        borderRadius: 3,
+                        padding: [3, 5],
+                        fontSize : 15
+                    }
+                },
+                indicator: [
+                    { name: 'Contrasti vinti',max: 254},
+                    { name: 'Falli commessi', max:63},
+                    { name: 'Palle recuperate', max: 273},
+                    { name: 'Tackle vinti', max: 53},
+                    { name: 'Passaggi riusciti', max: 1960}
+                    ]
+            },
+            series: [{
+                name: 'Players',
+                type: 'radar',
+                // areaStyle: {normal: {}},
+                data: [
+                    {
+                        value: [141, 52, 211, 22, 1380],
+                        name: dimension_array[0]
+                    },
+                    {
+                        value: [206, 48, 169, 31.0, 1133],
+                        name: dimension_array[1]
+                    },{
+                        value: [42, 11,  48,  7, 313],
+                        name: dimension_array[2]
+                    }
+                ]
+            }]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+
+          }
+          });
 
         /*
-        var template = document.getElementById('template').innerHTML;
-        var rendered = Mustache.render(template, data);
-        document.getElementById('target').innerHTML = rendered;
-        console.log(rendered)
+        // Redirect to login if not authenticated 
+        $(document).ajaxError(function( event, jqxhr, settings, exception ) {
+            if ( jqxhr.status== 401 ) {
+              location.replace(environment_auth+"/login");
+
+            }
+        });
         */
 
-var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
-var app = {};
-
-var option;
-
-option = {
-    title: {},
-    tooltip: {},
-    legend: {
-        data: ['Kessié Franck','Milinkovic-Savic Sergej','Media Serie A']
-    },
-    radar: {
-        shape: 'circle',
-        name: {
-            textStyle: {
-                color: '#000000',
-                borderRadius: 3,
-                padding: [3, 5],
-                fontSize : 15
-            }
-        },
-        indicator: [
-            { name: 'Contrasti vinti',max: 254},
-            { name: 'Falli commessi', max:63},
-            { name: 'Palle recuperate', max: 273},
-            { name: 'Tackle vinti', max: 53},
-            { name: 'Passaggi riusciti', max: 1960}
-            ]
-    },
-    series: [{
-        name: 'Players',
-        type: 'radar',
-        // areaStyle: {normal: {}},
-        data: [
-            {
-                value: [141, 52, 211, 22, 1380],
-                name: 'Kessié Franck'
-            },
-            {
-                value: [206, 48, 169, 31.0, 1133],
-                name: 'Milinkovic-Savic Sergej'
-            },{
-                value: [42, 11,  48,  7, 313],
-                name: 'Media Serie A'
-            }
-        ]
-    }]
-};
-
-if (option && typeof option === 'object') {
-    myChart.setOption(option);
-}
-
-  }
-  });
-
-/*
-// Redirect to login if not authenticated 
-$(document).ajaxError(function( event, jqxhr, settings, exception ) {
-    if ( jqxhr.status== 401 ) {
-      location.replace(environment_auth+"/login");
-
-    }
-});
-*/
-
-  </script>
-</html>
-    
+          </script>
+        </html>
+            
