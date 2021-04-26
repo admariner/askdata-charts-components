@@ -28,10 +28,6 @@
 
 <script type="text/javascript">
 
-<<<<<<< HEAD
-environment_widget = "https://api-dev.askdata.com";
-=======
->>>>>>> 8c2a69ed6467ca56e20e87bcf109f7cea5f9a765
 $.ajax({
 
        url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
@@ -47,13 +43,8 @@ $.ajax({
         var option;
 
  
-<<<<<<< HEAD
-        var datasets = data.fields.m2_id.data.map(function(v,i) {
-                    return {'interval':v, 'measure':data.fields.m3_id.data[i],'dimension':data.fields.m1_id.data[i]};
-=======
         var datasets = data.fields.s1_id.data.map(function(v,i) {
                     return {'interval':v, 'measure':data.fields.m1_id.data[i],'dimension':data.fields.d1_id.data[i]};
->>>>>>> 8c2a69ed6467ca56e20e87bcf109f7cea5f9a765
                 }); 
         
         
@@ -143,11 +134,7 @@ option = {
         {
             name: namesAxesUnique[2],
             type: 'bar',
-<<<<<<< HEAD
-            data: y1,
-=======
             data: y3,
->>>>>>> 8c2a69ed6467ca56e20e87bcf109f7cea5f9a765
             color: '#02a1db'
         },
         {
@@ -158,11 +145,7 @@ option = {
         },{
             name: namesAxesUnique[0],
             type: 'line',
-<<<<<<< HEAD
-            data: y3,
-=======
             data: y1,
->>>>>>> 8c2a69ed6467ca56e20e87bcf109f7cea5f9a765
             color: '#CCCCCC'
         }
     ]
