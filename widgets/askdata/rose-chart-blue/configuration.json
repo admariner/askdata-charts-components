@@ -41,7 +41,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
+        "mandatory": true,
         "tooltip": "Choose the second measure"
     }, {
         "code": "settings.m3_id",
@@ -51,5 +51,32 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the third measure"
+    },
+{
+        "code": "settings.m4_id",
+        "label": "Measure4",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the fourth measure"
+    },
+    {
+        "code": "settings.m5_id",
+        "label": "Measure5",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the fifth measure"
+    },
+{
+        "code": "settings.m6_id",
+        "label": "Measure6",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the sixth measure"
     }]
 }
