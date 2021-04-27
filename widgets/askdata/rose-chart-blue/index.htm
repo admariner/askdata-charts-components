@@ -83,7 +83,9 @@ $.ajax({
         // creating array for indicator
         var indicator_ar_2= value_1.map(e => ({value: e}))
         
-        var indicator_ar = keys_name_ar.map((o, i) => ({name: o.name, value: indicator_ar_2[i].value}))
+        var indicator_ar = keys_name_ar.map((o, i) => ({value: indicator_ar_2[i].value,name: o.name}))
+
+        var data_to_plot = indicator_ar.sort(function (a, b) { return a.value - b.value;})
 
         console.log(indicator_ar.sort(function (a, b) { return a.value - b.value; }))
 
@@ -113,7 +115,7 @@ option = {
     visualMap: {
         show: false,
         min: 0,
-        max: 3000,
+        max: 100000,
         inRange: {
             colorLightness: [0, 1]
         }
@@ -122,9 +124,9 @@ option = {
         {
             name: 'Features',
             type: 'pie',
-            radius: '80%',
+            radius: '70%',
             center: ['50%', '50%'],
-            data: indicator_ar.sort(function (a, b) { return a.value - b.value; }),
+            data: data_to_plot,
             roseType: 'radius',
             label: {
                 show: true,
@@ -132,7 +134,7 @@ option = {
                               return  params.name  + ' (' + params.value + ')'
                         },
                 color: 'rgba(0, 0, 0, 1)',
-                fontSize:18
+                fontSize: 15
             },
             labelLine: {
                 lineStyle: {
