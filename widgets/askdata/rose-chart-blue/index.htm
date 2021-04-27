@@ -24,6 +24,8 @@
 
     <script>
 
+    //environment_widget = "https://api-dev.askdata.com";
+
 // Request charting data
 $.ajax({
 
@@ -33,14 +35,57 @@ $.ajax({
        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
         ).setRequestHeader('Content-Type','application/json')},
        success: function(data) { 
-        console.log(data)
+        console.log(data.fields)
 
-        /*
-        var template = document.getElementById('template').innerHTML;
-        var rendered = Mustache.render(template, data);
-        document.getElementById('target').innerHTML = rendered;
-        console.log(rendered)
-        */
+           // finding the field from data input
+        measures_list =[]
+        keys_data = $.map(data.fields, function(v, i){
+                            if (v.type != 'query') {
+                                measures_list.push(v)
+                                return i; 
+                            }
+                        }
+                    );
+        function arrayRemove(arr, value) { 
+    
+                return arr.filter(function(ele){ 
+                        return ele != value; 
+                });
+        }
+        
+
+        // filling array with measures
+        keys_data_ar = []
+        keys_data.forEach(function(value){
+
+                keys_data_ar.push({value : parseInt(data.fields[value].data[0])})
+
+        });
+        console.log(keys_data_ar)
+
+        var value_1 = [];
+        keys_data_ar.forEach(function(item) {
+                    value_1.push(item['value'])
+                });
+
+
+        // filling array with name of measures
+        keys_name_ar = []
+        keys_data.forEach(function(name){
+
+                keys_name_ar.push({name : data.fields[name].name})
+
+        });
+
+        console.log(keys_name_ar)
+
+        
+        // creating array for indicator
+        var indicator_ar_2= value_1.map(e => ({value: e}))
+        
+        var indicator_ar = keys_name_ar.map((o, i) => ({name: o.name, value: indicator_ar_2[i].value}))
+
+        console.log(indicator_ar.sort(function (a, b) { return a.value - b.value; }))
 
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
@@ -52,7 +97,7 @@ option = {
     backgroundColor: '#E9F2FF',
 
     title: {
-        text: 'Tile of the widget',
+        text: '',
         show: false,
         left: 'center',
         top: 10,
@@ -79,11 +124,7 @@ option = {
             type: 'pie',
             radius: '80%',
             center: ['50%', '50%'],
-            data: [
-                {value: 664, name: 'Gol di testa'},
-                {value: 1252, name: 'Sinistro'},
-                {value: 2057, name: 'Destro'}
-            ].sort(function (a, b) { return a.value - b.value; }),
+            data: indicator_ar.sort(function (a, b) { return a.value - b.value; }),
             roseType: 'radius',
             label: {
                 show: true,
