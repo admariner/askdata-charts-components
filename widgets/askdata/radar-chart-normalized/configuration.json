@@ -76,5 +76,24 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the fifth measure"
-    }]
+    },
+    {
+        "code": "settings.m6_id",
+        "label": "Measure 6",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the sixth measure"
+    },
+    {
+        "code": "settings.m7_id",
+        "label": "Measure 7",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the seventh measure"
+    }
+]
 }
