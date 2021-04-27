@@ -23,7 +23,7 @@
 
 
     <script>
-environment_widget = "https://api-dev.askdata.com";
+//environment_widget = "https://api-dev.askdata.com";
 //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
 // Request charting data
@@ -36,9 +36,7 @@ $.ajax({
         ).setRequestHeader('Content-Type','application/json')},
         success: function(data) { 
      
-        console.log(data)
-        //data.fields = data.fields.filter(function( obj ) {
-        // take the length of array results
+
         measures_list =[]
         keys_data = $.map(data.fields, function(v, i){
                             if (v.type != 'query') {
@@ -65,6 +63,14 @@ $.ajax({
 
         });
 
+        keys_name_ar = []
+        keys_data.forEach(function(name){
+
+                keys_name_ar.push({name : data.fields[name].name})
+
+        });
+
+
         dimension_array = data.fields['d1_id'].data;
 
   
@@ -88,20 +94,12 @@ $.ajax({
                 });
 
 
-        console.log(value_1)
-        console.log(value_2)
-
-
-        var indicator_ar_1 = list_of_measures.map(e => ({name: e}))
 
         var indicator_ar_2= value_3.map(e => ({max: e}))
         
-        var indicator_ar = indicator_ar_1.map((o, i) => ({name: o.name, max: indicator_ar_2[i].max}))
+        var indicator_ar = keys_name_ar.map((o, i) => ({name: o.name, max: indicator_ar_2[i].max}))
 
-        console.log(value_3)
-
-
-
+ 
         
 
         var dom = document.getElementById("container");
