@@ -66,7 +66,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the fourth measure"
     }, {
         "code": "settings.m5_id",
@@ -74,7 +74,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the fifth measure"
     }]
 }

@@ -36,7 +36,7 @@ $.ajax({
         ).setRequestHeader('Content-Type','application/json')},
         success: function(data) { 
      
-
+        console.log(data)
         //data.fields = data.fields.filter(function( obj ) {
         // take the length of array results
         measures_list =[]
@@ -47,34 +47,59 @@ $.ajax({
                             }
                         }
                     );
+        function arrayRemove(arr, value) { 
+    
+                return arr.filter(function(ele){ 
+                        return ele != value; 
+                });
+        }
+    
+        var keys_data = arrayRemove(keys_data, 'd1_id');
 
 
         // d1_id is a dimension
+        keys_data_ar = []
+        keys_data.forEach(function(item){
 
-        dimension_array = data.fields.d1_id.data  
-        console.log(data.fields[keys_data[0]].data)
+                keys_data_ar.push({item : data.fields[item].data})
 
-        var datasets = data.fields.d1_id.data.map(function(v,i) {
-                    return {'dimension': v, 
-                            'measure': [data.fields.m1_id.data[i], data.fields.m2_id.data[i],data.fields.m3_id.data[i], data.fields.m4_id.data[i],data.fields.m5_id.data[i]]}
-                           });
-     
-        console.log(dimension_array)
+        });
+
+        dimension_array = data.fields['d1_id'].data;
+
+  
+
 
         list_of_measures = [data.fields.m1_id.name, data.fields.m2_id.name, data.fields.m3_id.name, data.fields.m4_id.name, data.fields.m5_id.name]
 
-        var massimo_ar = [];
-        datasets.forEach(function(item) {
-                    if (item.dimension == 'Massimo Serie A'){
-                        massimo_ar = item.measure
-                    }
+        var value_1 = [];
+        keys_data_ar.forEach(function(item) {
+                    value_1.push(item['item'][0])
                 });
+
+        var value_2= [];
+        keys_data_ar.forEach(function(item) {
+                    value_2.push(item['item'][1])
+                });
+
+        var value_3= [];
+        keys_data_ar.forEach(function(item) {
+                    value_3.push(item['item'][2])
+                });
+
+
+        console.log(value_1)
+        console.log(value_2)
+
 
         var indicator_ar_1 = list_of_measures.map(e => ({name: e}))
 
-        var indicator_ar_2= massimo_ar.map(e => ({max: e}))
+        var indicator_ar_2= value_3.map(e => ({max: e}))
         
         var indicator_ar = indicator_ar_1.map((o, i) => ({name: o.name, max: indicator_ar_2[i].max}))
+
+        console.log(value_3)
+
 
 
         
@@ -102,13 +127,7 @@ $.ajax({
                         fontSize : 15
                     }
                 },
-                indicator: [
-                    { name: 'Contrasti vinti',max: 254},
-                    { name: 'Falli commessi', max:63},
-                    { name: 'Palle recuperate', max: 273},
-                    { name: 'Tackle vinti', max: 53},
-                    { name: 'Passaggi riusciti', max: 1960}
-                    ]
+                indicator: indicator_ar
             },
             series: [{
                 name: 'Players',
@@ -116,14 +135,14 @@ $.ajax({
                 // areaStyle: {normal: {}},
                 data: [
                     {
-                        value: [141, 52, 211, 22, 1380],
+                        value: value_1,
                         name: dimension_array[0]
                     },
                     {
-                        value: [206, 48, 169, 31.0, 1133],
+                        value: value_2,
                         name: dimension_array[1]
                     },{
-                        value: [42, 11,  48,  7, 313],
+                        value: value_3,
                         name: dimension_array[2]
                     }
                 ]
