@@ -37,6 +37,7 @@ $.ajax({
         success: function(data) { 
      
 
+        // finding the field from data input
         measures_list =[]
         keys_data = $.map(data.fields, function(v, i){
                             if (v.type != 'query') {
@@ -51,11 +52,11 @@ $.ajax({
                         return ele != value; 
                 });
         }
-    
+        
+        // keeping only measures fields
         var keys_data = arrayRemove(keys_data, 'd1_id');
 
-
-        // d1_id is a dimension
+        // filling array with measures
         keys_data_ar = []
         keys_data.forEach(function(item){
 
@@ -63,6 +64,7 @@ $.ajax({
 
         });
 
+        // filling array with name of measures
         keys_name_ar = []
         keys_data.forEach(function(name){
 
@@ -70,10 +72,11 @@ $.ajax({
 
         });
 
-
+        //  array with dimension data
         dimension_array = data.fields['d1_id'].data;
 
 
+        // keeping value of each dimensions
         var value_1 = [];
         keys_data_ar.forEach(function(item) {
                     value_1.push(item['item'][0])
@@ -90,13 +93,12 @@ $.ajax({
                 });
 
 
-
+        // creating array for indicator
         var indicator_ar_2= value_3.map(e => ({max: e}))
         
         var indicator_ar = keys_name_ar.map((o, i) => ({name: o.name, max: indicator_ar_2[i].max}))
 
  
-        
 
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
