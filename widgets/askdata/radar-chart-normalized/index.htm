@@ -73,10 +73,6 @@ $.ajax({
 
         dimension_array = data.fields['d1_id'].data;
 
-  
-
-
-        list_of_measures = [data.fields.m1_id.name, data.fields.m2_id.name, data.fields.m3_id.name]
 
         var value_1 = [];
         keys_data_ar.forEach(function(item) {
@@ -113,6 +109,7 @@ $.ajax({
             title: {},
             tooltip: {},
             legend: {
+                x: 'left',
                 data: dimension_array
             },
             radar: {
@@ -154,15 +151,6 @@ $.ajax({
           }
           });
 
-        /*
-        // Redirect to login if not authenticated 
-        $(document).ajaxError(function( event, jqxhr, settings, exception ) {
-            if ( jqxhr.status== 401 ) {
-              location.replace(environment_auth+"/login");
-
-            }
-        });
-        */
 
           </script>
         </html>
