@@ -44,10 +44,11 @@ $.ajax({
 
          displayChart(data);
 
+         // Apply custom watermark
          if (data.resultSet.logo) {
-            $('watermark-img').attr('src', data.resultSet.logo);
+            var watermark = data.resultSet.logo;
+            $('#watermark-img').attr('src', watermark);
          }
-
 
 }
 }); 
