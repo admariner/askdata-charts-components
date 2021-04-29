@@ -44,8 +44,13 @@ $.ajax({
 
          displayChart(data);
 
+         if (data.resultSet.logo) {
+            $('watermark-img').attr('src', data.resultSet.logo);
+         }
+
+
 }
-});  
+}); 
 
 // Redirect to login if not authenticated 
 $( document ).ajaxError(function( event, jqxhr, settings, exception ) {
