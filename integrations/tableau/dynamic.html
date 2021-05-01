@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Askdata - Tableau Integration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="_lib/css/chart.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.14.0/js-yaml.js" integrity="sha512-BTCsK6anMeuJMZs95DlnUuvcq2qKJRev/Z/pbFiDccj4WlRz4mo7wn0G2pgSgGku4OymSGTTRW4BJoLvzP/2zw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js" integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg==" crossorigin="anonymous"></script>
+<script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
+<script>
+//Test - https://tableau.github.io/webdataconnector/Simulator/  
+(function() {
+    // Create the connector object
+    var myConnector = tableau.makeConnector();
+
+    // Define the schema
+    myConnector.getSchema = function(schemaCallback) {
+        var cols = [{
+            id: "id",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "mag",
+            alias: "magnitude",
+            dataType: tableau.dataTypeEnum.float
+        }, {
+            id: "title",
+            alias: "title",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "location",
+            dataType: tableau.dataTypeEnum.geometry
+        }];
+
+        var tableSchema = {
+            id: "earthquakeFeed",
+            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
+            columns: cols
+        };
+
+        schemaCallback([tableSchema]);
+    };
+
+    // Download the data
+    myConnector.getData = function(table, doneCallback) {
+          $.ajax({
+        type: "GET",
+        url: "https://api.askdata.com/c/vjRCIoYinqM",
+        dataType: "text",
+        success: function(data) {
+
+            console.log(data)
+            var parsed_csv = $.csv.toArray(data);
+
+            tableData = [];
+
+            // Iterate over the JSON object
+            for (var i = 0, len = feat.length; i < len; i++) {
+                tableData.push({
+                    "id": parsed_csv[i].id,
+                    "mag": parsed_csv[i].properties.mag,
+                    "title": parsed_csv[i].properties.title,
+                    "location": parsed_csv[i].geometry
+                });
+            }
+
+            table.appendRows(tableData);
+            doneCallback();
+
+        }
+     });
+
+    };
+
+    tableau.registerConnector(myConnector);
+
+    // Create event listeners for when the user submits the form
+    $(document).ready(function() {
+        $("#submitButton").click(function() {
+            tableau.connectionName = "Data from Askdata"; // This will be the data source name in Tableau
+            tableau.submit(); // This sends the connector object to Tableau
+        });
+    });
+})();
+
+
+</script>
+</head>
+<body>
+  
+  <div class="container container-table">
+      <div class="row vertical-center-row">
+          <div class="text-center col-md-4 col-md-offset-4">
+              <button type="button" id="submitButton" class="btn btn-success" style="margin: 10px;">Visualize Data</button>
+          </div>
+      </div>
+  </div>
+  
+</body>
+</html>

@@ -24,7 +24,6 @@ function displayChart(data) {
 
     console.log(data);
 
-    var MONTHS = [data.resultSet.dimension.labels];
     var color = Chart.helpers.color;
     var measures = [];
     for(var i in data.resultSet.measures) {  
@@ -54,6 +53,10 @@ function displayChart(data) {
       displayLegend = false;
 
     }
+
+    //Get labels of the measures
+    let measuresLabel = measures.map(({ label }) => label)
+    console.log(measuresLabel)
 
     var chartData = {
       labels: data.resultSet.dimension.labels,
