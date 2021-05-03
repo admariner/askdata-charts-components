@@ -93,7 +93,7 @@
 
                 // removing space in column IDs
                 for (const key of tableKeys) {
-                      record[key.replace(/ /g,"_")] = temp2[i][j];
+                      record[key.replace(/ /g,"_")] = parsed_csv[i][j];
                       j++;
                 }
 
