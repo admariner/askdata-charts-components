@@ -39,7 +39,7 @@
     }, {
         "code": "settings.m2_id",
         "label": "Measure2",
-        "type": "params",
+        "type": "dimension",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
