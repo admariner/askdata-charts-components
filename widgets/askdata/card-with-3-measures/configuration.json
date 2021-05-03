@@ -30,7 +30,7 @@
     }, {
         "code": "settings.m1_id",
         "label": "Measure1",
-        "type": "params",
+        "type": "measure",
         "viewType": "dropdown",
         "readOnly": false,
 	"multiple": true,
@@ -39,7 +39,7 @@
     }, {
         "code": "settings.m2_id",
         "label": "Measure2",
-        "type": "params",
+        "type": "dimension",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
