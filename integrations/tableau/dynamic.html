@@ -21,15 +21,15 @@
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
-            id: "Denominazione regione",
+            id: "Denominazione_regione",
+            alias: "Denominazione regione",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "Deceduti",
-            alias: "magnitude",
+            alias: "Deceduti",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "lat",
-            alias: "title",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "long",
@@ -90,8 +90,9 @@
 
                 j = 0;
 
+                // removing space in column IDs
                 for (const key of tableKeys) {
-                      record[key] = temp2[i][j];
+                      record[key.replace(/ /g,"_")] = temp2[i][j];
                       j++;
                 }
 
