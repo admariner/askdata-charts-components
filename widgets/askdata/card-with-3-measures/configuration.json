@@ -34,6 +34,7 @@
         "viewType": "dropdown",
         "readOnly": false,
 	"multiple": true,
+	"entity": "measure",
         "mandatory": true,
         "tooltip": "Choose the first measure"
     }, {
