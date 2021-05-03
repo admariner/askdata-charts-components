@@ -30,11 +30,10 @@
     }, {
         "code": "settings.m1_id",
         "label": "Measure1",
-        "type": "params",
+        "type": "measure",
         "viewType": "dropdown",
         "readOnly": false,
 	"multiple": true,
-	"entity": "measure",
         "mandatory": true,
         "tooltip": "Choose the first measure"
     }, {
