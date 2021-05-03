@@ -33,6 +33,9 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
+	"settings":{
+		"multiple": true
+	}
         "mandatory": true,
         "tooltip": "Choose the first measure"
     }, {
