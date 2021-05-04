@@ -55,7 +55,7 @@
     }, {
         "code": "test",
         "label": "Test",
-        "type": "params",
+        "type": "list",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
