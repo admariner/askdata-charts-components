@@ -82,7 +82,7 @@
 		"method": "GET",
 		"fireEvent": "loadData",
 		"code": "id",
-		"label": "id"
+		"label": "name"
 	},
         "tooltip": "Choose the third measure"
     }]
