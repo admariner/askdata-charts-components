@@ -1,0 +1,89 @@
+{
+	"configuration": [{
+        "code": "code",
+        "label": "Chart code",
+        "type": "string",
+        "viewType": "hidden",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "name",
+        "label": "Name",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "description",
+        "label": "Description",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
+        "readOnly": false,
+        "viewType": "dropdown",
+        "mandatory": true
+    }, {
+        "code": "settings.m1_id",
+        "label": "Measure1",
+        "type": "measure",
+        "viewType": "dropdown",
+        "readOnly": false,
+	"multiple": true,
+        "mandatory": true,
+        "tooltip": "Choose the first measure"
+    }, {
+        "code": "settings.m2_id",
+        "label": "Measure2",
+        "type": "dimension",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the second measure"
+    }, {
+        "code": "settings.m3_id",
+        "label": "Measure3",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the third measure"
+    }, {
+        "code": "test",
+        "label": "Test",
+        "type": "list",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+	"itemList": [
+	    {
+		"label":"Test 1",
+		"code":"test1"
+	    },
+	    {
+		"label":"Test 2",
+		"code":"test2"
+	    }
+	],
+        "tooltip": "Choose the third measure"
+    }, {
+        "code": "test2",
+        "label": "Test 2",
+        "type": "list",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+	"settings": {
+		"url": "https://api-dev.askdata.com/smartinsight/definitions/{{definitionId}}/queries/q1/dimensions",
+		"method": "GET",
+		"fireEvent": "loadData",
+		"code": "id",
+		"label": "name"
+	},
+        "tooltip": "Choose the third measure"
+    }]
+}
