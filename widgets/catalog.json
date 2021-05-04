@@ -80,11 +80,18 @@
 			"name": "Sankey",
 			"icon": "_lib/icons/test.png",
 			"description": "Sankey Graph"
-		},		{
+		},
+		{
 			"code": "stats_6_kpi",
 			"name": "Chart with 6 KPIs",
 			"icon": "_lib/icons/test.png",
 			"description": "Chart with 6 KPIs"
+		},
+		,		{
+			"code": "treemap",
+			"name": "Treemap",
+			"icon": "_lib/icons/test.png",
+			"description": "Treemap"
 		}
 	],
 	"background-color": "#CCCCCC"
