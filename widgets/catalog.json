@@ -75,7 +75,7 @@
 			"icon": "_lib/icons/test.png",
 			"description": "Soccer field"
 		},
-		,{
+		{
 			"code": "sankey",
 			"name": "Sankey",
 			"icon": "_lib/icons/test.png",
