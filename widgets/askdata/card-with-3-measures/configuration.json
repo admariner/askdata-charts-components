@@ -52,5 +52,23 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the third measure"
+    }, {
+        "code": "test",
+        "label": "Test",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+	"itemList": {
+	    {
+		"label":"Test 1",
+		"code":"test1"
+	    },
+	    {
+		"label":"Test 2",
+		"code":"test2"
+	    }
+	}
+        "tooltip": "Choose the third measure"
     }]
 }
