@@ -80,6 +80,7 @@
 	"settings": {
 		"url": "/agents/{{agentId}}/datasets/list",
 		"method": "GET",
+		"fireEvent": "loadData",
 		"code": "id",
 		"label": "id"
 	},
