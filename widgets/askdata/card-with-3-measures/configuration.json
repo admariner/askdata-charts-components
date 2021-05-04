@@ -78,7 +78,7 @@
         "readOnly": false,
         "mandatory": false,
 	"settings": {
-		"url": "https://api-dev.askdata.com/smartinsight/definitions/{{definitionId}}/queries/{{_object.id}}/dimensions",
+		"url": "https://api-dev.askdata.com/smartinsight/definitions/{{definitionId}}/queries/q1/dimensions",
 		"method": "GET",
 		"fireEvent": "loadData",
 		"code": "id",
