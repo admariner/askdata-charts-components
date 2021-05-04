@@ -70,13 +70,6 @@
 			"description" : "Stream Graph",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
 			"icon" : "_lib/icons/IcoChartStreamgraph.png"
-		},
-				{
-			"code": "sankey", 
-			"name" : "Sankey",
-			"description" : "Sankey",
-			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "_lib/icons/IcoChartStreamgraph.png"
 		}
 	],
 	"base_url": "/charts/askdata",
