@@ -78,7 +78,7 @@
         "readOnly": false,
         "mandatory": false,
 	"settings": {
-		"url": "/agents/{{agentId}}/datasets/list",
+		"url": "https://api-dev.askdata.com/smartinsight/definitions/{{definitionId}}/queries/{{_object.id}}/dimensions",
 		"method": "GET",
 		"fireEvent": "loadData",
 		"code": "id",
