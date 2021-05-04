@@ -74,7 +74,13 @@
 			"name": "Radar Chart Normalized",
 			"icon": "_lib/icons/test.png",
 			"description": "Soccer field"
-		}		
+		},
+		,{
+			"code": "sankey",
+			"name": "sankey",
+			"icon": "_lib/icons/test.png",
+			"description": "Sankey Graph"
+		}
 	],
 	"background-color": "#CCCCCC"
 }
