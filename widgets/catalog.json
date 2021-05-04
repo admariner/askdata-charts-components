@@ -87,7 +87,7 @@
 			"icon": "_lib/icons/test.png",
 			"description": "Chart with 6 KPIs"
 		},
-		,		{
+		{
 			"code": "treemap",
 			"name": "Treemap",
 			"icon": "_lib/icons/test.png",
