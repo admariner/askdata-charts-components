@@ -70,5 +70,19 @@
 	    }
 	],
         "tooltip": "Choose the third measure"
+    }, {
+        "code": "test2",
+        "label": "Test 2",
+        "type": "list",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+	"settings": {
+		"url": "/agents/{{agentId}}/datasets/list",
+		"method": "GET",
+		"code": "id",
+		"label": "id"
+	},
+        "tooltip": "Choose the third measure"
     }]
 }
