@@ -123,7 +123,7 @@ option = {
     },
     xAxis: {
         type: 'category',
-        data: [labelAxesUnique[0],labelAxesUnique[1],labelAxesUnique[2],labelAxesUnique[3],labelAxesUnique[4],labelAxesUnique[5], labelAxesUnique[6]]
+        data: labelAxesUnique
     },
     yAxis: {
        type: 'value',
@@ -146,6 +146,8 @@ option = {
             name: namesAxesUnique[0],
             type: 'line',
             data: y1,
+            label : {
+                        show: true},
             color: '#CCCCCC'
         }
     ]
