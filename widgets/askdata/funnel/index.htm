@@ -25,7 +25,7 @@
         <script type="text/javascript">
 
 
-//environment_widget = "https://api-dev.askdata.com";
+environment_//widget = "https://api-dev.askdata.com";
 //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
 
@@ -59,7 +59,7 @@ success: function(data) {
                 }
             },
             legend: {
-                data: ['a','b','c','d','e']
+                data: data.fields.s1_id.data
             },
 
             series: [
@@ -99,11 +99,11 @@ success: function(data) {
                         }
                     },
                     data: [
-                        {value: 0, name: 'a'},
-                        {value: 40, name: 'b'},
-                        {value: 20, name: 'c'},
-                        {value: 80, name: 'd'},
-                        {value: 100, name: 'e'}
+                        {value: data.fields.m1_id.data[0], name: temp0.fields.s1_id.data[0]},
+                        {value: data.fields.m1_id.data[1], name: temp0.fields.s1_id.data[1]},
+                        {value: data.fields.m1_id.data[2], name: temp0.fields.s1_id.data[2]},
+                        {value: data.fields.m1_id.data[3], name: temp0.fields.s1_id.data[3]},
+                        {value: data.fields.m1_id.data[4], name: temp0.fields.s1_id.data[4]}
                     ]
                 }
             ]
