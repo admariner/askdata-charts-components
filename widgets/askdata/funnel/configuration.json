@@ -36,7 +36,7 @@
         "mandatory": true,
         "tooltip": "Choose the measure"
     }, {
-        "code": "settings.m2_id",
+        "code": "settings.s1_id",
         "label": "Dimension",
         "type": "params",
         "viewType": "dropdown",
