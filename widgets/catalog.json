@@ -96,7 +96,7 @@
 		{
 			"code": "funnel",
 			"name": "Funnel",
-			"icon": "_lib/icons/test.png",
+			"icon": "funnel/funnel.png",
 			"description": "Funnel chart"
 		}   
 	],
