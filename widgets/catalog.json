@@ -92,7 +92,13 @@
 			"name": "Treemap",
 			"icon": "_lib/icons/test.png",
 			"description": "Treemap"
-		}
+		},
+		{
+			"code": "funnel",
+			"name": "Funnel",
+			"icon": "_lib/icons/test.png",
+			"description": "Funnel chart"
+		}   
 	],
 	"background-color": "#CCCCCC"
 }
