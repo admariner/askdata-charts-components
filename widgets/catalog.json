@@ -90,7 +90,7 @@
 		{
 			"code": "treemap",
 			"name": "Treemap",
-			"icon": "_lib/icons/test.png",
+			"icon": "treemap/treemap_icon.PNG",
 			"description": "Treemap"
 		},
 		{
