@@ -78,7 +78,7 @@
 		{
 			"code": "sankey",
 			"name": "Sankey",
-			"icon": "_lib/icons/test.png",
+			"icon": "sankey/sankey.png",
 			"description": "Sankey Graph"
 		},
 		{
