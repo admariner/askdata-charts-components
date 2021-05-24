@@ -98,7 +98,13 @@
 			"name": "Funnel",
 			"icon": "funnel/funnel.png",
 			"description": "Funnel chart"
-		}   
+		},
+		{
+			"code": "single_barchart",
+			"name": "Single Barchart",
+			"icon": "_lib/icons/test.png",
+			"description": "Single barchart"
+		}     
 	],
 	"background-color": "#CCCCCC"
 }
