@@ -1,13 +1,13 @@
 <!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=bar-y-category-stack
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=bar-gradient
 -->
 <!DOCTYPE html>
-<html style="height: 30%">
+<html style="height: 100%">
     <head>
         <meta charset="utf-8">
     </head>
-    <body style="height: 30%; margin: 0">
-        <div id="container" style="height: 30%"></div>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
 
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-nightly@5.1.2-dev.20210512/dist/echarts.min.js"></script>
         <!-- Uncomment this line if you want to dataTool extension
@@ -37,47 +37,90 @@ var option;
 
 
 
+
+
+
+var dataAxis = ['a','b','c','d','e'];
+var data = [220, 198, 123, 125, 220];
+var yMax = 500;
+var dataShadow = [];
+
+for (var i = 0; i < data.length; i++) {
+    dataShadow.push(yMax);
+}
+
 option = {
-    tooltip: {
-        trigger: 'axis',
-        show: false,
-        axisPointer: {            // Use axis to trigger tooltip
-            type: 'shadow'        // 'shadow' as default; can also be 'line' or 'shadow'
-        }
-    },
-    legend: {
-        show: false
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: false
-    },
     xAxis: {
         type: 'value',
-        show: false
+        data: dataAxis,
+        show: false,
+        axisLabel: {
+            inside: true,
+            textStyle: {
+                color: '#fff'
+            }
+        }, 
     },
     yAxis: {
         type: 'category',
-        data: ['Mon'], 
-        show: false
+        show: false,
+        axisLine: {
+            show: true
+        },
+        axisTick: {
+            show: true
+        }
     },
+    dataZoom: [
+        {
+            type: 'inside'
+        }
+    ],
     series: [
         {
-            name: 'Direct',
             type: 'bar',
-            stack: 'total',
-            label: {
-                show: false
+            showBackground: true,
+            itemStyle: {
+                normal: {
+                    barBorderRadius: [150, 150, 150 ,150 ]
+                },
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: '#2e74f3'},
+                        {offset: 0.5, color: '#2e74f3'},
+                        {offset: 1, color: '#2e74f3'}
+                    ]
+                )
             },
             emphasis: {
-                focus: ''
+                itemStyle: {
+                    barBorderRadius: [150, 150],
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#2e74f3'},
+                            {offset: 0.7, color: '#2e74f3'},
+                            {offset: 1, color: '#2e74f3'}
+                        ]
+                    )
+                }
             },
-            data: [320]
+            label: {
+                show: true,
+                position: 'top',
+                color: "black",
+                fontFamily: 'roboto',
+                fontSize: 15,
+                formatter: function(d) {
+                  return dataAxis[d.name] ;
+                }
+            },
+            data: data
         }
     ]
 };
+
 
 if (option && typeof option === 'object') {
     myChart.setOption(option);
