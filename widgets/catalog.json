@@ -100,10 +100,10 @@
 			"description": "Funnel chart"
 		},
 		{
-			"code": "single_barchart",
-			"name": "Single Barchart",
+			"code": "multiple_barchart",
+			"name": "Multiple Barchart",
 			"icon": "_lib/icons/test.png",
-			"description": "Single barchart"
+			"description": "Multiple barchart"
 		}     
 	],
 	"background-color": "#CCCCCC"
