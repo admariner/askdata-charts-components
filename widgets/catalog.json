@@ -102,7 +102,7 @@
 		{
 			"code": "multiple_barchart",
 			"name": "Multiple Barchart",
-			"icon": "_lib/icons/test.png",
+			"icon": "multiple_barchart/multiple-bars.PNG",
 			"description": "Multiple barchart"
 		}     
 	],
