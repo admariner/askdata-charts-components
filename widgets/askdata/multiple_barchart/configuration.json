@@ -42,6 +42,6 @@
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the dimension"
+        "tooltip": "Choose the Dimension"
     }]
 }
