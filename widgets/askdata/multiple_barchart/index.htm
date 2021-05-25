@@ -38,9 +38,7 @@ var option;
 
 
 
-
-
-var dataAxis = ['a','b','c','d','e'];
+var dataAxis = ['Lamezia','Roma','Catanzaro','Pisa','Fregene'];
 var data = [220, 198, 123, 125, 220];
 var yMax = 500;
 var dataShadow = [];
@@ -80,46 +78,45 @@ option = {
         {
             type: 'bar',
             showBackground: true,
+            backgroundStyle: {
+                borderRadius: [150, 150, 150 ,150 ]
+            },
+            barCategoryGap: '80%',
             itemStyle: {
                 normal: {
                     barBorderRadius: [150, 150, 150 ,150 ]
                 },
-                color: new echarts.graphic.LinearGradient(
-                    0, 0, 0, 1,
-                    [
-                        {offset: 0, color: '#2e74f3'},
-                        {offset: 0.5, color: '#2e74f3'},
-                        {offset: 1, color: '#2e74f3'}
-                    ]
-                )
+                color: '#006cfa'
             },
             emphasis: {
                 itemStyle: {
                     barBorderRadius: [150, 150],
-                    color: new echarts.graphic.LinearGradient(
-                        0, 0, 0, 1,
-                        [
-                            {offset: 0, color: '#2e74f3'},
-                            {offset: 0.7, color: '#2e74f3'},
-                            {offset: 1, color: '#2e74f3'}
-                        ]
-                    )
+                    color: '#006cfa'
                 }
+            },
+            normal:{
+                color: '#006cfa'
             },
             label: {
                 show: true,
-                position: 'top',
-                color: "white",
+                color: "black",
+                position: "top",
+                fontWeight: 'bold',
                 fontFamily: 'roboto',
                 fontSize: 15,
                 formatter: function(d) {
-                  return dataAxis[d.name] ;
+                  return dataAxis[d.name] +" \n\n"+  d.data + "%";
                 }
             },
             data: data
         }
     ]
 };
+
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
 
 
 if (option && typeof option === 'object') {
