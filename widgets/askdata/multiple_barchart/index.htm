@@ -101,12 +101,17 @@ option = {
                 show: true,
                 color: "black",
                 position: "top",
+                offset: [0,-15],
                 fontWeight: 'bold',
                 fontFamily: 'roboto',
                 fontSize: 15,
+                avoidLabelOverlap:false,
                 formatter: function(d) {
                   return dataAxis[d.name] + "  -  "+  d.data + "%";
                 }
+            },
+            labelLayout: {
+                x: 115,
             },
             data: data
         }
