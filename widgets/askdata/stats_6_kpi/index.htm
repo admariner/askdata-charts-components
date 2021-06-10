@@ -1,15 +1,36 @@
-<!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=sankey-simple
--->
 <!DOCTYPE html>
 <html style="height: 100%">
-    <head>
+<head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        <!-- These imports are required -->
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+        <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        
+        <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+        <script src="/lib/scripts/jquery.min.js"></script>
+
+        <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+        <script src="https://unpkg.com/mustache@latest"></script>
+
+        <!-- Default styling -->
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        
+        <!-- Other JS libraries or CSS import-->
+        <!-- Put your libaries here --->
     </head>
+
     <body style="height: 100%; margin: 0">
+        
         <div id="container" style="height: 100%">
             
-       <svg width="100%" viewBox="0 0 1194 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <svg width="100%" viewBox="0 0 1194 450" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="7.5" y="7.5" width="1179" height="435" rx="22.5" fill="white"/>
     <g filter="url(#filter0_d)">
     <rect x="54" y="62" width="346" height="153" rx="16" fill="#F1A90B"/>
@@ -41,8 +62,7 @@
     <text fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="50" font-weight="bold" letter-spacing="0em"><tspan x="895.447" y="147.59">45.536</tspan></text>
     <text fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="50" font-weight="bold" letter-spacing="0em"><tspan x="902.184" y="313.59">+ 1.5%</tspan></text>
     <text fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="50" font-weight="bold" letter-spacing="0em"><tspan x="534.364" y="313.59">-1.3% </tspan></text>
-    <text fill="#4E5461" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="23" letter-spacing="0em"><tspan x="839.166" y="414.361">More Info https://askdata.com</tspan></text>
-    <text fill="#3774C6" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan x="150.156" y="200.203">SIM VENDUTE</tspan></text>
+    <text fill="#3774C6" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan x="150.156" y="200.203">{{type}}</tspan></text>
     <text fill="#3774C6" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan x="121.316" y="364.203">SIM VENDUTE (6M)</tspan></text>
     <text fill="#3774C6" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan x="531.465" y="358.203">MNP IN (6M)</tspan></text>
     <text fill="#3774C6" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="24" font-weight="bold" letter-spacing="0em"><tspan x="894.18" y="364.203">MNP OUT (6M)</tspan></text>
@@ -133,6 +153,49 @@
     
             
         </div>
+
     </body>
+
+
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+// Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+environment_widget = "https://api-dev.askdata.com";
+//environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+console.log("I'm going to request data");
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+
+    console.log("Requesting data if the WS answers 200");
+    /// PUT YOUR CODE THAT RENDER THE WIDGET RESULTS
+
+    //Log data repsonse
+    console.log(data);
+
+    // Select the HTML to render as temple
+    var template = document.getElementById('container').innerHTML;
+    
+    // Rendering of the template
+    var rendered = Mustache.render(template, data);
+    
+    // replace of the SVG
+    document.getElementById('container').innerHTML = rendered;
+       
+    }
+
+  });
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
 </html>
     
