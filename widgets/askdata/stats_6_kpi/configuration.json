@@ -29,19 +29,51 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Measure",
+        "label": "KPI 1",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the measure"
+        "tooltip": "Choose the KPI"
     }, {
         "code": "settings.m2_id",
-        "label": "Dimension",
+        "label": "KPI 2",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the dimension"
+        "tooltip": "Choose the KPI"
+    }, {
+        "code": "settings.m3_id",
+        "label": "KPI 3",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the KPI"
+    }, {
+        "code": "settings.m4_id",
+        "label": "KPI 4",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the KPI"
+    }, {
+        "code": "settings.m5_id",
+        "label": "KPI 5",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the KPI"
+    }, {
+        "code": "settings.m6_id",
+        "label": "KPI 6",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the KPI"
     }]
 }
