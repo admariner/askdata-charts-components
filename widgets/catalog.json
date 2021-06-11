@@ -88,6 +88,12 @@
 			"description": "Chart with 6 KPIs"
 		},
 		{
+		     "code": "card-blue-with-6-kpi",
+		     "name": "Card blue with 6 KPIs",
+		     "icon": "_lib/icons/test.png",
+		     "description": "Card in blue color with 6 KPIs"
+		},
+		{
 			"code": "treemap",
 			"name": "Treemap",
 			"icon": "treemap/treemap_icon.PNG",
