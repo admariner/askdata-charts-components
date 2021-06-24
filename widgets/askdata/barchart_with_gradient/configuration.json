@@ -28,7 +28,7 @@
         "viewType": "dropdown",
         "mandatory": true
     }, {
-        "code": "settings.m1_id",
+        "code": "settings.s1_id",
         "label": "Dimension",
         "type": "params",
         "viewType": "dropdown",
@@ -36,7 +36,7 @@
         "mandatory": true,
         "tooltip": "Choose the dimension"
     },{
-        "code": "settings.m2_id",
+        "code": "settings.m1_id",
         "label": "Measure",
         "type": "params",
         "viewType": "dropdown",
