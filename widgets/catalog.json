@@ -110,7 +110,13 @@
 			"name": "Multiple Barchart",
 			"icon": "multiple_barchart/multiple-bars.PNG",
 			"description": "Multiple barchart"
-		}     
+		},
+		{
+			"code": "barchart_with_gradient",
+			"name": "Barchart With Gradient",
+			"icon": "barchart_with_gradient/info.PNG",
+			"description": "Barchart With Gradient"
+		}      
 	],
 	"background-color": "#CCCCCC"
 }
