@@ -1,7 +1,7 @@
 {
-	"workspaces": ["sales_demo", "askdatacovid", "nytimes", "20201118_all_datasets", "20210326_trend_datacard", "askdata_covid_qa"],
+	"workspaces": ["istat", "sales_demo", "worldbank", "eurostat", "sales_demo", "askdatacovid", "our_world_in_data", "nytimes"],
 	"data_cards": [{
-			"workspace": "sales_demo",
+			"workspace": "macroeconomics",
 			"data_card": "metric_one"
 		},
 		{
