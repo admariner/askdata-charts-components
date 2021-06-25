@@ -114,17 +114,23 @@ success: function(data) {
     	
     	
     	xAxis: [
-            {gridIndex: 0, offset: 15, scale: true},
-            {gridIndex: 1},
-            {gridIndex: 2},
-            {gridIndex: 3}
+        {gridIndex: 0,  offset: 15, min: "dataMin", max: "dataMax",
+        axisLabel: {
+      formatter: "{value} %"
+    },},
+        {gridIndex: 1},
+        {gridIndex: 2},
+        {gridIndex: 3}
     	],
     	
     	yAxis: [
-            {gridIndex: 0, offset: 15, scale: true},
-            {gridIndex: 1},
-            {gridIndex: 2},
-            {gridIndex: 3}
+        {gridIndex: 0, offset: 15, min: "dataMin", max: "dataMax", 
+        axisLabel: {
+      formatter: "{value} €"
+    },},
+        {gridIndex: 1},
+        {gridIndex: 2},
+        {gridIndex: 3}
     	],
     	
     	series: [{
