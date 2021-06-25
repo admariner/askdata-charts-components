@@ -84,13 +84,13 @@ success: function(data) {
 	option = {
     	dataset: [{
         	source: dataAll[0]
-    	}, {
+    	}/*, {
         transform: {
             type: 'ecStat:regression'
             // 'linear' by default.
             // config: { method: 'linear', formulaOn: 'end'}
         }
-    	}],
+    	}*/],
     	grid: [
         {left: '7%', top: '7%', width: '38%', height: '38%'},
         {right: '7%', top: '7%', width: '38%', height: '38%'},
@@ -118,12 +118,12 @@ success: function(data) {
         type: 'scatter',
         xAxisIndex: 0,
         yAxisIndex: 0
-    	}, {
+    	}/*, {
         name: 'line',
         type: 'line',
         datasetIndex: 1,
         symbolSize: 0.1
-    }]
+    }*/]
 };
 
 if (option && typeof option === 'object') {
