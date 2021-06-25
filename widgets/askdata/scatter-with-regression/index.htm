@@ -1,0 +1,146 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=scatter-linear-regression
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+        
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+		<!-- These imports are required -->
+		
+		<script src="/lib/scripts/utils.js"></script>
+		
+		<script src="/lib/scripts/env.js"></script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+		
+		
+		<!-- 
+		
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+		
+		<script src="https://unpkg.com/mustache@latest"></script>
+		
+		-->
+		
+		<script src="/lib/scripts/jquery.min.js"></script>
+		
+		
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+
+
+		<!-- These import is needed for calculate regression -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+
+		
+
+	
+		
+	
+		<!-- Default styling -->
+		
+		<link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+		
+	</head>
+	
+		<body style="height: 100%; margin: 0">
+       		<div id="container" style="height: 100%"></div>
+   		</body>
+		
+		
+    <script type="text/javascript">
+        
+        
+        
+
+$.ajax({        
+
+url: environment_widget + "/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) {
+        
+	var dom = document.getElementById("container");
+	var myChart = echarts.init(dom);
+	var app = {};
+	
+	var option;
+
+
+
+	// See https://github.com/ecomfe/echarts-stat
+	echarts.registerTransform(ecStat.transform.regression);
+
+	var dataAll = [[
+	]];
+	
+	for(var i=0; i<fields.s1_id.length; i++)
+		
+		dataAll[0].push([fields.s1_id[i], fields.s2_id[i]]);
+
+
+
+	option = {
+    	dataset: [{
+        	source: dataAll[0]
+    	}, {
+        transform: {
+            type: 'ecStat:regression'
+            // 'linear' by default.
+            // config: { method: 'linear', formulaOn: 'end'}
+        }
+    	}],
+    	grid: [
+        {left: '7%', top: '7%', width: '38%', height: '38%'},
+        {right: '7%', top: '7%', width: '38%', height: '38%'},
+        {left: '7%', bottom: '7%', width: '38%', height: '38%'},
+        {right: '7%', bottom: '7%', width: '38%', height: '38%'}
+    	],
+    	tooltip: {
+        	formatter: 'Group {a}: ({c})'
+    	},
+    	
+    	xAxis: [
+        {gridIndex: 0},
+        {gridIndex: 1},
+        {gridIndex: 2},
+        {gridIndex: 3}
+    	],
+    	
+    	yAxis: [
+        {gridIndex: 0},
+        {gridIndex: 1},
+        {gridIndex: 2},
+        {gridIndex: 3}
+    	],
+    	
+    	series: [{
+        name: 'scatter',
+        type: 'scatter',
+        xAxisIndex: 0,
+        yAxisIndex: 0
+    	}, {
+        name: 'line',
+        type: 'line',
+        datasetIndex: 1,
+        symbolSize: 0.1
+    }]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+}
+});
+
+        </script>
+</html>
+    
