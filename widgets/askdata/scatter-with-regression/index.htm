@@ -30,10 +30,7 @@
 		<!-- These import is needed for calculate regression -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
 
-		
-
 	
-		
 	
 		<!-- Default styling -->
 		
@@ -72,6 +69,8 @@ success: function(data) {
 	// See https://github.com/ecomfe/echarts-stat
 	echarts.registerTransform(ecStat.transform.regression);
 
+	
+	/*
 	var dataAll = [[
 	]];
 	
@@ -79,18 +78,32 @@ success: function(data) {
 		
 		dataAll[0].push([data.fields.s1_id.data[i], data.fields.s2_id.data[i]]);
 
+    */
+    
+    
+    var data_x = [10.0, 8.0, 13.0, 9.0, 11.0, 14.0, 6.0, 4.0, 12.0, 7.0, 5.0];
+    
+    var data_y = [8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68];
+    
+    var dataAll = [[
+	]];
+	
+	for(var i=0; i<data_x.length; i++)
+		
+		dataAll[0].push([data_x[i], data_y[i]]);
 
+    
 
 	option = {
     	dataset: [{
         	source: dataAll[0]
-    	}/*, {
+    	}, {
         transform: {
             type: 'ecStat:regression'
             // 'linear' by default.
             // config: { method: 'linear', formulaOn: 'end'}
         }
-    	}*/],
+    	}],
     	grid: [
         {left: '7%', top: '7%', width: '38%', height: '38%'},
         {right: '7%', top: '7%', width: '38%', height: '38%'},
@@ -116,14 +129,15 @@ success: function(data) {
     	series: [{
         name: 'scatter',
         type: 'scatter',
+        datasetIndex: 0,
         xAxisIndex: 0,
         yAxisIndex: 0
-    	}/*, {
+    	}, {
         name: 'line',
         type: 'line',
         datasetIndex: 1,
         symbolSize: 0.1
-    }*/]
+    }]
 };
 
 if (option && typeof option === 'object') {
