@@ -116,6 +116,12 @@
 			"name": "Barchart With Gradient",
 			"icon": "barchart_with_gradient/info.PNG",
 			"description": "Barchart With Gradient"
+		},
+		{
+		    "code": "scatter-with-regression",
+		    "name": "Scatter with regression line",
+		    "icon": "barchart_with_gradient/info.PNG",
+		    "description": "4 scatter plots with regression line"
 		}      
 	],
 	"background-color": "#CCCCCC"
