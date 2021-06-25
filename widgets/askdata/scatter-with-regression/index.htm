@@ -114,30 +114,31 @@ success: function(data) {
     	
     	
     	xAxis: [
-        {gridIndex: 0},
-        {gridIndex: 1},
-        {gridIndex: 2},
-        {gridIndex: 3}
+            {gridIndex: 0, offset: 15, scale: true},
+            {gridIndex: 1},
+            {gridIndex: 2},
+            {gridIndex: 3}
     	],
     	
     	yAxis: [
-        {gridIndex: 0},
-        {gridIndex: 1},
-        {gridIndex: 2},
-        {gridIndex: 3}
+            {gridIndex: 0, offset: 15, scale: true},
+            {gridIndex: 1},
+            {gridIndex: 2},
+            {gridIndex: 3}
     	],
     	
     	series: [{
-        name: 'scatter',
-        type: 'scatter',
-        datasetIndex: 0,
-        xAxisIndex: 0,
-        yAxisIndex: 0
-    	}, {
-        name: 'line',
-        type: 'line',
-        datasetIndex: 1,
-        symbolSize: 0.1
+            name: 'scatter',
+            type: 'scatter',
+            datasetIndex: 0,
+            xAxisIndex: 0,
+            yAxisIndex: 0
+    	}, 
+    	{
+            name: 'line',
+            type: 'line',
+            datasetIndex: 1,
+            symbolSize: 0.1
     }]
 };
 
