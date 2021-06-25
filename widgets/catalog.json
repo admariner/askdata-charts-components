@@ -120,7 +120,7 @@
 		{
 		    "code": "scatter-with-regression",
 		    "name": "Scatter with regression line",
-		    "icon": "barchart_with_gradient/info.PNG",
+		    "icon": "scatter-with-regression/scatter.PNG",
 		    "description": "4 scatter plots with regression line"
 		}      
 	],
