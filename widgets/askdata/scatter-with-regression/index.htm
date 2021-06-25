@@ -75,9 +75,9 @@ success: function(data) {
 	var dataAll = [[
 	]];
 	
-	for(var i=0; i<fields.s1_id.length; i++)
+	for(var i=0; i<data.fields.s1_id.length; i++)
 		
-		dataAll[0].push([fields.s1_id[i], fields.s2_id[i]]);
+		dataAll[0].push([data.fields.s1_id.data[i], fields.s2_id.data[i]]);
 
 
 

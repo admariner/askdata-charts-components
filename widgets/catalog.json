@@ -120,7 +120,7 @@
 		{
 		    "code": "scatter-with-regression",
 		    "name": "Scatter with regression line",
-		    "icon": "scatter-with-regression/scatter.PNG",
+		    "icon": "scatter-with-regression/scatter.png",
 		    "description": "4 scatter plots with regression line"
 		}      
 	],
