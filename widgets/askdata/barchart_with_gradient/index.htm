@@ -38,7 +38,7 @@ beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getT
  ).setRequestHeader('Content-Type','application/json')},
 success: function(data) { 
  console.log(data)        
-var dom = document.getElementById("container");
+ var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
 
@@ -55,7 +55,14 @@ option = {
     },
     grid: {containLabel: false},
     xAxis: {name: 'COR 1'},
-    yAxis: {type: 'category'},
+    yAxis: {
+        type: 'category',
+        axisLabel:{
+            fontSize:18,
+            fontFamily: 'roboto'
+        }
+        
+    },
     visualMap: {
         orient: 'horizontal',
         left: 'center',
@@ -71,6 +78,14 @@ option = {
     series: [
         {
             type: 'bar',
+            label: {
+            normal: {
+                show: true,
+                position: 'right',
+                fontSize: 15,
+                fontFamily: 'roboto'
+              }
+          },
             encode: {
                 // Map the "amount" column to X axis.
                 x: 'count',
@@ -80,6 +95,7 @@ option = {
         }
     ]
 };
+
 
 if (option && typeof option === 'object') {
     myChart.setOption(option);
