@@ -43,5 +43,13 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "y-axis"
+    }, {
+        "code": "settings.d1_id",
+        "label": "Dimension",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Dimension"
     }]
 }

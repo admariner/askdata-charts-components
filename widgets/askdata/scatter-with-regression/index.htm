@@ -27,6 +27,9 @@
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
 
 
+        <script src="https://unpkg.com/mustache@latest"></script>
+        
+        
 		<!-- These import is needed for calculate regression -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
 
@@ -113,6 +116,13 @@ success: function(data) {
     */
 
 	option = {
+	
+	    title: [{
+            text: {{fields.d1_id.name}},
+            left: "27%",
+            top: "1%",
+            show: true
+        }],
     	dataset: [{
         	source: dataAll[0]
     	}, {
