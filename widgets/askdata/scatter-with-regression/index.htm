@@ -74,15 +74,17 @@ success: function(data) {
 	var dataAll = [[
 	]];
 	
-	for(var i=0; i<data_x.length; i++)
-
-        if (data_y[i] >= 1000) {
-    
-            var y = data_y[i]/1000;
-    
-            dataAll[0].push([data_x[i], y]);
 	
-    } 
+	
+	for(var i=0; i<data.fields.s1_id.data.length; i++)
+	
+	    if (data.fields.s2_id.data[i] >= 1000) {
+	    
+	    var y = data.fields.s2_id.data[i]/1000;
+		
+		dataAll[0].push([data.fields.s1_id.data[i], y]);
+		
+		}
     
     /*
     
