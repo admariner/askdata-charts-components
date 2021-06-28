@@ -62,7 +62,6 @@ success: function(data) {
         
 	var dom = document.getElementById("container");
 	
-	var template = document.getElementById('container').innerHTML;
 	var myChart = echarts.init(dom);
 	var app = {};
 	
@@ -100,29 +99,10 @@ success: function(data) {
             
             }
     
-    /*
     
-    
-    
-    var data_x = [10.0, 8.0, 13.0, 9.0, 11.0, 14.0, 6.0, 4.0, 12.0, 7.0, 5.0];
-    
-    var data_y = [8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68];
-    
-    
-	for(var i=0; i<data_x.length; i++)
-		
-		dataAll[0].push([data_x[i], data_y[i]]);
-
-    */
 
 	option = {
 	
-	    title: [{
-            text: data.fields.d1_id.data[0],
-            left: "27%",
-            top: "1%",
-            show: true
-        }],
     	dataset: [{
         	source: dataAll[0]
     	}, {
