@@ -71,20 +71,31 @@ success: function(data) {
 
 	
 	
+	
+    
+    function check_thousand(value) {
+        return value >= 1000;
+    }
+
+	
 	var dataAll = [[
 	]];
 	
+	if (data.fields.s2_id.data.every(check_thousand) == true) {
 	
-	
-	for(var i=0; i<data.fields.s1_id.data.length; i++)
-	
-	    if (data.fields.s2_id.data[i] >= 1000) {
-	    
-	    var y = data.fields.s2_id.data[i]/1000;
-		
-		dataAll[0].push([data.fields.s1_id.data[i], y]);
-		
-		}
+        for(var i=0; i<data.fields.s1_id.data.length; i++)
+    
+        
+            dataAll[0].push([data.fields.s1_id.data[i], data.fields.s2_id.data[i]/1000]);
+        
+            } else {
+                    
+                    for(var i=0; i<data.fields.s1_id.data.length; i++)
+                    
+                    dataAll[0].push([data.fields.s1_id.data[i], data.fields.s2_id.data[i]]);
+                    
+            
+            }
     
     /*
     
@@ -150,8 +161,6 @@ success: function(data) {
             },
             splitNumber: 4,
             axisLabel: {
-                showMinLabel: false,
-                showMaxLabel: true,
                 formatter: "{value} €"
                         },
                         
