@@ -39,8 +39,8 @@
 		
 	</head>
 	
-		<body style="height: 100%; margin: 0">
-       		<div id="container" style="height: 100%"></div>
+		<body style="height: 100%; width: 100%; margin: 0">
+       		<div id="container" style="height: 100%; width: 100%"></div>
    		</body>
 		
 		
@@ -114,20 +114,44 @@ success: function(data) {
     	
     	
     	xAxis: [
-        {gridIndex: 0,  offset: 15, min: "dataMin", max: "dataMax",
-        axisLabel: {
-      formatter: "{value} %"
-    },},
+        {
+            gridIndex: 0,  offset: 15,
+            min: function (value) {
+                return Math.round(value.min)
+            },
+            max: function (value) {
+                return Math.round(value.max)
+            },
+            axisLabel: {
+                
+                formatter: "{value} %"
+                        },
+            
+        },
         {gridIndex: 1},
         {gridIndex: 2},
         {gridIndex: 3}
     	],
     	
     	yAxis: [
-        {gridIndex: 0, offset: 15, min: "dataMin", max: "dataMax", 
-        axisLabel: {
-      formatter: "{value} €"
-    },},
+        {
+            gridIndex: 0, offset: 15,
+            min: function (value) {
+                return Math.round(value.min)
+            },
+            max: function (value) {
+                return Math.round(value.max)
+            },
+            splitNumber: 4,
+            axisLabel: {
+                showMinLabel: false,
+                showMaxLabel: true,
+                formatter: "{value} €"
+                        },
+                        
+                        
+            
+        },
         {gridIndex: 1},
         {gridIndex: 2},
         {gridIndex: 3}
