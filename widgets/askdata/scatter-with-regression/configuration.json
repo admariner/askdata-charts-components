@@ -43,5 +43,9 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "y-axis"
+    }, {
+        "code": "settings.d1_id",
+        "label": "Dimension",
+        
     }]
 }
