@@ -75,8 +75,8 @@ option = {
     visualMap: {
         orient: 'horizontal',
         left: 'center',
-        min: data.fields.m2_id.data,
-        max: data.fields.m3_id.data,
+        min: Math.min(...data.fields.m1_id.data),
+        max: Math.max(...data.fields.m1_id.data),
         text: ['COR 1 Alto', 'COR 1 Basso'],
         // Map the score column to color
         dimension: 1,
