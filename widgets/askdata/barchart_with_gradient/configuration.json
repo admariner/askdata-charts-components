@@ -43,5 +43,23 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the measure"
+    },
+    {
+        "code": "settings.m2_id",
+        "label": "Measure",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the min value"
+    },
+    {
+        "code": "settings.m3_id",
+        "label": "Measure",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the max value"
     }]
 }
