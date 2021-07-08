@@ -68,20 +68,31 @@ option = {
         axisLabel:{
             interval: 0,
             fontSize: 11,
-            fontFamily: 'roboto'
+            fontFamily: 'Roboto'
         }
         
     },
     visualMap: {
         orient: 'horizontal',
         left: 'center',
-        min: Math.min(...data.fields.m1_id.data),
-        max: Math.max(...data.fields.m1_id.data),
-        text: ['COR 1 Alto', 'COR 1 Basso'],
-        // Map the score column to color
-        dimension: 1,
-        inRange: {
+        min: -100,
+        max: 100,
+                inRange: {
             color: ['#65B581', '#FD665F']
+        },
+        piecewise:{
+            pieces: [
+            {min: -1000, max: -100,inRange: {
+                color: ['blue', 'green'],
+                symbolSize: [30, 100]
+            }},        
+            {min: -100, max: 0, color: 'green'},        
+            {min: 0, max: 199, color: 'blue'}
+    
+            ],
+            text: ['COR 1 Alto', 'COR 1 Basso'],
+            // Map the score column to color
+            dimension: 1
         }
     },
     series: [
@@ -92,7 +103,7 @@ option = {
                 show: true,
                 position: 'right',
                 fontSize: 11,
-                fontFamily: 'roboto'
+                fontFamily: 'Roboto'
               }
           },
             encode: {
