@@ -1,5 +1,5 @@
 {
-	"workspaces": ["istat", "sales_demo", "worldbank", "eurostat", "sales_demo", "askdatacovid", "our_world_in_data", "nytimes", "bls_gov", "featured", "tim_data_room", "fra_integrationtest_agent_1" "fra_integrationtest_agent_1" "sap_20210701" , "fra_integrationtest_agent",  "new_agent_-_test_mail_01", "my_name_and_test", "pin_and_parameters", "test_error_creation", "test_sharing" "radu_test_17_jun", "20210615_dataframe_check", "test_agent_1", "nuovo_agent", "widget_test", "20210611_sqlserver", "20210611_sqlserver_cub1_", "20210611_sqlserver_t1",  "20210607_sqlserver_bis" "inisight_status_test", "emoji_prove", "join_component" ],
+	"workspaces": ["istat", "sales_demo", "worldbank", "eurostat", "sales_demo", "askdatacovid", "our_world_in_data", "nytimes", "bls_gov", "featured", "tim_data_room", "fra_integrationtest_agent_1" , "fra_integrationtest_agent_1" , "sap_20210701" , "fra_integrationtest_agent",  "new_agent_-_test_mail_01", "my_name_and_test", "pin_and_parameters", "test_error_creation", "test_sharing" , "radu_test_17_jun", "20210615_dataframe_check", "test_agent_1", "nuovo_agent", "widget_test", "20210611_sqlserver", "20210611_sqlserver_cub1_", "20210611_sqlserver_t1",  "20210607_sqlserver_bis", "inisight_status_test", "emoji_prove", "join_component" ],
 	"data_cards": [{
 			"workspace": "macroeconomics",
 			"data_card": "metric_one"
