@@ -88,13 +88,14 @@ success: function(data) {
         for(var i=0; i<data.fields.s1_id.data.length; i++)
     
         
-            dataAll[0].push([data.fields.s1_id.data[i], data.fields.s2_id.data[i]/1000]);
+            dataAll[0].push([parseFloat(data.fields.s1_id.data[i]), parseFloat(data.fields.s2_id.data[i])/1000]);
         
-            } else {
+            } 
+            else {
                     
                     for(var i=0; i<data.fields.s1_id.data.length; i++)
                     
-                    dataAll[0].push([data.fields.s1_id.data[i], data.fields.s2_id.data[i]]);
+                    dataAll[0].push([parseFloat(data.fields.s1_id.data[i]), parseFloat(data.fields.s2_id.data[i])]);
                     
             
             }
@@ -124,10 +125,10 @@ success: function(data) {
         {
             gridIndex: 0,  offset: 15,
             min: function (value) {
-                return Math.round(value.min)
+                return Math.round(value.min) - 1 
             },
             max: function (value) {
-                return Math.round(value.max)
+                return Math.round(value.max) + 1
             },
             axisLabel: {
                 
@@ -144,10 +145,10 @@ success: function(data) {
         {
             gridIndex: 0, offset: 15,
             min: function (value) {
-                return Math.round(value.min)
+                return Math.round(value.min) - 1
             },
             max: function (value) {
-                return Math.round(value.max)
+                return Math.round(value.max) + 1
             },
             splitNumber: 4,
             axisLabel: {
