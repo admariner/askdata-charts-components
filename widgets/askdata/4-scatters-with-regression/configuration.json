@@ -1,0 +1,120 @@
+{
+	"configuration": [{
+        "code": "code",
+        "label": "Chart code",
+        "type": "string",
+        "viewType": "hidden",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "name",
+        "label": "Name",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "title_1",
+        "label": "First Title",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Type the title for the upper-left plot"
+    }, {
+        "code": "title_2",
+        "label": "Second Title",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Type the title for the upper-right plot"
+    },{
+        "code": "title_3",
+        "label": "Third Title",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Type the title for the bottom-left plot"
+    },{
+        "code": "title_4",
+        "label": "Fourth Title",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Type the title for the bottom-right plot"
+    },{
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
+        "readOnly": false,
+        "viewType": "dropdown",
+        "mandatory": true
+    }, {
+        "code": "settings.x_1",
+        "label": "x1-axis",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "x-axis of the upper-left plot"
+    }, {
+        "code": "settings.y_1",
+        "label": "y1-axis",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "y-axis of the upper-left plot"
+    },{
+        "code": "settings.x_2",
+        "label": "x2-axis",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "x-axis of the upper-right plot"
+    }, {
+        "code": "settings.y_2",
+        "label": "y2-axis",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "y-axis of the upper-right plot"
+    },{
+        "code": "settings.x_3",
+        "label": "x3-axis",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "x-axis of the bottom-left plot"
+    }, {
+        "code": "settings.y_3",
+        "label": "y3-axis",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "y-axis of the bottom-left plot"
+    },{
+        "code": "settings.x_4",
+        "label": "x4-axis",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "x-axis of the bottom-right plot"
+    }, {
+        "code": "settings.y_4",
+        "label": "y4-axis",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "y-axis of the bottom-right plot"
+    }]
+}
