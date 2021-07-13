@@ -118,9 +118,9 @@
 			"description": "Barchart With Gradient"
 		},
 		{
-		    "code": "4-scatters-with-regression",
-		    "name": "Scatter with regression line",
-		    "icon": "scatter-with-regression/icon_scatter.png",
+		    "code": "4-scatter-with-regression",
+		    "name": "4 Scatter with regression line",
+		    "icon": "4-scatter-with-regression/icon_scatter.png",
 		    "description": "4 scatter plots with regression line"
 		}      
 	],
