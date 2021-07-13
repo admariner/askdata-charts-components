@@ -1,20 +1,24 @@
 {
 	"workspaces": ["istat", "sales_demo", "worldbank", "eurostat", "sales_demo", "askdatacovid", "our_world_in_data", "nytimes", "bls_gov", "featured", "tim_data_room",  "20210326_trend_datacard", "20210326_trend_datacard", "20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard","20210326_trend_datacard", "20210326_trend_datacard" ],
 	"data_cards": [{
-			"workspace": "macroeconomics",
-			"data_card": "metric_one"
+			"workspace": "istat",
+			"data_card": "tasso_di_natalit_vs_tasso_di_mortalit"
 		},
 		{
 			"workspace": "bls_gov",
 			"data_card": "unemployment_rate"
 		},
 		{
-			"workspace": "20210326_trend_datacard",
-			"data_card": "trend_deceduti_denominazione_regione_lazio_e_lombardia_14"
+			"workspace": "eurostat",
+			"data_card": "employment_rate_italy_vs_eu"
 		},
 		{
-			"workspace": "askdata_covid_qa",
-			"data_card": "positivi_denominazione_regione_as_chart"
+			"workspace": "eurostat",
+			"data_card": "top_10_countries_by_gdp_in_2011_vs_2020"
+		},
+		{
+			"workspace": "worldbank",
+			"data_card": "gdp"
 		}
 	]
 }
