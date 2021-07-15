@@ -52,6 +52,14 @@
 		{
 			"workspace": "worldbank",
 			"data_card": "gdp"
+		},
+		{
+			"workspace": "worldbank",
+			"data_card": "merchandise_commercial_trade"
+		},
+		{
+			"workspace": "worldbank",
+			"data_card": "food"
 		}
 	]
 }
