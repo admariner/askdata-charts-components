@@ -80,6 +80,9 @@ option = {
                 inRange: {
             color: ['#65B581', '#FD665F']
         },
+        text: ['COR 1 Alto', 'COR 1 Basso'],
+        // Map the score column to color
+        dimension: 1,
         piecewise:{
             pieces: [
             {min: -1000, max: -100,inRange: {
@@ -89,10 +92,7 @@ option = {
             {min: -100, max: 0, color: 'green'},        
             {min: 0, max: 199, color: 'blue'}
     
-            ],
-            text: ['COR 1 Alto', 'COR 1 Basso'],
-            // Map the score column to color
-            dimension: 1
+            ]
         }
     },
     series: [
