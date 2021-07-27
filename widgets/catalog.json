@@ -32,7 +32,7 @@
 		{
 			"code": "table-light-blue",
 			"name": "Table Light",
-			"icon": "_lib/icons/test.png",
+			"icon": "table-light-blue/table.png",
 			"description": "Responsive table up to 5 elements"
 		},
 		{

@@ -250,7 +250,17 @@ iframe {
     }
 }
 </style>
-
+<script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+    <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -329,9 +339,9 @@ success: function(data) {
 
  
   
- var title1= temp1.fields.m1_id.name;
- var title2= temp1.fields.m2_id.name;
- var title3= temp1.fields.m3_id.name;
+ var title1= data.fields.m1_id.name;
+ var title2= data.fields.m2_id.name;
+ var title3= data.fields.m3_id.name;
  console.log(title1) 
  console.log(title2) 
  console.log(title3) 
