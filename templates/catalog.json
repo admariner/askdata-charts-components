@@ -1,0 +1,55 @@
+{
+   "templates":[
+      {
+         "code":"nps",
+         "name":"NPS",
+         "description":"This is NPS card with one line",
+         "target":{
+            "workspace":"sales_demo",
+            "card":"my_slug_insight"
+         },
+         "style":{
+            "color":"red"
+         },
+         "categories":[
+            "sales"
+         ],
+         "processes":[
+            "monitor_sales"
+         ],
+         "objectives":[
+            "sell_more"
+         ]
+      }
+   ],
+   "categories":[
+      {
+         "code":"reccomented",
+         "name":"Reccomented"
+      },
+      {
+         "code":"sales",
+         "name":"Sales"
+      },
+      {
+         "code":"support",
+         "name":"Support"
+      },
+      {
+         "code":"product_and_cx",
+         "name":"Product & CX"
+      }
+   ],
+   "processes":[
+      {
+         "code":"monitor_sales",
+         "name":"Monitor Sales"
+      }
+   ],
+   "objectives":[
+      {
+         "code":"sell_more",
+         "name":"Sell more"
+      }
+   ]
+}
