@@ -250,6 +250,7 @@ iframe {
     }
 }
 </style>
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -257,6 +258,9 @@ iframe {
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
         <script src="/lib/scripts/utils.js"></script>
         <script src="/lib/scripts/env.js"></script>
+        <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script>
         <script src="/lib/scripts/jquery.min.js"></script>
         <link href="/lib/styles/css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
@@ -301,10 +305,7 @@ iframe {
                 </div>
                 </div>
                 </div>
-                
-                <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'></script>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
-                <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script>
+
         </div>
     </body>
 
@@ -331,6 +332,9 @@ success: function(data) {
  var title1= temp1.fields.m1_id.name;
  var title2= temp1.fields.m2_id.name;
  var title3= temp1.fields.m3_id.name;
+ console.log(title1) 
+ console.log(title2) 
+ console.log(title3) 
 $.each(data, function(i, item) {
     var $tr = $('<tr>').append(
         $('<td>').text(item.rank),
