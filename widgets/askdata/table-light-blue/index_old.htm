@@ -283,39 +283,67 @@ iframe {
 <body translate="no" >
   <div class="container-table100">
 <div class="wrap-table100">
-<div class="table">
+<div class="table" id="main_table">
 <div class="row header">
-<div class="cell">
-Full Name
-</div>
-<div class="cell">
-Age
-</div>
-<div class="cell">
-Job Title
-</div>
-<div class="cell">
-Location
-</div>
+
+    <div class="cell" id="tit1">
+    </div>
+    <div class="cell" id="tit2">
+    </div>
+    <div class="cell" id="tit3">
+    </div>
+
 </div>
 <div class="row">
-<div class="cell" data-title="Full Name">
+<div class="cell" >
 Vincent Williamson
 </div>
-<div class="cell" data-title="Age">
+<div class="cell" >
 31
 </div>
-<div class="cell" data-title="Job Title">
+<div class="cell" >
 iOS Developer
 </div>
-<div class="cell" data-title="Location">
-Washington
 </div>
 </div>
 </div>
 </div>
-</div>
+<script>
+    document.getElementById("tit1").innerHTML =  "aa";
+    document.getElementById("tit2").innerHTML =  "bb";
+    document.getElementById("tit3").innerHTML = "cc";
+    data1 = [1, 2, 3, 5]
+    data2 = [4, 5 , 6, 6]
+    data3 = [7, 8 , 9, 7]
 
+    for (let i = 0; i < data1.length; i++) {
+        var div = document.createElement("div");
+        document.getElementById("main_table").appendChild(div);
+        div.setAttribute('class', 'row'); 
+        div.setAttribute('id', 'row' + (i));
+        console.log("row" + i) 
+        
+        for (let s = 0; s < 3; s++) {
+            var div = document.createElement("div");
+            div.setAttribute('class', 'cell');
+            div.setAttribute('id', 'a' + i + s);
+            document.getElementById('row'+ i).appendChild(div);
+            if (s==0) {
+                document.getElementById("a"+ i + s).innerHTML = data1[i];
+                console.log("row" + i + s + " "+ data1[i]) 
+            } 
+            if (s==1) {
+                document.getElementById("a"+ i + s).innerHTML = data2[i];
+                console.log("row" + i + s+ " "+ data2[i]) 
+            } 
+            if (s==2) {
+                document.getElementById("a"+ i + s).innerHTML = data3[i];
+                console.log("row" + i + s + " "+ data3[i]) 
+            } 
+        }
+    }
+    
+   </script>
 <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script>

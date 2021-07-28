@@ -96,7 +96,7 @@ iframe {
 .container-table100 {
     width: 100%;
     min-height: 100vh;
-    background: #c4d3f6;
+    background: #E9F2FF;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -332,17 +332,34 @@ success: function(data) {
  document.getElementById("tit1").innerHTML =  data.fields.m1_id.name;
  document.getElementById("tit2").innerHTML =  data.fields.m2_id.name;
  document.getElementById("tit3").innerHTML = data.fields.m3_id.name;
- console.log(title1) 
- console.log(title2) 
- console.log(title3) 
-$.each(data, function(i, item) {
-    var $tr = $('<tr>').append(
-        $('<td>').text(item.rank),
-        $('<td>').text(item.content),
-        $('<td>').text(item.UID)
-    ); //.appendTo('#records_table');
-    console.log($tr.wrap('<p>').html());
-});
+ data1 = data.fields.m1_id.data;
+ data2 = data.fields.m1_id.data;
+ data3 = data.fields.m1_id.data;
+
+ 
+ for (let i = 0; i < data1.length; i++) {
+        var div = document.createElement("div");
+        document.getElementById("main_table").appendChild(div);
+        div.setAttribute('class', 'row'); 
+        div.setAttribute('id', 'row' + (i));
+        console.log("row" + i) 
+        
+        for (let s = 0; s < 3; s++) {
+            var div = document.createElement("div");
+            div.setAttribute('class', 'cell');
+            div.setAttribute('id', 'a' + i + s);
+            document.getElementById('row'+ i).appendChild(div);
+            if (s==0) {
+                document.getElementById("a"+ i + s).innerHTML = data1[i];
+            } 
+            if (s==1) {
+                document.getElementById("a"+ i + s).innerHTML = data2[i];
+            } 
+            if (s==2) {
+                document.getElementById("a"+ i + s).innerHTML = data3[i];
+            } 
+        }
+    }
 
 
 
