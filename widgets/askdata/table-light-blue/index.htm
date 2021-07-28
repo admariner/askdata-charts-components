@@ -284,14 +284,11 @@ iframe {
                 <div class="wrap-table100">
                 <div class="table">
                 <div class="row header">
-                <div class="cell">
-                title1
+                <div class="cell" id="tit1">
                 </div>
-                <div class="cell">
-                title2
+                <div class="cell" id="tit2">
                 </div>
-                <div class="cell">
-                title3
+                <div class="cell" id="tit3">
                 </div>
                 </div>
 
@@ -331,11 +328,10 @@ beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getT
 success: function(data) { 
  console.log(data)     
 
- 
-  
- var title1= data.fields.m1_id.name;
- var title2= data.fields.m2_id.name;
- var title3= data.fields.m3_id.name;
+
+ document.getElementById("tit1").innerHTML =  data.fields.m1_id.name;
+ document.getElementById("tit2").innerHTML =  data.fields.m2_id.name;
+ document.getElementById("tit3").innerHTML = data.fields.m3_id.name;
  console.log(title1) 
  console.log(title2) 
  console.log(title3) 
