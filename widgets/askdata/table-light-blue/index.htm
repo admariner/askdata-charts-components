@@ -282,7 +282,7 @@ iframe {
         <div id="container" style="height: 100%">
             <div class="container-table100"style="height: 100%">
                 <div class="wrap-table100">
-                <div class="table">
+                <div class="table" id="main_table">
                 <div class="row header">
                 <div class="cell" id="tit1">
                 </div>
@@ -336,7 +336,7 @@ success: function(data) {
  data2 = data.fields.m1_id.data;
  data3 = data.fields.m1_id.data;
 
- 
+
  for (let i = 0; i < data1.length; i++) {
         var div = document.createElement("div");
         document.getElementById("main_table").appendChild(div);
