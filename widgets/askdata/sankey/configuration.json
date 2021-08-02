@@ -29,19 +29,36 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Measure",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": true,
-        "tooltip": "Choose the measure"
-    }, {
-        "code": "settings.m2_id",
         "label": "Dimension",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the dimension"
+        "tooltip": "Players list"
+    }, {
+        "code": "settings.m2_id",
+        "label": "Sources",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the sources"
+    },
+    {
+        "code": "settings.m3_id",
+        "label": "Targets",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the targets"
+    }, {
+        "code": "settings.m4_id",
+        "label": "Scores",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the scores"
     }]
 }

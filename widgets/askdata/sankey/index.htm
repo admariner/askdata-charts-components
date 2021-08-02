@@ -1,95 +1,187 @@
 <!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=sankey-simple
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=funnel
 -->
 <!DOCTYPE html>
 <html style="height: 100%">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
     </head>
+
+
     <body style="height: 100%; margin: 0">
         <div id="container" style="height: 100%"></div>
+    </body>
 
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-        <!-- Uncomment this line if you want to dataTool extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to use gl extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to echarts-stat extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to use map
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
-        -->
-        <!-- Uncomment these two lines if you want to use bmap extension
-        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
-        -->
-
+    
         <script type="text/javascript">
-var dom = document.getElementById("container");
+
+
+environment_widget = "https://api-dev.askdata.com";
+//environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+ console.log(data)        
+ var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
-
 var option;
 
+// From
+
+// var nomi =  ["Donnarumma","Romagnoli","Kjaer","Florenzi","Kolarov","Bennacer","De Rossi","Tonali","Diaz","Ibra","Under"]
+// var sources= ["Donnarumma", "Donnarumma", "Donnarumma", "Donnarumma", "Florenzi", "Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Bennacer","De Rossi","Tonali"]
+// var targets = ["Florenzi","Kolarov","Kjaer","Romagnoli","Bennacer","Bennacer", "Bennacer","Bennacer","Tonali","Tonali","Tonali","Tonali","De Rossi","De Rossi","De Rossi","De Rossi","Diaz","Ibra",  "Under"]
+// var scores = [ 0.342284047256003,0.42322870366987,0.177682517071359,0.0433076373512774,0.137241325342711,0.137241325342711,0.137241325342711, 0.137241325342711, 0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,  0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,0.237241325342711,0.237241325342711,0.237241325342711]
+
+var nomi =  data.fields.m1_id.data
+var sources= data.fields.m2_id.data
+var targets = data.fields.m3_id.data
+var scores = data.fields.m4_id.data
+
+var dict_nomi = []
+for (let i = 0; i < nomi.length; i++) {
+    var newrow = {name: nomi[i]};   
+    dict_nomi.push(newrow);
+}
+
+var dict_passaggi = []
+for (let i = 0; i < sources.length; i++) {
+    var newrow = {source: sources[i], target: targets[i], value: scores[i]};   
+    dict_passaggi.push(newrow);
+}
 
 
-option = {
-    series: {
-        type: 'sankey',
-        layout: 'none',
-        emphasis: {
-            focus: 'adjacency'
+// data= {"nodes": [
+//       {"name": "Donnarumma"},
+//       {"name": "Romagnoli"},
+//       {"name": "Kjaer"},
+//       {"name": "Florenzi"},
+// 	  {"name": "Kolarov"},
+// 	  {"name": "Bennacer"},
+// 	  {"name": "De Rossi"},
+// 	  {"name": "Tonali"},
+// 	  {"name": "Diaz"},
+// 	  {"name": "Ibra"},
+// 	  {"name": "Under"}
+
+//    ],
+//    "links": [
+//       {"source": "Donnarumma", "target": "Florenzi", "value": 0.342284047256003},
+//       {"source": "Donnarumma", "target": "Kolarov", "value": 0.42322870366987},
+//       {"source": "Donnarumma", "target": "Kjaer", "value": 0.177682517071359},
+//       {"source": "Donnarumma", "target": "Romagnoli", "value": 0.0433076373512774},
+//       {"source": "Florenzi", "target": "Bennacer", "value": 0.137241325342711},
+//       {"source": "Kolarov", "target": "Bennacer", "value": 0.137241325342711},
+//       {"source": "Romagnoli", "target": "Bennacer", "value": 0.137241325342711},
+//       {"source": "Kjaer", "target": "Bennacer", "value": 0.137241325342711},
+//       {"source": "Florenzi", "target": "Tonali", "value": 0.137241325342711},
+//       {"source": "Kolarov", "target": "Tonali", "value": 0.137241325342711},
+//       {"source": "Romagnoli", "target": "Tonali", "value": 0.137241325342711},
+//       {"source": "Kjaer", "target": "Tonali", "value": 0.137241325342711},
+//       {"source": "Florenzi", "target": "De Rossi", "value": 0.137241325342711},
+//       {"source": "Kolarov", "target": "De Rossi", "value": 0.137241325342711},
+//       {"source": "Romagnoli", "target": "De Rossi", "value": 0.137241325342711},
+//       {"source": "Kjaer", "target": "De Rossi", "value": 0.137241325342711},
+//       {"source": "Bennacer", "target": "Diaz", "value": 0.237241325342711},
+//       {"source": "De Rossi", "target": "Ibra", "value": 0.237241325342711},
+//       {"source": "Tonali", "target": "Under", "value": 0.237241325342711}]}
+
+    option = {
+        title: {
+            text: 'Sankey Diagram'
         },
-        data: [{
-            name: '5€ < Offerta < 6€'
-        }, {
-            name: 'Offerta < 5€'
-        }, {
-            name: 'Kena per te 100'
-        }, {
-            name: 'Kena per te 30'
-        }, {
-            name: 'Kena per te'
-        }, {
-            name: 'Kena per te 70'
-        }],
-        links: [{
-            source: '5€ < Offerta < 6€',
-            target: 'Kena per te 100',
-            value: 5
-        }, {
-            source: '5€ < Offerta < 6€',
-            target: 'Kena per te 30',
-            value: 3
-        }, {
-            source: 'Offerta < 5€',
-            target: 'Kena per te',
-            value: 8
-        }, {
-            source: '5€ < Offerta < 6€',
-            target: 'Kena per te',
-            value: 3
-        }, {
-            source: 'Kena per te',
-            target: 'Kena per te 100',
-            value: 1
-        }, {
-            source: 'Kena per te',
-            target: 'Kena per te 70',
-            value: 2
-        }]
-    }
-};
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove'
+        },
+        series: [
+            {
+                type: 'sankey',
+                data: dict_nomi,
+                links: dict_passaggi,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        fontSize: 15,
+                        fontFamily: 'Roboto'
+                      }
+                  },
+                emphasis: {
+                    focus: 'adjacency'
+                },
+                levels: [{
+                    depth: 0,
+                    itemStyle: {
+                        color: '#fbb4ae'
+                    },
+                    lineStyle: {
+                        color: 'source',
+                        opacity: 0.8
+                    }
+                }, {
+                    depth: 1,
+                    itemStyle: {
+                        color: '#b3cde3'
+                    },
+                    lineStyle: {
+                        color: 'source',
+                        opacity: 0.8
+                    }
+                }, {
+                    depth: 2,
+                    itemStyle: {
+                        color: '#ccebc5'
+                    },
+                    lineStyle: {
+                        color: 'source',
+                        opacity: 0.8
+                    }
+                }, {
+                    depth: 3,
+                    itemStyle: {
+                        color: '#decbe4'
+                    },
+                    lineStyle: {
+                        color: 'source',
+                        opacity: 0.8
+                    }
+                }],
+                lineStyle: {
+                    curveness: 0.5
+                }
+            }
+        ]
+    };
+
 
 if (option && typeof option === 'object') {
     myChart.setOption(option);
 }
 
+
+// To
+
+    }
+  });
         </script>
-    </body>
+
 </html>
-    
