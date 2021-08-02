@@ -51,6 +51,6 @@
         "viewType": "text",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the measure"
+        "tooltip": "Threshold"
     }]
 }
