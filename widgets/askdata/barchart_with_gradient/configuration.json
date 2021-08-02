@@ -47,7 +47,7 @@
     {
         "code": "settings.m2_id",
         "label": "Measure",
-        "type": "measure",
+        "type": "params",
         "viewType": "text",
         "readOnly": false,
         "mandatory": true,
