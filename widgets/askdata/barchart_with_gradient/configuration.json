@@ -47,8 +47,8 @@
     {
         "code": "settings.m2_id",
         "label": "Threshold",
-        "type": "params",
-        "viewType": "dropdown",
+        "type": "string",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the  threshold"
