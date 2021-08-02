@@ -47,8 +47,8 @@
     {
         "code": "settings.m2_id",
         "label": "Measure",
-        "type": "params",
-        "viewType": "dropdown",
+        "type": "measure",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the measure"
