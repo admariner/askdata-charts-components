@@ -46,6 +46,7 @@ var app = {};
 var option;
 
 
+var val = data.fields.m2_id.data
 
 option = {
     dataset: {
@@ -75,27 +76,17 @@ option = {
     visualMap: {
         orient: 'horizontal',
         left: 'center',
-        min: -100,
-        max: 100,
+        min: val -150,
+        max: val + 150,
                 inRange: {
             color: ['#65B581', '#FD665F']
         },
         text: ['COR 1 Alto', 'COR 1 Basso'],
         // Map the score column to color
-        dimension: 1,
-        piecewise:{
-            pieces: [
-            {min: -1000, max: -100,inRange: {
-                color: ['blue', 'green'],
-                symbolSize: [30, 100]
-            }},        
-            {min: -100, max: 0, color: 'green'},        
-            {min: 0, max: 199, color: 'blue'}
-    
-            ]
-        }
+        dimension: 1
     },
     series: [
+        
         {
             type: 'bar',
             label: {
@@ -106,6 +97,27 @@ option = {
                 fontFamily: 'Roboto'
               }
           },
+            markLine: {
+               data: [ 
+                   { name: 'Valore Totale Italia', 
+                   xAxis: val, 
+                   label: {
+                        fontSize: 13,
+                        fontFamily: 'Roboto',
+                       formatter: function(d) {
+                            return d.name + ' ' + val;
+                          },
+                  position:"insideEndTop"}}],
+               silent: true,
+               show: true,
+               symbol: "none",
+               lineStyle: {
+                    normal: {
+                        type: "solid",
+                        color: "black"
+                            }
+                        }
+            },
             encode: {
                 // Map the "amount" column to X axis.
                 x: 'count',
