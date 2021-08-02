@@ -46,8 +46,8 @@
     },
     {
         "code": "settings.m2_id",
-        "label": "threshold",
-        "type": "string",
+        "label": "Threshold",
+        "type": "params",
         "viewType": "text",
         "readOnly": false,
         "mandatory": true,
