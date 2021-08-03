@@ -46,11 +46,11 @@
     },
     {
         "code": "settings.m2_id",
-        "label": "Measure",
+        "label": "Threshold",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Threshold"
+        "tooltip": "Choose the Threshold"
     }]
 }
