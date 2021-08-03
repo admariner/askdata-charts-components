@@ -20,6 +20,26 @@
          "objectives":[
             "help_more"
          ]
+      },{
+         "code":"dev_test",
+         "name":"Dev Test",
+         "description":"Analyze your current product and see which features are used",
+         "target":{
+            "workspace":"atlassian_demo",
+            "card":"copy_of_test"
+         },
+         "style":{
+            "color":"green"
+         },
+         "categories":[
+            "support"
+         ],
+         "processes":[
+            "monitor_sales"
+         ],
+         "objectives":[
+            "help_more"
+         ]
       },
       {
          "code":"nps",
