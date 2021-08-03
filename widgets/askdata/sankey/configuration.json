@@ -29,14 +29,6 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Dimension",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": true,
-        "tooltip": "Players list"
-    }, {
-        "code": "settings.m2_id",
         "label": "Sources",
         "type": "params",
         "viewType": "dropdown",
@@ -45,7 +37,7 @@
         "tooltip": "Choose the sources"
     },
     {
-        "code": "settings.m3_id",
+        "code": "settings.m2_id",
         "label": "Targets",
         "type": "params",
         "viewType": "dropdown",
@@ -53,7 +45,7 @@
         "mandatory": true,
         "tooltip": "Choose the targets"
     }, {
-        "code": "settings.m4_id",
+        "code": "settings.m3_id",
         "label": "Scores",
         "type": "params",
         "viewType": "dropdown",

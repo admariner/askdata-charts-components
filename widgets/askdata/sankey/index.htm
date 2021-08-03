@@ -51,10 +51,13 @@ var option;
 // var targets = ["Florenzi","Kolarov","Kjaer","Romagnoli","Bennacer","Bennacer", "Bennacer","Bennacer","Tonali","Tonali","Tonali","Tonali","De Rossi","De Rossi","De Rossi","De Rossi","Diaz","Ibra",  "Under"]
 // var scores = [ 0.342284047256003,0.42322870366987,0.177682517071359,0.0433076373512774,0.137241325342711,0.137241325342711,0.137241325342711, 0.137241325342711, 0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,  0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,0.237241325342711,0.237241325342711,0.237241325342711]
 
-var nomi =  data.fields.m1_id.data
-var sources= data.fields.m2_id.data
-var targets = data.fields.m3_id.data
-var scores = data.fields.m4_id.data
+// var nomi =  data.fields.m1_id.data
+var sources= data.fields.m1_id.data
+var targets = data.fields.m2_id.data
+var scores = data.fields.m3_id.data
+
+var nomi = [...sources, ...targets];
+nomi = [...new Set(nomi)];
 
 var dict_nomi = []
 for (let i = 0; i < nomi.length; i++) {
