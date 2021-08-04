@@ -26,7 +26,7 @@
         <script type="text/javascript">
 
 
-// environment_widget = "https://api-dev.askdata.com";
+environment_widget = "https://api-dev.askdata.com";
 // environment_widget = "https://api-qa.askdata.com"
 // environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
@@ -45,94 +45,6 @@ var myChart = echarts.init(dom);
 var app = {};
 
 var option;
-
-
-// var val = data.fields.m2_id.data
-// var val = parseFloat(data.fields.m2_id.data)
-
-// option = {
-//     dataset: {
-//         source: {
-//         'product': data.fields.s1_id.data,
-//         'count': data.fields.m1_id.data
-//         }
-//     },
-//     grid: {
-//         containLabel: true,    
-//         left: 10,
-//         top: 10,
-//         right: 10,
-//         bottom: 28
-//         },
-//     xAxis: {name: 'COR 1'},
-//     yAxis: {
-//         type: 'category',
-//         inverse:true,
-//         axisLabel:{
-//             interval: 0,
-//             fontSize: 11,
-//             fontFamily: 'Roboto'
-//         }
-        
-//     },
-//     visualMap: {
-//         orient: 'horizontal',
-//         left: 'center',
-//         min: val - 50,
-//         max: val + 50,
-//                 inRange: {
-//             color: ['#65B581', '#FD665F']
-//         },
-//         text: ['COR 1 Alto', 'COR 1 Basso'],
-//         // Map the score column to color
-//         dimension: 1
-//     },
-//     series: [
-        
-//         {
-//             type: 'bar',
-//             label: {
-//             normal: {
-//                 show: true,
-//                 position: 'right',
-//                 fontSize: 11,
-//                 fontFamily: 'Roboto'
-//               }
-//           },
-//             markLine: {
-//                data: [ 
-//                    { name: 'Valore Totale Italia', 
-//                    xAxis: val, 
-//                    label: {
-//                         fontSize: 13,
-//                         fontFamily: 'Roboto',
-//                        formatter: function(d) {
-//                             return d.name + ' ' + data.fields.m2_id.data;
-//                           },
-//                   position:"insideEndTop"}}],
-//                silent: true,
-//                show: true,
-//                symbol: "none",
-//                lineStyle: {
-//                     normal: {
-//                         type: "solid",
-//                         color: "black"
-//                             }
-//                         }
-//             },
-//             encode: {
-//                 // Map the "amount" column to X axis.
-//                 x: 'count',
-//                 // Map the "product" column to Y axis
-//                 y: 'product'
-//             }
-//         }
-//     ]
-// };
-
-
-
-
 
 
 var val = parseFloat(data.fields.m2_id.data)
