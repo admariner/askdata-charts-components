@@ -48,6 +48,93 @@ var option;
 
 
 // var val = data.fields.m2_id.data
+// var val = parseFloat(data.fields.m2_id.data)
+
+// option = {
+//     dataset: {
+//         source: {
+//         'product': data.fields.s1_id.data,
+//         'count': data.fields.m1_id.data
+//         }
+//     },
+//     grid: {
+//         containLabel: true,    
+//         left: 10,
+//         top: 10,
+//         right: 10,
+//         bottom: 28
+//         },
+//     xAxis: {name: 'COR 1'},
+//     yAxis: {
+//         type: 'category',
+//         inverse:true,
+//         axisLabel:{
+//             interval: 0,
+//             fontSize: 11,
+//             fontFamily: 'Roboto'
+//         }
+        
+//     },
+//     visualMap: {
+//         orient: 'horizontal',
+//         left: 'center',
+//         min: val - 50,
+//         max: val + 50,
+//                 inRange: {
+//             color: ['#65B581', '#FD665F']
+//         },
+//         text: ['COR 1 Alto', 'COR 1 Basso'],
+//         // Map the score column to color
+//         dimension: 1
+//     },
+//     series: [
+        
+//         {
+//             type: 'bar',
+//             label: {
+//             normal: {
+//                 show: true,
+//                 position: 'right',
+//                 fontSize: 11,
+//                 fontFamily: 'Roboto'
+//               }
+//           },
+//             markLine: {
+//                data: [ 
+//                    { name: 'Valore Totale Italia', 
+//                    xAxis: val, 
+//                    label: {
+//                         fontSize: 13,
+//                         fontFamily: 'Roboto',
+//                        formatter: function(d) {
+//                             return d.name + ' ' + data.fields.m2_id.data;
+//                           },
+//                   position:"insideEndTop"}}],
+//                silent: true,
+//                show: true,
+//                symbol: "none",
+//                lineStyle: {
+//                     normal: {
+//                         type: "solid",
+//                         color: "black"
+//                             }
+//                         }
+//             },
+//             encode: {
+//                 // Map the "amount" column to X axis.
+//                 x: 'count',
+//                 // Map the "product" column to Y axis
+//                 y: 'product'
+//             }
+//         }
+//     ]
+// };
+
+
+
+
+
+
 var val = parseFloat(data.fields.m2_id.data)
 
 option = {
@@ -78,8 +165,8 @@ option = {
     visualMap: {
         orient: 'horizontal',
         left: 'center',
-        min: val - 50,
-        max: val + 50,
+        min: val - 80,
+        max: val + 80,
                 inRange: {
             color: ['#65B581', '#FD665F']
         },
@@ -94,27 +181,31 @@ option = {
             label: {
             normal: {
                 show: true,
-                position: 'right',
-                fontSize: 11,
+                color: "#fff",
+                position: 'inside',
+                fontSize: 14,
                 fontFamily: 'Roboto'
               }
           },
             markLine: {
                data: [ 
-                   { name: 'Valore Totale Italia', 
+                   { name: 'Valore Totale Italia: ', 
                    xAxis: val, 
                    label: {
+                        normal: {
+                        offset: [65, -40],
+                        show: true,
                         fontSize: 13,
                         fontFamily: 'Roboto',
-                       formatter: function(d) {
-                            return d.name + ' ' + data.fields.m2_id.data;
-                          },
-                  position:"insideEndTop"}}],
+                        formatter: function(d) {
+                                    return d.name + data.fields.m2_id.data;
+                                  }
+                             }}}],
                silent: true,
                show: true,
                symbol: "none",
                lineStyle: {
-                    normal: {
+                   normal: {
                         type: "solid",
                         color: "black"
                             }
@@ -129,6 +220,18 @@ option = {
         }
     ]
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if (option && typeof option === 'object') {
