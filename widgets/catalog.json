@@ -73,7 +73,7 @@
 			"code": "radar-chart-normalized",
 			"name": "Radar Chart Normalized",
 			"icon": "radar-chart-normalized/radar.PNG",
-			"description": "Classical radar chart with axs normalized."
+			"description": "Classical radar chart with axis normalized."
 		},
 		{
 			"code": "sankey",
