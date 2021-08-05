@@ -20,7 +20,7 @@
 		{
 			"code": "rose-chart-blue",
 			"name": "Rose Chart Blue",
-			"icon": "_lib/icons/test.png",
+			"icon": "rose-chart-blue/rose.jpg",
 			"description": "Rose Chart Blue"
 		},
 		{
@@ -62,17 +62,17 @@
 		{
 			"code": "soccer-goal-front",
 			"name": "Soccer Target Chart (front)",
-			"icon": "soccer-goal-front/goalpng",
+			"icon": "soccer-goal-front/goal.png",
 			"description": "Soccer Front"
 		},{
 			"code": "soccer-field-top",
 			"name": "Soccer Field Chart (top)",
-			"icon": "soccer-field-top/field.png",
+			"icon": "soccer-field-top/field.PNG",
 			"description": "Soccer field"
 		},{
 			"code": "radar-chart-normalized",
 			"name": "Radar Chart Normalized",
-			"icon": "_lib/icons/test.png",
+			"icon": "radar-chart-normalized/radar.PNG",
 			"description": "Soccer field"
 		},
 		{
