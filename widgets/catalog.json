@@ -49,9 +49,9 @@
 		},
 		{
 			"code": "vertical-bar-with-trendline",
-			"name": "Chart Vertical Bar with Trandline",
-			"icon": "_lib/icons/test.png",
-			"description": "Chart Vertical Bar with Trandline"
+			"name": "Chart Vertical Bar with Trendline",
+			"icon": "vertical-bar-with-trendline/bartrend.png",
+			"description": "Chart Vertical Bar with Trendline"
 		},
 		{
 			"code": "bar-chart-with-icons",
