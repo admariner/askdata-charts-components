@@ -40,7 +40,27 @@
          "objectives":[
             "help_more"
          ]
-      },
+      },{
+         "code":"dev_fra",
+         "name":"Check Francesco (workspace 20210326_trend_datacard)",
+         "description":"Template for Francesco's tests",
+         "target":{
+            "workspace":"20210326_trend_datacard",
+            "card":"sum_nuovi_positivi_denominazione_regione_8"
+         },
+         "style":{
+            "color":"green"
+         },
+         "categories":[
+            "support"
+         ],
+         "processes":[
+            "monitor_sales"
+         ],
+         "objectives":[
+            "help_more"
+         ]
+      },,
       {
          "code":"nps",
          "name":"NPS",
