@@ -48,6 +48,7 @@ var option;
 
 
 var val = parseFloat(data.fields.m2_id.data)
+var bool = data.fields.s2_id.data
 
 option = {
     dataset: {
@@ -96,12 +97,23 @@ option = {
                 color: "#fff",
                 position: 'inside',
                 fontSize: 14,
-                fontFamily: 'Roboto'
+                fontFamily: 'Roboto',
+                formatter: function(d) 
+                {
+                    if (bool==true) 
+                    {
+                        return d.value[1] +" %";
+                    }
+                    else
+                    {
+                        return d.value[1] ;
+                     } 
+                }
               }
           },
             markLine: {
                data: [ 
-                   { name: 'Valore Totale Italia: ', 
+                   { name: 'Valore Totale Italia: \n', 
                    xAxis: val, 
                    label: {
                         normal: {
@@ -110,8 +122,8 @@ option = {
                         fontSize: 13,
                         fontFamily: 'Roboto',
                         formatter: function(d) {
-                                    return d.name + data.fields.m2_id.data;
-                                  }
+                            return data.fields.m2_id.data;
+                          }
                              }}}],
                silent: true,
                show: true,
@@ -132,11 +144,6 @@ option = {
         }
     ]
 };
-
-
-
-
-
 
 
 

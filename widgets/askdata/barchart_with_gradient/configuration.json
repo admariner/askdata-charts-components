@@ -52,5 +52,13 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the Threshold"
+    },{
+        "code": "settings.s2_id",
+        "label": "Percentage?",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "true if the measure is a percentage, false if not"
     }]
 }
