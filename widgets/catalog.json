@@ -2,7 +2,7 @@
 	"widget": [{
 			"code": "card-with-3-measures",
 			"name": "Card with 3 measures",
-			"icon": "_lib/icons/test.png",
+			"icon": "card-with-3-measures/card3.PNG",
 			"description": "Card with 3 KPIs"
 		},
 		{
@@ -14,7 +14,7 @@
 		{
 			"code": "leatherboard-red",
 			"name": "LeatherBoard Red",
-			"icon": "_lib/icons/test.png",
+			"icon": "leatherboard-red/leath.PNG",
 			"description": "Leatherboard with Red Background"
 		},
 		{
@@ -26,7 +26,7 @@
 		{
 			"code": "pair-comparisons",
 			"name": "Pair Comparisons",
-			"icon": "_lib/icons/test.png",
+			"icon": "pair-comparisons/com.PNG",
 			"description": "Re-arrange entities split by an attribute sorted by one dimension"
 		},
 		{
@@ -44,7 +44,7 @@
 		{
 			"code": "chart-trend-cumulative-run",
 			"name": "Trend Comulative Run",
-			"icon": "_lib/icons/test.png",
+			"icon": "chart-trend-cumulative-run/trend_cum.png",
 			"description": "Trend Cumulative Value"
 		},
 		{
@@ -56,18 +56,18 @@
 		{
 			"code": "bar-chart-with-icons",
 			"name": "Bar Chart with custom icons",
-			"icon": "_lib/icons/test.png",
+			"icon": "bar-chart-with-icons/baricons.png",
 			"description": "Horizontal Bar Chart with custom icons"
 		},
 		{
 			"code": "soccer-goal-front",
 			"name": "Soccer Target Chart (front)",
-			"icon": "_lib/icons/test.png",
+			"icon": "soccer-goal-front/goalpng",
 			"description": "Soccer Front"
 		},{
 			"code": "soccer-field-top",
 			"name": "Soccer Field Chart (top)",
-			"icon": "_lib/icons/test.png",
+			"icon": "soccer-field-top/field.png",
 			"description": "Soccer field"
 		},{
 			"code": "radar-chart-normalized",
@@ -84,13 +84,13 @@
 		{
 			"code": "stats_6_kpi",
 			"name": "Chart with 6 KPIs",
-			"icon": "_lib/icons/test.png",
+			"icon": "stats_6_kpi/kpiyel.PNG",
 			"description": "Chart with 6 KPIs"
 		},
 		{
 		     "code": "card-blue-with-6-kpi",
 		     "name": "Card blue with 6 KPIs",
-		     "icon": "_lib/icons/test.png",
+		     "icon": "card-blue-with-6-kpi/kpiblu.PNG",
 		     "description": "Card in blue color with 6 KPIs"
 		},
 		{
