@@ -100,13 +100,13 @@ option = {
                 fontFamily: 'Roboto',
                 formatter: function(d) 
                 {
-                    if (bool == true) 
+                    if (bool == "true") 
                     {
-                        return d.value[1] +" %";
+                        return (d.value[1]<0?"":"+") + " " + d.value[1] +" %";
                     }
                     else
                     {
-                        return d.value[1] ;
+                        return (d.value[1]<0?"":"+") + " " + d.value[1];
                      } 
                 }
               }
@@ -144,12 +144,6 @@ option = {
         }
     ]
 };
-
-
-
-
-
-
 
 
 
