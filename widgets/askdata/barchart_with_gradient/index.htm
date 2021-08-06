@@ -49,12 +49,18 @@ var option;
 
 var val = parseFloat(data.fields.m2_id.data)
 var bool = data.fields.s2_id.data
+var lista_val =[]
+for(var i = 0; i < data.fields.m1_id.data.length; i++)
+  {
+    lista_val[i] = data.fields.m1_id[i].replace('%', '');
+  }
+
 
 option = {
     dataset: {
         source: {
         'product': data.fields.s1_id.data,
-        'count': data.fields.m1_id.data
+        'count': lista_val
         }
     },
     grid: {
