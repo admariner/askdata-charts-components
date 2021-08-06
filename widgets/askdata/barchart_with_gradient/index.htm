@@ -52,7 +52,7 @@ var bool = data.fields.s2_id.data
 var lista_val =[]
 for(var i = 0; i < data.fields.m1_id.data.length; i++)
   {
-    lista_val[i] = data.fields.m1_id[i].replace('%', '');
+    lista_val[i] = data.fields.m1_id[i].toString().replace('%', '');
   }
 
 
@@ -105,16 +105,6 @@ option = {
                 fontSize: 12,
                 fontFamily: 'Roboto',
                 formatter: function(d) 
-                // {
-                //     if (bool == "true") 
-                //     {
-                //         return (d.value[1]<0?"":"+") + " " + d.value[1] +" %";
-                //     }
-                //     else
-                //     {
-                //         return (d.value[1]<0?"":"+") + " " + d.value[1];
-                //      } 
-                // }
                 {
                     if (bool == "true") 
                     {
