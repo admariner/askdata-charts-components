@@ -29,27 +29,27 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Measure1",
+        "label": "Quantity 1",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the first measure"
+        "tooltip": "Choose the first quantity"
     }, {
         "code": "settings.m2_id",
-        "label": "Measure2",
+        "label": "Quantity 2",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the second measure"
+        "mandatory": true,
+        "tooltip": "Choose the second quantity"
     }, {
         "code": "settings.m3_id",
-        "label": "Measure3",
+        "label": "Quantity 3",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the third measure"
+        "mandatory": true,
+        "tooltip": "Choose the third quantity"
     }]
 }
