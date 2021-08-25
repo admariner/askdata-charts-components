@@ -3,19 +3,13 @@
 			"code": "card-with-3-measures",
 			"name": "Card with 3 measures",
 			"icon": "card-with-3-measures/card3.PNG",
-			"description": "Card with 3 KPIs, white backgorund."
-		},
-		{
-			"code": "card-with-2-circles",
-			"name": "Card with 2 KPIs",
-			"icon": "_lib/icons/test.png",
-			"description": "Card with 2 KPIs"
+			"description": "Card with 3 KPIs, white backgorund. Useful to compare 3 different quantities or a single quantity variation over time."
 		},
 		{
 			"code": "leatherboard-red",
 			"name": "LeatherBoard Red",
 			"icon": "leatherboard-red/leath.PNG",
-			"description": "Leatherboard with Red Background"
+			"description": "Leaderboard with Red Background. This widget supports a leaderboard with maximum 5 elements. You can provide a quantity, a measure and a custom title. Please be aware that the quantitties should already be sorted accordingly."
 		},
 		{
 			"code": "rose-chart-blue",
