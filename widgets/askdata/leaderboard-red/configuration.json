@@ -45,13 +45,14 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the measure"
-    },{
+    },
+    {
         "code": "settings.s2_id",
         "label": "Title",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the Title"
     }]
 }
