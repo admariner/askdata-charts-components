@@ -27,27 +27,31 @@
         "readOnly": false,
         "viewType": "dropdown",
         "mandatory": true
-    }, {
-        "code": "main_chart",
-        "label": "Main Chart",
-        "type": "button",
-        "viewType": "button",
+    },
+    {
+        "code": "settings.s1_id",
+        "label": "Dimension",
+        "type": "params",
+        "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "settings": {
-            "label": "Chart config",
-            "role": "CHART_CONFIG"
-        }
-    }, {
-        "code": "bottom_left_chart",
-        "label": "Bottom left Chart",
-        "type": "button",
-        "viewType": "button",
+        "mandatory": true,
+        "tooltip": "Choose the Dimension"
+    },
+    {
+        "code": "settings.m1_id",
+        "label": "Measure 1",
+        "type": "params",
+        "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "settings": {
-            "label": "Chart config",
-            "role": "CHART_CONFIG"
-        }
+        "mandatory": true,
+        "tooltip": "Choose the measure"
+    },{
+        "code": "settings.s2_id",
+        "label": "Title",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the Title"
     }]
 }
