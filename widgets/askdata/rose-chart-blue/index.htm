@@ -39,47 +39,58 @@ async: false,
 beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
  ).setRequestHeader('Content-Type','application/json')},
 success: function(data) { 
- console.log(data)      
- 
-
-var values = data.fields.m1_id.data
-var names = data.fields.s1_id.data
-
-var obj = [];
-for (let i = 0; i < values.length; i++)
-{
-   obj.push({value: values[i], name: names[i]}); 
-}
-console.log(obj)
-option = {
-    legend: {
-        top: 'bottom'
-    },
-    toolbox: {
-        show: true,
-        feature: {
-            mark: {show: true},
-            dataView: {show: false, readOnly: false},
-            restore: {show: false},
-            saveAsImage: {show: false}
-        }
-    },
-    series: [
-        {
-            name: 'Rose chart',
-            type: 'pie',
-            radius: [50, 250],
-            center: ['50%', '50%'],
-            roseType: 'radius',
-            itemStyle: {
-                borderRadius: 8
-            },
-            data: obj,
+            console.log(data)      
             
-        }
-    ]
-};
 
+            var dom = document.getElementById("container");
+            var myChart = echarts.init(dom);
+            var app = {};
+
+            var option;
+
+
+
+            var values = data.fields.m1_id.data
+            var names = data.fields.s1_id.data
+
+            var obj = [];
+            for (let i = 0; i < values.length; i++)
+            {
+            obj.push({value: values[i], name: names[i]}); 
+            }
+            console.log(obj)
+            option = {
+                legend: {
+                    top: 'bottom'
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {show: true},
+                        dataView: {show: false, readOnly: false},
+                        restore: {show: false},
+                        saveAsImage: {show: false}
+                    }
+                },
+                series: [
+                    {
+                        name: 'Rose chart',
+                        type: 'pie',
+                        radius: [50, 250],
+                        center: ['50%', '50%'],
+                        roseType: 'radius',
+                        itemStyle: {
+                            borderRadius: 8
+                        },
+                        data: obj,
+                        
+                    }
+                ]
+            };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
     }
   });
         </script>
