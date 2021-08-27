@@ -1,181 +1,87 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=funnel
+-->
 <!DOCTYPE html>
 <html style="height: 100%">
     <head>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-
-        <!-- Beginning Include Header -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-<script src="/lib/scripts/utils.js"></script>
-<script src="/lib/scripts/env.js"></script>
-<script src="/lib/scripts/jquery.min.js"></script>
-<link href="/lib/styles/css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
-<script src="https://unpkg.com/mustache@latest"></script>
-
-<!-- End Include Header -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
     </head>
+
+
     <body style="height: 100%; margin: 0">
         <div id="container" style="height: 100%"></div>
     </body>
 
+    
+        <script type="text/javascript">
 
-    <script>
 
-    //environment_widget = "https://api-dev.askdata.com";
+environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
-// Request charting data
+
 $.ajax({
 
-       url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
-       type: "GET",
-       async: false,
-       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
-        ).setRequestHeader('Content-Type','application/json')},
-       success: function(data) { 
-        console.log(data.fields)
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+ console.log(data)      
+ 
 
-           // finding the field from data input
-        measures_list =[]
-        keys_data = $.map(data.fields, function(v, i){
-                            if (v.type != 'query') {
-                                measures_list.push(v)
-                                return i; 
-                            }
-                        }
-                    );
-        function arrayRemove(arr, value) { 
-    
-                return arr.filter(function(ele){ 
-                        return ele != value; 
-                });
-        }
-        
+var values = data.fields.m1_id.data
+var names = data.fields.s1_id.data
 
-        // filling array with measures
-        keys_data_ar = []
-        keys_data.forEach(function(value){
-
-                keys_data_ar.push({value : parseInt(data.fields[value].data[0])})
-
-        });
-        console.log(keys_data_ar)
-
-        var value_1 = [];
-        keys_data_ar.forEach(function(item) {
-                    value_1.push(item['value'])
-                });
-
-
-        // filling array with name of measures
-        keys_name_ar = []
-        keys_data.forEach(function(name){
-
-                keys_name_ar.push({name : data.fields[name].name})
-
-        });
-
-        console.log(keys_name_ar)
-
-        
-        // creating array for indicator
-        var indicator_ar_2= value_1.map(e => ({value: e}))
-        
-        var indicator_ar = keys_name_ar.map((o, i) => ({value: indicator_ar_2[i].value,name: o.name}))
-
-        var data_to_plot = indicator_ar.sort(function (a, b) { return a.value - b.value;})
-
-        console.log(indicator_ar.sort(function (a, b) { return a.value - b.value; }))
-
-var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
-var app = {};
-
-var option;
-
+var obj = [];
+for (let i = 0; i < values.length; i++)
+{
+   obj.push({value: values[i], name: names[i]}); 
+}
+console.log(obj)
 option = {
-    backgroundColor: '#E9F2FF',
-
-    title: {
-        text: '',
-        show: false,
-        left: 'center',
-        top: 10,
-        textStyle: {
-            color: '#FFFFFF'
-        }
+    legend: {
+        top: 'bottom'
     },
-
-    tooltip: {
-        trigger: 'item'
-    },
-
-    visualMap: {
-        show: false,
-        min: 0,
-        max: 100000,
-        inRange: {
-            colorLightness: [0, 1]
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {show: true},
+            dataView: {show: false, readOnly: false},
+            restore: {show: false},
+            saveAsImage: {show: false}
         }
     },
     series: [
         {
-            name: 'Features',
+            name: 'Rose chart',
             type: 'pie',
-            radius: '70%',
+            radius: [50, 250],
             center: ['50%', '50%'],
-            data: data_to_plot,
             roseType: 'radius',
-            label: {
-                show: true,
-                formatter : function (params){
-                              return  params.name  + ' (' + params.value + ')'
-                        },
-                color: 'rgba(0, 0, 0, 1)',
-                fontSize: 15
-            },
-            labelLine: {
-                lineStyle: {
-                    color: 'rgba(0, 0, 0, 0.3)'
-                },
-                smooth: 0.2,
-                length: 30,
-                length2: 20
-            },
             itemStyle: {
-                color: '#266ff2',
-                shadowBlur: 10,
-                shadowColor: 'rgba(0, 0, 0, 0.2)'
+                borderRadius: 8
             },
-
-            animationType: 'scale',
-            animationEasing: 'elasticOut',
-            animationDelay: function (idx) {
-                return Math.random() * 200;
-            }
+            data: obj,
+            
         }
     ]
 };
 
-if (option && typeof option === 'object') {
-    myChart.setOption(option);
-}
-
-  }
-  });
-
-/*
-// Redirect to login if not authenticated 
-$(document).ajaxError(function( event, jqxhr, settings, exception ) {
-    if ( jqxhr.status== 401 ) {
-      location.replace(environment_auth+"/login");
-
     }
-});
-*/
+  });
+        </script>
 
-  </script>
 </html>
-    
