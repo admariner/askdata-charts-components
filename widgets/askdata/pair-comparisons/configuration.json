@@ -85,7 +85,7 @@
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the color of Dimension 1"
     },
     {
@@ -94,7 +94,7 @@
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the color of Dimension 2"
     }]
 }

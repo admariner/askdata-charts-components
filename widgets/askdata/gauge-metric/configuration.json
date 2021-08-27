@@ -29,19 +29,19 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Measure",
+        "label": "Value",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the first measure"
+        "tooltip": "Choose the value"
     }, {
         "code": "settings.s1_id",
-        "label": "Measure2",
+        "label": "Color",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "Choose the second measure"
+        "tooltip": "Choose the graph's color"
     }]
 }
