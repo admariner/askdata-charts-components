@@ -65,7 +65,7 @@
         "code": "settings.s3_id",
         "label": "Dimension 3",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the name of the dimension 1 (Displayed on the left of the VisualMap)"
@@ -74,7 +74,7 @@
         "code": "settings.s4_id",
         "label": "Dimension 4",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the name of the dimension 2 (Displayed on the right of the VisualMap)"
@@ -83,7 +83,7 @@
         "code": "settings.s5_id",
         "label": "Dimension 5",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the color of Dimension 1"
@@ -92,7 +92,7 @@
         "code": "settings.s6_id",
         "label": "Dimension 6",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the color of Dimension 2"
