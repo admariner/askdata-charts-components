@@ -286,8 +286,8 @@ beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getT
 success: function(data) 
 	{ 
 		 console.log(data)     
-
-	
+    // START
+    // Your echart graph
 		var players= data.fields.s1_id.data
 		var scores = data.fields.m1_id.data
 		var title = data.fields.s2_id.data
@@ -317,9 +317,8 @@ success: function(data)
 			sco.innerHTML = scores[i];
 		}
 
-
-
-console.log("row") 
+    // END
+    // Your echart graph
 
     }
   });

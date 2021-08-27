@@ -21,7 +21,7 @@
 			"code": "pair-comparisons",
 			"name": "Pair Comparisons",
 			"icon": "pair-comparisons/com.PNG",
-			"description": "Re-arrange entities split by an attribute sorted by one dimension"
+			"description": "This widget allows to compare in an efficient way two different quantities (for example the difference in players performances that belong to two different teams). Colors can be customized."
 		},
 		{
 			"code": "table-light-blue",
