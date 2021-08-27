@@ -15,7 +15,7 @@
 			"code": "rose-chart-blue",
 			"name": "Rose Chart Blue",
 			"icon": "rose-chart-blue/rose.PNG",
-			"description": "This Rose Diagram constructor creates circular charts to display data that contain direction and magnitude variables. A rose diagram normally comprises of 8 or 16 radiating spokes, which represent degrees of a circle or compass points North, East, South, West and their intermediate directions."
+			"description": "This Rose Diagram constructor creates circular charts to display data that contain direction and magnitude variables. A rose diagram normally comprises of 8 or 16 radiating spokes, which could , for example, represent degrees of a circle or compass points North, East, South, West and their intermediate directions."
 		},
 		{
 			"code": "pair-comparisons",
