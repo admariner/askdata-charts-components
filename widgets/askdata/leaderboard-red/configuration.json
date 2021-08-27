@@ -52,7 +52,7 @@
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": false,
+        "mandatory": true,
         "tooltip": "Choose the Title"
     }]
 }
