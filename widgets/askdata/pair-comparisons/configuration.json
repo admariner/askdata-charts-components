@@ -81,7 +81,7 @@
     },
     {
         "code": "settings.s5_id",
-        "label": "Dimension 5",
+        "label": "Color 1",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
@@ -90,7 +90,7 @@
     },
     {
         "code": "settings.s6_id",
-        "label": "Dimension 6",
+        "label": "Color 2",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
