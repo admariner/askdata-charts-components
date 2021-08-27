@@ -30,8 +30,10 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+    /* width: 285px;
+    height: 308px; */
     width: 285px;
-    height: 308px;
+    height: 208px;
     background: -webkit-linear-gradient(top, #3a404d, #181c26);
     background: linear-gradient(to bottom, #3a404d, #181c26);
     border-radius: 10px;
@@ -302,7 +304,7 @@ success: function(data)
 		//   console.log("Yes")
 		// }
 
-		for (let i = 0; i < players.length; i++)
+		for (let i = 0; i < 5; i++)
 		{
 			var li = document.createElement("li");
 			document.getElementById("cont").appendChild(li);

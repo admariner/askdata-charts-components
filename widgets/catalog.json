@@ -12,28 +12,28 @@
 			"description": "Leaderboard with Red Background. This widget supports a leaderboard with maximum 5 elements. You can provide a quantity, a measure and a custom title. Please be aware that the quantities should already be sorted accordingly."
 		},
 		{
-			"code": "rose-chart-blue",
-			"name": "Rose Chart Blue",
-			"icon": "rose-chart-blue/rose.PNG",
+			"code": "rose-chart",
+			"name": "Rose Chart",
+			"icon": "rose-chart/rose.PNG",
 			"description": "This Rose Diagram constructor creates circular charts to display data that contain direction and magnitude variables. A rose diagram normally comprises of 8 or 16 radiating spokes, which could , for example, represent degrees of a circle or compass points North, East, South, West and their intermediate directions."
 		},
 		{
 			"code": "pair-comparisons",
 			"name": "Pair Comparisons",
 			"icon": "pair-comparisons/com.PNG",
-			"description": "This widget allows to compare in an efficient way two different quantities (for example the difference in players performances that belong to two different teams). Colors can be customized."
+			"description": "This widget allows to compare in an efficient way two different quantities (for example the difference in players performances that belong to two different teams). Colors can be customized. Please remove any duplicate between the two dimensions otherwise they will be collapsed."
 		},
 		{
 			"code": "table-light-blue",
 			"name": "Table Light",
 			"icon": "table-light-blue/table.png",
-			"description": "Responsive table without a fixed number of rows but with restricted to 3 columns."
+			"description": "Responsive table without a fixed number of rows but with restricted to 3 columns(mandatory). Blue is the default color."
 		},
 		{
 			"code": "gauge-metric",
 			"name": "Gauge Metric",
 			"icon": "gauge-metric/icon.png",
-			"description": "Also known as a speedometer chart or a dial chart, a gauge chart is one of the most commonly used visual tools to represent progressive values."
+			"description": "Also known as a speedometer chart or a dial chart, a gauge chart is one of the most commonly used visual tools to represent progressive values. Colors can be customized, blue is the default."
 		},
 		{
 			"code": "chart-trend-cumulative-run",

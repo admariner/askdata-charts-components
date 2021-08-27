@@ -1,46 +1,79 @@
-<!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=gauge-speed
--->
 <!DOCTYPE html>
 <html style="height: 100%">
-    <head>
+<!-- Start Custom  Style -->
+
+<!-- End Custom style -->
+<head>
         <meta charset="utf-8">
-    </head>
-    <body style="height: 100%; margin: 0">
-        <div id="container" style="height: 100%"></div>
-
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/supah/pen/WwrJpw?limit=all&page=86&q=box" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-        <!-- Uncomment this line if you want to dataTool extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to use gl extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to echarts-stat extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to use map
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
-        -->
-        <!-- Uncomment these two lines if you want to use bmap extension
-        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
-        -->
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
+    </head>
 
-        <script type="text/javascript">
-var dom = document.getElementById("container");
+</head>
+<!-- Start body -->
+  
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+</body>
+
+<!-- End body -->
+    
+<!-- Start Ajax -->
+<script type="text/javascript">
+
+
+//environment_widget = "https://api-dev.askdata.com";
+//environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) 
+	{ 
+		 console.log(data)     
+    // START
+    // Your echart graph
+    var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
 
 var option;
 
 
+var valu = data.fields.m1_id.data
+try {
+    var color = data.fields.s1_id.data
+} catch (error) {
+  console.error(error);
+  // expected output: ReferenceError: nonExistentFunction is not defined
+  // Note - error messages will vary depending on browser
+  var color = "#5470c6"
+}
+
 
 option = {
     series: [{
         type: 'gauge',
-animation: false ,
         progress: {
             show: true,
             width: 18
@@ -60,15 +93,18 @@ animation: false ,
                 color: '#999'
             }
         },
+        color: color,
         axisLabel: {
             distance: 25,
             color: '#999',
-            fontSize: 20
+            fontSize: 20,
+            fontFamily: 'Roboto'
         },
         anchor: {
             show: true,
             showAbove: true,
             size: 25,
+            fontFamily: 'Roboto',
             itemStyle: {
                 borderWidth: 10
             }
@@ -79,11 +115,11 @@ animation: false ,
         detail: {
             valueAnimation: false,
             fontSize: 80,
+            fontFamily: 'Roboto',
             offsetCenter: [0, '70%']
         },
         data: [{
-            value: 70,
-            itemStyle: { color: '#266FF2'}
+            value: valu
         }]
     }]
 };
@@ -92,7 +128,13 @@ if (option && typeof option === 'object') {
     myChart.setOption(option);
 }
 
-        </script>
-    </body>
+    // END
+    // Your echart graph
+
+    }
+  });
+</script>
+
+<!-- End Ajax -->
+
 </html>
-    

@@ -60,6 +60,16 @@ success: function(data)
         var option;
 
 
+        try{
+        var col1 = data.fields.s5_id.data
+        var col2 = data.fields.s6_id.data
+        } catch (error) {
+        console.error(error);
+        // expected output: ReferenceError: nonExistentFunction is not defined
+        // Note - error messages will vary depending on browser
+        var col1 = "#DE3163"
+        var col2 = "#6495ED"
+        }
 
 
         var team1 = data.fields.s3_id.data
