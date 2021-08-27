@@ -37,7 +37,7 @@
 <script type="text/javascript">
 
 
-environment_widget = "https://api-dev.askdata.com";
+//environment_widget = "https://api-dev.askdata.com";
 //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
 
@@ -85,7 +85,7 @@ success: function(data)
             dataset: {
                 source: obj
             },
-            grid: {containLabel: true, top:5,bottom:28,left:10,right:10},
+            grid: {containLabel: true, top:5,bottom:28,left:5,right:15},
             xAxis: {name: 'GOALS'},
             yAxis: {type: 'category', inverse: true},
             visualMap: {
@@ -97,7 +97,7 @@ success: function(data)
                 // Map the score column to color
                 dimension: 'score',
                 inRange: {
-                    color: [col1, col2]
+                    color: [col2, col1]
                 }
             },
             series: [
