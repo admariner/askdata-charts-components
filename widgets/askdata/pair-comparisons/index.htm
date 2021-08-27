@@ -93,11 +93,11 @@ success: function(data)
                 left: 'center',
                 min: 0,
                 max: 1,
-                text: [team1, team2],
+                text: [team2, team1],
                 // Map the score column to color
                 dimension: 'score',
                 inRange: {
-                    color: [col2, col1]
+                    color: [col1, col2]
                 }
             },
             series: [
@@ -107,6 +107,9 @@ success: function(data)
                     normal: {
                         show: true,
                         position: 'right'
+                    },
+                    emphasis: {
+                        scale: true
                     }
                 },
                     encode: {
