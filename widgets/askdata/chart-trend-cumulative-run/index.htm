@@ -52,6 +52,17 @@ var app = {};
 var option;
 
 
+try{
+        var col1 = data.fields.s3_id.data
+        var col2 = data.fields.s4_id.data
+        } 
+catch (error) {
+        console.error(error);
+        // expected output: ReferenceError: nonExistentFunction is not defined
+        // Note - error messages will vary depending on browser
+        var col1 = "#02a1db"
+        var col2 = "#011EA0"
+        }
 
  
  var label1 = data.fields.s1_id.data
@@ -83,12 +94,12 @@ $.each(names, function(i, el){
                     showSymbol: false,
                     smooth: false,
                         lineStyle: {
-                        color: '#02a1db',
-                        width: 4
+                        color: col1,
+                        width: 2.5
                     },
                     itemStyle: {
-                        borderWidth: 4,
-                        color: '#02a1db'
+                        borderWidth: 2.5,
+                        color: col1
                     }
                 },{
                     name: label2,
@@ -97,12 +108,12 @@ $.each(names, function(i, el){
                     showSymbol: false,
                     smooth: false,
                         lineStyle: {
-                        color: '#011EA0',
-                        width: 4
+                        color: col2,
+                        width: 2.5
                     },
                     itemStyle: {
-                        borderWidth: 4,
-                        color: '#011EA0'
+                        borderWidth: 2.5,
+                        color: col2
                     }
                 }]
             };
