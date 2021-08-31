@@ -39,7 +39,7 @@
 			"code": "chart-trend-cumulative-run",
 			"name": "Trend Comulative Run",
 			"icon": "chart-trend-cumulative-run/trend_cum.png",
-			"description": "Trend Cumulative Value"
+			"description": "This widget allows to compare different quantities over time by drawing two different lines, one for each measure. One possibile usage is for the comparison of stock prices over a fixed period of time."
 		},
 		{
 			"code": "vertical-bar-with-trendline",

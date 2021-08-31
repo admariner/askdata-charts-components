@@ -29,28 +29,28 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Main Dimension",
+        "label": "First Sequence",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the main dimension"
+        "tooltip": "Choose the first sequence"
     }, {
         "code": "settings.m2_id",
-        "label": "Sequence Dimension",
+        "label": "Second Sequence",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the sequence dimension. Eg: match day, hour of the day"
+        "mandatory": true,
+        "tooltip": "Choose the second sequence"
     }, {
         "code": "settings.m3_id",
-        "label": "Measure",
+        "label": "Dimension",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "Choose the measure to analyze"
+        "tooltip": "Choose the x-axis dimensions"
     }, {
         "code": "settings.s1_id",
         "label": "First Label",
