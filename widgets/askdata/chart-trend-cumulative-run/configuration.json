@@ -51,5 +51,21 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the measure to analyze"
+    }, {
+        "code": "settings.s1_id",
+        "label": "First Label",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the main dimension"
+    }, {
+        "code": "settings.se_id",
+        "label": "Second Label",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the main dimension"
     }]
 }

@@ -28,7 +28,7 @@
  <script>
 
 
-//environment_widget = "https://api-dev.askdata.com";
+environment_widget = "https://api-dev.askdata.com";
 //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
 // Request charting data
@@ -42,96 +42,42 @@ $.ajax({
        success: function(data) { 
 
             console.log(data)
-            var result1 = data.fields.m2_id.data.map(function (x) { 
-            return parseInt(x, 10); 
-            });
- 
-            var datasets = data.fields.m1_id.data.map(function(v,i) {
-                    return {'dimension':v, 'sequence':result1[i],'measure':data.fields.m3_id.data[i]};
-                });  
-          
+
           
 
             var dom = document.getElementById("container");
-            var myChart = echarts.init(dom);
-            var app = {};
+var myChart = echarts.init(dom);
+var app = {};
 
-            var option;
+var option;
 
-            // Load from the main dimension the series
-    
-            
 
-     
-            
 
-            /* sorting by match_day */
-  
-            datasets.sort((a, b) => (a.sequence > b.sequence) ? 1 : -1)
-
-           
-            var labelAxes = [];
-            var namesAxes = [];
-            //iterate through sequence and dimension
-            datasets.forEach(function(item) {
-                  //get the value of name
-                  var val = item.dimension
-                  var val2 = item.sequence
-                  labelAxes.push(val)
-                  namesAxes.push(val2);
-            });
-            
-            //Array.from(new Set(namesAxes));
-            $.unique(labelAxes);
-            var labelAxesUnique = Array.from(new Set(labelAxes));
-            var namesAxesUnique = Array.from(new Set(namesAxes));
  
-           
-           
-                
-            var y1 = [];
-            var y2 = [];
-            datasets.forEach(function(item) {
-                    if (item.dimension == labelAxesUnique[0]){
-                        y1.push(item.measure)
-                    }
-            });
-
-            datasets.forEach(function(item) {
-                    if (item.dimension == labelAxesUnique[1]){
-                        y2.push(item.measure)
-                    }
-
-                
-
-     
-                  });
-            y1 = y1.filter(function( element ) {
-                           return element !== undefined;
-                        });
-            y2 = y2.filter(function( element ) {
-                           return element !== undefined;
-                        });
-
-            console.log(y1);
-            console.log(datasets);
-
-            //prints ["1", "2", "3"]
-
-            option = { 
+ var label1 = data.fields.s1_id.data
+ var label2 = data.fields.s2_id.data
+ var data1 = data.fields.m1_id.data
+ var data2 = data.fields.m2_id.data
+ var names = data.fields.m3_id.data
+ 
+ var dimension = [];
+$.each(names, function(i, el){
+    if($.inArray(el, dimension) === -1) dimension.push(el);
+});
+ option = { 
                 legend: {
-                    data: labelAxesUnique, 
+                    data: 0, 
                 },
                 xAxis: {
                     type: 'category',
-                    data: namesAxesUnique,
+                    data: dimension,
                 },
                 yAxis: {
                     type: 'value'
                 },
                 series: [{
-                    name: labelAxesUnique[0],
-                    data: y1,
+                    name: label1,
+                    data: data1,
                     type: 'line',
                     showSymbol: false,
                     smooth: false,
@@ -144,8 +90,8 @@ $.ajax({
                         color: '#02a1db'
                     }
                 },{
-                    name: labelAxesUnique[1],
-                    data: y2,
+                    name: label2,
+                    data: data2,
                     type: 'line',
                     showSymbol: false,
                     smooth: false,
@@ -160,10 +106,13 @@ $.ajax({
                 }]
             };
 
-            if (option && typeof option === 'object') {
-                myChart.setOption(option);
-            }
-        
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+
+
+
         }
   });
 
