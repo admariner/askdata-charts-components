@@ -60,7 +60,7 @@
         "mandatory": true,
         "tooltip": "Choose the main dimension"
     }, {
-        "code": "settings.se_id",
+        "code": "settings.s2_id",
         "label": "Second Label",
         "type": "params",
         "viewType": "text",
