@@ -24,7 +24,7 @@
         <script type="text/javascript">
 
 
-environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-dev.askdata.com";
 // environment_widget = "https://api-qa.askdata.com"
 // environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
@@ -58,7 +58,7 @@ for ( var j = 0; j < ser1.length; j++){
 try{
         var col1 = data.fields.s2_id.data
         var col2 = data.fields.s3_id.data
-        var col2 = data.fields.s4_id.data
+        var col3 = data.fields.s4_id.data
         } 
 catch (error) {
         console.error(error);
@@ -108,7 +108,7 @@ option = {
             color: col1
         },
         {
-            name: data.fields.m1_id.name,
+            name: data.fields.m2_id.name,
             type: 'bar',
             data: ser2,
             color: col2
