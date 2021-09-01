@@ -24,7 +24,7 @@
         <script type="text/javascript">
 
 
-environment_widget = "https://api-dev.askdata.com";
+//environment_widget = "https://api-dev.askdata.com";
 // environment_widget = "https://api-qa.askdata.com"
 // environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
@@ -65,19 +65,19 @@ catch (error) {
     'fourth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png',
     'fifth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png'
 };
-        }
+}
 
 
 
 
-var data= data.fields.m1_id.data
+var misura= data.fields.m1_id.data
 try{
     var col1 = data.fields.s6_id.data
     } 
 catch (error) {
-        console.error(error);
-        var col1 = "#243882"
-        }
+    console.error(error);
+    var col1 = "#243882"
+    }
 
 option = {
    
@@ -111,35 +111,35 @@ option = {
                     align: 'center'
                 },
                 first: {
-                    height: 35,
+                    height: 30,
                     align: 'center',
                     backgroundColor: {
                         image: weatherIcons.first
                     }
                 },
                 second: {
-                    height: 35,
+                    height: 30,
                     align: 'center',
                     backgroundColor: {
                         image: weatherIcons.second
                     }
                 },
                 third: {
-                    height: 35,
+                    height: 30,
                     align: 'center',
                     backgroundColor: {
                         image: weatherIcons.third
                     }
                 },
                 fourth: {
-                    height: 35,
+                    height: 30,
                     align: 'center',
                     backgroundColor: {
                         image: weatherIcons.fourth
                     }
                 },
                 fifth: {
-                    height: 35,
+                    height: 30,
                     align: 'center',
                     backgroundColor: {
                         image: weatherIcons.fifth
@@ -152,7 +152,7 @@ option = {
         {
             name: 'Lead',
             type: 'bar',
-            data: data,
+            data: misura,
             label : {fontFamily: 'Roboto', show: true,fontSize: '15',},
             color: col1
         
