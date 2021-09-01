@@ -52,7 +52,7 @@ var ser2 = data.fields.m2_id.data
 var averages = []
 
 for ( var j = 0; j < ser1.length; j++){
-    averages.push(round((ser1[j]*1 + ser2[j]*1)/2))
+    averages.push(Math.round((ser1[j]*1 + ser2[j]*1)/2))
 }
 
 try{
