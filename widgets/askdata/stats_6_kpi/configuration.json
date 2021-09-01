@@ -75,5 +75,29 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the KPI"
+    }, {
+        "code": "settings.s1_id",
+        "label": "Box's Color",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the color of the box"
+    }, {
+        "code": "settings.s2_id",
+        "label": "Main String's Color",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the color of the measure"
+    }, {
+        "code": "settings.s1_id",
+        "label": "Substring's Color",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the color of the string under the main measure"
     }]
 }
