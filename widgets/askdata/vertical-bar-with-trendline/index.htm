@@ -52,7 +52,7 @@ var ser2 = data.fields.m2_id.data
 var averages = []
 
 for ( var j = 0; j < ser1.length; j++){
-    averages.push((ser1[j]+ser2[j])/2)
+    averages.push(round((ser1[j]*1 + ser2[j]*1)/2))
 }
 
 try{
@@ -102,18 +102,18 @@ option = {
     },
     series: [
         {
-            name: names[0],
+            name: data.fields.m1_id.name,
             type: 'bar',
             data: ser1,
             color: col1
         },
         {
-            name: names[1],
+            name: data.fields.m1_id.name,
             type: 'bar',
             data: ser2,
             color: col2
         },{
-            name: names[2],
+            name: "Average",
             type: 'line',
             data: averages,
             label : {fontFamily: 'Roboto',
