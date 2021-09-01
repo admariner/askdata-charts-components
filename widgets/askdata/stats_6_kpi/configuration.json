@@ -92,7 +92,7 @@
         "mandatory": false,
         "tooltip": "Choose the color of the measure"
     }, {
-        "code": "settings.s1_id",
+        "code": "settings.s3_id",
         "label": "Substring's Color",
         "type": "params",
         "viewType": "text",
