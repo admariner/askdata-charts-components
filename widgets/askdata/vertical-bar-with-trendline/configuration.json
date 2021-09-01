@@ -28,28 +28,52 @@
         "viewType": "dropdown",
         "mandatory": true
     }, {
-        "code": "settings.d1_id",
+        "code": "settings.m1_id",
+        "label": "First measure",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the first measure"
+    }, {
+        "code": "settings.m2_id",
+        "label": "Second measure",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the second measure"
+    }, {
+        "code": "settings.s1_id",
         "label": "Dimension",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the dimension"
-    }, {
-        "code": "settings.s1_id",
-        "label": "Sequence",
+        "tooltip": "Choose the dimension (x-axis)"
+    },{
+        "code": "settings.s2_id",
+        "label": "First measure's color",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
-        "tooltip": "Choose the intervall"
+        "mandatory": false,
+        "tooltip": "Choose the first color"
     }, {
-        "code": "settings.m1_id",
-        "label": "Measure",
+        "code": "settings.s3_id",
+        "label": "Second measure's color",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
-        "tooltip": "Choose the measure"
+        "mandatory": false,
+        "tooltip": "Choose the second color"
+    }, {
+        "code": "settings.s4_id",
+        "label": "Third measure's color",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the third color"
     }]
 }

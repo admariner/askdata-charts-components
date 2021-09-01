@@ -45,7 +45,7 @@
 			"code": "vertical-bar-with-trendline",
 			"name": "Chart Vertical Bar with Trendline",
 			"icon": "vertical-bar-with-trendline/bartrend.png",
-			"description": "Chart Vertical Bar with Trendline"
+			"description": "This widget has two vertical barplots that can highlight the differences within two measures. It also provides a line that connects all the averages within the same interval. Colors of bars and line can be customized."
 		},
 		{
 			"code": "bar-chart-with-icons",

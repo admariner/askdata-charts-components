@@ -1,120 +1,88 @@
-<!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=bar-y-category
--->
+
 <!DOCTYPE html>
 <html style="height: 100%">
     <head>
-    <meta charset="utf-8">
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
+    </head>
 
-<!-- Beginning Include Libraries -->
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-<script src="/lib/scripts/utils.js"></script>
-<script src="/lib/scripts/env.js"></script>
-<script src="/lib/scripts/jquery.min.js"></script>
-<link href="/lib/styles/css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
-<script src="https://unpkg.com/mustache@latest"></script>
-
-<!-- End Include Libraries -->
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-
-</head>
     <body style="height: 100%; margin: 0">
         <div id="container" style="height: 100%"></div>
-     </body>
+    </body>
 
-<script type="text/javascript">
+    
+        <script type="text/javascript">
+
+
+environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
 
 $.ajax({
 
-       url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
-       type: "GET",
-       async: false,
-       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
-        ).setRequestHeader('Content-Type','application/json')},
-       success: function(data) { 
-        var dom = document.getElementById("container");
-        var myChart = echarts.init(dom);
-        var app = {};
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+ console.log(data)        
+ //  From here
+ var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
 
-        var option;
+var option;
 
+
+
+var ser1 = data.fields.m1_id.data
+var ser2 = data.fields.m2_id.data
+var averages = []
+
+for ( var j = 0; j < ser1.length; j++){
+    averages.push((ser1[j]+ser2[j])/2)
+}
+
+try{
+        var col1 = data.fields.s2_id.data
+        var col2 = data.fields.s3_id.data
+        var col2 = data.fields.s4_id.data
+        } 
+catch (error) {
+        console.error(error);
+        // expected output: ReferenceError: nonExistentFunction is not defined
+        // Note - error messages will vary depending on browser
+        var col1 = "#02a1db"
+        var col2 = '#011EA0'
+        var col3 = '#CCCCCC'
+        }
+
+
+
+ var names = data.fields.s1_id.data
  
-        var datasets = data.fields.s1_id.data.map(function(v,i) {
-                    return {'interval':v, 'measure':data.fields.m1_id.data[i],'dimension':data.fields.d1_id.data[i]};
-                }); 
-        
-        
-        
-
-        var labelAxes = [];
-        var namesAxes = [];
-            //iterate through sequence and dimension
-        datasets.forEach(function(item) {
-                  //get the value of name
-                  var val = item.dimension
-                  var val2 = item.interval
-                  
-                  namesAxes.push(val)
-                  labelAxes.push(val2);
-            });
+ var dimension = [];
+$.each(names, function(i, el){
+    if($.inArray(el, dimension) === -1) dimension.push(el);
+});
 
 
-        
-        $.unique(labelAxes);
-        var labelAxesUnique = Array.from(new Set(labelAxes));
-        var namesAxesUnique = Array.from(new Set(namesAxes));
-        console.log(namesAxesUnique)
-        
-
-        var y1 = [];
-        var y2 = [];
-        var y3 = [];
-        datasets.forEach(function(item) {
-                    if (item.dimension == 'Avg Serie A'){
-                        y1.push(item.measure)
-                    }
-                });
-
-        datasets.forEach(function(item) {
-                    if (item.dimension == namesAxesUnique[1]){
-                        y2.push(item.measure)
-                    }
-                });
-        datasets.forEach(function(item) {
-                    if (item.dimension == namesAxesUnique[2]){
-                        y3.push(item.measure)
-                    }
-
-                });
-        y1 = y1.filter(function( element ) {
-                           return element !== undefined;
-                        });
-        y2 = y2.filter(function( element ) {
-                           return element !== undefined;
-                        });
-        y3 = y3.filter(function( element ) {
-                           return element !== undefined;
-                        });
-
-
-        console.log(namesAxesUnique)
-        
 
 option = {
    
-    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'shadow'
-        }
-    },
-    legend: {
-        data: namesAxesUnique
-    },
+    legend:{show: true, textStyle:{fontFamily: 'Roboto'}},
     grid: {
         left: '3%',
         right: '4%',
@@ -123,47 +91,50 @@ option = {
     },
     xAxis: {
         type: 'category',
-        data: labelAxesUnique,
-        axisLabel: { fontSize: '15', rotate: 20}
+        data: dimension,
+        axisLabel: { fontSize: '15', rotate: 0,fontFamily: 'Roboto'}
     },
     yAxis: {
        type: 'value',
-        boundaryGap: [0, 0.01]
+        boundaryGap: [0, 0.01],
+        axisLabel: { fontSize: '15', rotate: 0,fontFamily: 'Roboto'}
         
     },
     series: [
         {
-            name: namesAxesUnique[2],
+            name: names[0],
             type: 'bar',
-            data: y3,
-            color: '#02a1db'
+            data: ser1,
+            color: col1
         },
         {
-            name: namesAxesUnique[1],
+            name: names[1],
             type: 'bar',
-            data: y2,
-            color: '#011EA0'
+            data: ser2,
+            color: col2
         },{
-            name: namesAxesUnique[0],
+            name: names[2],
             type: 'line',
-            data: y1,
-            label : {
-                        show: true},
-            color: '#CCCCCC'
+            data: averages,
+            label : {fontFamily: 'Roboto',
+                    show: true},
+            color: col3
         }
     ]
 
 
 };
 
+
+
 if (option && typeof option === 'object') {
     myChart.setOption(option);
 }
+ 
+ //To here
+ 
+    }
+  });
+        </script>
 
-       
-   
-}
-});
- </script>
 </html>
-    
