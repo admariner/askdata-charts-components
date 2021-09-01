@@ -1,41 +1,45 @@
-  
+
 <!DOCTYPE html>
 <html style="height: 100%">
     <head>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-
-        <!-- Beginning Include Header -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-<script src="/lib/scripts/utils.js"></script>
-<script src="/lib/scripts/env.js"></script>
-<script src="/lib/scripts/jquery.min.js"></script>
-<link href="/lib/styles/css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
-<script src="https://unpkg.com/mustache@latest"></script>
-
-<!-- End Include Header -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
     </head>
+
+
     <body style="height: 100%; margin: 0">
         <div id="container" style="height: 100%"></div>
     </body>
 
+    
+        <script type="text/javascript">
 
-    <script>
 
-// Request charting data
+environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+
 $.ajax({
 
-       url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
-       type: "GET",
-       async: false,
-       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
-        ).setRequestHeader('Content-Type','application/json')},
-       success: function(data) { 
-        console.log(data)
-var dom = document.getElementById("container");
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+ console.log(data)        
+ //  From here
+ var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
 
@@ -43,17 +47,37 @@ var option;
 
 
 
-var weatherIcons = {
-    'alfa': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/stellantis/brand_icons/alfa-romeo.png',
-    'fiat': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/stellantis/brand_icons/fiat.png',
-    'fiatp': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/stellantis/brand_icons/fiat-professional.png',
-    'jeep': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/stellantis/brand_icons/jeep.png',
-    'lancia': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/stellantis/brand_icons/lancia .png'
+try{
+    var weatherIcons = {
+    'first': data.fields.s1_id.data,
+    'second': data.fields.s2_id.data,
+    'third': data.fields.s3_id.data,
+    'fourth': data.fields.s4_id.data,
+    'fifth': data.fields.s5_id.data
 };
+} 
+catch (error) {
+    console.error(error);
+    var weatherIcons = {
+    'first': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png',
+    'second': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png',
+    'third': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png',
+    'fourth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png',
+    'fifth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png'
+};
+        }
 
-var seriesLabel = {
-    show: true
-}
+
+
+
+var data= data.fields.m1_id.data
+try{
+    var col1 = data.fields.s6_id.data
+    } 
+catch (error) {
+        console.error(error);
+        var col1 = "#243882"
+        }
 
 option = {
    
@@ -63,75 +87,62 @@ option = {
             type: 'shadow'
         }
     },
-    grid: {
-        left: 100
-    },
-    toolbox: {
-        show: true,
-        feature: {
-            saveAsImage: {}
-        }
-    },
+    grid: {show: true, top:10, bottom:50},
     xAxis: {
         type: 'value',
         name: 'Leads',
         axisLabel: {
-            formatter: '{value}'
+            formatter: '{value}',fontFamily: 'Roboto',fontSize: '15'
         }
     },
     yAxis: {
         type: 'category',
         inverse: true,
-        data: ["Fiat","Jeep","Fiat_Professional","Alfa_Romeo","Lancia"],
+        data: ["first","second","third","fourth","fifth"],
         axisLabel: {
             formatter: function (value) {
                 return '{' + value + '| }';
             },
+            fontFamily: 'Roboto',
+            fontSize: '15',
             margin: 3,
             rich: {
                 value: {
                     align: 'center'
                 },
-                Alfa_Romeo: {
+                first: {
                     height: 35,
                     align: 'center',
                     backgroundColor: {
-                        image: weatherIcons.alfa
+                        image: weatherIcons.first
                     }
                 },
-                Fiat_Professional: {
+                second: {
                     height: 35,
                     align: 'center',
                     backgroundColor: {
-                        image: weatherIcons.fiatp
+                        image: weatherIcons.second
                     }
                 },
-                Speechiness: {
+                third: {
                     height: 35,
                     align: 'center',
                     backgroundColor: {
-                        image: weatherIcons.fiatp
+                        image: weatherIcons.third
                     }
                 },
-                Lancia: {
+                fourth: {
                     height: 35,
                     align: 'center',
                     backgroundColor: {
-                        image: weatherIcons.lancia
+                        image: weatherIcons.fourth
                     }
                 },
-                Jeep: {
+                fifth: {
                     height: 35,
                     align: 'center',
                     backgroundColor: {
-                        image: weatherIcons.jeep
-                    }
-                },
-                Fiat: {
-                    height: 35,
-                    align: 'center',
-                    backgroundColor: {
-                        image: weatherIcons.fiat
+                        image: weatherIcons.fifth
                     }
                 }
             }
@@ -141,9 +152,9 @@ option = {
         {
             name: 'Lead',
             type: 'bar',
-            data: [773878, 185684,106438, 82172,31076],
-            label: seriesLabel,
-            color: "#243882"
+            data: data,
+            label : {fontFamily: 'Roboto', show: true,fontSize: '15',},
+            color: col1
         
         }
     ]
@@ -152,9 +163,11 @@ option = {
 if (option && typeof option === 'object') {
     myChart.setOption(option);
 }
-}
+ 
+ //To here
+ 
+    }
   });
-
         </script>
+
 </html>
-    
