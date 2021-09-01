@@ -67,14 +67,8 @@
 		{
 			"code": "stats_6_kpi",
 			"name": "Chart with 6 KPIs",
-			"icon": "stats_6_kpi/kpiyel.PNG",
-			"description": "Yellow card with 6 slots dedicated to your stats to show. Could be used to highlight the difference w.r.t. to a fixed time frame."
-		},
-		{
-		     "code": "card-blue-with-6-kpi",
-		     "name": "Card blue with 6 KPIs",
-		     "icon": "card-blue-with-6-kpi/kpiblu.PNG",
-		     "description": "Blue card with 6 slots dedicated to your stats to show. Could be used to highlight the difference w.r.t. to a fixed time frame."
+			"icon": "stats_6_kpi/kpiblue.PNG",
+			"description": "Card with 6 slots dedicated to your stats to show. Could be used to highlight the difference w.r.t. to a fixed time frame. Colors can be fully customized."
 		},
 		{
 			"code": "treemap",
