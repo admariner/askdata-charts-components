@@ -49,31 +49,20 @@
 		},
 		{
 			"code": "bar-chart-with-icons",
-			"name": "Bar Chart with custom icons",
+			"name": "Horizontal Bar Chart with custom icons",
 			"icon": "bar-chart-with-icons/baricons.png",
-			"description": "Horizontal Bar Chart with custom icons, displayed on the y-axis. Bars are colored in blue."
-		},
-		{
-			"code": "soccer-goal-front",
-			"name": "Soccer Target Chart (front)",
-			"icon": "soccer-goal-front/goal.png",
-			"description": "Soccer goal from Front perspective. Typically used to show penalties/goals attempts."
-		},{
-			"code": "soccer-field-top",
-			"name": "Soccer Field Chart (top)",
-			"icon": "soccer-field-top/field.PNG",
-			"description": "Soccer goal from above perspective. Typically used to show key moments or actions happended during the football match."
+			"description": "A Horizontal bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with lengths proportional to the values that they represent. Custom icons (displayed on the y-axis) can be added together with a custom color for the bars."
 		},{
 			"code": "radar-chart-normalized",
 			"name": "Radar Chart Normalized",
 			"icon": "radar-chart-normalized/radar.PNG",
-			"description": "Classical radar chart with axis normalized."
+			"description": "A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables. This widget can compare 7 different (normalized) measures over 3 different measures."
 		},
 		{
 			"code": "sankey",
 			"name": "Sankey",
 			"icon": "sankey/sankey.png",
-			"description": "Sankey diagrams emphasize the major transfers or flows within a system. They help locate the most important contributions to a flow. Number of layers is fixes to 4"
+			"description": "Sankey diagrams emphasize the major transfers or flows within a system. They help locate the most important contributions to a flow. Number of layers is fixed to 4"
 		},
 		{
 			"code": "stats_6_kpi",
