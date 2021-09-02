@@ -3,11 +3,11 @@
 			"code": "card-with-3-measures",
 			"name": "Card with 3 measures",
 			"icon": "card-with-3-measures/card3.PNG",
-			"description": "Card with 3 KPIs, white backgorund. Useful to compare 3 different quantities or a single quantity variation over time."
+			"description": "Card with 3 KPIs, white background. Useful to compare 3 different quantities or a single quantity variation over time. Numbers are displayed in different fixed colors."
 		},
 		{
 			"code": "leaderboard-red",
-			"name": "LeaderBoard Red",
+			"name": "Leaderboard Red",
 			"icon": "leaderboard-red/leath.PNG",
 			"description": "Leaderboard with Red Background. This widget supports a leaderboard with maximum 5 elements. You can provide a quantity, a measure and a custom title. Please be aware that the quantities should already be sorted accordingly."
 		},
@@ -69,12 +69,6 @@
 			"name": "Card with 6 KPIs",
 			"icon": "stats_6_kpi/kpiblue.PNG",
 			"description": "Card with 6 slots dedicated to your stats to show. Could be used to highlight the difference w.r.t. to a fixed time frame. Colors can be fully customized."
-		},
-		{
-			"code": "treemap",
-			"name": "Treemap",
-			"icon": "treemap/treemap_icon.PNG",
-			"description": "A treemap chart provides a hierarchical view of your data and makes it easy to spot patterns, such as which items are a store's best sellers."
 		},
 		{
 			"code": "funnel",

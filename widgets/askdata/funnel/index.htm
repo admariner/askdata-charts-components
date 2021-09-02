@@ -11,6 +11,7 @@
         <script src="/lib/scripts/utils.js"></script>
         <script src="/lib/scripts/env.js"></script>
         <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link href="/lib/styles/css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
         <script src="https://unpkg.com/mustache@latest"></script>
@@ -38,80 +39,80 @@ beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getT
  ).setRequestHeader('Content-Type','application/json')},
 success: function(data) { 
  console.log(data)        
-        var dom = document.getElementById("container");
-        var myChart = echarts.init(dom);
-        var app = {};
+       
+ 
+ var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
 
-        var option;
+var option;
 
 
 
-        option = {
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} :{c}%"
+var values = data.fields.m1_id.data
+var names = data.fields.s1_id.data
+var data1 = []
+for (let i = 0; i < values.length; i++)
+{
+data1.push({'value':values[i], 'name': names[i]}); 
+}
+
+
+option = {
+ legend: {
+        data: names,
+        textStyle:{
+            fontFamily: 'Roboto'
+        }
+    },
+    series: [
+        {
+            name:'Funnel',
+            type:'funnel',
+            left: '10%',
+            top: 40,
+            //x2: 80,
+            bottom: 10,
+            width: '80%',
+            // height: {totalHeight} - y - y2,
+            min: 0,
+            max: 100,
+            minSize: '0%',
+            maxSize: '100%',
+            sort: 'descending',
+            gap: 2,
+            label: {
+                show: false,
+                position: 'inside'
             },
-            toolbox: {
-                feature: {
-                    dataView: {readOnly: true},
-                    restore: {},
-                    saveAsImage: {}
+            labelLine: {
+                length: 10,
+                lineStyle: {
+                    width: 1,
+                    type: 'solid'
                 }
             },
-            legend: {
-                data: data.fields.s1_id.data
+            itemStyle: {
+                borderColor: '#fff',
+                borderWidth: 1
             },
-
-            series: [
-                {
-                    name:'Funnel',
-                    type:'funnel',
-                    left: '10%',
-                    top: 60,
-                    //x2: 80,
-                    bottom: 60,
-                    width: '80%',
-                    // height: {totalHeight} - y - y2,
-                    min: 0,
-                    max: 100,
-                    minSize: '0%',
-                    maxSize: '100%',
-                    sort: 'descending',
-                    gap: 2,
-                    label: {
-                        show: false,
-                        position: 'inside'
-                    },
-                    labelLine: {
-                        length: 10,
-                        lineStyle: {
-                            width: 1,
-                            type: 'solid'
-                        }
-                    },
-                    itemStyle: {
-                        borderColor: '#fff',
-                        borderWidth: 1
-                    },
-                    emphasis: {
-                        label: {
-                            fontSize: 20
-                        }
-                    },
-                    data: [
-                        {value: data.fields.m1_id.data[0], name: data.fields.s1_id.data[0]},
-                        {value: data.fields.m1_id.data[1], name: data.fields.s1_id.data[1]},
-                        {value: data.fields.m1_id.data[2], name: data.fields.s1_id.data[2]},
-                        {value: data.fields.m1_id.data[3], name: data.fields.s1_id.data[3]},
-                        {value: data.fields.m1_id.data[4], name: data.fields.s1_id.data[4]}
-                    ]
+            emphasis: {
+                label: {
+                    fontSize: 20
                 }
-            ]
-        };
+            },
+            data: data1
+        }
+    ]
+};
 
-    if (option && typeof option === 'object') {
-        myChart.setOption(option);
-    }
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+
+
+
     }
   });
         </script>
