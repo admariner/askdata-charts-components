@@ -57,7 +57,10 @@ for (let i = 0; i < values.length; i++)
 data1.push({'value':values[i], 'name': names[i]}); 
 }
 
-
+var max1 = Math.max.apply(Math, values); 
+var min1 = Math.min.apply(Math, values);
+console.log(min1)
+console.log(max1)
 option = {
  legend: {
         data: names,
@@ -75,8 +78,8 @@ option = {
             bottom: 10,
             width: '80%',
             // height: {totalHeight} - y - y2,
-            min: 0,
-            max: 100,
+            min: min1-min1,
+            max: max1,
             minSize: '0%',
             maxSize: '100%',
             sort: 'descending',
