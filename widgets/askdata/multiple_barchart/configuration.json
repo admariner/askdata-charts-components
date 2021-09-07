@@ -43,5 +43,13 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the Dimension"
+    },{
+        "code": "settings.s2_id",
+        "label": "Dimension",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the Dimension"
     }]
 }
