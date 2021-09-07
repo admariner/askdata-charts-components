@@ -57,7 +57,9 @@ try {
 catch (error) {
     var perc =  ""
 }
-
+console.log(perc)
+var perc1 = perc
+console.log(perc1)
 
 option = {
     xAxis: {
@@ -125,7 +127,7 @@ option = {
                 fontSize: 15,
                 avoidLabelOverlap:false,
                 formatter: function(d) {
-                  return dataAxis[d.name] + "  -  " +  d.data + perc;
+                  return dataAxis[d.name] + "  -  " +  d.data + perc1;
                 }
             },
             labelLayout: {
