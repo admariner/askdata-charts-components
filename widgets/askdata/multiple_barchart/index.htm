@@ -48,7 +48,7 @@ var option;
 
 
 var dataAxis = data.fields.s1_id.data;
-var data = data.fields.m1_id.data;
+var datas = data.fields.m1_id.data;
 var yMax = 100;
 
 try {
@@ -57,9 +57,6 @@ try {
 catch (error) {
     var perc =  ""
 }
-console.log(perc)
-var perc1 = perc
-console.log(perc1)
 
 option = {
     xAxis: {
@@ -127,13 +124,13 @@ option = {
                 fontSize: 15,
                 avoidLabelOverlap:false,
                 formatter: function(d) {
-                  return dataAxis[d.name] + "  -  " +  d.data + perc1;
+                  return dataAxis[d.name] + "  -  " +  d.data + perc;
                 }
             },
             labelLayout: {
                 x: 30
             },
-            data: data
+            data: datas
         }
     ]
 };
