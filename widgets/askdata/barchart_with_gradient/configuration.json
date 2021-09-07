@@ -50,7 +50,7 @@
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the Threshold"
     },{
         "code": "settings.s2_id",
@@ -78,11 +78,11 @@
         "tooltip": "Choose the left label"
     },{
         "code": "settings.s5_id",
-        "label": "Line",
+        "label": "Line's label",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "true if the measure is a percentage, false if not"
+        "tooltip": "The text to be displayed next to the line"
     }]
 }

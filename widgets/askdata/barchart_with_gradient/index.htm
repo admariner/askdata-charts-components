@@ -46,13 +46,15 @@ var app = {};
 
 var option;
 
-
+try{
 var val = parseFloat(data.fields.m2_id.data)
+}
+catch(error){
+    var val = ""
+}
 var bool = data.fields.s2_id.data
 
-if(val==0){
-    val=""
-}
+
 
 // text: ['COR 1 Alto', 'COR 1 Basso']
 // name: 'Valore Totale Italia: \n', 
