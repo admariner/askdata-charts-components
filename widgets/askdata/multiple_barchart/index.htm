@@ -51,15 +51,12 @@ var dataAxis = data.fields.s1_id.data;
 var data = data.fields.m1_id.data;
 var yMax = 100;
 var perc =  data.fields.s2_id.data;
-var label_percentage = ""
-if ( label_percentage == true) {
-  //  block of code to be executed if the condition is true
-  label_percentage= "%"
+
+try {
+    var perc =  data.fields.s2_id.data;
 }
-
-
-for (var i = 0; i < data.length; i++) {
-    dataShadow.push(yMax);
+catch (exception_var) {
+    var perc =  ""
 }
 
 
@@ -129,7 +126,7 @@ option = {
                 fontSize: 15,
                 avoidLabelOverlap:false,
                 formatter: function(d) {
-                  return dataAxis[d.name] + "  -  "+  d.data + label_percentage;
+                  return dataAxis[d.name] + "  -  "+  d.data + perc;
                 }
             },
             labelLayout: {
