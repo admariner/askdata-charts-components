@@ -54,7 +54,7 @@ var yMax = 100;
 try {
     var perc =  data.fields.s2_id.data;
 }
-catch (exception_var) {
+catch (error) {
     var perc =  ""
 }
 
@@ -125,7 +125,7 @@ option = {
                 fontSize: 15,
                 avoidLabelOverlap:false,
                 formatter: function(d) {
-                  return dataAxis[d.name] + "  -  "+  d.data + perc;
+                  return dataAxis[d.name] + "  -  " +  d.data + perc;
                 }
             },
             labelLayout: {
