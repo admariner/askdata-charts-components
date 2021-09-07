@@ -26,7 +26,7 @@
         <script type="text/javascript">
 
 
-environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-dev.askdata.com";
 // environment_widget = "https://api-qa.askdata.com"
 // environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
@@ -47,13 +47,12 @@ var app = {};
 var option;
 
 try{
-var val = parseFloat(data.fields.m2_id.data)
+    var val = parseFloat(data.fields.m2_id.data)
 }
 catch(error){
-    var val = ""
+    var val = 0
 }
 var bool = data.fields.s2_id.data
-
 
 
 // text: ['COR 1 Alto', 'COR 1 Basso']
@@ -79,6 +78,11 @@ catch(error){
     var label_line = ""
 }
 
+if (val==0 && label_line == ""){
+    supp = ""
+}else{
+    supp = val
+}
 
 
 var lista_val =[]
@@ -160,7 +164,7 @@ option = {
                         fontSize: 13,
                         fontFamily: 'Roboto',
                         formatter: function(d) {
-                            return d.name + data.fields.m2_id.data;
+                            return d.name + supp;
                           }
                              }}}],
                silent: true,
