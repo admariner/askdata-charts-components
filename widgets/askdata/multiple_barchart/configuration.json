@@ -45,11 +45,11 @@
         "tooltip": "Choose the Dimension"
     },{
         "code": "settings.s2_id",
-        "label": "Dimension",
+        "label": "Label's symbol",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "Choose the Dimension"
+        "tooltip": "Choose the character to be displayed next to the label (i.e. %, &, $)"
     }]
 }
