@@ -62,27 +62,27 @@
         "tooltip": "true if the measure is a percentage, false if not"
     },{
         "code": "settings.s3_id",
-        "label": "Left",
+        "label": "Left label",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
-        "tooltip": "true if the measure is a percentage, false if not"
+        "mandatory": false,
+        "tooltip": "Choose the left label"
     },{
         "code": "settings.s4_id",
-        "label": "Right",
+        "label": "Right label",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
-        "tooltip": "true if the measure is a percentage, false if not"
+        "mandatory": false,
+        "tooltip": "Choose the left label"
     },{
         "code": "settings.s5_id",
         "label": "Line",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "true if the measure is a percentage, false if not"
     }]
 }

@@ -50,6 +50,9 @@ var option;
 var val = parseFloat(data.fields.m2_id.data)
 var bool = data.fields.s2_id.data
 
+if(val==0){
+    val=""
+}
 
 // text: ['COR 1 Alto', 'COR 1 Basso']
 // name: 'Valore Totale Italia: \n', 
@@ -57,14 +60,14 @@ try{
     var left_label = data.fields.s3_id.data
 }
 catch(error){
-    var left_label = "" 
+    var left_label = "Good" 
 }
 
 try{
     var right_label = data.fields.s4_id.data
 }
 catch(error){
-    var right_label = ""
+    var right_label = "Bad"
 }
 
 try{
