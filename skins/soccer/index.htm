@@ -1,0 +1,304 @@
+<!--
+    EXAMPLE DOWNLOADED FROM https://github.com/AskdataHQ/askdata-charts-components/tree/main/skins/askdata/_skin_example/index.htm
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+
+    <!-- BEGINNING OF THE HEADER SNIPPET -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- These imports are required -->
+    <script src="../../lib/scripts/utils.js"></script>
+    <script src="../../lib/scripts/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+    <script src="../../lib/scripts/jquery.min.js"></script>
+
+    <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- Default styling -->
+    <link href="../../lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../lib/styles/style.css">
+
+    <!-- Other JS libraries or CSS import-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: normal;
+            font-weight: normal;
+            src: url('../_lib/fonts/TIMSans-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            src: url('../_lib/fonts/TIMSans-Bold.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        .score-card {
+            width: 1080px;
+            height: 1080px;
+            padding: 20px;
+            background: linear-gradient(160deg, #dbbc52 0%, #ac761e 100%);
+            font-family: TIMSans;
+        }
+
+        .score-card-internal {
+            background: #0a1bb9;
+            color: #fff;
+        }
+
+        .score-card-internal-stripes {
+            background: url('../_lib/images/stripe-background.png');
+            padding: 40px 45px 20px 45px;
+            width: 1040px;
+            height: 1040px;
+        }
+
+        .score-card-body {
+            width: 950px;
+            height: 845px;
+            border: solid 3px #007cff;
+            background: #0034ba;
+            box-shadow: 0px 0px 20px 0px #000;
+        }
+
+        .score-card-head {
+            height: 115px;
+            border-bottom: solid 3px #007cff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .team-image-wrapper {
+            width: 112px;
+            height: 112px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-image-wrapper img {
+            height: 80%;
+        }
+
+        .team-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .score-line {
+            color: #00dcfe;
+        }
+
+        .team-score {
+            background: #001275;
+            height: 100%;
+            width: 170px;
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .items-wrapper {
+            padding: 20px 30px;
+        }
+
+        .item-row {
+            transform: skewX(-20deg);
+            background: #001d8d;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            width: 100%;
+            justify-content: space-between;
+            height: 48px;
+        }
+
+        .item-row-title {
+            font-size: 26px;
+            transform: skewX(20deg);
+            font-weight: bold;
+            width: 320px;
+            height: 48px;
+            text-transform: uppercase;
+            background: #001d8d;
+            position: absolute;
+            top: 0;
+            left: 282px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-number, .away-number {
+            font-size: 36px;
+            background: linear-gradient(to bottom, #001d8d, #0034ba);
+            width: 33%;
+            text-align: center;
+            height: 48px;
+        }
+
+        .home-number-text, .away-number-text {
+            transform: skewX(20deg);
+            font-weight: 900;
+        }
+
+        .home-number {
+            color: #8af3fa;
+        }
+
+        .away-number {
+            color: #90ffea;
+        }
+
+        .home-number.highlight {
+            background: #78eaf6;
+            color: #001286;
+        }
+
+        .away-number.highlight {
+            background: #7dffdc;
+            color: #001286;
+        }
+
+        .footer-images {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 25px;
+            align-items: flex-end;
+        }
+
+        .footer-first-image {
+            width: 68px;
+            height: 109px;
+        }
+
+        .footer-second-image {
+            width: 308px;
+            height: 66px;
+        }
+    </style>
+    <!-- Put your libaries here --->
+
+    <!-- END OF THE HEADER SNIPPET -->
+</head>
+
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%">
+    <div class="score-card">
+        <div class="score-card-internal">
+            <div class="score-card-internal-stripes">
+                <div class="score-card-body">
+                    <div class="score-card-head">
+                        <div class="team-image-wrapper">
+                            <img src="{{homeTeamImageUrl}}" />
+                        </div>
+                        <div class="team-title">
+                            {{homeTeamTitle}}
+                        </div>
+                        <div class="team-score">
+                            {{homeScore}} <span class="score-line">-</span> {{awayScore}}
+                        </div>
+                        <div class="team-title">
+                            {{awayTeamTitle}}
+                        </div>
+                        <div class="team-image-wrapper">
+                            <img src="{{awayTeamImageUrl}}" />
+                        </div>
+                    </div>
+                    <div class="items-wrapper">
+                        <div class="item-row" *ngFor="let title of titleRows; let index = index">
+                            <div class="home-number" [ngClass]="{highlight: isHomeHighlighted(index)}">
+                                <div class="home-number-text">{{homeRows[index]}}</div>
+                            </div>
+                            <div class="item-row-title">{{title}}</div>
+                            <div class="away-number" [ngClass]="{highlight: isAwayHighlighted(index)}">
+                                <div class="away-number-text">
+                                    {{awayRows[index]}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-images" *ngIf="message">
+                    <img class="footer-first-image" src="../_lib/images/tim-second-logo.png" />
+                    <img class="footer-second-image" src="../_lib/images/powered-by-tim.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+    // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+    environment_widget = "https://api-dev.askdata.com";
+    //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+    console.log("I'm going to request data");
+    // Requesting agent data
+    $.ajax({
+        url: `${environment_widget}/smartbot/agents/agentslug/${getUrlParameter('agentSlug')}`,
+        type: "GET",
+        async: false,
+        beforeSend: (xhr) => setAuthHeader(xhr),
+        success: (agentData) => {
+
+            console.log("Requesting data if the WS answers 200");
+
+            // Requesting card data
+            $.ajax({
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                type: "GET",
+                async: false,
+                beforeSend: (xhr) => setAuthHeader(xhr),
+                success: (data) => {
+                    // Select the HTML to render as temple
+                    const template = document.getElementById('container').innerHTML;
+
+                    const cardData = data[1].attachment.body[0];
+                    console.log(data);
+                    const parsedData = {
+                        homeTeamImageUrl: cardData.details['rows'][0][1],
+                        awayTeamImageUrl: cardData.details['rows'][1][1],
+                        homeTeamTitle: cardData.details['rows'][0][0],
+                        awayTeamTitle: cardData.details['rows'][1][0],
+                        homeScore: cardData.details['rows'][0][2],
+                        awayScore: cardData.details['rows'][1][2],
+                    };
+
+                    // replace of the content
+                    document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
+                }
+            });
+        }
+    });
+
+    function setAuthHeader(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + getToken()
+        ).setRequestHeader('Content-Type', 'application/json')
+    }
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
