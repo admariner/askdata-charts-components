@@ -11,22 +11,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <!-- These imports are required -->
-    <script src="../../lib/scripts/utils.js"></script>
-    <script src="../../lib/scripts/env.js"></script>
+    <script src="/lib/scripts/utils.js"></script>
+    <script src="/lib/scripts/env.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
     <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 
     <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
-    <script src="../../lib/scripts/jquery.min.js"></script>
+    <script src="/lib/scripts/jquery.min.js"></script>
 
     <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
     <script src="https://unpkg.com/mustache@latest"></script>
 
     <!-- Default styling -->
-    <link href="../../lib/styles/css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../../lib/styles/style.css">
+    <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
 
     <!-- Other JS libraries or CSS import-->
     <style type="text/css">
@@ -47,6 +47,11 @@
             font-family: 'TIMSans';
             font-weight: 900;
             src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
         }
 
         .score-card {
@@ -225,20 +230,22 @@
                         </div>
                     </div>
                     <div class="items-wrapper">
-                        <div class="item-row" *ngFor="let title of titleRows; let index = index">
-                            <div class="home-number" [ngClass]="{highlight: isHomeHighlighted(index)}">
-                                <div class="home-number-text">{{homeRows[index]}}</div>
+                        {{#rows}}
+                        <div class="item-row">
+                            <div class="home-number {{homeClass}}">
+                                <div class="home-number-text">{{home}}</div>
                             </div>
                             <div class="item-row-title">{{title}}</div>
-                            <div class="away-number" [ngClass]="{highlight: isAwayHighlighted(index)}">
+                            <div class="away-number {{awayClass}}">
                                 <div class="away-number-text">
-                                    {{awayRows[index]}}
+                                    {{away}}
                                 </div>
                             </div>
                         </div>
+                        {{/rows}}
                     </div>
                 </div>
-                <div class="footer-images" *ngIf="message">
+                <div class="footer-images">
                     <img class="footer-first-image" src="../_lib/images/tim-second-logo.png" />
                     <img class="footer-second-image" src="../_lib/images/powered-by-tim.png" />
                 </div>
@@ -285,6 +292,7 @@
                         awayTeamTitle: cardData.details['rows'][1][0],
                         homeScore: cardData.details['rows'][0][2],
                         awayScore: cardData.details['rows'][1][2],
+                        rows: parsedRows(cardData),
                     };
 
                     // replace of the content
@@ -293,6 +301,21 @@
             });
         }
     });
+
+    function parsedRows(cardData) {
+        const homeRows = cardData.details['rows'][0].slice(3);
+        const awayRows = cardData.details['rows'][1].slice(3);
+        const titleRows = cardData.details['columns'].slice(3);
+        return titleRows.map((title, index) => {
+           return {
+               title: title,
+               home: homeRows[index],
+               away: awayRows[index],
+               homeClass: parseFloat(homeRows[index]) >= parseFloat(awayRows[index]) ? 'highlight' : '',
+               awayClass: parseFloat(awayRows[index]) >= parseFloat(homeRows[index]) ? 'highlight' : ''
+           }
+        });
+    }
 
     function setAuthHeader(xhr) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + getToken()
