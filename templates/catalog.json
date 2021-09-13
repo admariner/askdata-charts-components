@@ -63,9 +63,9 @@
 		{
 			"code": "nps",
 			"name": "NPS",
-			"description": "This is NPS card with one line",
+			"description": "Easily track Net Performance Score",
 			"target": {
-				"workspace": "sales_organization",
+				"workspace": "sales",
 				"card": "nps_trend"
 			},
 			"style": {
@@ -80,15 +80,36 @@
 			"objectives": [
 				"improve_customer_experience"
 			]
-		}
+		},
+		{
+			"code": "product_sales",
+			"name": "Product Sales",
+			"description": "Visualize the amount of quarterly sales by product category",
+			"target": {
+				"workspace": "sales",
+				"card": "ProductSales"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		}      
 	],
 	"categories": [{
 			"code": "reccomended",
 			"name": "Reccomended"
 		},
 		{
-			"code": "sales_organization",
-			"name": "Sales Organization"
+			"code": "Sales",
+			"name": "Sales"
 		},
 		{
 			"code": "support",
@@ -101,7 +122,21 @@
 	       	{
 			"code": "marketing",
 			"name": "Marketing"
-	      	}
+	      	},
+		{
+			"code": "hr",
+			"name": "HR"
+	      	},
+		{
+			"code": "procurement",
+			"name": "Procurement"
+	      	},
+		{
+			"code": "e_commerce",
+			"name": "E-Commerce"
+	      	}       
+		       
+		   
 	],
 	"processes": [{
 		"code": "monitor_sales",
@@ -114,18 +149,114 @@
 		{
 			"code": "customer_experience_success",
 			"name": "Customer Experience and Success"
-	      	}],
+	      	},
+		{
+			"code": "ticket_management",
+			"name": "Ticket Management"
+	      	},
+		{
+			"code": "customer_service_performance",
+			"name": "Customer Service Performance"
+	      	},
+		{
+			"code": "sales_growth",
+			"name": "Sales Growth"
+	      	},      
+		{
+			"code": "sales_efficiency",
+			"name": "Sales Efficienty"
+	      	},
+		{
+			"code": "sales_performance",
+			"name": "Sales Performance"
+	      	}, 
+		{
+			"code": "hr_improvement",
+			"name": "HR Improvement"
+	      	},
+		{
+			"code": "procurement_optimization",
+			"name": "Procurement Optimization"
+	      	},
+		{
+			"code": "analytics_early_stage",
+			"name": "Analytics for Early Stage"
+	      	}      
+		      
+		      
+		      
+		      
+		      
+		   ],
 	"objectives": [{
 			"code": "sell_more",
-			"name": "Sell more"
+			"name": "Sell More"
 		},
 		{
 			"code": "help_more",
-			"name": "Help more"
+			"name": "Help More"
 		},
 		{
 			"code": "improve_customer_experience",
-			"name": "Improve customer experience"
-		}
+			"name": "Improve Customer Experience"
+		},
+		{
+			"code": "improve_customer_care",
+			"name": "Improve Customer Care"
+		},      
+		{
+			"code": "awarness",
+			"name": "Awarness"
+		},
+		{
+			"code": "consideration",
+			"name": "Consideration"
+		},       
+		{
+			"code": "conversion",
+			"name": "Conversion"
+		},       
+		{
+			"code": "loyalty",
+			"name": "Loyalty"
+		},
+		{
+			"code": "advocacy",
+			"name": "Advocacy"
+		},      
+		{
+			"code": "lead_generation",
+			"name": "Lead Generation"
+		},
+		{
+			"code": "website_traffic_metrics",
+			"name": "Website and Traffic Metrics"
+		},
+		{
+			"code": "seo_optimization",
+			"name": "SEO Optimization"
+		},
+		{
+			"code": "advertising",
+			"name": "Advertising"
+		},
+		{
+			"code": "social_media",
+			"name": "Social Media"
+		},
+		{
+			"code": "manage_growth",
+			"name": "Manage Growth"
+		},
+		{
+			"code": "suppliers_management",
+			"name": "Suppliers Management"
+		},
+		{
+			"code": "user_monitoring",
+			"name": "User Monitoring"
+		}       
+		  	       
+		       
 	]
 }
