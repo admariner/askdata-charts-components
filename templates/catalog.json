@@ -65,8 +65,8 @@
 			"name": "NPS",
 			"description": "This is NPS card with one line",
 			"target": {
-				"workspace": "sales_demo",
-				"card": "my_slug_insight"
+				"workspace": "sales_organization",
+				"card": "nps_trend"
 			},
 			"style": {
 				"color": "red"
@@ -80,99 +80,15 @@
 			"objectives": [
 				"sell_more"
 			]
-		},
-		{
-			"code": "test1",
-			"name": "Test 1",
-			"description": "Test description klajsdklj aklsjd kaj sdhkja sdhjka shdjk akjh dkjahks jdh akhdkl ajshdjk halksjdh",
-			"target": {
-				"workspace": "sales_demo",
-				"card": "my_slug_insight"
-			},
-			"style": {
-				"color": "#FF4422"
-			},
-			"categories": [
-				"sales"
-			],
-			"processes": [
-				"monitor_sales"
-			],
-			"objectives": [
-				"sell_more"
-			]
-		},
-		{
-			"code": "test2",
-			"name": "Test 2",
-			"description": "Test description klajsdklj aklsjd kaj sdhkja sdhjka shdjk akjh dkjahks jdh akhdkl ajshdjk halksjdh",
-			"target": {
-				"workspace": "sales_demo",
-				"card": "my_slug_insight"
-			},
-			"style": {
-				"color": "#AAFF22"
-			},
-			"categories": [
-				"sales"
-			],
-			"processes": [
-				"monitor_sales"
-			],
-			"objectives": [
-				"sell_more"
-			]
-		},
-		{
-			"code": "test3",
-			"name": "Test 3",
-			"description": "Test description klajsdklj aklsjd kaj sdhkja sdhjka shdjk akjh dkjahks jdh akhdkl ajshdjk halksjdh",
-			"target": {
-				"workspace": "sales_demo",
-				"card": "my_slug_insight"
-			},
-			"style": {
-				"color": "#1122FF"
-			},
-			"categories": [
-				"sales"
-			],
-			"processes": [
-				"monitor_sales"
-			],
-			"objectives": [
-				"sell_more"
-			]
-		},
-		{
-			"code": "test4",
-			"name": "Test 4",
-			"description": "Test description klajsdklj aklsjd kaj sdhkja sdhjka shdjk akjh dkjahks jdh akhdkl ajshdjk halksjdh",
-			"target": {
-				"workspace": "sales_demo",
-				"card": "my_slug_insight"
-			},
-			"style": {
-				"color": "#CCAAFF"
-			},
-			"categories": [
-				"sales"
-			],
-			"processes": [
-				"monitor_sales"
-			],
-			"objectives": [
-				"sell_more"
-			]
 		}
 	],
 	"categories": [{
-			"code": "reccomented",
-			"name": "Reccomented"
+			"code": "reccomended",
+			"name": "Reccomended"
 		},
 		{
-			"code": "sales",
-			"name": "Sales"
+			"code": "sales_organization",
+			"name": "Sales Organization"
 		},
 		{
 			"code": "support",
@@ -181,7 +97,11 @@
 		{
 			"code": "product_and_cx",
 			"name": "Product & CX"
-		}
+		}, 
+	       	{
+			"code": "digital_marketing",
+			"name": "Digital Marketing"
+	      	}
 	],
 	"processes": [{
 		"code": "monitor_sales",
