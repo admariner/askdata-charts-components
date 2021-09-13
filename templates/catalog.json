@@ -72,13 +72,13 @@
 				"color": "red"
 			},
 			"categories": [
-				"sales"
+				"marketing"
 			],
 			"processes": [
-				"monitor_sales"
+				"customer_experience_success"
 			],
 			"objectives": [
-				"sell_more"
+				"improve_customer_experience"
 			]
 		}
 	],
@@ -99,14 +99,22 @@
 			"name": "Product & CX"
 		}, 
 	       	{
-			"code": "digital_marketing",
-			"name": "Digital Marketing"
+			"code": "marketing",
+			"name": "Marketing"
 	      	}
 	],
 	"processes": [{
 		"code": "monitor_sales",
 		"name": "Monitor Sales"
-	}],
+	},
+		{
+			"code": "digital_marketing",
+			"name": "Digital Marketing"
+	      	},
+		{
+			"code": "customer_experience_success",
+			"name": "Customer Experience and Success"
+	      	}],
 	"objectives": [{
 			"code": "sell_more",
 			"name": "Sell more"
@@ -114,6 +122,10 @@
 		{
 			"code": "help_more",
 			"name": "Help more"
+		},
+		{
+			"code": "improve_customer_experience",
+			"name": "Improve customer experience"
 		}
 	]
 }
