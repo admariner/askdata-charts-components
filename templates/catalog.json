@@ -27,7 +27,7 @@
 			"description": "Visualize the amount of quarterly sales by product category",
 			"target": {
 				"workspace": "sales",
-				"card": "ProductSales"
+				"card": "sales_product_category"
 			},
 			"style": {
 				"color": "red"
