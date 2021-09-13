@@ -41,7 +41,53 @@
 			"objectives": [
 				"manage_growth"
 			]
-		}      
+		},
+		{
+			"code": "impression_weekday",
+			"name": "Impression by Weekday",
+			"description": "This is the number of times your post was visible in someone’s feed or timeline distributed by weekdays. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "impression_by_weekday"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"awareness"
+			]
+		},
+		{
+			"code": "trend_impression",
+			"name": "Trend Impression",
+			"description": "This is the number of times your post was visible in someone’s feed or timeline distributed by days. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "trend_impression"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"awareness"
+			]
+		}
+		
+		
+		
+		
 	],
 	"categories": [{
 			"code": "reccomended",
@@ -145,8 +191,8 @@
 			"name": "Improve Customer Care"
 		},      
 		{
-			"code": "awarness",
-			"name": "Awarness"
+			"code": "awareness",
+			"name": "Awareness"
 		},
 		{
 			"code": "consideration",
