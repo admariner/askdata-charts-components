@@ -22,6 +22,27 @@
 			]
 		},
 		{
+			"code": "nps_respondents",
+			"name": "NPS Respondents",
+			"description": "Easily track Net Performance Score respondents over time",
+			"target": {
+				"workspace": "sales",
+				"card": "nps_respondents"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"customer_experience_success"
+			],
+			"objectives": [
+				"improve_customer_experience"
+			]
+		},
+		{
 			"code": "product_sales",
 			"name": "Product Sales",
 			"description": "Visualize the amount of quarterly sales by product category",
@@ -70,6 +91,48 @@
 			"target": {
 				"workspace": "marketing_templates",
 				"card": "trend_impression"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"awareness"
+			]
+		},
+		{
+			"code": "click_through_rate",
+			"name": "Click-Through Rate",
+			"description": "Keyword Click-Through Rate metrics measure how often your listings on the SERPs (Search Engine Results Pages) generates clicks compared the number of times your listing appears in search results.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "trend_impression"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"awareness"
+			]
+		},
+		{
+			"code": "unique_users",
+			"name": "Unique Users",
+			"description": "Overall number of unique users during a specific period who visited your site for the first time.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "unique_users"
 			},
 			"style": {
 				"color": "red"
