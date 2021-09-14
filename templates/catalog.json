@@ -147,7 +147,48 @@
 				"awareness"
 			]
 		},
-		
+		{
+			"code": "conversion_rate",
+			"name": "Conversion Rate",
+			"description": "Visualize with a time series the percentage of website visitors who completed a conversion on a daily basis. The y-axis is expressed in %.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "conversion_rate"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"conversion"
+			]
+		},
+		{
+			"code": "monthly_new_leads ",
+			"name": "Monthly New Leads",
+			"description": "Visualize the number of new leads acquired in the past month, i.e. someone creating an account on your online retail site. The barplot tracks the new leads comparing different sources.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "monthly_new_leads "
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		}
 		
 		
 		
