@@ -3,7 +3,7 @@
 		{
 			"code": "nps",
 			"name": "NPS",
-			"description": "Measure the customer experience of your compnay with Net Performance Score (NPS). The metrics are given on a quarterly basis. All that you need are NPS with the number of detractors, passives and promoters respondents.",
+			"description": "Measure the customer experience of your compnay with Net Performance Score (NPS) on a quarterly basis. All that you need are NPS with the number of detractors, passives and promoters respondents.",
 			"target": {
 				"workspace": "sales",
 				"card": "nps_trend"
@@ -24,7 +24,7 @@
 		{
 			"code": "nps_respondents",
 			"name": "NPS Respondents",
-			"description": "Easily track Net Performance Score respondents on a quarterly basis. All that you need are the number of detractors, passives and promoters respondents.",
+			"description": "Easily track on a quarterly basis the answers of Net Performance Score survey. All that you need are the number of detractors, passives and promoters respondents.",
 			"target": {
 				"workspace": "sales",
 				"card": "nps_respondents"
@@ -66,7 +66,7 @@
 		{
 			"code": "impression_weekday",
 			"name": "Impression by Weekday",
-			"description": "Visualize and compare with a barplot the number of times your post was visible in someone’s feed (impression) with the number of users on the webpage. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
+			"description": "Visualize and compare with a barplot the number of times your post was visible in someone’s feed (impression) with the number of users on the webpage.",
 			"target": {
 				"workspace": "marketing_templates",
 				"card": "impression_by_weekday"
@@ -169,12 +169,12 @@
 			]
 		},
 		{
-			"code": "monthly_new_leads ",
+			"code": "monthly_new_leads",
 			"name": "Monthly New Leads",
 			"description": "Visualize the number of new leads acquired in the past month, i.e. someone creating an account on your online retail site. The barplot tracks the new leads comparing different sources.",
 			"target": {
 				"workspace": "marketing_templates",
-				"card": "monthly_new_leads "
+				"card": "monthly_new_leads"
 			},
 			"style": {
 				"color": "red"
@@ -187,6 +187,48 @@
 			],
 			"objectives": [
 				"lead_generation"
+			]
+		},
+		{
+			"code": "monthly_website_traffic",
+			"name": "Monthly Website Traffic",
+			"description": "Monitor in a monthly time series the total number of visits of your web page.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "monthly_website_traffic_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"website_traffic_metrics"
+			]
+		},
+		{
+			"code": "returning_vs_new_visitors",
+			"name": "Returning vs New Visitors",
+			"description": "By measuring the number of returning visitors, you see how engaged your audience is. The following barplot compare new visitors vs old visitors on a quarterly basis.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "returning_vs_new_visitors"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"website_traffic_metrics"
 			]
 		}
 		
