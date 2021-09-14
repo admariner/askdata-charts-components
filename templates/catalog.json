@@ -3,7 +3,7 @@
 		{
 			"code": "nps",
 			"name": "NPS",
-			"description": "Easily track Net Performance Score",
+			"description": "Measure the customer experience of your compnay with Net Performance Score (NPS). The metrics are given on a quarterly basis. All that you need are NPS with the number of detractors, passives and promoters respondents.",
 			"target": {
 				"workspace": "sales",
 				"card": "nps_trend"
@@ -24,7 +24,7 @@
 		{
 			"code": "nps_respondents",
 			"name": "NPS Respondents",
-			"description": "Easily track Net Performance Score respondents over time",
+			"description": "Easily track Net Performance Score respondents on a quarterly basis. All that you need are the number of detractors, passives and promoters respondents.",
 			"target": {
 				"workspace": "sales",
 				"card": "nps_respondents"
@@ -43,9 +43,9 @@
 			]
 		},
 		{
-			"code": "product_sales",
-			"name": "Product Sales",
-			"description": "Visualize the amount of quarterly sales by product category",
+			"code": "sales_product_category",
+			"name": "Sales by Product Category",
+			"description": "Visualize and compare with a barplot the amount of quarterly sales of different product category.",
 			"target": {
 				"workspace": "sales",
 				"card": "sales_product_category"
@@ -66,7 +66,7 @@
 		{
 			"code": "impression_weekday",
 			"name": "Impression by Weekday",
-			"description": "This is the number of times your post was visible in someone’s feed or timeline distributed by weekdays. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
+			"description": "Visualize and compare with a barplot the number of times your post was visible in someone’s feed (impression) with the number of users on the webpage. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
 			"target": {
 				"workspace": "marketing_templates",
 				"card": "impression_by_weekday"
@@ -87,7 +87,7 @@
 		{
 			"code": "trend_impression",
 			"name": "Trend Impression",
-			"description": "This is the number of times your post was visible in someone’s feed or timeline distributed by days. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
+			"description": "Visualize and compare with a time series the evolution of impression and total users on daily basis. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
 			"target": {
 				"workspace": "marketing_templates",
 				"card": "trend_impression"
@@ -129,7 +129,7 @@
 		{
 			"code": "unique_users",
 			"name": "Unique Users",
-			"description": "Overall number of unique users during a specific period who visited your site for the first time.",
+			"description": "Overall number of unique users during a specific period who visited your site for the first time. The value is compared with the number of impressions.",
 			"target": {
 				"workspace": "marketing_templates",
 				"card": "unique_users"
@@ -146,16 +146,14 @@
 			"objectives": [
 				"awareness"
 			]
-		}
+		},
+		
 		
 		
 		
 		
 	],
-	"categories": [{
-			"code": "reccomended",
-			"name": "Reccomended"
-		},
+	"categories": [
 		{
 			"code": "Sales",
 			"name": "Sales"
