@@ -230,6 +230,27 @@
 			"objectives": [
 				"website_traffic_metrics"
 			]
+		},
+		{
+			"code": "average_time_on_page",
+			"name": "Average Time on Page",
+			"description": "How much time spend your clients reading your content each month? The higher your website’s average time on site, the more likely you rank well on search results and convert more visitors to leads.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "average_time_on_page"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"website_traffic_metrics"
+			]
 		}
 		
 		
