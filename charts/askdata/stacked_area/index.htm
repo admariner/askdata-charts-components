@@ -28,6 +28,15 @@ function displayChart(data) {
 // End include prepare-layout
 
 
+  function hexToRgb(hex) {
+      var bigint = parseInt(hex, 16);
+      var r = (bigint >> 16) & 255;
+      var g = (bigint >> 8) & 255;
+      var b = bigint & 255;
+
+      return r + "," + g + "," + b + ","+ "0.15";
+  }
+
     console.log(data);
 
     var MONTHS = [data.resultSet.dimension.labels];
@@ -50,7 +59,7 @@ function displayChart(data) {
           "data" : item.numericValues,
           "borderColor": item.color,
           // "backgroundColor": 'rgb(38,111,242,0.15)',
-          "backgroundColor": item.color + '0.15',
+          "backgroundColor": hexToRgb(item.color),
           "fill" : true
       });
 
