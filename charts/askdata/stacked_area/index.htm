@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-<title>Askdata - Line Chart</title>
+<title>Askdata - Stacked Area</title>
  <!-- Beginning Include Header -->
 <!--# include virtual="/charts/askdata/_includes/header.html" -->
 <!-- End Include Header -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </head>
 <body>
 
@@ -13,13 +14,17 @@
 <!-- End Include Watermak -->
 
 <div id="container">
-  <canvas id="canvas"></canvas></div>
+  <canvas id="canvas"></canvas>
+</div>
 <script>
+
+// var data= {"aa":[1,2,3]}
+// displayChart(data)
 
 function displayChart(data) {
 
   // Beinning include prepare-layout
-<!--# include virtual="/charts/askdata/_includes/prepare-layout.js" -->
+  <!--# include virtual="/charts/askdata/_includes/prepare-layout.js" -->
 // End include prepare-layout
 
 
@@ -43,7 +48,9 @@ function displayChart(data) {
       measures.push({ 
           "label" : item.name,
           "data" : item.numericValues,
-          "borderColor": item.color
+          "borderColor": item.color,
+          "backgroundColor": 'rgb(38,111,242,0.15)',
+          "fill" : true
       });
 
     }
@@ -61,6 +68,99 @@ function displayChart(data) {
       datasets: measures,
     };
 
+
+{
+    // START CUSTOM
+
+    // var color = Chart.helpers.color;
+    var measures = [];
+    // for(var i in data.resultSet.measures) {
+
+
+    //     var item = data.resultSet.measures[i];
+      
+    //   // theme handling
+    //     if (window.theme.palette) {
+    //       console.log("set theme")
+    //       item.color = window.theme.palette[i]
+    //     } else {
+    //       item.color = data.resultSet.color.palette[i];
+    //       if (i==0) {item.color = data.resultSet.color.accent; }
+    //     }
+        
+    //       measures.push({ 
+    //           "label" : item.name,
+    //           "data" : item.numericValues,
+    //           "borderColor": item.color
+    //       });
+
+    // }
+
+    // // Show legend if measures more than one
+    // var displayLegend = true
+    
+    // if (measures.length == 1) {
+    //   displayLegend = false;
+
+    // }
+// measures = []
+// var item = new Object();
+// item.name = 'aa';
+// item.numericValues = [1,2,3,4,5];
+// item.borderColor = "#266ff2";
+// item.fillColor = "#266ff2"
+
+// measures.push({ 
+//               "label" : item.name,
+//               "data" : item.numericValues,
+//               "borderColor": item.borderColor,
+//               fill: true,
+//               fillColor: "rgba(220,220,220,0.5)"
+//           })
+
+
+//           var item = new Object();
+// item.name = 'bb';
+// item.numericValues = [2,3,5,6,7,8];
+// item.borderColor = "rgb(255, 0, 0)";
+// item.fill = "#266ff2"
+// measures.push({ 
+//               "label" : item.name,
+//               "data" : item.numericValues,
+//               "borderColor": item.borderColor,
+//               "fill": item.fill
+//           })
+
+
+// var datas = [{           backgroundColor: 'rgb(38,111,242,0.15)',
+//                         borderColor: "rgba(55, 173, 221,  0.6)",
+//                         fill: true,  //no fill here
+//                         data: [1,2,3]
+//                     },
+//                     {           backgroundColor: 'rgb(38,111,242,0.15)',
+//                         borderColor: "rgba(55, 173, 221,  0.6)",
+//                         fill: true,  //no fill here
+//                         data: [2,3,5]
+//                     },
+//                     {           backgroundColor: 'rgb(38,111,242,0.15)',
+//                         borderColor: "rgba(55, 173, 221,  0.6)",
+//                         fill: true,  //no fill here
+//                         data: [4,5,7]
+//                     }]
+
+//     var chartData = {
+//       labels: measures.label,
+//       datasets: datas
+//     };
+
+
+// console.log(chartData)
+//     var displayLegend = true
+    // END CUSTOM
+}
+
+
+
     // Todo - replace with dynamic locale, rounding, currency and measurement units
     // Scales should be aggregated by measurement units
     // Color is used as 3rd axis if the measurements units are greaten than 2
@@ -75,12 +175,13 @@ function displayChart(data) {
       window.myHorizontalBar = new Chart(ctx, {
         type: 'line',
         data: chartData,
+
         options: {
 
           // Elements options apply to all of the options unless overridden in a dataset
           // In this case, we are setting the border of each horizontal bar to be 2px wide
           responsive: true,
-          maintainAspectRatio:false,
+          maintainAspectRatio:true, //FALSE
           legend: {
             display : displayLegend,
             position: 'top',
@@ -92,17 +193,16 @@ function displayChart(data) {
           },
           title: {
             display: true,
-            text: data.title,
-            fontSize: titleSize(data.title),
+            text: "aa",
+            fontSize: 12,
             fontStyle:'normal'
           },
-          yAxes: [{stacked: true, ticks: {fontSize: labelFontSize, fontFamily: labelFontFamily}}],
+          yAxes: [{stacked: true,  ticks: {fontSize: labelFontSize, fontFamily: labelFontFamily}}, ],
           xAxes: [{stacked: true, ticks: {fontSize: labelFontSize, fontFamily: labelFontFamily}}]
           }
        
       });
     
-    var colorNames = Object.keys(window.chartColors);
 
 }
 
