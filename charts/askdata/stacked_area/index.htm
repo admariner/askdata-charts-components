@@ -34,8 +34,8 @@ function displayChart(data) {
       var g = (bigint >> 8) & 255;
       var b = bigint & 255;
 
-      return r + "," + g + "," + b + ","+ "0.15";
-  }
+      return "rgb("+ r + "," + g + "," + b + ","+ "0.15)";
+      }
 
     console.log(data);
 
@@ -59,7 +59,7 @@ function displayChart(data) {
           "data" : item.numericValues,
           "borderColor": item.color,
           // "backgroundColor": 'rgb(38,111,242,0.15)',
-          "backgroundColor": hexToRgb(item.color),
+          "backgroundColor": hexToRgb(item.color.substring(1)),
           "fill" : true
       });
 
