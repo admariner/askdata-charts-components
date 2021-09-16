@@ -13,12 +13,15 @@
 			},
 			"categories": [
 				"marketing"
+				
 			],
 			"processes": [
 				"customer_experience_success"
+				
 			],
 			"objectives": [
 				"improve_customer_experience"
+				
 			]
 		},
 		{
@@ -205,6 +208,7 @@
 			],
 			"processes": [
 				"digital_marketing"
+				
 			],
 			"objectives": [
 				"website_traffic_metrics"
@@ -259,7 +263,7 @@
 	],
 	"categories": [
 		{
-			"code": "Sales",
+			"code": "sales",
 			"name": "Sales"
 		},
 		{
