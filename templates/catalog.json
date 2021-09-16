@@ -12,17 +12,16 @@
 				"color": "red"
 			},
 			"categories": [
-				"marketing",
-				"product_and_cx"
+				"marketing"
+				
 			],
 			"processes": [
-				"customer_experience_success",
-				"customer_service_performance"
+				"customer_experience_success"
+				
 			],
 			"objectives": [
-				"improve_customer_experience",
-				"improve_customer_care",
-				"user_monitoring"
+				"improve_customer_experience"
+				
 			]
 		},
 		{
@@ -37,17 +36,13 @@
 				"color": "red"
 			},
 			"categories": [
-				"marketing",
-				"product_and_cx"
+				"marketing"
 			],
 			"processes": [
-				"customer_experience_success",
-				"customer_service_performance"
+				"customer_experience_success"
 			],
 			"objectives": [
-				"improve_customer_experience",
-				"improve_customer_care",
-				"user_monitoring"
+				"improve_customer_experience"
 			]
 		},
 		{
@@ -65,14 +60,10 @@
 				"sales"
 			],
 			"processes": [
-				"sales_performance",
-				"monitor_sales",
-				"sales_growth",
-				"sales_efficiency"
+				"sales_performance"
 			],
 			"objectives": [
-				"manage_growth",
-				"sell_more"
+				"manage_growth"
 			]
 		},
 		{
@@ -93,8 +84,7 @@
 				"digital_marketing"
 			],
 			"objectives": [
-				"awareness",
-				"user_monitoring"
+				"awareness"
 			]
 		},
 		{
@@ -115,8 +105,7 @@
 				"digital_marketing"
 			],
 			"objectives": [
-				"awareness",
-				"user_monitoring"
+				"awareness"
 			]
 		},
 		{
@@ -137,8 +126,7 @@
 				"digital_marketing"
 			],
 			"objectives": [
-				"awareness",
-				"user_monitoring"
+				"awareness"
 			]
 		},
 		{
@@ -159,9 +147,7 @@
 				"digital_marketing"
 			],
 			"objectives": [
-				"awareness",
-				"user_monitoring",
-				"website_traffic_metrics"
+				"awareness"
 			]
 		},
 		{
@@ -182,9 +168,7 @@
 				"digital_marketing"
 			],
 			"objectives": [
-				"conversion",
-				"user_monitoring",
-				"website_traffic_metrics"
+				"conversion"
 			]
 		},
 		{
@@ -202,12 +186,10 @@
 				"marketing"
 			],
 			"processes": [
-				"digital_marketing",
-				"monitor_sales"
+				"digital_marketing"
 			],
 			"objectives": [
-				"lead_generation",
-				"sell_more"
+				"lead_generation"
 			]
 		},
 		{
@@ -222,16 +204,14 @@
 				"color": "red"
 			},
 			"categories": [
-				"marketing",
-				"e-commerce"
+				"marketing"
 			],
 			"processes": [
 				"digital_marketing",
 				
 			],
 			"objectives": [
-				"website_traffic_metrics",
-				"user_monitoring"
+				"website_traffic_metrics"
 			]
 		},
 		{
@@ -246,15 +226,13 @@
 				"color": "red"
 			},
 			"categories": [
-				"marketing",
-				"e-commerce"
+				"marketing"
 			],
 			"processes": [
 				"digital_marketing"
 			],
 			"objectives": [
-				"website_traffic_metrics",
-				"user_monitoring"
+				"website_traffic_metrics"
 			]
 		},
 		{
@@ -269,15 +247,13 @@
 				"color": "red"
 			},
 			"categories": [
-				"marketing",
-				"e-commerce"
+				"marketing"
 			],
 			"processes": [
 				"digital_marketing"
 			],
 			"objectives": [
-				"website_traffic_metrics",
-				"user_monitoring"
+				"website_traffic_metrics"
 			]
 		}
 		
