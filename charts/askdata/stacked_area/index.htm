@@ -27,7 +27,7 @@ function displayChart(data) {
   <!--# include virtual="/charts/askdata/_includes/prepare-layout.js" -->
 // End include prepare-layout
 
-
+// Function to convert an hex code number to rgb
   function hexToRgb(hex) {
       var bigint = parseInt(hex, 16);
       var r = (bigint >> 16) & 255;
@@ -58,7 +58,7 @@ function displayChart(data) {
           "label" : item.name,
           "data" : item.numericValues,
           "borderColor": item.color,
-          // "backgroundColor": 'rgb(38,111,242,0.15)',
+          // "backgroundColor": 'rgb(38,111,242,0.15)', # This is for default askdata
           "backgroundColor": hexToRgb(item.color.substring(1)),
           "fill" : true
       });
@@ -202,8 +202,8 @@ function displayChart(data) {
             usePointStyle: true}
           },
           title: {
-            display: true,
-            text: "aa",
+            display: true,text: data.title,
+            fontSize: titleSize(data.title),
             fontSize: 12,
             fontStyle:'normal'
           },
