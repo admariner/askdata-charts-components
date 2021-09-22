@@ -61,7 +61,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Specify the positions"
     },
     {
@@ -70,7 +70,7 @@
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the starting Color"
     },
     {
@@ -79,7 +79,7 @@
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the ending color"
     }
     ]

@@ -441,7 +441,7 @@ success: function(data)
 			var li = document.createElement("li");
 			document.getElementById("cont").appendChild(li);
 			li.setAttribute('id', 'row'+ i);
-      document.getElementById('row'+ i).style.background = '#'.concat(tmp[i + 2]);
+      document.getElementById('row'+ i).style.background = '#'.concat(tmp[i * 2]);
       li.setAttribute('seq', positions[i]);
 			var pl = document.createElement("mark");
 			var sco = document.createElement("small");
@@ -449,6 +449,7 @@ success: function(data)
 			document.getElementById("row" + i).appendChild(sco);
 			pl.setAttribute('id', 'pl' + i);
 			sco.setAttribute('id', 'sco' + i);
+      document.getElementById('sco'+ i).color = "white";
 			pl.innerHTML = players[i];
 			sco.innerHTML = scores[i];
 		}
