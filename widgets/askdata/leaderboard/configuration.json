@@ -54,5 +54,33 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the Title"
-    }]
+    },
+    {
+        "code": "settings.s3_id",
+        "label": "Positions",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Specify the positions"
+    },
+    {
+        "code": "settings.s4_id",
+        "label": "Starting Color",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the starting Color"
+    },
+    {
+        "code": "settings.s5_id",
+        "label": "Ending Color",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the ending color"
+    }
+    ]
 }

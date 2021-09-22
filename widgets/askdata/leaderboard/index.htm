@@ -66,7 +66,7 @@
             transform: translateZ(0) scale(1, 1);
   }
   .leaderboard ol li::before {
-    content: counter(leaderboard);
+    content: attr(seq) ;
     position: absolute;
     z-index: 2;
     top: 15px;
@@ -232,12 +232,37 @@
         <svg class="ico-cup" style="float: left;" id = "tro">
           <use xlink:href="#cup"></use>
         </svg>
-        <p id="title" style="margin-left: 36px; width:250px">
-        </p>
+        <p id="title" style="margin-left: 36px; width:250px">Prova</p>
       </div>
     </h1>
     <ol id = "cont" style = "margin-top: 30px;">
     <!-- here are placed the rows -->
+    <!-- <li id="row1" seq ="1">
+      <mark>Marco coppola</mark>
+      <small style="color:white">22 10</small>
+    </li>
+
+    <li id="row2" seq ="2">
+      <mark>Marco coppola</mark>
+      <small style="color:white">22</small>
+    </li>
+
+    <li id="row3" seq ="3">
+      <mark>Marco coppola</mark>
+      <small style="color:white">22</small>
+    </li>
+
+    <li id="row4" seq ="3">
+      <mark>Marco coppola</mark>
+      <small style="color:white">22</small>
+    </li>
+
+    <li id="row5" seq ="10">
+      <mark>Marco coppola</mark>
+      <small style="color:white">22</small>
+    </li>
+ -->
+
     </ol>
   </div>
   
@@ -265,6 +290,85 @@
         </symbol>
   </svg>
 
+
+<script>
+  
+
+  function hex (c) {
+  var s = "0123456789abcdef";
+  var i = parseInt (c);
+  if (i == 0 || isNaN (c))
+    return "00";
+  i = Math.round (Math.min (Math.max (0, i), 255));
+  return s.charAt ((i - i % 16) / 16) + s.charAt (i % 16);
+}
+
+/* Convert an RGB triplet to a hex string */
+function convertToHex (rgb) {
+  return hex(rgb[0]) + hex(rgb[1]) + hex(rgb[2]);
+}
+
+/* Remove '#' in color hex string */
+function trim (s) { return (s.charAt(0) == '#') ? s.substring(1, 7) : s }
+
+/* Convert a hex string to an RGB triplet */
+function convertToRGB (hex) {
+  var color = [];
+  color[0] = parseInt ((trim(hex)).substring (0, 2), 16);
+  color[1] = parseInt ((trim(hex)).substring (2, 4), 16);
+  color[2] = parseInt ((trim(hex)).substring (4, 6), 16);
+  return color;
+}
+
+function generateColor(colorStart,colorEnd,colorCount){
+
+	// The beginning of your gradient
+	var start = convertToRGB (colorStart);    
+
+	// The end of your gradient
+	var end   = convertToRGB (colorEnd);    
+
+	// The number of colors to compute
+	var len = colorCount;
+
+	//Alpha blending amount
+	var alpha = 0.0;
+
+	var saida = [];
+	
+	for (i = 0; i < len; i++) {
+		var c = [];
+		alpha += (1.0/len);
+		
+		c[0] = start[0] * alpha + (1 - alpha) * end[0];
+		c[1] = start[1] * alpha + (1 - alpha) * end[1];
+		c[2] = start[2] * alpha + (1 - alpha) * end[2];
+
+		saida.push(convertToHex (c));
+		
+	}
+	
+	return saida;
+	
+}
+
+// Exemplo de como usar
+
+
+// var tmp = generateColor('#001d9b','#123fff',10);
+
+// console.log(tmp)
+
+// document.getElementById("row1").style.background = '#'.concat(tmp[1]);
+// document.getElementById("row2").style.background = '#'.concat(tmp[3]);
+// document.getElementById("row3").style.background = '#'.concat(tmp[5]);
+// document.getElementById("row4").style.background = '#'.concat(tmp[7]);
+// document.getElementById("row5").style.background = '#'.concat(tmp[9]);
+
+</script>
+
+
+
 </body>
 <!-- End body -->
     
@@ -272,7 +376,7 @@
 <script type="text/javascript">
 
 
-//environment_widget = "https://api-dev.askdata.com";
+environment_widget = "https://api-dev.askdata.com";
 //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
 
@@ -291,7 +395,37 @@ success: function(data)
 		var players= data.fields.s1_id.data
 		var scores = data.fields.m1_id.data
 		var title = data.fields.s2_id.data
+
+    try {
+      var positions = data.fields.s3_id.data
+    }
+    catch (error) {
+      var positions = [1, 2, 3, 4, 5]
+    }
+
+    
+    try {
+      var start_color = data.fields.s4_id.data
+    }
+    catch (error) {
+      var start_color = "#123fff"
+    }
+    
+
+    
+    try {
+      var end_color = data.fields.s5_id.data
+    }
+    catch (error) {
+      var end_color = '#001d9b'
+    }
+    
+    
+    
+    var end_color = data.fields.s5_id.data
 		// var trophy = "true"
+
+    var tmp = generateColor(end_color,start_color,10);
 
 		document.getElementById("title").textContent +=  title;
     // to be added, true if you want trophy in title
@@ -307,6 +441,8 @@ success: function(data)
 			var li = document.createElement("li");
 			document.getElementById("cont").appendChild(li);
 			li.setAttribute('id', 'row'+ i);
+      document.getElementById('row'+ i).style.background = '#'.concat(tmp[i + 2]);
+      li.setAttribute('seq', positions[i]);
 			var pl = document.createElement("mark");
 			var sco = document.createElement("small");
 			document.getElementById("row" + i).appendChild(pl);
@@ -322,6 +458,11 @@ success: function(data)
 
     }
   });
+
+
+
+
+  
 </script>
 
 <!-- End Ajax -->

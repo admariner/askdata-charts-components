@@ -75,7 +75,7 @@
         "viewType": "text",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "Choose the left label"
+        "tooltip": "Choose the right label"
     },{
         "code": "settings.s5_id",
         "label": "Line's label",

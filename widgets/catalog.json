@@ -6,10 +6,10 @@
 			"description": "Card with 3 KPIs, white background. Useful to compare 3 different quantities or a single quantity variation over time. Numbers are displayed in different fixed colors."
 		},
 		{
-			"code": "leaderboard-red",
-			"name": "Leaderboard Red",
-			"icon": "leaderboard-red/leath.PNG",
-			"description": "Leaderboard with Red Background. This widget supports a leaderboard with maximum 5 elements. You can provide a quantity, a measure and a custom title. Please be aware that the quantities should already be sorted accordingly."
+			"code": "leaderboard",
+			"name": "Leaderboard ",
+			"icon": "leaderboard/leath.PNG",
+			"description": "This widget supports a leaderboard with maximum 5 elements. You can provide a quantity, a measure and a custom title. Please be aware that the quantities should already be sorted accordingly."
 		},
 		{
 			"code": "rose-chart",
