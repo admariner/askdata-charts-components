@@ -74,7 +74,7 @@
     width: 20px;
     height: 20px;
     line-height: 20px;
-    color: #c24448;
+    color: #000000;  /*To change color for numbers */
     background: #fff;
     border-radius: 20px;
     text-align: center;
@@ -232,14 +232,16 @@
         <svg class="ico-cup" style="float: left;" id = "tro">
           <use xlink:href="#cup"></use>
         </svg>
-        <p id="title" style="margin-left: 36px; width:250px"></p>
+        <p id="title" style="margin-left: 36px; width:250px" >aaa</p>
       </div>
     </h1>
-    <ol id = "cont" style = "margin-top: 30px;">
+    <ol id = "cont" style = "margin-top: 2px;">
+
+
     <!-- here are placed the rows -->
-    <!-- <li id="row1" seq ="1">
+    <li id="row1" seq ="1">
       <mark>Marco coppola</mark>
-      <small style="color:white">22 10</small>
+      <small style="color:white">22</small>
     </li>
 
     <li id="row2" seq ="2">
@@ -261,16 +263,16 @@
       <mark>Marco coppola</mark>
       <small style="color:white">22</small>
     </li>
- -->
+
 
     </ol>
   </div>
   
   
-  <svg style="display: none;">
+  <svg style="display: none;" id ="cup1">
     <symbol id="cup" x="0px" y="0px"
      width="25px" height="26px" viewBox="0 0 25 26" enable-background="new 0 0 25 26" xml:space="preserve">
-  <path fill="#F26856" d="M21.215,1.428c-0.744,0-1.438,0.213-2.024,0.579V0.865c0-0.478-0.394-0.865-0.88-0.865H6.69
+  <path id="face" fill="#F26856" d="M21.215,1.428c-0.744,0-1.438,0.213-2.024,0.579V0.865c0-0.478-0.394-0.865-0.88-0.865H6.69
     C6.204,0,5.81,0.387,5.81,0.865v1.142C5.224,1.641,4.53,1.428,3.785,1.428C1.698,1.428,0,3.097,0,5.148
     C0,7.2,1.698,8.869,3.785,8.869h1.453c0.315,0,0.572,0.252,0.572,0.562c0,0.311-0.257,0.563-0.572,0.563
     c-0.486,0-0.88,0.388-0.88,0.865c0,0.478,0.395,0.865,0.88,0.865c0.421,0,0.816-0.111,1.158-0.303
@@ -292,7 +294,6 @@
 
 
 <script>
-  
 
   function hex (c) {
   var s = "0123456789abcdef";
@@ -419,9 +420,22 @@ success: function(data)
     catch (error) {
       var end_color = '#001d9b'
     }
-    
+       
+    try {
+      var cup_color = data.fields.s6_id.data
+    }
+    catch (error) {
+      var cup_color = '#FFFFFF'
+    }
     
 		// var trophy = "true"
+
+
+    var _currentFill = cup_color; // red
+    $svg = $("#cup1");
+    $("#face", $svg).attr('style', "fill:"+_currentFill); 
+
+
 
     var tmp = generateColor(end_color,start_color,10);
 

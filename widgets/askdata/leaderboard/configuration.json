@@ -81,6 +81,15 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the ending color"
+    },
+    {
+        "code": "settings.s6_id",
+        "label": "Cup Color",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the cup's color"
     }
     ]
 }
