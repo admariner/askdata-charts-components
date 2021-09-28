@@ -3,7 +3,8 @@
 		{
 			"code": "nps",
 			"name": "NPS",
-			"description": "Measure the customer experience of your compnay with Net Performance Score (NPS) on a quarterly basis. All that you need are NPS with the number of detractors, passives and promoters respondents.",
+			"icon": "askdata-charts-components/icons/ico-incomes.other.otherRevenue.png",
+			"description": "Measure the customer experience of your company with Net Performance Score (NPS) on a quarterly basis. All that you need are NPS with the number of detractors, passives and promoters respondents.",
 			"target": {
 				"workspace": "sales",
 				"card": "nps_trend"
@@ -27,6 +28,7 @@
 		{
 			"code": "nps_respondents",
 			"name": "NPS Respondents",
+			"icon": "askdata-charts-components/icons/icon-chat.png",
 			"description": "Easily track on a quarterly basis the answers of Net Performance Score survey. All that you need are the number of detractors, passives and promoters respondents.",
 			"target": {
 				"workspace": "sales",
@@ -48,6 +50,7 @@
 		{
 			"code": "sales_product_category",
 			"name": "Sales by Product Category",
+			"icon": "askdata-charts-components/icons/ico-dollar.png",
 			"description": "Visualize and compare with a barplot the amount of quarterly sales of different product category.",
 			"target": {
 				"workspace": "sales",
@@ -69,6 +72,7 @@
 		{
 			"code": "impression_weekday",
 			"name": "Impression by Weekday",
+			"icon": "askdata-charts-components/icons/ico-incomes.other.salary.png",
 			"description": "Visualize and compare with a barplot the number of times your post was visible in someone’s feed (impression) with the number of users on the webpage.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -90,6 +94,7 @@
 		{
 			"code": "trend_impression",
 			"name": "Trend Impression",
+			"icon": "askdata-charts-components/icons/icon-Trending.png",
 			"description": "Visualize and compare with a time series the evolution of impression and total users on daily basis. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -111,6 +116,7 @@
 		{
 			"code": "click_through_rate",
 			"name": "Click-Through Rate",
+			"icon": "askdata-charts-components/icons/ico-expenses.other.bankTransfer-1.png",
 			"description": "Keyword Click-Through Rate metrics measure how often your listings on the SERPs (Search Engine Results Pages) generates clicks compared the number of times your listing appears in search results.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -132,6 +138,7 @@
 		{
 			"code": "unique_users",
 			"name": "Unique Users",
+			"icon": "askdata-charts-components/icons/icon-contacts-rubrica.png",
 			"description": "Overall number of unique users during a specific period who visited your site for the first time. The value is compared with the number of impressions.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -153,6 +160,7 @@
 		{
 			"code": "conversion_rate",
 			"name": "Conversion Rate",
+			"icon": "askdata-charts-components/icons/icon-checklist.png",
 			"description": "Visualize with a time series the percentage of website visitors who completed a conversion on a daily basis. The y-axis is expressed in %.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -174,6 +182,7 @@
 		{
 			"code": "monthly_new_leads",
 			"name": "Monthly New Leads",
+			"icon": "askdata-charts-components/icons/icon-list-datas.png",
 			"description": "Visualize the number of new leads acquired in the past month, i.e. someone creating an account on your online retail site. The barplot tracks the new leads comparing different sources.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -195,6 +204,7 @@
 		{
 			"code": "monthly_website_traffic",
 			"name": "Monthly Website Traffic",
+			"icon": "askdata-charts-components/icons/icon-Trending.png",
 			"description": "Monitor in a monthly time series the total number of visits of your web page.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -217,6 +227,7 @@
 		{
 			"code": "returning_vs_new_visitors",
 			"name": "Returning vs New Visitors",
+			"icon": "askdata-charts-components/icons/ico-expenses.coursesAndTraining.otherSchoolAndTraining.png",
 			"description": "By measuring the number of returning visitors, you see how engaged your audience is. The following barplot compare new visitors vs old visitors on a quarterly basis.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -238,6 +249,7 @@
 		{
 			"code": "average_time_on_page",
 			"name": "Average Time on Page",
+			"icon": "askdata-charts-components/icons/icon-list-questionnaire.png",
 			"description": "How much time spend your clients reading your content each month? The higher your website’s average time on site, the more likely you rank well on search results and convert more visitors to leads.",
 			"target": {
 				"workspace": "marketing_templates",
