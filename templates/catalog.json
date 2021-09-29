@@ -294,8 +294,8 @@
 			]
 		},
 		{
-			"code": "training_costs",
-			"name": "Training Costs",
+			"code": "training_summary",
+			"name": "Training Summary",
 			"icon": "/icons/ico-dollar.png",
 			"description": "Do you invest in your employees? How much you have invested onboarding new hires and upgrading one’s education. ",
 			"target": {
@@ -372,7 +372,7 @@
 			"code": "top_suppliers",
 			"name": "Top Suppliers",
 			"icon": "/icons/icon-list-datas.png",
-			"description": "Top 5 Suppliers based on Total Spending over the last years.",
+			"description": "Compare Suppliers based on the Total Spendings over a fixed period of time.",
 			"target": {
 				"workspace": "procurement",
 				"card": "suppl"
@@ -389,7 +389,30 @@
 			"objectives": [
 				"suppliers_management"
 			]
+		},
+		{
+			"code": "e_comm_n_users",
+			"name": "New Users",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "With this template you can compare new users gained by every nation.",
+			"target": {
+				"workspace": "e-commerce",
+				"card": "n_users"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
 		}
+		
 		
 		
 		
