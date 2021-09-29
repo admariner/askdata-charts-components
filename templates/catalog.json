@@ -3,7 +3,7 @@
 		{
 			"code": "nps",
 			"name": "NPS",
-			"icon": "askdata-charts-components/icons/ico-incomes.other.otherRevenue.png",
+			"icon": "/icons/ico-incomes.other.otherRevenue.png",
 			"description": "Measure the customer experience of your company with Net Performance Score (NPS) on a quarterly basis. All that you need are NPS with the number of detractors, passives and promoters respondents.",
 			"target": {
 				"workspace": "sales",
@@ -28,7 +28,7 @@
 		{
 			"code": "abs_rate",
 			"name": "Absenteeism Rate",
-			"icon": "askdata-charts-components/icons/icon-contacts-rubrica.png",
+			"icon": "/icons/icon-contacts-rubrica.png",
 			"description": "How engaged are your employees? Average absenteeism rate as a percentage of the total working days among all employees",
 			"target": {
 				"workspace": "hr",
@@ -53,7 +53,7 @@
 		{
 			"code": "nps_respondents",
 			"name": "NPS Respondents",
-			"icon": "askdata-charts-components/icons/icon-chat.png",
+			"icon": "/icons/icon-chat.png",
 			"description": "Easily track on a quarterly basis the answers of Net Performance Score survey. All that you need are the number of detractors, passives and promoters respondents.",
 			"target": {
 				"workspace": "sales",
@@ -75,7 +75,7 @@
 		{
 			"code": "sales_product_category",
 			"name": "Sales by Product Category",
-			"icon": "askdata-charts-components/icons/ico-dollar.png",
+			"icon": "/icons/ico-dollar.png",
 			"description": "Visualize and compare with a barplot the amount of quarterly sales of different product category.",
 			"target": {
 				"workspace": "sales",
@@ -97,7 +97,7 @@
 		{
 			"code": "impression_weekday",
 			"name": "Impression by Weekday",
-			"icon": "askdata-charts-components/icons/ico-incomes.other.salary.png",
+			"icon": "/icons/ico-incomes.other.salary.png",
 			"description": "Visualize and compare with a barplot the number of times your post was visible in someone’s feed (impression) with the number of users on the webpage.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -119,7 +119,7 @@
 		{
 			"code": "trend_impression",
 			"name": "Trend Impression",
-			"icon": "askdata-charts-components/icons/icon-Trending.png",
+			"icon": "/icons/icon-Trending.png",
 			"description": "Visualize and compare with a time series the evolution of impression and total users on daily basis. This doesn’t necessarily mean the person who viewed the post noticed it or read it.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -141,7 +141,7 @@
 		{
 			"code": "click_through_rate",
 			"name": "Click-Through Rate",
-			"icon": "askdata-charts-components/icons/ico-expenses.other.bankTransfer-1.png",
+			"icon": "/icons/ico-expenses.other.bankTransfer-1.png",
 			"description": "Keyword Click-Through Rate metrics measure how often your listings on the SERPs (Search Engine Results Pages) generates clicks compared the number of times your listing appears in search results.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -163,7 +163,7 @@
 		{
 			"code": "unique_users",
 			"name": "Unique Users",
-			"icon": "askdata-charts-components/icons/icon-contacts-rubrica.png",
+			"icon": "/icons/icon-contacts-rubrica.png",
 			"description": "Overall number of unique users during a specific period who visited your site for the first time. The value is compared with the number of impressions.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -185,7 +185,7 @@
 		{
 			"code": "conversion_rate",
 			"name": "Conversion Rate",
-			"icon": "askdata-charts-components/icons/icon-checklist.png",
+			"icon": "/icons/icon-checklist.png",
 			"description": "Visualize with a time series the percentage of website visitors who completed a conversion on a daily basis. The y-axis is expressed in %.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -207,7 +207,7 @@
 		{
 			"code": "monthly_new_leads",
 			"name": "Monthly New Leads",
-			"icon": "askdata-charts-components/icons/icon-list-datas.png",
+			"icon": "/icons/icon-list-datas.png",
 			"description": "Visualize the number of new leads acquired in the past month, i.e. someone creating an account on your online retail site. The barplot tracks the new leads comparing different sources.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -229,7 +229,7 @@
 		{
 			"code": "monthly_website_traffic",
 			"name": "Monthly Website Traffic",
-			"icon": "askdata-charts-components/icons/icon-Trending.png",
+			"icon": "/icons/icon-Trending.png",
 			"description": "Monitor in a monthly time series the total number of visits of your web page.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -252,7 +252,7 @@
 		{
 			"code": "returning_vs_new_visitors",
 			"name": "Returning vs New Visitors",
-			"icon": "askdata-charts-components/icons/ico-expenses.coursesAndTraining.otherSchoolAndTraining.png",
+			"icon": "/icons/ico-expenses.coursesAndTraining.otherSchoolAndTraining.png",
 			"description": "By measuring the number of returning visitors, you see how engaged your audience is. The following barplot compare new visitors vs old visitors on a quarterly basis.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -274,7 +274,7 @@
 		{
 			"code": "average_time_on_page",
 			"name": "Average Time on Page",
-			"icon": "askdata-charts-components/icons/icon-list-questionnaire.png",
+			"icon": "/icons/icon-list-questionnaire.png",
 			"description": "How much time spend your clients reading your content each month? The higher your website’s average time on site, the more likely you rank well on search results and convert more visitors to leads.",
 			"target": {
 				"workspace": "marketing_templates",
@@ -296,7 +296,7 @@
 		{
 			"code": "training_costs",
 			"name": "Training Costs",
-			"icon": "askdata-charts-components/icons/ico-dollar.png",
+			"icon": "/icons/ico-dollar.png",
 			"description": "Do you invest in your employees? How much you have invested onboarding new hires and upgrading one’s education. ",
 			"target": {
 				"workspace": "hr",
@@ -321,7 +321,7 @@
 		{
 			"code": "compare_tickets",
 			"name": "Compare Ticket by Status and Problem",
-			"icon": "askdata-charts-components/icons/ico-dollar.png",
+			"icon": "/icons/ico-dollar.png",
 			"description": "Compare the number of ticket by the type of problem and their status. This helps to understand if some problems have more propensity to be more suspended or not.",
 			"target": {
 				"workspace": "support",
@@ -346,7 +346,7 @@
 		{
 			"code": "trend_ticket",
 			"name": "Trend ticket by open and closing dates",
-			"icon": "askdata-charts-components/icons/ico-dollar.png",
+			"icon": "/icons/ico-dollar.png",
 			"description": "With this template you can compare the ticket trend by open and closing dates. Using this visualization helps to understand if the majority of the ticket are open rather than closed.",
 			"target": {
 				"workspace": "support",
@@ -366,6 +366,28 @@
 			"objectives": [
 				"help_more"
 				
+			]
+		},
+		{
+			"code": "top_suppliers",
+			"name": "Top Suppliers",
+			"icon": "/icons/icon-list-datas.png",
+			"description": "Top 5 Suppliers based on Total Spending over the last years.",
+			"target": {
+				"workspace": "procurement",
+				"card": "suppl"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
 			]
 		}
 		
