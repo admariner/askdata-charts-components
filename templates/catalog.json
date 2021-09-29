@@ -317,6 +317,56 @@
 				"employee_management"
 				
 			]
+		},
+		{
+			"code": "compare_tickets",
+			"name": "Compare Ticket by Status and Problem",
+			"icon": "askdata-charts-components/icons/ico-dollar.png",
+			"description": "Compare the number of ticket by the type of problem and their status. This helps to understand if some problems have more propensity to be more suspended or not.",
+			"target": {
+				"workspace": "support",
+				"card": "confronto_status_problemi_ticket"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+				
+			],
+			"processes": [
+				"ticket_management"
+				
+			],
+			"objectives": [
+				"help_more"
+				
+			]
+		},
+		{
+			"code": "trend_ticket",
+			"name": "Trend ticket by open and closing dates",
+			"icon": "askdata-charts-components/icons/ico-dollar.png",
+			"description": "With this template you can compare the ticket trend by open and closing dates. Using this visualization helps to understand if the majority of the ticket are open rather than closed.",
+			"target": {
+				"workspace": "support",
+				"card": "trend_ticket"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+				
+			],
+			"processes": [
+				"ticket_management"
+				
+			],
+			"objectives": [
+				"help_more"
+				
+			]
 		}
 		
 		
