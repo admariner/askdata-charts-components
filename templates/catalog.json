@@ -26,7 +26,7 @@
 			]
 		},
 		{
-			"code": "nps",
+			"code": "abs_rate",
 			"name": "Absenteeism Rate",
 			"icon": "askdata-charts-components/icons/icon-contacts-rubrica.png",
 			"description": "How engaged are your employees? Average absenteeism rate as a percentage of the total working days among all employees",
