@@ -56,8 +56,10 @@ success: function(data) {
             var obj = [];
             for (let i = 0; i < values.length; i++)
             {
-            obj.push({value: values[i], name: names[i]}); 
+            obj.push({value: parseFloat(values[i]), name: names[i]}); 
             }
+
+            
             console.log(obj)
             option = {
                 legend: {
