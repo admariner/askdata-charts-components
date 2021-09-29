@@ -26,6 +26,31 @@
 			]
 		},
 		{
+			"code": "nps",
+			"name": "Absenteeism Rate",
+			"icon": "askdata-charts-components/icons/icon-contacts-rubrica.png",
+			"description": "How engaged are your employees? Average absenteeism rate as a percentage of the total working days among all employees",
+			"target": {
+				"workspace": "hr",
+				"card": "absence_rate_by_department"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+				
+			],
+			"processes": [
+				"hr_improvement"
+				
+			],
+			"objectives": [
+				"improve_customer_experience"
+				
+			]
+		},
+		{
 			"code": "nps_respondents",
 			"name": "NPS Respondents",
 			"icon": "askdata-charts-components/icons/icon-chat.png",
@@ -305,10 +330,11 @@
 		       
 		   
 	],
-	"processes": [{
-		"code": "monitor_sales",
-		"name": "Monitor Sales"
-	},
+	"processes": [
+		{
+			"code": "monitor_sales",
+			"name": "Monitor Sales"
+			},
 		{
 			"code": "digital_marketing",
 			"name": "Digital Marketing"
