@@ -411,6 +411,94 @@
 			"objectives": [
 				"user_monitoring"
 			]
+		},
+		{
+			"code": "brand_reputation",
+			"name": "Brand Reputation",
+			"icon": "",
+			"description": "Understand how a yuor brand is viewed by everyone else.",
+			"target": {
+				"workspace": "social",
+				"card": "brand_reputation"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"social"
+			],
+			"processes": [
+				"social_media_listening"
+			],
+			"objectives": [
+				"understand_customer_perception"
+			]
+		},
+		{
+			"code": "competitor_analysis",
+			"name": "Competitor Analysis",
+			"icon": "/icons/ico-incomes.other.otherRevenue.png",
+			"description": "Understand what your competitors are doing to better set up the business strategies.",
+			"target": {
+				"workspace": "social",
+				"card": "competitor_analysis"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"social"
+			],
+			"processes": [
+				"social_media_listening"
+			],
+			"objectives": [
+				"improve_business_strategies"
+			]
+		},
+		{
+			"code": "crisis_management",
+			"name": "Crisis Management",
+			"icon": "/icons/icon-alert-1.png",
+			"description": "Get notified when certain events occur over a specified amount of time and decide for effective solutions.",
+			"target": {
+				"workspace": "social",
+				"card": "crisis_management"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"social"
+			],
+			"processes": [
+				"social_media_listening","social_media_management"
+			],
+			"objectives": [
+				"crisis_solutions"
+			]
+		},
+		{
+			"code": "trend_analysis",
+			"name": "Trend Analysis",
+			"icon": "/icons/fin-graph-curve.png",
+			"description": "Analyze any public debate by tracking over time how, when, where and who is talking about it.",
+			"target": {
+				"workspace": "social",
+				"card": "trend_analysis"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"social"
+			],
+			"processes": [
+				"social_media_listening"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
 		}
 		
 		
@@ -446,14 +534,22 @@
 		{
 			"code": "e_commerce",
 			"name": "E-Commerce"
-	      	}       
-		       
+	      	},
+		{
+			"code": "social",
+			"name": "Social"
+			}       
+		
 		   
 	],
 	"processes": [
 		{
 			"code": "monitor_sales",
 			"name": "Monitor Sales"
+			},
+		{
+			"code": "social_media_listening",
+			"name": "Social Media Listening"
 			},
 		{
 			"code": "digital_marketing",
@@ -494,7 +590,11 @@
 		{
 			"code": "analytics_early_stage",
 			"name": "Analytics for Early Stage"
-	      	}      
+	      	},		
+		{
+			"code": "social_media_management",
+			"name": "Social Media Management"
+			}      
 		      
 		      
 		      
@@ -554,6 +654,10 @@
 			"name": "Advertising"
 		},
 		{
+			"code": "improve_business_strategies",
+			"name": "Improve Business Strategies"
+		},
+		{
 			"code": "social_media",
 			"name": "Social Media"
 		},
@@ -572,7 +676,15 @@
 		{
 			"code": "employee_management",
 			"name": "Employee management"
-		}       
+		},
+		{
+			"code": "understand_customer_perception",
+			"name": "Understand Customer Perception"
+		},
+		{
+			"code": "crisis_solutions",
+			"name": "Crisis Solutions"
+		}                   
 		  	       
 		       
 	]
