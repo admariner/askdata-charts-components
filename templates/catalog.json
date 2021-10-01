@@ -415,7 +415,7 @@
 		{
 			"code": "brand_reputation",
 			"name": "Brand Reputation",
-			"icon": "",
+			"icon": "/icons/icon-wallet.png",
 			"description": "Understand how a yuor brand is viewed by everyone else.",
 			"target": {
 				"workspace": "social",
