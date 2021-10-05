@@ -6,4 +6,4 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Ths is the official repository of all the **Charts** Compoments available for the [Askdata platform](https://www.askdata.com).
+Ths is the official repository of all the **Charts** Compoments available for the [Askdata platform](https://www.askdata.com)
