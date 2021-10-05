@@ -499,6 +499,94 @@
 			"objectives": [
 				"user_monitoring"
 			]
+		},
+		{
+			"code": "audience_by_gender",
+			"name": "Audience By Gender",
+			"icon": "/icons/weekly_esposizioni_ac.png",
+			"description": "Displays the gender proportion of the customers involved in your business.",
+			"target": {
+				"workspace": "social",
+				"card": "audience_by_gender"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"social"
+			],
+			"processes": [
+				"social_audience"
+			],
+			"objectives": [
+				""
+			]
+		},
+		{
+			"code": "trending_topics",
+			"name": "Trending Topics",
+			"icon": "/icons/ico-expenses.other.bankTransfer-1.png",
+			"description": "Understand which subjects experience a surge in popularity on one or more social media platforms for a limited duration of time.",
+			"target": {
+				"workspace": "social",
+				"card": "interests"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"social"
+			],
+			"processes": [
+				"social_audience"
+			],
+			"objectives": [
+				""
+			]
+		},
+		{
+			"code": "audience_by_age",
+			"name": "Audience By Age",
+			"icon": "/icons/ico-incomes.other.otherRevenue.png",
+			"description": "Analyze the age distributions of your audiences.",
+			"target": {
+				"workspace": "social",
+				"card": "audience_by_age"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"social"
+			],
+			"processes": [
+				"social_audience"
+			],
+			"objectives": [
+				""
+			]
+		},
+		{
+			"code": "audience_topic",
+			"name": "Audience Topic",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Analyze the topics that are being discussed within your audience.",
+			"target": {
+				"workspace": "social",
+				"card": "audience_topic"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"social"
+			],
+			"processes": [
+				"social_audience"
+			],
+			"objectives": [
+				""
+			]
 		}
 		
 		
@@ -594,7 +682,12 @@
 		{
 			"code": "social_media_management",
 			"name": "Social Media Management"
+			},
+		{
+			"code": "social_audience",
+			"name": "Social Audience"
 			}      
+					
 		      
 		      
 		      
