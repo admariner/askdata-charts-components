@@ -1,101 +1,76 @@
-
 <!DOCTYPE html>
-<html style="height: 100%">
-    <head>
+<html>
+ <head>
+  <style>
+/* fonts */
 
-        <style>
-            /* fonts */
+div.jqcloud {
+    font-size: 10px;
+    line-height: normal;
+}
 
-            div.jqcloud {
-                font-size: 10px;
-                line-height: normal;
-            }
+div.jqcloud a {
+    font-size: inherit;
+    text-decoration: none;
+}
 
-            div.jqcloud a {
-                font-size: inherit;
-                text-decoration: none;
-            }
+div.jqcloud span.w10 { font-size: 550%; }
+div.jqcloud span.w9 { font-size: 500%; }
+div.jqcloud span.w8 { font-size: 450%; }
+div.jqcloud span.w7 { font-size: 400%; }
+div.jqcloud span.w6 { font-size: 350%; }
+div.jqcloud span.w5 { font-size: 300%; }
+div.jqcloud span.w4 { font-size: 250%; }
+div.jqcloud span.w3 { font-size: 200%; }
+div.jqcloud span.w2 { font-size: 150%; }
+div.jqcloud span.w1 { font-size: 100%; }
 
-            div.jqcloud span.w10 { font-size: 550%; }
-            div.jqcloud span.w9 { font-size: 500%; }
-            div.jqcloud span.w8 { font-size: 450%; }
-            div.jqcloud span.w7 { font-size: 400%; }
-            div.jqcloud span.w6 { font-size: 350%; }
-            div.jqcloud span.w5 { font-size: 300%; }
-            div.jqcloud span.w4 { font-size: 250%; }
-            div.jqcloud span.w3 { font-size: 200%; }
-            div.jqcloud span.w2 { font-size: 150%; }
-            div.jqcloud span.w1 { font-size: 100%; }
+/* colors */
 
-            /* colors */
-
-            div.jqcloud { color: #2BA0FD; }
-            div.jqcloud span.w10 { color: #3D5A68; }
-            div.jqcloud span.w9 { color: #563225; }
-            div.jqcloud span.w8 { color: #DC7500; }
-            div.jqcloud span.w7 { color: #298C2D; }
-            div.jqcloud span.w6 { color:  #0073D0; }
-            div.jqcloud span.w5 { color:  #1C2E92; }
-            div.jqcloud span.w4 { color: #441794; }
-            div.jqcloud span.w3 { color: #79048D; }
-            div.jqcloud span.w2 { color: #C60040; }
-            div.jqcloud span.w1 { color: #D12013; }
-            /* div.jqcloud span:hover { color: #0099B2; } */
-
-
-            /* layout */
-
-            div.jqcloud {
-                overflow: hidden;
-                position: relative;
-                margin: 20px auto;
-            }
-
-            div.jqcloud span {
-                padding: 0;
-            }
-
-        </style>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-        <script src="/lib/scripts/utils.js"></script>
-        <script src="/lib/scripts/env.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script src="/lib/scripts/jquery.min.js"></script>
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
-        <script src="https://unpkg.com/mustache@latest"></script>
-    </head>
+div.jqcloud { color: #2BA0FD; }
+div.jqcloud span.w10 { color: #3D5A68; }
+div.jqcloud span.w9 { color: #563225; }
+div.jqcloud span.w8 { color: #DC7500; }
+div.jqcloud span.w7 { color: #298C2D; }
+div.jqcloud span.w6 { color:  #0073D0; }
+div.jqcloud span.w5 { color:  #1C2E92; }
+div.jqcloud span.w4 { color: #441794; }
+div.jqcloud span.w3 { color: #79048D; }
+div.jqcloud span.w2 { color: #C60040; }
+div.jqcloud span.w1 { color: #D12013; }
+/* div.jqcloud span:hover { color: #0099B2; } */
 
 
-    <body style="height: 100%; margin: 0">
-        <div  id="word-cloud"></div>
-    </body>
+/* layout */
 
-    
-        <script type="text/javascript">
+div.jqcloud {
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+}
 
+div.jqcloud span {
+    padding: 0;
+}
+  </style> 
+ </head>
+  <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <div  id="word-cloud"></div>
 
-environment_widget = "https://api-dev.askdata.com";
-// environment_widget = "https://api-qa.askdata.com"
-// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+    <script>
+  
+/*!
+ * jQCloud Plugin for jQuery
+ *
+ * Version 1.0.4
+ *
+ * Copyright 2011, Luca Ongaro
+ * Licensed under the MIT license.
+ *
+ * Date: 2013-05-09 18:54:22 +0200
+*/
 
-
-$.ajax({
-
-url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
-type: "GET",
-async: false,
-beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
- ).setRequestHeader('Content-Type','application/json')},
-success: function(data) { 
- console.log(data)        
- //  From here
-
- 
 (function( $ ) {
   "use strict";
   $.fn.jQCloud = function(word_array, options) {
@@ -371,12 +346,7 @@ console.log(word_arrays)
     }
   });
 
-
-
- //To here
- 
-    }
-  });
-        </script>
-
+    </script>
+  </body>
 </html>
+

@@ -29,15 +29,15 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Measure",
+        "label": "Weights",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the measure"
     }, {
-        "code": "settings.m2_id",
-        "label": "Dimension",
+        "code": "settings.s1_id",
+        "label": "Words",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
