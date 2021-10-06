@@ -93,6 +93,12 @@
 		    "name": "Scatter with regression line",
 		    "icon": "scatter-with-regression/scatter.png",
 		    "description": "4 different Scatter plots with regression lines."
+		},
+		{
+		    "code": "word_cloud",
+		    "name": "Word Cloud",
+		    "icon": "word_cloud/word.png",
+		    "description": "Word Cloud."
 		}
 	],
 	"background-color": "#CCCCCC"
