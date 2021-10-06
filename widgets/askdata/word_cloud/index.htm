@@ -44,17 +44,20 @@ div.jqcloud span:hover { color: #0099B2; }
 /* layout */
 
 div.jqcloud {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
+    margin: 20px auto;
+    height: fit-content;
+    width: fit-content;
 }
 
-
+div.jqcloud span {
+    padding: 0;
+}
   </style> 
  </head>
   <body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <div style="width: 100%;" id="word-cloud"></div>
+    <div id="word-cloud"></div>
 
     <script>
   
