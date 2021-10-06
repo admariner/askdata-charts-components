@@ -73,30 +73,9 @@
 
     <body style="height: 100%; margin: 0">
         <div  id="word-cloud"></div>
-    </body>
-
-    
-        <script type="text/javascript">
-
-
-environment_widget = "https://api-dev.askdata.com";
-// environment_widget = "https://api-qa.askdata.com"
-// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
-
-
-$.ajax({
-
-url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
-type: "GET",
-async: false,
-beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
- ).setRequestHeader('Content-Type','application/json')},
-success: function(data) { 
- console.log(data)        
- //  From here
-
+      <script>
  
-(function( $ ) {
+ (function( $ ) {
   "use strict";
   $.fn.jQCloud = function(word_array, options) {
     // Reference to the container element
@@ -317,6 +296,31 @@ success: function(data) {
     return $this;
   };
 })(jQuery);
+
+
+      </script>
+    </body>
+
+    
+        <script type="text/javascript">
+
+
+environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+ console.log(data)        
+ //  From here
+
 
 
 var words = data.fields.s1_id.data;
