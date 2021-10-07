@@ -304,9 +304,9 @@
                     const element = document.getElementById("row1");
                     element.innerHTML = cardData.details.rows[0];
 
-                    // const parsedData = {
-                    //     rows: cardData,
-                    // };
+                    const parsedData = {
+                        rows: cardData,
+                    };
 
                     // replace of the content
                     document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
