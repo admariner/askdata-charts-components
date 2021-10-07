@@ -233,19 +233,19 @@
     <!-- END OF THE HEADER SNIPPET -->
 </head>
 <body>
-    <table id="target">
+    <!-- <table id="target">
     <tbody>
         <tr>
         <td>Col 1  Col 2 </td>
         
         </tr>
         
-        <!-- {{#yourList}}
+        {{#yourList}}
     <tr>{{.}}</tr>
-    {{/yourList}} -->
+    {{/yourList}}
         
     </tbody>
-    </table>
+    </table> -->
 </body>
 
     <script type="text/javascript">
@@ -300,7 +300,13 @@
                     
                     // Log result
                     console.log(data);
-                    console.log(cardData.details.rows[0]);
+                    var righe = cardData.details.rows;
+
+                    for(var i = 0; i < right; i++)
+                    {
+                        console.log(righe[i])
+                    }
+
 
                     const parsedData = {
                         rows: parsedRows(cardData)
