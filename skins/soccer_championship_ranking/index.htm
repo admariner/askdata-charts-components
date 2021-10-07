@@ -236,13 +236,13 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
 <table id="target">
   <tbody>
     <tr>
-      <td>Col 1</td>
-      <td>Col 2</td>
+      <td>Col 1  Col 2 </td>
+      
     </tr>
     
-    {{#yourList}}
+    <!-- {{#yourList}}
   <tr>{{.}}</tr>
-  {{/yourList}}
+  {{/yourList}} -->
     
   </tbody>
 </table>
@@ -282,12 +282,12 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
                     console.log(data);
 
                     const parsedData = {
-                        homeTeamImageUrl: cardData.details['rows'][0][1],
-                        awayTeamImageUrl: cardData.details['rows'][1][1],
-                        homeTeamTitle: cardData.details['rows'][0][0],
-                        awayTeamTitle: cardData.details['rows'][1][0],
-                        homeScore: cardData.details['rows'][0][2],
-                        awayScore: cardData.details['rows'][1][2],
+                        // homeTeamImageUrl: cardData.details['rows'][0][1],
+                        // awayTeamImageUrl: cardData.details['rows'][1][1],
+                        // homeTeamTitle: cardData.details['rows'][0][0],
+                        // awayTeamTitle: cardData.details['rows'][1][0],
+                        // homeScore: cardData.details['rows'][0][2],
+                        // awayScore: cardData.details['rows'][1][2],
                         rows: parsedRows(cardData),
                     };
 
