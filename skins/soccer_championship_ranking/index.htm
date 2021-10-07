@@ -10,30 +10,30 @@
   background-color: #ddd;
 }
 </style>
-        <script>
+        <!-- <script>
             
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
 
-// Body
-document.body.style.padding = '0';
-document.body.style.margin = '0';
+// // Body
+// document.body.style.padding = '0';
+// document.body.style.margin = '0';
 
-//Create a div
-var div = document.createElement('div');
-div.style.backgroundColor = 'blue';
-div.style.width = '1080px';
-div.style.height = '1350px';
+// //Create a div
+// var div = document.createElement('div');
+// div.style.backgroundColor = 'blue';
+// div.style.width = '1080px';
+// div.style.height = '1350px';
 
-div.id = 'container';
+// div.id = 'container';
 
 
-// Add the div to the HTML body
-document.body.appendChild(div);
+// // Add the div to the HTML body
+// document.body.appendChild(div);
 
-//Load background
-div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/classifica_bg.png)';
-});
-        </script>
+// //Load background
+// div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/classifica_bg.png)';
+// });
+        </script> -->
 
 
     <!-- BEGINNING OF THE HEADER SNIPPET -->
@@ -273,6 +273,27 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
                 beforeSend: (xhr) => setAuthHeader(xhr),
                 success: (data) => {
                     // Select the HTML to render as temple
+
+                    // Body
+                    document.body.style.padding = '0';
+                    document.body.style.margin = '0';
+
+                    //Create a div
+                    var div = document.createElement('div');
+                    div.style.backgroundColor = 'blue';
+                    div.style.width = '1080px';
+                    div.style.height = '1350px';
+
+                    div.id = 'container';
+
+
+                    // Add the div to the HTML body
+                    document.body.appendChild(div);
+
+                    //Load background
+                    div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/classifica_bg.png)';
+
+
                     const template = document.getElementById('container').innerHTML;
 
                     const cardData = data[1].attachment.body[0];
