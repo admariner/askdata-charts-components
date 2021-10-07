@@ -236,7 +236,7 @@
     <table id="target">
     <tbody>
         <tr>
-        <td id="row1">Col 1  Col 2 </td>
+        <td>Col 1  Col 2 </td>
         
         </tr>
         
@@ -300,12 +300,10 @@
                     
                     // Log result
                     console.log(data);
-                    console.log(cardData.details.rows[0]);
-                    const element = document.getElementById("row1");
-                    element.innerHTML = cardData.details.rows[0];
+                    console.log(data.details.rows[0]);
 
                     const parsedData = {
-                        rows: cardData,
+                        rows: parsedRows(cardData)
                     };
 
                     // replace of the content
@@ -314,6 +312,26 @@
             });
         }
     });
+
+    function parsedRows(cardData) {
+        const homeRows = cardData.details['rows'][0].slice(3);
+        const awayRows = cardData.details['rows'][1].slice(3);
+        const titleRows = cardData.details['columns'].slice(3);
+        return titleRows.map((title, index) => {
+           return {
+               title: title,
+               home: homeRows[index],
+               away: awayRows[index],
+               homeClass: parseFloat(homeRows[index]) >= parseFloat(awayRows[index]) ? 'highlight' : '',
+               awayClass: parseFloat(awayRows[index]) >= parseFloat(homeRows[index]) ? 'highlight' : ''
+           }
+        });
+    }
+
+    function setAuthHeader(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + getToken()
+        ).setRequestHeader('Content-Type', 'application/json')
+    }
 </script>
 </html>
 
