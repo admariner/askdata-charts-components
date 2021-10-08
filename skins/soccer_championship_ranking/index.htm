@@ -414,32 +414,25 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
                     document.getElementById("row" +i).appendChild(td);
 
                 }
-
-                    // const parsedData = {
-                    //     rows: parsedRows(cardData)
-                    // };
-
-                    // // replace of the content
-                    // document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
                 }
             });
         }
     });
 
-    function parsedRows(cardData) {
-        const homeRows = cardData.details['rows'][0].slice(3);
-        const awayRows = cardData.details['rows'][1].slice(3);
-        const titleRows = cardData.details['columns'].slice(3);
-        return titleRows.map((title, index) => {
-           return {
-               title: title,
-               home: homeRows[index],
-               away: awayRows[index],
-               homeClass: parseFloat(homeRows[index]) >= parseFloat(awayRows[index]) ? 'highlight' : '',
-               awayClass: parseFloat(awayRows[index]) >= parseFloat(homeRows[index]) ? 'highlight' : ''
-           }
-        });
-    }
+    // function parsedRows(cardData) {
+    //     const homeRows = cardData.details['rows'][0].slice(3);
+    //     const awayRows = cardData.details['rows'][1].slice(3);
+    //     const titleRows = cardData.details['columns'].slice(3);
+    //     return titleRows.map((title, index) => {
+    //        return {
+    //            title: title,
+    //            home: homeRows[index],
+    //            away: awayRows[index],
+    //            homeClass: parseFloat(homeRows[index]) >= parseFloat(awayRows[index]) ? 'highlight' : '',
+    //            awayClass: parseFloat(awayRows[index]) >= parseFloat(homeRows[index]) ? 'highlight' : ''
+    //        }
+    //     });
+    // }
 
     function setAuthHeader(xhr) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + getToken()
