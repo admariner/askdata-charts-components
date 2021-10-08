@@ -1,39 +1,48 @@
 
 <html>
     <head>
-<style>
-          #target {
+        <!-- <style>
+        @font-face { font-family: Delicious; src: url('Delicious-Roman.otf'); } 
+        @font-face { font-family: Delicious; font-weight: bold; src: url('Delicious-Bold.otf');}
+        
+    </style> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300&family=Tajawal:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<!-- <style>
+#target {
   position: absolute;
-  left: 50px;
-  top: 100px;
-  border: 2px solid black;
-  background-color: #ddd;
+  left: 150px;
+  top: 250px;
 }
-</style>
-        <!-- <script>
+</style> -->
+        <script>
             
-// document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
 
-// // Body
-// document.body.style.padding = '0';
-// document.body.style.margin = '0';
+// Body
+document.body.style.padding = '0';
+document.body.style.margin = '0';
 
-// //Create a div
-// var div = document.createElement('div');
-// div.style.backgroundColor = 'blue';
-// div.style.width = '1080px';
-// div.style.height = '1350px';
+//Create a div
+var div = document.createElement('div');
+div.style.backgroundColor = 'blue';
+div.style.width = '1080px';
+div.style.height = '1350px';
 
-// div.id = 'container';
+div.id = 'container';
 
 
-// // Add the div to the HTML body
-// document.body.appendChild(div);
+// Add the div to the HTML body
+document.body.appendChild(div);
 
-// //Load background
-// div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/classifica_bg.png)';
-// });
-        </script> -->
+//Load background
+div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/classifica_bg.png)';
+});
+        </script>
 
 
     <!-- BEGINNING OF THE HEADER SNIPPET -->
@@ -244,12 +253,56 @@
     <tr>{{.}}</tr>
     {{/yourList}}
         
+
+    
     </tbody>
     </table> -->
+
+    <div style = "font-family: 'Roboto', sans-serif;color:white; position: absolute; left: 458px; top: 141px; font-size: 33px;" id ="matchday">
+
+    </div>
+
+    <div style= "display: flex; flex-wrap: wrap; align-items: stretch;">
+        <!-- <p style="float: left;"><img height = 45px src="https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png"></p> -->
+        <table>
+            <tbody style = "font-family: 'Roboto', sans-serif; color:#0d267e; font-size: 29px;" id = "leaderboard">
+                <!-- <tr style = " width:1500 px;font-family: 'Roboto'; position: absolute; left: 190px; top: 240px;"> 
+                    <td style="padding-right:40px"><img height = 45px src="https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png"></td><td style="font-weight: bold;padding-right:182px" >Sampdoria</td><td style="font-weight: bold; padding-right:67px">21</td><td style="padding-right:53px">7</td><td style="padding-right:55px">7</td><td style="padding-right:48px">0</td><td style="padding-right:40px">0</td>
+                </tr> -->
+
+            </tbody>
+        </table> 
+        
+
+        
+    </div>
 </body>
 
     <script type="text/javascript">
 
+    // var data = [[8,"https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8,"https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0]]
+
+    //  Set Matchday
+   
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
     environment_widget = "https://api-dev.askdata.com";
     //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
@@ -272,28 +325,9 @@
                 async: false,
                 beforeSend: (xhr) => setAuthHeader(xhr),
                 success: (data) => {
-                    // Select the HTML to render as temple
 
                     // Body
-                    document.body.style.padding = '0';
-                    document.body.style.margin = '0';
-
-                    //Create a div
-                    var div = document.createElement('div');
-                    div.style.backgroundColor = 'blue';
-                    div.style.width = '1080px';
-                    div.style.height = '1350px';
-
-                    div.id = 'container';
-
-
-                    // Add the div to the HTML body
-                    document.body.appendChild(div);
-
-                    //Load background
-                    div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/classifica_bg.png)';
-
-
+                 
                     const template = document.getElementById('container').innerHTML;
 
                     const cardData = data[1].attachment.body[0];
@@ -307,6 +341,79 @@
                         console.log(righe[i])
                     }
 
+
+
+                document.getElementById("matchday").innerHTML = data[0][0] + "°"
+                for(var i = 0; i < data.length; i++)
+                {
+
+                    var data1 = righe[i]
+                    //  Add tr
+                    var tr = document.createElement('tr');
+                    tr.style.width = '1500px';
+                    tr.style.fontFamily = "'Roboto', sans-serif"
+                    tr.style.position = "absolute"
+                    tr.style.left = "190px"
+                    var y = 240 + (52 * i)
+                    tr.style.top = y + "px"
+                    tr.id = "row" + i
+                    document.getElementById("leaderboard").appendChild(tr);
+
+                    // Add first td
+                    var td = document.createElement('td');
+                    td.style.paddingRight = "40px"
+                    td.id = "td_row" + i
+                    document.getElementById("row" +i).appendChild(td);
+                    var img = document.createElement('img');
+                    img.height = 45
+                    img.src = data1[1]
+                    document.getElementById("td_row" + i).appendChild(img);
+
+                    // Add second td
+                    var td = document.createElement('td');
+                    td.style.paddingRight = "12px"
+                    td.style.width = "333px"
+                    td.fontWeight = "bold"
+                    td.innerHTML = data1[2]
+                    document.getElementById("row" +i).appendChild(td);
+
+                    
+                    // Add third td
+                    var td = document.createElement('td');
+                    td.style.paddingRight = "70px"
+                    td.fontWeight = "bold"
+                    td.innerHTML = data1[3]
+                    document.getElementById("row" +i).appendChild(td);
+
+                    // Add fourth td
+                    var td = document.createElement('td');
+                    td.style.paddingRight = "53px"
+                    td.fontWeight = "bold"
+                    td.innerHTML = data1[4]
+                    document.getElementById("row" +i).appendChild(td);
+
+                    // Add fifth td
+                    var td = document.createElement('td');
+                    td.style.paddingRight = "55px"
+                    td.fontWeight = "bold"
+                    td.innerHTML = data1[5]
+                    document.getElementById("row" +i).appendChild(td);
+
+                    // Add sixth td
+                    var td = document.createElement('td');
+                    td.style.paddingRight = "48px"
+                    td.fontWeight = "bold"
+                    td.innerHTML = data1[6]
+                    document.getElementById("row" +i).appendChild(td);
+
+                    // Add seventh td
+                    var td = document.createElement('td');
+                    td.style.paddingRight = "51px"
+                    td.fontWeight = "bold"
+                    td.innerHTML = data1[7]
+                    document.getElementById("row" +i).appendChild(td);
+
+                }
 
                     const parsedData = {
                         rows: parsedRows(cardData)
