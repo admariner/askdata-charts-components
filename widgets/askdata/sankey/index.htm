@@ -108,9 +108,14 @@ for (let i = 0; i < sources.length; i++) {
 //       {"source": "Tonali", "target": "Under", "value": 0.237241325342711}]}
 
     option = {
-        title: {
-            text: 'Sankey Diagram'
-        },
+        
+        grid: {
+          containLabel: true,    
+          left: 10,
+          top: 10,
+          right: 10,
+          bottom: 10
+          },
         tooltip: {
             trigger: 'item',
             triggerOn: 'mousemove'
