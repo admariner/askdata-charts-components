@@ -369,6 +369,31 @@
 			]
 		},
 		{
+			"code": "anger_ticket",
+			"name": "Number of tickets with angry emotion",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Understand the sentiment and the emotion of the users might help to develop a more elevate conversations and supports with the customers.",
+			"target": {
+				"workspace": "support",
+				"card": "angry_emotion"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+				
+			],
+			"processes": [
+				"ticket_management"
+				
+			],
+			"objectives": [
+				"help_more"
+				
+			]
+		},
+		{
 			"code": "top_suppliers",
 			"name": "Top Suppliers",
 			"icon": "/icons/icon-list-datas.png",
