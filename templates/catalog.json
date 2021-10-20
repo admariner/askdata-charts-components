@@ -296,7 +296,7 @@
 		{
 			"code": "training_summary",
 			"name": "Training Summary",
-			"icon": "/icons/ico-dollar.png",
+			"icon": "/icons/icon-list-questionnaire.png",
 			"description": "Do you invest in your employees? How much you have invested onboarding new hires and upgrading one’s education. ",
 			"target": {
 				"workspace": "hr",
@@ -321,7 +321,7 @@
 		{
 			"code": "compare_tickets",
 			"name": "Compare Ticket by Status and Problem",
-			"icon": "/icons/ico-dollar.png",
+			"icon": "/icons/ico-incomes.other.otherRevenue.png",
 			"description": "Compare the number of ticket by the type of problem and their status. This helps to understand if some problems have more propensity to be more suspended or not.",
 			"target": {
 				"workspace": "support",
@@ -346,7 +346,7 @@
 		{
 			"code": "trend_ticket",
 			"name": "Trend ticket by open and closing dates",
-			"icon": "/icons/ico-dollar.png",
+			"icon": "/icons/fin-graph-curve.png",
 			"description": "With this template you can compare the ticket trend by open and closing dates. Using this visualization helps to understand if the majority of the ticket are open rather than closed.",
 			"target": {
 				"workspace": "support",
@@ -371,7 +371,7 @@
 		{
 			"code": "anger_ticket",
 			"name": "Number of tickets with angry emotion",
-			"icon": "/icons/ico-dollar.png",
+			"icon": "/icons/icon-list-datas.png",
 			"description": "Understand the sentiment and the emotion of the users might help to develop a more elevate conversations and supports with the customers.",
 			"target": {
 				"workspace": "support",
