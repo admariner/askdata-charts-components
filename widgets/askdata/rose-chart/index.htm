@@ -54,6 +54,7 @@ success: function(data) {
             var names = data.fields.s1_id.data
 
             var obj = [];
+            
             for (let i = 0; i < values.length; i++)
             {
             obj.push({value: parseFloat(values[i]), name: names[i]}); 
