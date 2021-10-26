@@ -1,0 +1,56 @@
+{
+	"configuration": [{
+        "code": "code",
+        "label": "Chart code",
+        "type": "string",
+        "viewType": "hidden",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "name",
+        "label": "Name",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "description",
+        "label": "Description",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
+        "readOnly": false,
+        "viewType": "dropdown",
+        "mandatory": true
+    }, {
+        "code": "settings.m1_id",
+        "label": "Sources",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the sources"
+    },
+    {
+        "code": "settings.m2_id",
+        "label": "Targets",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the targets"
+    }, {
+        "code": "settings.m3_id",
+        "label": "Scores",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the scores"
+    }]
+}

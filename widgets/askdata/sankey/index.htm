@@ -2,19 +2,7 @@
     THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=funnel
 -->
 <!DOCTYPE html>
-<html >
-    <style>
-        body {
-       /* Background pattern from Toptal Subtle Patterns */
-       background-image: url("https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/campo.png");
-       background-repeat: no-repeat;
-       /* background-position: center;  */
-       background-size: 580px 290px;
-       position: relative;
-    
-    }
-    
-    </style>    
+<html style="height: 100%">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -30,8 +18,8 @@
     </head>
 
 
-    <body style="width: 580px;height: 290px;">
-        <div id="container" style="width: 88%; height: 87%; margin-left: 4.8%; margin-top: 3.2% ; " ></div>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
     </body>
 
     
@@ -54,70 +42,73 @@ success: function(data) {
  var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
-
 var option;
 
+// From
+
+// var nomi =  ["Donnarumma","Romagnoli","Kjaer","Florenzi","Kolarov","Bennacer","De Rossi","Tonali","Diaz","Ibra","Under"]
+// var sources= ["Donnarumma", "Donnarumma", "Donnarumma", "Donnarumma", "Florenzi", "Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Bennacer","De Rossi","Tonali"]
+// var targets = ["Florenzi","Kolarov","Kjaer","Romagnoli","Bennacer","Bennacer", "Bennacer","Bennacer","Tonali","Tonali","Tonali","Tonali","De Rossi","De Rossi","De Rossi","De Rossi","Diaz","Ibra",  "Under"]
+// var scores = [ 0.342284047256003,0.42322870366987,0.177682517071359,0.0433076373512774,0.137241325342711,0.137241325342711,0.137241325342711, 0.137241325342711, 0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,  0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,0.237241325342711,0.237241325342711,0.237241325342711]
+
+// var nomi =  data.fields.m1_id.data
+var sources= data.fields.m1_id.data
+var targets = data.fields.m2_id.data
+var scores = data.fields.m3_id.data
+
+var nomi = [...sources, ...targets];
+nomi = [...new Set(nomi)];
+
+var dict_nomi = []
+for (let i = 0; i < nomi.length; i++) {
+    var newrow = {name: nomi[i]};   
+    dict_nomi.push(newrow);
+}
+
+var dict_passaggi = []
+for (let i = 0; i < sources.length; i++) {
+    var newrow = {source: sources[i], target: targets[i], value: scores[i]};   
+    dict_passaggi.push(newrow);
+}
 
 
+// data= {"nodes": [
+//       {"name": "Donnarumma"},
+//       {"name": "Romagnoli"},
+//       {"name": "Kjaer"},
+//       {"name": "Florenzi"},
+// 	  {"name": "Kolarov"},
+// 	  {"name": "Bennacer"},
+// 	  {"name": "De Rossi"},
+// 	  {"name": "Tonali"},
+// 	  {"name": "Diaz"},
+// 	  {"name": "Ibra"},
+// 	  {"name": "Under"}
 
-
-
-// var sources= ["ME", "ME"]
-// var targets = ["YOU", "ES"]
-// var scores = [1,2]
-
-// var nomi = [...sources, ...targets];
-// nomi = [...new Set(nomi)];
-
-// var dict_nomi = []
-// for (let i = 0; i < nomi.length; i++) {
-//     var newrow = {name: nomi[i]};   
-//     dict_nomi.push(newrow);
-// }
-
-// var dict_passaggi = []
-// for (let i = 0; i < sources.length; i++) {
-//     var newrow = {source: sources[i], target: targets[i], value: scores[i]};   
-//     dict_passaggi.push(newrow);
-// }
-
-
-data= {"nodes": [
-      {"name": "Donnarumma"},
-      {"name": "Romagnoli"},
-      {"name": "Kjaer"},
-      {"name": "Florenzi"},
-	  {"name": "Kolarov"},
-	  {"name": "Bennacer"},
-	  {"name": "De Rossi"},
-	  {"name": "Tonali"},
-	  {"name": "Diaz"},
-	  {"name": "Ibra"},
-	  {"name": "Under"}
-
-    ],
-    "links": [
-      {"source": "Donnarumma", "target": "Florenzi", "value": 0.34},
-      {"source": "Donnarumma", "target": "Kolarov", "value": 0.42},
-      {"source": "Donnarumma", "target": "Kjaer", "value": 0.17},
-      {"source": "Donnarumma", "target": "Romagnoli", "value": 0.04},
-      {"source": "Florenzi", "target": "Bennacer", "value": 0.11},
-      {"source": "Kolarov", "target": "Bennacer", "value": 0.137241325342711},
-      {"source": "Romagnoli", "target": "Bennacer", "value": 0.137241325342711},
-      {"source": "Kjaer", "target": "Bennacer", "value": 0.137241325342711},
-      {"source": "Florenzi", "target": "Tonali", "value": 0.137241325342711},
-      {"source": "Kolarov", "target": "Tonali", "value": 0.137241325342711},
-      {"source": "Romagnoli", "target": "Tonali", "value": 0.137241325342711},
-      {"source": "Kjaer", "target": "Tonali", "value": 0.137241325342711},
-      {"source": "Florenzi", "target": "De Rossi", "value": 0.137241325342711},
-      {"source": "Kolarov", "target": "De Rossi", "value": 0.137241325342711},
-      {"source": "Romagnoli", "target": "De Rossi", "value": 0.137241325342711},
-      {"source": "Kjaer", "target": "De Rossi", "value": 0.137241325342711},
-      {"source": "Bennacer", "target": "Diaz", "value": 0.237241325342711},
-      {"source": "De Rossi", "target": "Ibra", "value": 0.237241325342711},
-      {"source": "Tonali", "target": "Under", "value": 0.237241325342711}]}
+//    ],
+//    "links": [
+//       {"source": "Donnarumma", "target": "Florenzi", "value": 0.342284047256003},
+//       {"source": "Donnarumma", "target": "Kolarov", "value": 0.42322870366987},
+//       {"source": "Donnarumma", "target": "Kjaer", "value": 0.177682517071359},
+//       {"source": "Donnarumma", "target": "Romagnoli", "value": 0.0433076373512774},
+//       {"source": "Florenzi", "target": "Bennacer", "value": 0.137241325342711},
+//       {"source": "Kolarov", "target": "Bennacer", "value": 0.137241325342711},
+//       {"source": "Romagnoli", "target": "Bennacer", "value": 0.137241325342711},
+//       {"source": "Kjaer", "target": "Bennacer", "value": 0.137241325342711},
+//       {"source": "Florenzi", "target": "Tonali", "value": 0.137241325342711},
+//       {"source": "Kolarov", "target": "Tonali", "value": 0.137241325342711},
+//       {"source": "Romagnoli", "target": "Tonali", "value": 0.137241325342711},
+//       {"source": "Kjaer", "target": "Tonali", "value": 0.137241325342711},
+//       {"source": "Florenzi", "target": "De Rossi", "value": 0.137241325342711},
+//       {"source": "Kolarov", "target": "De Rossi", "value": 0.137241325342711},
+//       {"source": "Romagnoli", "target": "De Rossi", "value": 0.137241325342711},
+//       {"source": "Kjaer", "target": "De Rossi", "value": 0.137241325342711},
+//       {"source": "Bennacer", "target": "Diaz", "value": 0.237241325342711},
+//       {"source": "De Rossi", "target": "Ibra", "value": 0.237241325342711},
+//       {"source": "Tonali", "target": "Under", "value": 0.237241325342711}]}
 
     option = {
+        
         grid: {
           containLabel: true,    
           left: 10,
@@ -127,20 +118,19 @@ data= {"nodes": [
           },
         tooltip: {
             trigger: 'item',
-            triggerOn: 'mousemove',
-            backgroundColor: "#ffffff"
-            },
+            triggerOn: 'mousemove'
+        },
         series: [
             {
                 type: 'sankey',
-                data: data.nodes,
+                data: dict_nomi,
                 width: '90%',
-                links: data.links,
+                links: dict_passaggi,
                 label: {
                     normal: {
                         show: true,
                         position: 'right',
-                        fontSize: 12,
+                        fontSize: 15,
                         fontFamily: 'Roboto'
                       }
                   },
@@ -149,18 +139,17 @@ data= {"nodes": [
                 },
                 levels: [{
                     depth: 0,
-                    
                     itemStyle: {
                         color: '#fbb4ae'
                     },
                     lineStyle: {
                         color: 'source',
                         opacity: 0.8
-                    },
+                    }
                 }, {
                     depth: 1,
                     itemStyle: {
-                        color: '#1368aa'
+                        color: '#b3cde3'
                     },
                     lineStyle: {
                         color: 'source',
@@ -185,18 +174,19 @@ data= {"nodes": [
                         opacity: 0.8
                     }
                 }],
-                
                 lineStyle: {
                     curveness: 0.5
                 }
             }
         ]
     };
-console.log("ok")
+
 
 if (option && typeof option === 'object') {
     myChart.setOption(option);
 }
+
+
 // To
 
     }
