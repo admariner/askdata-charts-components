@@ -1,0 +1,270 @@
+<!--
+    EXAMPLE DOWNLOADED FROM https://github.com/AskdataHQ/askdata-charts-components/tree/main/skins/askdata/_skin_example/index.htm
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+
+    <!-- BEGINNING OF THE HEADER SNIPPET -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- These imports are required -->
+    <script src="/lib/scripts/utils.js"></script>
+    <script src="/lib/scripts/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+    <script src="/lib/scripts/jquery.min.js"></script>
+
+    <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- Default styling -->
+    <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+
+    <!-- Other JS libraries or CSS import-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: normal;
+            font-weight: normal;
+            src: url('../_lib/fonts/TIMSans-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            src: url('../_lib/fonts/TIMSans-Bold.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-BoldItalic.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 500;
+            src: url('../_lib/fonts/TIMSans-Medium.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            padding: 20px;
+            background: url('../_lib/images/performance_background.jpg');
+            font-family: TIMSans;
+            color: #FFFFFF;
+        }
+
+        .performance-score {
+            position: absolute;
+            top: 202px;
+            left: 500px;
+            width: 94px;
+            text-align: center;
+            font-size: 50px;
+            font-family: TIMSans;
+            font-style: italic;
+            font-weight: bold;
+            text-shadow: 3px 3px #424242;
+        }
+
+        .team-image {
+            position: absolute;
+            top: 293px;
+            left: 363px;
+            height: 57px;
+        }
+
+        .shirt {
+            position: absolute;
+            top: 321px;
+            left: 435px;
+            width: 222px;
+            height: 234px;
+        }
+
+        .shirt-image {
+            height: 100%;
+            position: absolute;
+            left: -7px;
+            top: 0;
+        }
+
+        .shirt-number {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 222px;
+            text-align: center;
+            font-size: 80px;
+            font-weight: 500;
+        }
+
+        .player-name {
+            position: absolute;
+            top: 608px;
+            left: 350px;
+            width: 380px;
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .score-table {
+            position: absolute;
+            left: 391px;
+            top: 675px;
+            font-size: 24px;
+            width: 320px;
+            text-align: center;
+        }
+    </style>
+    <!-- Put your libaries here --->
+
+    <!-- END OF THE HEADER SNIPPET -->
+</head>
+
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%">
+    <div class="card">
+        <div class="performance-score">{{performanceScore}}</div>
+        <img class="team-image" src="{{teamImageUrl}}" />
+        <div class="shirt">
+            <img class="shirt-image" src="{{shirtImageUrl}}" />
+            <div class="shirt-number" style="color: {{shirtNumberColor}}">{{shirtNumber}}</div>
+        </div>
+        <div class="player-name">{{playerName}}</div>
+        <table class="score-table">
+            <tr>
+                <td>TIR</td>
+                <td>{{TIRScore}}</td>
+                <td>stars</td>
+            </tr>
+            <tr>
+                <td>TEC</td>
+                <td>{{TECScore}}</td>
+                <td>stars</td>
+            </tr>
+            <tr>
+                <td>FIS</td>
+                <td>{{FISScore}}</td>
+                <td>stars</td>
+            </tr>
+            <tr>
+                <td>PAS</td>
+                <td>{{PASScore}}</td>
+                <td>stars</td>
+            </tr>
+            <tr>
+                <td>DIF</td>
+                <td>{{DIFScore}}</td>
+                <td>stars</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+    // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+    environment_widget = "https://api-dev.askdata.com";
+    //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+    const teamIdMap = {
+        t120: 'Milan',
+        t121: 'Roma',
+        t123: 'Bologna',
+        t124: 'Cagliari',
+        t125: 'Fiorentina',
+        t127: 'Internazionale',
+        t128: 'Juventus',
+        t129: 'Lazio',
+        t135: 'Torino',
+        t136: 'Udinese',
+        t456: 'Atalanta',
+        t459: 'Napoli',
+        t603: 'Sampdoria',
+        t990: 'Genoa',
+        t695: 'Empoli',
+        t126: 'Verona',
+        t2182: 'Sassuolo',
+        t1025: 'Salernitana',
+        t2036: 'Spezia',
+        t137: 'Venezia',
+    };
+
+    console.log("I'm going to request data");
+    // Requesting agent data
+    $.ajax({
+        url: `${environment_widget}/smartbot/agents/agentslug/${getUrlParameter('agentSlug')}`,
+        type: "GET",
+        async: false,
+        beforeSend: (xhr) => setAuthHeader(xhr),
+        success: (agentData) => {
+
+            console.log("Requesting data if the WS answers 200");
+
+            // Requesting card data
+            $.ajax({
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                type: "GET",
+                async: false,
+                beforeSend: (xhr) => setAuthHeader(xhr),
+                success: (data) => {
+                    // Select the HTML to render as temple
+                    const template = document.getElementById('container').innerHTML;
+
+                    const cardData = data[1].attachment.body[0];
+                    console.log(data);
+                    const parsedData = {
+                        performanceScore: '75',
+                        teamImageUrl: '../_lib/images/teams/t120.png',
+                        shirtImageUrl: '../_lib/images/shirts/cagliari_player.png',
+                        shirtNumberColor: '#FF0000',
+                        shirtNumber: '15',
+                        playerName: 'IBANEZ',
+                        TIRScore: '50',
+                        TECScore: '22',
+                        FISScore: '66',
+                        PASScore: '77',
+                        DIFScore: '88',
+                    };
+
+                    // replace of the content
+                    document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
+                }
+            });
+        }
+    });
+
+    function setAuthHeader(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + getToken()
+        ).setRequestHeader('Content-Type', 'application/json')
+    }
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
