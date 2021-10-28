@@ -616,7 +616,7 @@
 		{
 			"code": "recruiting_conversion_rate_by_department",
 			"name": "Recruiting conversion rate by department",
-			"icon": "/icons/icon-chart-bars",
+			"icon": "/icons/icon-chart-bars.png",
 			"description": "Measures the ratio of the total number of applicants, that are actually turned into hired employees at the end of the process",
 			"target": {
 				"workspace": "human_resources",
@@ -660,7 +660,7 @@
 		{
 			"code": "training_cost_vs_recruitment_cost",
 			"name": "Training cost vs recruitment cost",
-			"icon": "ico-dollar.png",
+			"icon": "/icons/ico-dollar.png",
 			"description": "Comparison of investments made into development and recruitment",
 			"target": {
 				"workspace": "human_resources",
@@ -874,3 +874,5 @@
 		       
 	]
 }
+
+
