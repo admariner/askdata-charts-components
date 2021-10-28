@@ -617,7 +617,7 @@
 			"code": "recruiting_conversion_rate_by_department",
 			"name": "Recruiting conversion rate by department",
 			"icon": "/icons/icon-chart-bars.png",
-			"description": "Measures the ratio of the total number of applicants, that are actually turned into hired employees at the end of the process",
+			"description": "Measures the ratio of the total number of applicants, that are actually turned into hired employees at the end of the process.",
 			"target": {
 				"workspace": "human_resources",
 				"card": "recruiting_conversion_rate_by_department_2020"
@@ -639,7 +639,7 @@
 			"code": "total_hr_training_cost_by_month",
 			"name": "Total HR training cost by month",
 			"icon": "/icons/ico-expenses.coursesAndTraining.otherSchoolAndTraining.png",
-			"description": "It is a helpful metric to track employees’ training costs by month",
+			"description": "It is a helpful metric to track employees’ training costs by month.",
 			"target": {
 				"workspace": "human_resources",
 				"card": "total_hr_training_cost_by_month_2020"
@@ -661,7 +661,7 @@
 			"code": "training_cost_vs_recruitment_cost",
 			"name": "Training cost vs recruitment cost",
 			"icon": "/icons/ico-dollar.png",
-			"description": "Comparison of investments made into development and recruitment",
+			"description": "Comparison of investments made into development and recruitment.",
 			"target": {
 				"workspace": "human_resources",
 				"card": "total_monthly_training_cost_vs_recruitment_cost_2020"
@@ -678,7 +678,316 @@
 			"objectives": [
 				"employee_management"
 			]
+		},
+		{
+			"code": "total_training_cost_by_business_function",
+			"name": "Total training cost by business function",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows training cost spending by business function in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "total_training_costs_by_business_function_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "monthly_training_cost_for_marketing",
+			"name": "Montly training cost for Marketing",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows monthly training cost spending in Marketing department in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "monthly_training_costs_for_marketing_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "ytd_training_cost_by_business_function",
+			"name": "YTD training cost by business function",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows training cost spending comparison year-to-date in 2020 and 2021 by business function as of September 2021.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "ytd_business_functions_training_cost_september_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "mom_total_training_costs",
+			"name": "MoM total training costs",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows training cost spending comparison month over month in 2020 and 2021.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "mom_total_training_costs_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "yoy_recruiting_conversion_rate_by_business_function",
+			"name": "YoY recruiting conversion rate by business function",
+			"icon": "/icons/icon-chart-bars.png",
+			"description": "Shows year over year 2019 vs 2020 comparison in recruiting rate for different business functions.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "yoy_recruiting_conversion_rate_by_business_function_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "total_training_cost_by_year",
+			"name": "Total training cost by year",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows total training cost spending by year in 2010 - 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "total_training_cost_by_year_2010_-_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "recruiting_conversion_rate_by_year",
+			"name": "Recruiting conversion rate by year",
+			"icon": "/icons/icon-chart-bars.png",
+			"description": "Shows recruiting conversion rate by year in 2010 - 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "recruiting_conversion_rate_by_year_2010_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "average_employees_timestay_by_number_of_years",
+			"name": "Average employees timestay by number of years",
+			"icon": "/icons/icon-company.png",
+			"description": "Shows percent of employees stayed within a company in 2015 - 2020 by average number of years.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "average_employees_timestay_by_number_of_years_2015_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "percent_of_employees_staying_in_company_from_5_to_10_years",
+			"name": "Percent of employees staying inb company from 5 to 10 years",
+			"icon": "/icons/icon-company.png",
+			"description": "Shows percent of employees stayed within a company from 5 to 10 years in 2015 - 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "percent_of_employees_staying_in_company_from_5_to_10_years_in_2015_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "average_absence_rate_by_department",
+			"name": "Average absence rate by department",
+			"icon": "/icons/ico-expenses.home.appliances.png",
+			"description": "Shows percentage of the total working days among all employees by department in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "average_absence_rate_by_department_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "absence_rate_for_marketing",
+			"name": "Absence rate for Marketing",
+			"icon": "/icons/ico-expenses.home.appliances.png",
+			"description": "Shows percentage of the total working days among all employees in Marketing department in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "absence_rate_for_marketing_in_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "absence_rate_for_marketing",
+			"name": "Absence rate for Marketing",
+			"icon": "/icons/ico-expenses.home.appliances.png",
+			"description": "Shows percentage of the total working days among all employees in Marketing department in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "absence_rate_for_marketing_in_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "average_employee_timestay",
+			"name": "Average employee timestay",
+			"icon": "/icons/icon-company.png",
+			"description": "Shows percent of employees stayed within a company by average number of years in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "average_employee_timestay_in_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "total_monthly_training_cost_vs_ROI",
+			"name": "Total monthly training cost vs ROI",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows comparison of investments made into employees' development and company's ROI.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "copy_of_total_monthly_training_cost_vs_roi_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
 		}
+		
 		
 		
 		
