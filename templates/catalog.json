@@ -612,6 +612,28 @@
 			"objectives": [
 				" "
 			]
+		},
+		{
+			"code": "recruiting_conversion_rate_by_department",
+			"name": "Recruiting conversion rate by department",
+			"icon": "/icons/icon-alert-1.png",
+			"description": "Here to be a place for description",
+			"target": {
+				"workspace": "human_resources",
+				"card": "recruiting_conversion_rate_by_department_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
 		}
 		
 		
