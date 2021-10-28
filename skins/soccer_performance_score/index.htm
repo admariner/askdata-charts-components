@@ -21,6 +21,10 @@
     <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
     <script src="/lib/scripts/jquery.min.js"></script>
 
+    <!-- Rating jquery plugin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
     <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
     <script src="https://unpkg.com/mustache@latest"></script>
 
@@ -98,10 +102,10 @@
 
         .shirt {
             position: absolute;
-            top: 321px;
-            left: 435px;
-            width: 222px;
-            height: 234px;
+            top: 301px;
+            left: 415px;
+            width: 262px;
+            height: 274px;
         }
 
         .shirt-image {
@@ -115,9 +119,10 @@
             position: absolute;
             top: 40px;
             left: 0;
-            width: 222px;
+            width: 262px;
             text-align: center;
-            font-size: 80px;
+            font-size: 100px;
+            font-family: TIMSans;
             font-weight: 500;
         }
 
@@ -129,6 +134,7 @@
             font-size: 40px;
             font-weight: 500;
             text-align: center;
+            text-transform: uppercase;
         }
 
         .score-table {
@@ -138,6 +144,10 @@
             font-size: 24px;
             width: 320px;
             text-align: center;
+        }
+
+        .jq-ry-container {
+            display: inline-block;
         }
     </style>
     <!-- Put your libaries here --->
@@ -159,27 +169,37 @@
             <tr>
                 <td>TIR</td>
                 <td>{{TIRScore}}</td>
-                <td>stars</td>
+                <td>
+                    <div id="TIRScore"></div>
+                </td>
             </tr>
             <tr>
                 <td>TEC</td>
                 <td>{{TECScore}}</td>
-                <td>stars</td>
+                <td>
+                    <div id="TECScore"></div>
+                </td>
             </tr>
             <tr>
                 <td>FIS</td>
                 <td>{{FISScore}}</td>
-                <td>stars</td>
+                <td>
+                    <div id="FISScore"></div>
+                </td>
             </tr>
             <tr>
                 <td>PAS</td>
                 <td>{{PASScore}}</td>
-                <td>stars</td>
+                <td>
+                    <div id="PASScore"></div>
+                </td>
             </tr>
             <tr>
                 <td>DIF</td>
                 <td>{{DIFScore}}</td>
-                <td>stars</td>
+                <td>
+                    <div id="DIFScore"></div>
+                </td>
             </tr>
         </table>
     </div>
@@ -190,30 +210,110 @@
 <script type="text/javascript">
 
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
-    environment_widget = "https://api-dev.askdata.com";
+    // environment_widget = "https://api-dev.askdata.com";
     //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
     const teamIdMap = {
-        t120: 'Milan',
-        t121: 'Roma',
-        t123: 'Bologna',
-        t124: 'Cagliari',
-        t125: 'Fiorentina',
-        t127: 'Internazionale',
-        t128: 'Juventus',
-        t129: 'Lazio',
-        t135: 'Torino',
-        t136: 'Udinese',
-        t456: 'Atalanta',
-        t459: 'Napoli',
-        t603: 'Sampdoria',
-        t990: 'Genoa',
-        t695: 'Empoli',
-        t126: 'Verona',
-        t2182: 'Sassuolo',
-        t1025: 'Salernitana',
-        t2036: 'Spezia',
-        t137: 'Venezia',
+        t120: {
+            name: 'Milan',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t121: {
+            name: 'Roma',
+            playerNumberColor: '#ea9e51',
+            goalkeeperNumberColor: '#000000'
+        },
+        t123: {
+            name: 'Bologna',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t124: {
+            name: 'Cagliari',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t125: {
+            name: 'Fiorentina',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t127: {
+            name: 'Internazionale',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t128: {
+            name: 'Juventus',
+            playerNumberColor: '#000000',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t129: {
+            name: 'Lazio',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#2c2a2a'
+        },
+        t135: {
+            name: 'Torino',
+            playerNumberColor: '#fefcfc',
+            goalkeeperNumberColor: '#214c43'
+        },
+        t136: {
+            name: 'Udinese',
+            playerNumberColor: '#fefcfc',
+            goalkeeperNumberColor: '#030101'
+        },
+        t456: {
+            name: 'Atalanta',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t459: {
+            name: 'Napoli',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t603: {
+            name: 'Sampdoria',
+            playerNumberColor: '#fefefe',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t990: {
+            name: 'Genoa',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#071319'
+        },
+        t695: {
+            name: 'Empoli',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t126: {
+            name: 'Verona',
+            playerNumberColor: '#fcd22e',
+            goalkeeperNumberColor: '#2c2a2a'
+        },
+        t2182: {
+            name: 'Sassuolo',
+            playerNumberColor: '#fefefe',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t1025: {
+            name: 'Salernitana',
+            playerNumberColor: '#efeddb',
+            goalkeeperNumberColor: '#1d4689'
+        },
+        t2036: {
+            name: 'Spezia',
+            playerNumberColor: '#010000',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t137: {
+            name: 'Venezia',
+            playerNumberColor: '#FFFFFF',
+            goalkeeperNumberColor: '#071319'
+        },
     };
 
     console.log("I'm going to request data");
@@ -237,20 +337,62 @@
                     // Select the HTML to render as temple
                     const template = document.getElementById('container').innerHTML;
 
-                    const cardData = data[1].attachment.body[0];
-                    console.log(data);
+                    const cardData = data[1].attachment.body[0].details;
+                    console.log(cardData);
+                    const teamId = cardData.rows[0][cardData.columns.indexOf('teamId')];
+                    const teamData = teamIdMap[teamId];
+                    const playerRole = cardData.rows[0][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber = cardData.rows[0][cardData.columns.indexOf('Shirt Number')];
+                    const playerName = cardData.rows[0][cardData.columns.indexOf('Nome')];
+                    const performanceScore = cardData.rows[0][cardData.columns.indexOf('Overall')];
+                    const TIRScore = Number(cardData.rows[0][cardData.columns.indexOf('Tiro')]);
+                    const TECScore = Number(cardData.rows[0][cardData.columns.indexOf('Tecnica')]);
+                    const FISScore = Number(cardData.rows[0][cardData.columns.indexOf('Fisico')]);
+                    const PASScore = Number(cardData.rows[0][cardData.columns.indexOf('Passaggio')]);
+                    const DIFScore = Number(cardData.rows[0][cardData.columns.indexOf('Difesa')]);
+
+                    const ratingStyleObj = {
+                        starWidth: "20px",
+                        readOnly: true,
+                        normalFill: '#424984',
+                        ratedFill: '#fac66d',
+                        spacing: "5px"
+                    };
+                    $(function () {
+                        $("#TIRScore").rateYo({
+                            rating: parseRating(TIRScore),
+                            ...ratingStyleObj
+                        });
+                        $("#TECScore").rateYo({
+                            rating: parseRating(TECScore),
+                            ...ratingStyleObj
+                        });
+                        $("#FISScore").rateYo({
+                            rating: parseRating(FISScore),
+                            ...ratingStyleObj
+                        });
+                        $("#PASScore").rateYo({
+                            rating: parseRating(PASScore),
+                            ...ratingStyleObj
+                        });
+                        $("#DIFScore").rateYo({
+                            rating: parseRating(DIFScore),
+                            ...ratingStyleObj
+                        });
+                    });
+
                     const parsedData = {
-                        performanceScore: '75',
-                        teamImageUrl: '../_lib/images/teams/t120.png',
-                        shirtImageUrl: '../_lib/images/shirts/cagliari_player.png',
-                        shirtNumberColor: '#FF0000',
-                        shirtNumber: '15',
-                        playerName: 'IBANEZ',
-                        TIRScore: '50',
-                        TECScore: '22',
-                        FISScore: '66',
-                        PASScore: '77',
-                        DIFScore: '88',
+                        performanceScore,
+                        teamImageUrl: `../_lib/images/teams/${teamId}.png`,
+                        shirtImageUrl: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerRole}.png`,
+                        shirtNumberColor: teamData[`${playerRole}NumberColor`],
+                        shirtNumber,
+                        playerName,
+                        TIRScore,
+                        TECScore,
+                        FISScore,
+                        PASScore,
+                        DIFScore,
                     };
 
                     // replace of the content
@@ -259,6 +401,10 @@
             });
         }
     });
+
+    function parseRating(rating) {
+        return rating * 5 / 100;
+    }
 
     function setAuthHeader(xhr) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + getToken()
