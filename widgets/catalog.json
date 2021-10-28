@@ -98,13 +98,13 @@
 		    "code": "word_cloud",
 		    "name": "Word Cloud",
 		    "icon": "word_cloud/word.png",
-		    "description": "Word Cloud."
+		    "description": "A visualisation method that displays how frequently words appear in a given body of text, by making the size of each word proportional to its frequency."
 		},
 		{
 		    "code": "sankey_football_field",
 		    "name": "New Sankey",
-		    "icon": "word_cloud/word.png",
-		    "description": "Word Cloud."
+		    "icon": "sankey/sankey.png",
+		    "description": "Sankey with football field as bg."
 		}
 	],
 	"background-color": "#CCCCCC"
