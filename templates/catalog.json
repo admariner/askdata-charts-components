@@ -616,8 +616,8 @@
 		{
 			"code": "recruiting_conversion_rate_by_department",
 			"name": "Recruiting conversion rate by department",
-			"icon": "/icons/icon-alert-1.png",
-			"description": "Here to be a place for description",
+			"icon": "/icons/icon-chart-bars",
+			"description": "Measures the ratio of the total number of applicants, that are actually turned into hired employees at the end of the process",
 			"target": {
 				"workspace": "human_resources",
 				"card": "recruiting_conversion_rate_by_department_2020"
@@ -638,7 +638,7 @@
 		{
 			"code": "total_hr_training_cost_by_month",
 			"name": "Total HR training cost by month",
-			"icon": "/icons/icon-alert-1.png",
+			"icon": "/icons/ico-expenses.coursesAndTraining.otherSchoolAndTraining.png",
 			"description": "It is a helpful metric to track employees’ training costs by month",
 			"target": {
 				"workspace": "human_resources",
@@ -660,7 +660,7 @@
 		{
 			"code": "training_cost_vs_recruitment_cost",
 			"name": "Training cost vs recruitment cost",
-			"icon": "/icons/icon-alert-1.png",
+			"icon": "ico-dollar.png",
 			"description": "Comparison of investments made into development and recruitment",
 			"target": {
 				"workspace": "human_resources",
