@@ -634,7 +634,52 @@
 			"objectives": [
 				"employee_management"
 			]
+		},
+		{
+			"code": "total_hr_training_cost_by_month",
+			"name": "Total HR training cost by month",
+			"icon": "/icons/icon-alert-1.png",
+			"description": "It is a helpful metric to track employees’ training costs by month",
+			"target": {
+				"workspace": "human_resources",
+				"card": "total_hr_training_cost_by_month_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "training_cost_vs_recruitment_cost",
+			"name": "Training cost vs recruitment cost",
+			"icon": "/icons/icon-alert-1.png",
+			"description": "Comparison of investments made into development and recruitment",
+			"target": {
+				"workspace": "human_resources",
+				"card": "total_monthly_training_cost_vs_recruitment_cost_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
 		}
+		
 		
 		
 		
