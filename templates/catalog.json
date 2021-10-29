@@ -1624,7 +1624,427 @@
 			"objectives": [
 				"suppliers_management"
 			]
+		},
+		{
+			"code": "bounce_rate",
+			"name": "Bounce rate",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the percentage of visitors who enter a site and exit without viewing a second page.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "bounce"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		
+		{
+			"code": "average_order_value",
+			"name": "Average order value",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Tracks the average amount spent each time a customer places an order on a website or mobile app.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "aov"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "number_of_purchases_completed_vs_number_of_purchases_initiated",
+			"name": "Number of purchases completed vs number of purchases initiated",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows how many purchases were abandoned before completing in comparison with purchases done.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "aband"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "shopping_cart_abandoment_rate",
+			"name": "Shopping cart abandoment rate",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows percentage of visits on a web page with abandoned shopping carts before purchase completion.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "abnd"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "shopping_cart_abandoment_rate",
+			"name": "Shopping cart abandoment rate",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows percentage of visits on a web page with abandoned shopping carts before purchase completion. Here is shown trend by month in 2019-2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "abnd"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "monthly_active_users",
+			"name": "Monthly active users",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the number of unique users who have opened the application during the last 30 days. Here is shown MAU for Italy and France in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "mau_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "monthly_active_users_in_italy",
+			"name": "Monthly active users in Italy",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the number of unique users who have opened the application during the last 30 days. Here is shown MAU for Italy in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "mau"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "weekly_active_users_in_italy",
+			"name": "Weekly active users in Italy",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the number of unique users who have opened the application during a week. Here is shown WAU for Italy in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "wau_5"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Maximum_weekly_active_users_by country",
+			"name": "Maximum weekly active users by country",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the maximum number of unique users opened the application during a week. Here is shown maximum WAU per country in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "wau_4"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Weekly_active_users_for_italy_and_united_states",
+			"name": "Weekly active users for Italy and United States",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a week. Here is shown WAU trends for Italy and United Staes in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "wau_2"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Weekly_active_users_by_country",
+			"name": "Weekly active users by country",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a week. Here is shown WAU trends by country on the first week of January.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "wau_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Daily_active_users",
+			"name": "Daily active users",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a day. Here is shown DAU trends for Russia and Italy in January 2021.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "daa_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Daily_active_users_by_country",
+			"name": "Daily active users by country",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a day. Here is shown DAU by country on 1 January 2021.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "daa"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Daily_active_users_in_russia",
+			"name": "Daily active users in Russia",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a day. Here is shown DAU inb Russia on January 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "daily_active_users"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_by_month",
+			"name": "Customer retention rate by month",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Measures how many existing customers are still with you at the end of a certain period. Here is shown monthly trend in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "customer_retention_rate_by_month_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_by_year",
+			"name": "Customer retention rate by month",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Measures how many existing customers are still with you at the end of a certain period. Here is shown early trend in 2015-2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "customer_retention_rate_by_year"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_vs_company_target",
+			"name": "Customer retention rate vs company target",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows how many existing customers are still with you at the end of a certain period in comparison with company target.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "customer_retention_rate_vs_company_target_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_vs_average",
+			"name": "Customer retention rate vs average",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows how many existing customers are still with you at the end of a certain period in comparison with market average number.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "customer_retention_rate_by_month_vs_average_crr_in_retail_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_vs_average_for_retail",
+			"name": "Customer retention rate vs average for retail",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows how many existing customers are still with you at the end of a certain period in comparison with retail average number.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "companys_crr_vs_average_crr_for_retails_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
 		}
+	
 		
 		
 		
