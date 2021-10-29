@@ -1404,6 +1404,226 @@
 			"objectives": [
 				"improve_customer_care"
 			]
+		},
+		{
+			"code": "total_spendings_by_supplier",
+			"name": "Total spendings by supplier",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows amount of money spent on each supplier in 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "total_spendings_by_supplier_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "total_spendings_by_project",
+			"name": "Total spendings by project",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows amount of money spent on each supplier by project managed in 2018 - 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "total_spendings_by_project_2018-2020_2"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_suppliers_by_service_type",
+			"name": "Number of suppliers by service type",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows total number of suppliers the company deals with.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_suppliers_by_service_type_2"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "cost_spendings_comparison_by_year_and_business_function",
+			"name": "Cost spendings comparison by year and business function",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows amount of money spent on different suppliers per business funcations for the period 2018-2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "cost_spendings_comparison_by_year_by_business_function"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_suppliers_by_country",
+			"name": "Number of suppliers by country",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows number of suppliers from different countries company worked with in 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_suppliers_by_country_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_projects_by_supplier",
+			"name": "Number of projects by supplier",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows number of project managed per supplier in 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_projects_by_suppliers_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_suppliers_by_year",
+			"name": "Number of suppliers by year",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows number of suppliers company workedc with from 2015 to 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_suppliers_by_year"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "complience_rate_for_suppliers",
+			"name": "Complience rate for suppliers",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows supplier’s compliance with company's business requirements.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "complience_rate_for_active_suppliers_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_suppliers_managed_by_responsible_employee",
+			"name": "Number of suppliers managed by Responsible employee",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows workload of Responsible employees measured by number of managed suppliers.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_suppliers_managed_by_responsible_employee"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "complience_rate_by_years_vs_target",
+			"name": "Complience rate by years vs target",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows suppliers's complience rate in comparison to established target.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "compliance_rate_by_years_vs_target"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
 		}
 		
 		
