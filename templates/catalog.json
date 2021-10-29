@@ -986,6 +986,424 @@
 			"objectives": [
 				"employee_management"
 			]
+		},
+		{
+			"code": "average_first_response_time_by_ticket_priority",
+			"name": "Average first response time by ticket priority",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown by ticket prriority",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_ticket_priority_hours_4"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_ticket_subject",
+			"name": "Average first response time by ticket subject",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown by ticket subject",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_response_time_by_ticket_subject_hours"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_year",
+			"name": "First contact resolution rate by year",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown a year trend.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_call_resolution_rate_by_year_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_year",
+			"name": "Average first response time by year",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown a year trend.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_hours_by_year"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_business_function",
+			"name": "Average first response time by business function",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown statistics by business function in 2020.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_business_function_hours_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_ticket_type",
+			"name": "Average first response time by ticket type",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown statistics by ticket type in 2020.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_ticket_type_hours_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_geo",
+			"name": "Average first response time by GEO",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown statistics by cities in Italy in 2020.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_geo_hours_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_month",
+			"name": "Average first response time by month",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown monthly trend in 2020.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_hours_by_month_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_vs_recommended_benchmark",
+			"name": "Average first response time vs recommended benchmark",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown a comparison to recommended market benchmark.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_vs_recommended_benchmark_hours"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_business_function",
+			"name": "First contact resolution rate by business function",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by business function.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_call_resolution_rate_by_business_function__1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_incident_subject",
+			"name": "First contact resolution rate by incident subject",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by incident subject.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_call_resolution_rate_by_incident_subject_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_vs_sla",
+			"name": "Average first response time vs SLA",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown a comparison to SLA.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_vs_sla_hours_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_channel",
+			"name": "First contact resolution rate by channel",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by channel.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_contact_resolution_rate_by_channel__1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_geo",
+			"name": "First contact resolution rate by GEO",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by regions of Italy.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_contact_resolution_rate_by_geo_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_priority",
+			"name": "First contact resolution rate by priority",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by ticket priority.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_contact_resolution_rate_by_priority__1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_vs_benchmark",
+			"name": "First contact resolution rate vs benchmark",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown a comparison to market benchmark.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_contact_resolution_rate_vs_recommended_benchmark_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_channel",
+			"name": "Average first response time by channel",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown statistics by channel.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_channel_hours_2019"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "peak_days_in_september",
+			"name": "Peak days in September",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Days in September when most calls/e-mail/chat came in.",
+			"target": {
+				"workspace": "support_template",
+				"card": "peak_days_in_september_4"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "peak_months_in_2020",
+			"name": "Peak months in 2020",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Months in 2020 when most calls/e-mail/chat came in.",
+			"target": {
+				"workspace": "support_template",
+				"card": "peak_month_in_a_year_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
 		}
 		
 		
