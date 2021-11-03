@@ -2268,7 +2268,7 @@
 			"code": "total_year_revenue_by_brand",
 			"name": "Total year revenue by brand",
 			"icon": "/icons/ico-dollar.png",
-			"description": "Measures the amount of money that a company can generate from an individual customer. Here is shown total revenue by brand in 2020.",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown total revenue by brand in 2020.",
 			"target": {
 				"workspace": "sales",
 				"card": "yearly_revenue_growth_by_brands"
@@ -2290,7 +2290,7 @@
 			"code": "total_year_revenue_by_channel",
 			"name": "Total year revenue by channel",
 			"icon": "/icons/ico-dollar.png",
-			"description": "Measures the amount of money that a company can generate from an individual customer. Here is shown total revenue by channel in 2020.",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown total revenue by channel in 2020.",
 			"target": {
 				"workspace": "sales",
 				"card": "revenue_by_channel"
@@ -2312,7 +2312,7 @@
 			"code": "yearly_revenue_growth",
 			"name": "Yearly revenue growth",
 			"icon": "/icons/ico-dollar.png",
-			"description": "Measures the amount of money that a company can generate from an individual customer. Here is shown yearly trend.",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown yearly trend.",
 			"target": {
 				"workspace": "sales",
 				"card": "year_revenue_growth_2015-2016"
@@ -2413,6 +2413,72 @@
 			],
 			"processes": [
 				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "ytd revenue",
+			"name": "YTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown year-to-date revenue from the beggining of the year util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "ytd_revenue_3"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "mtd revenue",
+			"name": "MTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown month-to-date revenue from the beggining of the current month util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "mtd_revenue_on_3_nov"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "wtd revenue",
+			"name": "WTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown week-to-date revenue from the beggining of the current week util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "wtd_revenue_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
 			],
 			"objectives": [
 				"manage_growth"
