@@ -2419,7 +2419,7 @@
 			]
 		},
 		{
-			"code": "ytd revenue",
+			"code": "ytd_revenue",
 			"name": "YTD Revenue",
 			"icon": "/icons/ico-dollar.png",
 			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown year-to-date revenue from the beggining of the year util today.",
@@ -2441,7 +2441,7 @@
 			]
 		},
 		{
-			"code": "mtd revenue",
+			"code": "mtd_revenue",
 			"name": "MTD Revenue",
 			"icon": "/icons/ico-dollar.png",
 			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown month-to-date revenue from the beggining of the current month util today.",
@@ -2463,7 +2463,7 @@
 			]
 		},
 		{
-			"code": "wtd revenue",
+			"code": "wtd_revenue",
 			"name": "WTD Revenue",
 			"icon": "/icons/ico-dollar.png",
 			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown week-to-date revenue from the beggining of the current week util today.",
@@ -2483,7 +2483,140 @@
 			"objectives": [
 				"manage_growth"
 			]
+		},
+		{
+			"code": "conversion_from_social_media",
+			"name": "Conversion from social media",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "This metrics helps to assess this channel’s efficiency in your marketing efforts.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "conversion_from_social_media_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"social_media"
+			]
+		},
+		{
+			"code": "social_media_traffic",
+			"name": "Social media traffic",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Social media traffic is a percentage of all website visits, is used to track the importance of various channels to the website traffic.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "social_media_traffic_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"social_media"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_vs_company_target",
+			"name": "Lead conversion rate vs company target",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers. Here is shown in a comparison with company's target.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_vs_lead_conversion_rate_company_target"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_vs_industry_benchmark",
+			"name": "Lead conversion rate vs Industry benchmark",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers. Here is shown in a comparison with industry benchmark.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_vs_industry_lead_conversion_rate"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_trend",
+			"name": "Lead conversion rate trend",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_trend_3"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "cost_per_lead",
+			"name": "Cost per lead",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Shows the cost to generate a lead.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "cost_per_lead"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
 		}
+		
 		
 		
 	
