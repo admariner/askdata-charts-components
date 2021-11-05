@@ -2043,7 +2043,582 @@
 			"objectives": [
 				"user_monitoring"
 			]
+		},
+		{
+			"code": "revenue_by_product_group_in_october_2021",
+			"name": "Revenue by product group in October 2021",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue id a measure shows how sales are increasing or decreasing over time. Here is shown revenue by product group in October.",
+			"target": {
+				"workspace": "sales",
+				"card": "revenue_growth_by_products_in_october_by_product_group"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_revenue_growth_by_product_group",
+			"name": "Monthly revenue growth by product group",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown monthly revenue trend by product group in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_revenue_growth_by_product_group_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "yoy_total_monthly_revenue_growth",
+			"name": "YOY total monthly revenue growth",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown year over year comparison between total monthly revenue in 2020 and 2021.",
+			"target": {
+				"workspace": "sales",
+				"card": "yoy_monthly_revenue_growth_2020_vs_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_revenue_growth_vs_competitor",
+			"name": "Monthly revenue growth vs competitor",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown comparison between company's monthly revenue and competitor's revenue.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_revenue_growth_vs_main_competitor"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_revenue_vs_planned_target",
+			"name": "Monthly revenue growth vs planned target",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown comparison between monthly revenue fact and planned target.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_revenue_growth_vs_planned_target_in_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "planned_monthly_revenue_growth",
+			"name": "Planned monthly revenue growth",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown planned monthly revenue target.",
+			"target": {
+				"workspace": "sales",
+				"card": "planned_monthly_revenue_growth_in_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "revenue_growth",
+			"name": "Revenue growth",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown revenue growth in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "revenue_growth_by_month_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "average_revenue_per_unit_by_month",
+			"name": "Average revenue per unit by month",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Measures the amount of money that a company can generate from an individual customer. Here is shown monthly trend in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "average_revenue_per_unit_by_month"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_efficiency"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "client_acquisition_cost_by_year",
+			"name": "Client acquisition cost by year",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Customer acquisition cost is the cost spent on convincing a consumer to buy your product or service, including research, marketing and advertising costs. Here is shown yearly trend in 2015-2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "_client_acquisition_cost_by_year_2015_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "client_acquisition_cost_by_month",
+			"name": "Client acquisition cost by month",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Customer acquisition cost is the cost spent on convincing a consumer to buy your product or service, including research, marketing and advertising costs. Here is shown monthly trend in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "client_acquisition_cost_by_quarter_in_2018_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "total_year_revenue_by_brand",
+			"name": "Total year revenue by brand",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown total revenue by brand in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "yearly_revenue_growth_by_brands"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "total_year_revenue_by_channel",
+			"name": "Total year revenue by channel",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown total revenue by channel in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "revenue_by_channel"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "yearly_revenue_growth",
+			"name": "Yearly revenue growth",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown yearly trend.",
+			"target": {
+				"workspace": "sales",
+				"card": "year_revenue_growth_2015-2016"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "annual_recurring_revenue",
+			"name": "Annual recurring revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows how much recurring revenue you can expect based on yearly subscriptions.",
+			"target": {
+				"workspace": "sales",
+				"card": "annual_recurring_revenue_2015-2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "annual_recurring_revenue_by_product",
+			"name": "Annual recurring revenue by product",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows how much recurring revenue you can expect based on yearly subscriptions. Here is shown ARR by product in 2015-2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "annual_recurring_revenue_by_products"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_recurring_revenue",
+			"name": "Monthly recurring revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Recurring amount of money expects on a monthly basis.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_recurring_revenue"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_recurring_revenue_by_product",
+			"name": "Monthly recurring revenue by product",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Recurring amount of money expects on a monthly basis. Here is shown MRR by product in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_recurring_rate_by_products"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "ytd_revenue",
+			"name": "YTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown year-to-date revenue from the beggining of the year util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "ytd_revenue_3"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "mtd_revenue",
+			"name": "MTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown month-to-date revenue from the beggining of the current month util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "mtd_revenue_on_3_nov"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "wtd_revenue",
+			"name": "WTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown week-to-date revenue from the beggining of the current week util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "wtd_revenue_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "conversion_from_social_media",
+			"name": "Conversion from social media",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "This metrics helps to assess this channel’s efficiency in your marketing efforts.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "conversion_from_social_media_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"social_media"
+			]
+		},
+		{
+			"code": "social_media_traffic",
+			"name": "Social media traffic",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Social media traffic is a percentage of all website visits, is used to track the importance of various channels to the website traffic.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "social_media_traffic_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"social_media"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_vs_company_target",
+			"name": "Lead conversion rate vs company target",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers. Here is shown in a comparison with company's target.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_vs_lead_conversion_rate_company_target"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_vs_industry_benchmark",
+			"name": "Lead conversion rate vs Industry benchmark",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers. Here is shown in a comparison with industry benchmark.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_vs_industry_lead_conversion_rate"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_trend",
+			"name": "Lead conversion rate trend",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_trend_3"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "cost_per_lead",
+			"name": "Cost per lead",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Shows the cost to generate a lead.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "cost_per_lead"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
 		}
+		
+		
+		
 	
 		
 		
