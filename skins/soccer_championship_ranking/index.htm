@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-        <!-- <script>
+        <script>
             
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -35,7 +35,7 @@ document.body.appendChild(div);
 //Load background
 div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/classifica_bg.png)';
 });
-        </script> -->
+        </script>
 
 
     <!-- BEGINNING OF THE HEADER SNIPPET -->
@@ -259,31 +259,159 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
 
     <script type="text/javascript">
 
-    // var data = [[8,"https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8,"https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0],
-    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,7,7,0,0]]
+    // var data = [[8,"https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Atalanta_lead.png","Atalanta",31,11,7,0,0],
+    //         [8,"https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Bologna_lead.png","Bologna",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Cagliari_lead.png","Cagliari",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Empoli_lead.png","Empoli",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Fiorentina_lead.png","Fiorentina",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Genoa_lead.png","Genoa",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Verona_blu_lead.png","Verona",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Inter_lead.png","Inter",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Juventus_lead.png","Juventus",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Lazio_lead.png","Lazio",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Milan_lead.png","Milan",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Napoli_lead.png","Napoli",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Roma_lead.png","Roma",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Salernitana_lead.png","Salernitana",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sassuolo_lead.png","Sassuolo",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Spezia_lead.png","Spezia",21,11,7,0,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Torino_lead.png","Torino",21,1,17,10,0],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Udinese_lead.png","Udinese",21,11,7,0,10],
+    //         [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Venezia_lead.png","Venezia",6,11,11,0,0]]
+
+
+
+            
+
+
+
+    //             document.getElementById("matchday").innerHTML = data[0][0] + "°"
+    //             righe = data
+    //             for(var i = 0; i < righe.length; i++)
+                // {
+                //     var data1 = righe[i]
+                //     //  Add tr
+                //     var tr = document.createElement('tr');
+                //     // tr.style.width = '1500px';
+                //     tr.style.fontFamily = "'Roboto', sans-serif"
+                //     tr.style.position = "absolute"
+                //     tr.style.left = "190px"
+                //     var y = 240 + (52 * i)
+                //     tr.style.top = y + "px"
+                //     tr.id = "row" + i
+                //     document.getElementById("leaderboard").appendChild(tr);
+
+                //     // Add first td logo
+                //     var td = document.createElement('td');
+                //     td.style.paddingRight = "20px"
+                //     td.id = "td_row" + i
+                //     document.getElementById("row" +i).appendChild(td);
+                //     var img = document.createElement('img');
+                //     img.height = 45;
+                //     img.src = data1[1]
+                //     document.getElementById("td_row" + i).appendChild(img);
+
+                //     // Add second td name
+                //     var td = document.createElement('td');
+                //     td.style.width = "347px"
+                //     td.fontWeight = "bold"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.align = "left";
+                //     td.innerHTML = data1[2]
+                //     document.getElementById("row" +i).appendChild(td);
+
+                    
+                //     // Add third td points
+                //     var td = document.createElement('td');
+                //     td.fontWeight = "bold"
+                //     td.align = "center";
+                //     td.width = "50 px"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.innerHTML = data1[3]
+                //     document.getElementById("row" +i).appendChild(td);
+
+                //     // Empty space
+                //     var td = document.createElement('td');
+                //     td.fontWeight = "bold"
+                //     td.align = "center";
+                //     td.width = "44 px"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.innerHTML = ""
+                //     document.getElementById("row" +i).appendChild(td);
+
+
+                //     // Add fourth td pg
+                //     var td = document.createElement('td');
+                //     td.fontWeight = "bold"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.align = "center";
+                //     td.width = "50 px"
+                //     td.innerHTML = data1[4]
+                //     document.getElementById("row" +i).appendChild(td);
+
+                                        
+                //     // Empty space
+                //     var td = document.createElement('td');
+                //     td.fontWeight = "bold"
+                //     td.align = "center";
+                //     td.width = "18 px"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.innerHTML = ""
+                //     document.getElementById("row" +i).appendChild(td);
+
+
+                //     // Add fifth td W
+                //     var td = document.createElement('td');
+                //     td.fontWeight = "bold"
+                //     td.align = "center";
+                //     td.width = "50 px"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.innerHTML = data1[5]
+                //     document.getElementById("row" +i).appendChild(td);
+
+                //     // Empty space
+                //     var td = document.createElement('td');
+                //     td.fontWeight = "bold"
+                //     td.align = "center";
+                //     td.width = "21 px"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.innerHTML = ""
+                //     document.getElementById("row" +i).appendChild(td);
+
+                //     // Add sixth td N
+                //     var td = document.createElement('td');
+                //     td.fontWeight = "bold"
+                //     td.align = "center";
+                //     td.width = "50 px"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.innerHTML = data1[6]
+                //     document.getElementById("row" +i).appendChild(td);
+
+                //     // Empty space
+                //     var td = document.createElement('td');
+                //     td.fontWeight = "bold"
+                //     td.align = "center";
+                //     td.width = "14 px"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.innerHTML = ""
+                //     document.getElementById("row" +i).appendChild(td);
+
+                //     // Add seventh td P
+                //     var td = document.createElement('td');
+                //     td.align = "center";
+                //     td.width = "50 px"
+                //     // td.style.border = "1px solid #FFFF00";
+                //     td.fontWeight = "bold"
+                //     td.innerHTML = data1[7]
+                //     document.getElementById("row" +i).appendChild(td);
+
+                // }
 
     //  Set Matchday
    
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
-    environment_widget = "https://api-dev.askdata.com";
+    // environment_widget = "https://api-dev.askdata.com";
     //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
     console.log("I'm going to request data");
@@ -325,11 +453,10 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
                 document.getElementById("matchday").innerHTML = righe[0][0] + "°"
                 for(var i = 0; i < righe.length; i++)
                 {
-
                     var data1 = righe[i]
                     //  Add tr
                     var tr = document.createElement('tr');
-                    tr.style.width = '1500px';
+                    // tr.style.width = '1500px';
                     tr.style.fontFamily = "'Roboto', sans-serif"
                     tr.style.position = "absolute"
                     tr.style.left = "190px"
@@ -338,56 +465,106 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
                     tr.id = "row" + i
                     document.getElementById("leaderboard").appendChild(tr);
 
-                    // Add first td
+                    // Add first td logo
                     var td = document.createElement('td');
-                    td.style.paddingRight = "40px"
+                    td.style.paddingRight = "20px"
                     td.id = "td_row" + i
                     document.getElementById("row" +i).appendChild(td);
                     var img = document.createElement('img');
-                    img.height = 45
+                    img.height = 45;
                     img.src = data1[1]
                     document.getElementById("td_row" + i).appendChild(img);
 
-                    // Add second td
+                    // Add second td name
                     var td = document.createElement('td');
-                    td.style.paddingRight = "12px"
-                    td.style.width = "333px"
+                    td.style.width = "347px"
                     td.fontWeight = "bold"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.align = "left";
                     td.innerHTML = data1[2]
                     document.getElementById("row" +i).appendChild(td);
 
                     
-                    // Add third td
+                    // Add third td points
                     var td = document.createElement('td');
-                    td.style.paddingRight = "70px"
                     td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "50 px"
+                    // td.style.border = "1px solid #FFFF00";
                     td.innerHTML = data1[3]
                     document.getElementById("row" +i).appendChild(td);
 
-                    // Add fourth td
+                    // Empty space
                     var td = document.createElement('td');
-                    td.style.paddingRight = "53px"
                     td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "44 px"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.innerHTML = ""
+                    document.getElementById("row" +i).appendChild(td);
+
+
+                    // Add fourth td pg
+                    var td = document.createElement('td');
+                    td.fontWeight = "bold"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.align = "center";
+                    td.width = "50 px"
                     td.innerHTML = data1[4]
                     document.getElementById("row" +i).appendChild(td);
 
-                    // Add fifth td
+                                        
+                    // Empty space
                     var td = document.createElement('td');
-                    td.style.paddingRight = "55px"
                     td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "18 px"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.innerHTML = ""
+                    document.getElementById("row" +i).appendChild(td);
+
+
+                    // Add fifth td W
+                    var td = document.createElement('td');
+                    td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "50 px"
+                    // td.style.border = "1px solid #FFFF00";
                     td.innerHTML = data1[5]
                     document.getElementById("row" +i).appendChild(td);
 
-                    // Add sixth td
+                    // Empty space
                     var td = document.createElement('td');
-                    td.style.paddingRight = "48px"
                     td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "21 px"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.innerHTML = ""
+                    document.getElementById("row" +i).appendChild(td);
+
+                    // Add sixth td N
+                    var td = document.createElement('td');
+                    td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "50 px"
+                    // td.style.border = "1px solid #FFFF00";
                     td.innerHTML = data1[6]
                     document.getElementById("row" +i).appendChild(td);
 
-                    // Add seventh td
+                    // Empty space
                     var td = document.createElement('td');
-                    td.style.paddingRight = "51px"
+                    td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "14 px"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.innerHTML = ""
+                    document.getElementById("row" +i).appendChild(td);
+
+                    // Add seventh td P
+                    var td = document.createElement('td');
+                    td.align = "center";
+                    td.width = "50 px"
+                    // td.style.border = "1px solid #FFFF00";
                     td.fontWeight = "bold"
                     td.innerHTML = data1[7]
                     document.getElementById("row" +i).appendChild(td);

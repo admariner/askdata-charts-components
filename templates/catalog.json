@@ -612,7 +612,2016 @@
 			"objectives": [
 				" "
 			]
+		},
+		{
+			"code": "recruiting_conversion_rate_by_department",
+			"name": "Recruiting conversion rate by department",
+			"icon": "/icons/icon-chart-bars.png",
+			"description": "Measures the ratio of the total number of applicants, that are actually turned into hired employees at the end of the process.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "recruiting_conversion_rate_by_department_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "total_hr_training_cost_by_month",
+			"name": "Total HR training cost by month",
+			"icon": "/icons/ico-expenses.coursesAndTraining.otherSchoolAndTraining.png",
+			"description": "It is a helpful metric to track employees’ training costs by month.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "total_hr_training_cost_by_month_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "training_cost_vs_recruitment_cost",
+			"name": "Training cost vs recruitment cost",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Comparison of investments made into development and recruitment.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "total_monthly_training_cost_vs_recruitment_cost_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "total_training_cost_by_business_function",
+			"name": "Total training cost by business function",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows training cost spending by business function in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "total_training_costs_by_business_function_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "monthly_training_cost_for_marketing",
+			"name": "Montly training cost for Marketing",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows monthly training cost spending in Marketing department in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "monthly_training_costs_for_marketing_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "ytd_training_cost_by_business_function",
+			"name": "YTD training cost by business function",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows training cost spending comparison year-to-date in 2020 and 2021 by business function as of September 2021.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "ytd_business_functions_training_cost_september_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "mom_total_training_costs",
+			"name": "MoM total training costs",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows training cost spending comparison month over month in 2020 and 2021.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "mom_total_training_costs_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "yoy_recruiting_conversion_rate_by_business_function",
+			"name": "YoY recruiting conversion rate by business function",
+			"icon": "/icons/icon-chart-bars.png",
+			"description": "Shows year over year 2019 vs 2020 comparison in recruiting rate for different business functions.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "yoy_recruiting_conversion_rate_by_business_function_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "total_training_cost_by_year",
+			"name": "Total training cost by year",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows total training cost spending by year in 2010 - 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "total_training_cost_by_year_2010_-_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "recruiting_conversion_rate_by_year",
+			"name": "Recruiting conversion rate by year",
+			"icon": "/icons/icon-chart-bars.png",
+			"description": "Shows recruiting conversion rate by year in 2010 - 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "recruiting_conversion_rate_by_year_2010_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "average_employees_timestay_by_number_of_years",
+			"name": "Average employees timestay by number of years",
+			"icon": "/icons/icon-company.png",
+			"description": "Shows percent of employees stayed within a company in 2015 - 2020 by average number of years.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "average_employees_timestay_by_number_of_years_2015_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "percent_of_employees_staying_in_company_from_5_to_10_years",
+			"name": "Percent of employees staying inb company from 5 to 10 years",
+			"icon": "/icons/icon-company.png",
+			"description": "Shows percent of employees stayed within a company from 5 to 10 years in 2015 - 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "percent_of_employees_staying_in_company_from_5_to_10_years_in_2015_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "average_absence_rate_by_department",
+			"name": "Average absence rate by department",
+			"icon": "/icons/ico-expenses.home.appliances.png",
+			"description": "Shows percentage of the total working days among all employees by department in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "average_absence_rate_by_department_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "absence_rate_for_marketing",
+			"name": "Absence rate for Marketing",
+			"icon": "/icons/ico-expenses.home.appliances.png",
+			"description": "Shows percentage of the total working days among all employees in Marketing department in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "absence_rate_for_marketing_in_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "absence_rate_for_marketing",
+			"name": "Absence rate for Marketing",
+			"icon": "/icons/ico-expenses.home.appliances.png",
+			"description": "Shows percentage of the total working days among all employees in Marketing department in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "absence_rate_for_marketing_in_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "average_employee_timestay",
+			"name": "Average employee timestay",
+			"icon": "/icons/icon-company.png",
+			"description": "Shows percent of employees stayed within a company by average number of years in 2020.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "average_employee_timestay_in_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "total_monthly_training_cost_vs_ROI",
+			"name": "Total monthly training cost vs ROI",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows comparison of investments made into employees' development and company's ROI.",
+			"target": {
+				"workspace": "human_resources",
+				"card": "copy_of_total_monthly_training_cost_vs_roi_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"hr"
+			],
+			"processes": [
+				"hr_improvement"
+			],
+			"objectives": [
+				"employee_management"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_ticket_priority",
+			"name": "Average first response time by ticket priority",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown by ticket prriority",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_ticket_priority_hours_4"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_ticket_subject",
+			"name": "Average first response time by ticket subject",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown by ticket subject",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_response_time_by_ticket_subject_hours"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_year",
+			"name": "First contact resolution rate by year",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown a year trend.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_call_resolution_rate_by_year_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_year",
+			"name": "Average first response time by year",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown a year trend.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_hours_by_year"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_business_function",
+			"name": "Average first response time by business function",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown statistics by business function in 2020.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_business_function_hours_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_ticket_type",
+			"name": "Average first response time by ticket type",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown statistics by ticket type in 2020.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_ticket_type_hours_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_geo",
+			"name": "Average first response time by GEO",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown statistics by cities in Italy in 2020.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_geo_hours_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_month",
+			"name": "Average first response time by month",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown monthly trend in 2020.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_hours_by_month_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_vs_recommended_benchmark",
+			"name": "Average first response time vs recommended benchmark",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown a comparison to recommended market benchmark.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_vs_recommended_benchmark_hours"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_business_function",
+			"name": "First contact resolution rate by business function",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by business function.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_call_resolution_rate_by_business_function__1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_incident_subject",
+			"name": "First contact resolution rate by incident subject",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by incident subject.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_call_resolution_rate_by_incident_subject_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_vs_sla",
+			"name": "Average first response time vs SLA",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown a comparison to SLA.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_vs_sla_hours_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_channel",
+			"name": "First contact resolution rate by channel",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by channel.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_contact_resolution_rate_by_channel__1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_geo",
+			"name": "First contact resolution rate by GEO",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by regions of Italy.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_contact_resolution_rate_by_geo_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_by_priority",
+			"name": "First contact resolution rate by priority",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown statistics by ticket priority.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_contact_resolution_rate_by_priority__1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "first_contact_resolution_rate_vs_benchmark",
+			"name": "First contact resolution rate vs benchmark",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Measures the efficiency to resolve an issue on the first contact. Here is shown a comparison to market benchmark.",
+			"target": {
+				"workspace": "support_template",
+				"card": "first_contact_resolution_rate_vs_recommended_benchmark_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "average_first_response_time_by_channel",
+			"name": "Average first response time by channel",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Is the time between a customer raising a ticket and an agent first responding to it. Here is shown statistics by channel.",
+			"target": {
+				"workspace": "support_template",
+				"card": "average_first_response_time_by_channel_hours_2019"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "peak_days_in_september",
+			"name": "Peak days in September",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Days in September when most calls/e-mail/chat came in.",
+			"target": {
+				"workspace": "support_template",
+				"card": "peak_days_in_september_4"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "peak_months_in_2020",
+			"name": "Peak months in 2020",
+			"icon": "/icons/ico-expenses.consumptions.mobileRecharge.png",
+			"description": "Months in 2020 when most calls/e-mail/chat came in.",
+			"target": {
+				"workspace": "support_template",
+				"card": "peak_month_in_a_year_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"support"
+			],
+			"processes": [
+				"ticket_management"
+			],
+			"objectives": [
+				"improve_customer_care"
+			]
+		},
+		{
+			"code": "total_spendings_by_supplier",
+			"name": "Total spendings by supplier",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows amount of money spent on each supplier in 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "total_spendings_by_supplier_2020_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "total_spendings_by_project",
+			"name": "Total spendings by project",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows amount of money spent on each supplier by project managed in 2018 - 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "total_spendings_by_project_2018-2020_2"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_suppliers_by_service_type",
+			"name": "Number of suppliers by service type",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows total number of suppliers the company deals with.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_suppliers_by_service_type_2"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "cost_spendings_comparison_by_year_and_business_function",
+			"name": "Cost spendings comparison by year and business function",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows amount of money spent on different suppliers per business funcations for the period 2018-2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "cost_spendings_comparison_by_year_by_business_function"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_suppliers_by_country",
+			"name": "Number of suppliers by country",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows number of suppliers from different countries company worked with in 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_suppliers_by_country_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_projects_by_supplier",
+			"name": "Number of projects by supplier",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows number of project managed per supplier in 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_projects_by_suppliers_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_suppliers_by_year",
+			"name": "Number of suppliers by year",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows number of suppliers company workedc with from 2015 to 2020.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_suppliers_by_year"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "complience_rate_for_suppliers",
+			"name": "Complience rate for suppliers",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows supplier’s compliance with company's business requirements.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "complience_rate_for_active_suppliers_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "number_of_suppliers_managed_by_responsible_employee",
+			"name": "Number of suppliers managed by Responsible employee",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows workload of Responsible employees measured by number of managed suppliers.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "number_of_suppliers_managed_by_responsible_employee"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "complience_rate_by_years_vs_target",
+			"name": "Complience rate by years vs target",
+			"icon": "/icons/icon-cart.png",
+			"description": "Shows suppliers's complience rate in comparison to established target.",
+			"target": {
+				"workspace": "procurement_template",
+				"card": "compliance_rate_by_years_vs_target"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"procurement"
+			],
+			"processes": [
+				"procurement_optimization"
+			],
+			"objectives": [
+				"suppliers_management"
+			]
+		},
+		{
+			"code": "bounce_rate",
+			"name": "Bounce rate",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the percentage of visitors who enter a site and exit without viewing a second page.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "bounce"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		
+		{
+			"code": "average_order_value",
+			"name": "Average order value",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Tracks the average amount spent each time a customer places an order on a website or mobile app.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "aov"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "number_of_purchases_completed_vs_number_of_purchases_initiated",
+			"name": "Number of purchases completed vs number of purchases initiated",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows how many purchases were abandoned before completing in comparison with purchases done.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "aband"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "shopping_cart_abandoment_rate",
+			"name": "Shopping cart abandoment rate",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows percentage of visits on a web page with abandoned shopping carts before purchase completion.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "abnd"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "shopping_cart_abandoment_rate",
+			"name": "Shopping cart abandoment rate",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows percentage of visits on a web page with abandoned shopping carts before purchase completion. Here is shown trend by month in 2019-2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "abnd"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "monthly_active_users",
+			"name": "Monthly active users",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the number of unique users who have opened the application during the last 30 days. Here is shown MAU for Italy and France in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "mau_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "monthly_active_users_in_italy",
+			"name": "Monthly active users in Italy",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the number of unique users who have opened the application during the last 30 days. Here is shown MAU for Italy in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "mau"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "weekly_active_users_in_italy",
+			"name": "Weekly active users in Italy",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the number of unique users who have opened the application during a week. Here is shown WAU for Italy in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "wau_5"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Maximum_weekly_active_users_by country",
+			"name": "Maximum weekly active users by country",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows the maximum number of unique users opened the application during a week. Here is shown maximum WAU per country in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "wau_4"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Weekly_active_users_for_italy_and_united_states",
+			"name": "Weekly active users for Italy and United States",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a week. Here is shown WAU trends for Italy and United Staes in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "wau_2"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Weekly_active_users_by_country",
+			"name": "Weekly active users by country",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a week. Here is shown WAU trends by country on the first week of January.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "wau_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Daily_active_users",
+			"name": "Daily active users",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a day. Here is shown DAU trends for Russia and Italy in January 2021.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "daa_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Daily_active_users_by_country",
+			"name": "Daily active users by country",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a day. Here is shown DAU by country on 1 January 2021.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "daa"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "Daily_active_users_in_russia",
+			"name": "Daily active users in Russia",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows number of unique users opened the application during a day. Here is shown DAU inb Russia on January 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "daily_active_users"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_by_month",
+			"name": "Customer retention rate by month",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Measures how many existing customers are still with you at the end of a certain period. Here is shown monthly trend in 2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "customer_retention_rate_by_month_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_by_year",
+			"name": "Customer retention rate by month",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Measures how many existing customers are still with you at the end of a certain period. Here is shown early trend in 2015-2020.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "customer_retention_rate_by_year"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_vs_company_target",
+			"name": "Customer retention rate vs company target",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows how many existing customers are still with you at the end of a certain period in comparison with company target.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "customer_retention_rate_vs_company_target_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_vs_average",
+			"name": "Customer retention rate vs average",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows how many existing customers are still with you at the end of a certain period in comparison with market average number.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "customer_retention_rate_by_month_vs_average_crr_in_retail_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "customer_retention_rate_vs_average_for_retail",
+			"name": "Customer retention rate vs average for retail",
+			"icon": "/icons/icon-hashtag.png",
+			"description": "Shows how many existing customers are still with you at the end of a certain period in comparison with retail average number.",
+			"target": {
+				"workspace": "e-commerce_1",
+				"card": "companys_crr_vs_average_crr_for_retails_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"e_commerce"
+			],
+			"processes": [
+				"analytics_early_stage"
+			],
+			"objectives": [
+				"user_monitoring"
+			]
+		},
+		{
+			"code": "revenue_by_product_group_in_october_2021",
+			"name": "Revenue by product group in October 2021",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue id a measure shows how sales are increasing or decreasing over time. Here is shown revenue by product group in October.",
+			"target": {
+				"workspace": "sales",
+				"card": "revenue_growth_by_products_in_october_by_product_group"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_revenue_growth_by_product_group",
+			"name": "Monthly revenue growth by product group",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown monthly revenue trend by product group in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_revenue_growth_by_product_group_in_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "yoy_total_monthly_revenue_growth",
+			"name": "YOY total monthly revenue growth",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown year over year comparison between total monthly revenue in 2020 and 2021.",
+			"target": {
+				"workspace": "sales",
+				"card": "yoy_monthly_revenue_growth_2020_vs_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_revenue_growth_vs_competitor",
+			"name": "Monthly revenue growth vs competitor",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown comparison between company's monthly revenue and competitor's revenue.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_revenue_growth_vs_main_competitor"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_revenue_vs_planned_target",
+			"name": "Monthly revenue growth vs planned target",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown comparison between monthly revenue fact and planned target.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_revenue_growth_vs_planned_target_in_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "planned_monthly_revenue_growth",
+			"name": "Planned monthly revenue growth",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown planned monthly revenue target.",
+			"target": {
+				"workspace": "sales",
+				"card": "planned_monthly_revenue_growth_in_2021"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "revenue_growth",
+			"name": "Revenue growth",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown revenue growth in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "revenue_growth_by_month_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "average_revenue_per_unit_by_month",
+			"name": "Average revenue per unit by month",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Measures the amount of money that a company can generate from an individual customer. Here is shown monthly trend in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "average_revenue_per_unit_by_month"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_efficiency"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "client_acquisition_cost_by_year",
+			"name": "Client acquisition cost by year",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Customer acquisition cost is the cost spent on convincing a consumer to buy your product or service, including research, marketing and advertising costs. Here is shown yearly trend in 2015-2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "_client_acquisition_cost_by_year_2015_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "client_acquisition_cost_by_month",
+			"name": "Client acquisition cost by month",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Customer acquisition cost is the cost spent on convincing a consumer to buy your product or service, including research, marketing and advertising costs. Here is shown monthly trend in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "client_acquisition_cost_by_quarter_in_2018_-_2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "total_year_revenue_by_brand",
+			"name": "Total year revenue by brand",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown total revenue by brand in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "yearly_revenue_growth_by_brands"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "total_year_revenue_by_channel",
+			"name": "Total year revenue by channel",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown total revenue by channel in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "revenue_by_channel"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "yearly_revenue_growth",
+			"name": "Yearly revenue growth",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown yearly trend.",
+			"target": {
+				"workspace": "sales",
+				"card": "year_revenue_growth_2015-2016"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "annual_recurring_revenue",
+			"name": "Annual recurring revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows how much recurring revenue you can expect based on yearly subscriptions.",
+			"target": {
+				"workspace": "sales",
+				"card": "annual_recurring_revenue_2015-2020"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "annual_recurring_revenue_by_product",
+			"name": "Annual recurring revenue by product",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Shows how much recurring revenue you can expect based on yearly subscriptions. Here is shown ARR by product in 2015-2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "annual_recurring_revenue_by_products"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_recurring_revenue",
+			"name": "Monthly recurring revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Recurring amount of money expects on a monthly basis.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_recurring_revenue"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "monthly_recurring_revenue_by_product",
+			"name": "Monthly recurring revenue by product",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Recurring amount of money expects on a monthly basis. Here is shown MRR by product in 2020.",
+			"target": {
+				"workspace": "sales",
+				"card": "monthly_recurring_rate_by_products"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_growth"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "ytd_revenue",
+			"name": "YTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown year-to-date revenue from the beggining of the year util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "ytd_revenue_3"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "mtd_revenue",
+			"name": "MTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown month-to-date revenue from the beggining of the current month util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "mtd_revenue_on_3_nov"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "wtd_revenue",
+			"name": "WTD Revenue",
+			"icon": "/icons/ico-dollar.png",
+			"description": "Revenue is a measure shows how sales are increasing or decreasing over time. Here is shown week-to-date revenue from the beggining of the current week util today.",
+			"target": {
+				"workspace": "sales",
+				"card": "wtd_revenue_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"sales"
+			],
+			"processes": [
+				"sales_performance"
+			],
+			"objectives": [
+				"manage_growth"
+			]
+		},
+		{
+			"code": "conversion_from_social_media",
+			"name": "Conversion from social media",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "This metrics helps to assess this channel’s efficiency in your marketing efforts.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "conversion_from_social_media_"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"social_media"
+			]
+		},
+		{
+			"code": "social_media_traffic",
+			"name": "Social media traffic",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Social media traffic is a percentage of all website visits, is used to track the importance of various channels to the website traffic.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "social_media_traffic_1"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"social_media"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_vs_company_target",
+			"name": "Lead conversion rate vs company target",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers. Here is shown in a comparison with company's target.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_vs_lead_conversion_rate_company_target"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_vs_industry_benchmark",
+			"name": "Lead conversion rate vs Industry benchmark",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers. Here is shown in a comparison with industry benchmark.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_vs_industry_lead_conversion_rate"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "lead_conversion_rate_trend",
+			"name": "Lead conversion rate trend",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Lead conversion rate is the percentage of leads that become customers.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "lead_conversion_rate_trend_3"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
+		},
+		{
+			"code": "cost_per_lead",
+			"name": "Cost per lead",
+			"icon": "/icons/icon-contacts-rubrica.png",
+			"description": "Shows the cost to generate a lead.",
+			"target": {
+				"workspace": "marketing_templates",
+				"card": "cost_per_lead"
+			},
+			"style": {
+				"color": "red"
+			},
+			"categories": [
+				"marketing"
+			],
+			"processes": [
+				"digital_marketing"
+			],
+			"objectives": [
+				"lead_generation"
+			]
 		}
+		
+		
+		
+	
+		
+		
 		
 		
 		
@@ -807,3 +2816,5 @@
 		       
 	]
 }
+
+

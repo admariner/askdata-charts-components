@@ -33,65 +33,65 @@
         // From
 
         // var nomi =  ["Donnarumma","Romagnoli","Kjaer","Florenzi","Kolarov","Bennacer","De Rossi","Tonali","Diaz","Ibra","Under"]
-        // var sources= ["Donnarumma", "Donnarumma", "Donnarumma", "Donnarumma", "Florenzi", "Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Bennacer","De Rossi","Tonali"]
-        // var targets = ["Florenzi","Kolarov","Kjaer","Romagnoli","Bennacer","Bennacer", "Bennacer","Bennacer","Tonali","Tonali","Tonali","Tonali","De Rossi","De Rossi","De Rossi","De Rossi","Diaz","Ibra",  "Under"]
-        // var scores = [ 0.342284047256003,0.42322870366987,0.177682517071359,0.0433076373512774,0.137241325342711,0.137241325342711,0.137241325342711, 0.137241325342711, 0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,  0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,0.237241325342711,0.237241325342711,0.237241325342711]
+        var sources = ["Barella","Barella","Barella","Barella","Barella","Barella","Barella","Barella","Bastoni","Bastoni","Bastoni","Bastoni","Bastoni","Bastoni","Bastoni","Brozovic","Brozovic","Brozovic","Brozovic","Brozovic","Brozovic","Calhanoglu","Calhanoglu","Calhanoglu","Calhanoglu","Calhanoglu","Darmian","Darmian","Darmian","Darmian","Dzeko","Dzeko","Dzeko","Handanovic","Handanovic","Perisic"]
+        var targets = ["Bastoni","Brozovic","Calhanoglu","Darmian","Dzeko","Handanovic","Perisic","Skriniar","Brozovic","Calhanoglu","Darmian","Dzeko","Handanovic","Perisic","Skriniar","Calhanoglu","Darmian","Dzeko","Handanovic","Perisic","Skriniar","Darmian","Dzeko","Handanovic","Perisic","Skriniar","Dzeko","Handanovic","Perisic","Skriniar","Handanovic","Perisic","Skriniar","Perisic","Skriniar","Skriniar"]
+        var scores = [ 58,128,45,57,49,31,31,87,111,76,10,14,72,64,54,71,67,44,56,39,131,23,17,18,35,35,28,18,13,90,25,17,17,10,94,9]
 
         // var nomi =  data.fields.m1_id.data
         // var sources= data.fields.m1_id.data
         // var targets = data.fields.m2_id.data
         // var scores = data.fields.m3_id.data
 
-        // var nomi = [...sources, ...targets];
-        // nomi = [...new Set(nomi)];
+        var nomi = [...sources, ...targets];
+        nomi = [...new Set(nomi)];
 
-        // var dict_nomi = []
-        // for (let i = 0; i < nomi.length; i++) {
-        //     var newrow = {name: nomi[i]};   
-        //     dict_nomi.push(newrow);
-        // }
+        var dict_nomi = []
+        for (let i = 0; i < nomi.length; i++) {
+            var newrow = {name: nomi[i]};   
+            dict_nomi.push(newrow);
+        }
 
-        // var dict_passaggi = []
-        // for (let i = 0; i < sources.length; i++) {
-        //     var newrow = {source: sources[i], target: targets[i], value: scores[i]};   
-        //     dict_passaggi.push(newrow);
-        // }
+        var dict_passaggi = []
+        for (let i = 0; i < sources.length; i++) {
+            var newrow = {source: sources[i], target: targets[i], value: scores[i]};   
+            dict_passaggi.push(newrow);
+        }
 
 
-        data= {"nodes": [
-              {"name": "Donnarumma"},
-              {"name": "Romagnoli"},
-              {"name": "Kjaer"},
-              {"name": "Florenzi"},
-        	  {"name": "Kolarov"},
-        	  {"name": "Bennacer"},
-        	  {"name": "De Rossi"},
-        	  {"name": "Tonali"},
-        	  {"name": "Diaz"},
-        	  {"name": "Ibra"},
-        	  {"name": "Under"}
+        // data= {"nodes": [
+        //       {"name": "Donnarumma"},
+        //       {"name": "Romagnoli"},
+        //       {"name": "Kjaer"},
+        //       {"name": "Florenzi"},
+        // 	  {"name": "Kolarov"},
+        // 	  {"name": "Bennacer"},
+        // 	  {"name": "De Rossi"},
+        // 	  {"name": "Tonali"},
+        // 	  {"name": "Diaz"},
+        // 	  {"name": "Ibra"},
+        // 	  {"name": "Under"}
 
-           ],
-           "links": [
-              {"source": "Donnarumma", "target": "Florenzi", "value": 0.342284047256003},
-              {"source": "Donnarumma", "target": "Kolarov", "value": 0.42322870366987},
-              {"source": "Donnarumma", "target": "Kjaer", "value": 0.177682517071359},
-              {"source": "Donnarumma", "target": "Romagnoli", "value": 0.0433076373512774},
-              {"source": "Florenzi", "target": "Bennacer", "value": 0.137241325342711},
-              {"source": "Kolarov", "target": "Bennacer", "value": 0.137241325342711},
-              {"source": "Romagnoli", "target": "Bennacer", "value": 0.137241325342711},
-              {"source": "Kjaer", "target": "Bennacer", "value": 0.137241325342711},
-              {"source": "Florenzi", "target": "Tonali", "value": 0.137241325342711},
-              {"source": "Kolarov", "target": "Tonali", "value": 0.137241325342711},
-              {"source": "Romagnoli", "target": "Tonali", "value": 0.137241325342711},
-              {"source": "Kjaer", "target": "Tonali", "value": 0.137241325342711},
-              {"source": "Florenzi", "target": "De Rossi", "value": 0.137241325342711},
-              {"source": "Kolarov", "target": "De Rossi", "value": 0.137241325342711},
-              {"source": "Romagnoli", "target": "De Rossi", "value": 0.137241325342711},
-              {"source": "Kjaer", "target": "De Rossi", "value": 0.137241325342711},
-              {"source": "Bennacer", "target": "Diaz", "value": 0.237241325342711},
-              {"source": "De Rossi", "target": "Ibra", "value": 0.237241325342711},
-              {"source": "Tonali", "target": "Under", "value": 0.237241325342711}]}
+        //    ],
+        //    "links": [
+        //       {"source": "Donnarumma", "target": "Florenzi", "value": 1.342284047256003},
+        //       {"source": "Donnarumma", "target": "Kolarov", "value": 0.42322870366987},
+        //       {"source": "Donnarumma", "target": "Kjaer", "value": 0.177682517071359},
+        //       {"source": "Donnarumma", "target": "Romagnoli", "value": 0.0433076373512774},
+        //       {"source": "Florenzi", "target": "Bennacer", "value": 0.137241325342711},
+        //       {"source": "Kolarov", "target": "Bennacer", "value": 0.137241325342711},
+        //       {"source": "Romagnoli", "target": "Bennacer", "value": 0.137241325342711},
+        //       {"source": "Kjaer", "target": "Bennacer", "value": 0.137241325342711},
+        //       {"source": "Florenzi", "target": "Tonali", "value": 0.137241325342711},
+        //       {"source": "Kolarov", "target": "Tonali", "value": 0.137241325342711},
+        //       {"source": "Romagnoli", "target": "Tonali", "value": 0.137241325342711},
+        //       {"source": "Kjaer", "target": "Tonali", "value": 0.137241325342711},
+        //       {"source": "Florenzi", "target": "De Rossi", "value": 0.137241325342711},
+        //       {"source": "Kolarov", "target": "De Rossi", "value": 0.137241325342711},
+        //       {"source": "Romagnoli", "target": "De Rossi", "value": 0.137241325342711},
+        //       {"source": "Kjaer", "target": "De Rossi", "value": 0.137241325342711},
+        //       {"source": "Bennacer", "target": "Diaz", "value": 0.237241325342711},
+        //       {"source": "De Rossi", "target": "Ibra", "value": 0.237241325342711},
+        //       {"source": "Tonali", "target": "Under", "value": 0.237241325342711}]}
 
             option = {
                 grid: {
@@ -109,8 +109,8 @@
                 series: [
                     {
                         type: 'sankey',
-                        data: data.nodes,
-                        links: data.links,
+                        data: dict_nomi,
+                        links: dict_passaggi,
                         label: {
                             normal: {
                                 show: true,
