@@ -54,8 +54,7 @@ $.ajax({
        url: "https://api-dev.askdata.com"+"/smartinsight/widgets/" + getUrlParameter('widgetId'),
        type: "GET",
        async: false,
-       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
-        ).setRequestHeader('Content-Type','application/json')},
+       beforeSend: (xhr) => setAuthHeader(xhr),
        success: function(data) { 
 
         $( "#target" ).replaceWith( '<div style="width:100%" id="first_chart"><iframe style="width:50%;border:0;height:100%" src="https://chart-dev.askdata.com/charts/askdata/horizontal_bar/index.htm?chartId=5fa032b053ceb555c449ebc7"></iframe></div>' );

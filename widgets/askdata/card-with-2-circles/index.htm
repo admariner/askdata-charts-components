@@ -117,16 +117,12 @@ if (getUrlParameter('token') != undefined){
 
 
     <script>
-
-
-
 // Request charting data
 $.ajax({
        url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
        type: "GET",
        async: false,
-       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
-        ).setRequestHeader('Content-Type','application/json')},
+       beforeSend: (xhr) => setAuthHeader(xhr),
        success: function(data) { 
         console.log(data)
         var template = document.getElementById('template').innerHTML;

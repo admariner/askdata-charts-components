@@ -176,12 +176,18 @@ if (getUrlParameter('theme')) {
      })
 }
 
+function setAuthHeader(xhr) {
+  if (token) {
+    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+  }
+  xhr.setRequestHeader('Content-Type', 'application/json');
+}
+
 // Request charting data
 $.ajax({
          url: environment_data + "/charts/" + getUrlParameter('chartId'),
          type: "GET",
-         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token 
-          ).setRequestHeader('Content-Type','application/json')},
+         beforeSend: (xhr) => setAuthHeader(xhr),
          success: function(data) { 
 
          displayChart(data);
