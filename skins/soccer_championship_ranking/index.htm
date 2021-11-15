@@ -276,8 +276,8 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
             [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sampdoria.png","Sampdoria",21,11,7,0,0],
             [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Sassuolo_lead.png","Sassuolo",21,11,7,0,0],
             [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Spezia_lead.png","Spezia",21,11,7,0,0],
-            [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Torino_lead.png","Torino",21,11,7,0,0],
-            [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Udinese_lead.png","Udinese",21,11,7,0,0],
+            [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Torino_lead.png","Torino",21,1,17,10,0],
+            [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Udinese_lead.png","Udinese",21,11,7,0,10],
             [8, "https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/osservatorio_tim/Venezia_lead.png","Venezia",6,11,11,0,0]]
 
 
@@ -290,7 +290,6 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
                 righe = data
                 for(var i = 0; i < righe.length; i++)
                 {
-
                     var data1 = righe[i]
                     //  Add tr
                     var tr = document.createElement('tr');
@@ -303,7 +302,7 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
                     tr.id = "row" + i
                     document.getElementById("leaderboard").appendChild(tr);
 
-                    // Add first td
+                    // Add first td logo
                     var td = document.createElement('td');
                     td.style.paddingRight = "20px"
                     td.id = "td_row" + i
@@ -313,47 +312,96 @@ div.style.backgroundImage = 'url(https://s3.eu-central-1.amazonaws.com/innaas.sm
                     img.src = data1[1]
                     document.getElementById("td_row" + i).appendChild(img);
 
-                    // Add second td
+                    // Add second td name
                     var td = document.createElement('td');
-                    td.style.paddingRight = "18px"
-                    td.style.width = "333px"
-                    td.style.left = "3000px"
+                    td.style.width = "340px"
                     td.fontWeight = "bold"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.align = "left";
                     td.innerHTML = data1[2]
                     document.getElementById("row" +i).appendChild(td);
 
                     
-                    // Add third td
+                    // Add third td points
                     var td = document.createElement('td');
-                    td.style.paddingRight = "70px"
                     td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "50 px"
+                    // td.style.border = "1px solid #FFFF00";
                     td.innerHTML = data1[3]
                     document.getElementById("row" +i).appendChild(td);
 
-                    // Add fourth td
+                    // Empty space
                     var td = document.createElement('td');
-                    td.style.paddingRight = "53px"
                     td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "37 px"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.innerHTML = ""
+                    document.getElementById("row" +i).appendChild(td);
+
+
+                    // Add fourth td pg
+                    var td = document.createElement('td');
+                    td.fontWeight = "bold"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.align = "center";
+                    td.width = "50 px"
                     td.innerHTML = data1[4]
                     document.getElementById("row" +i).appendChild(td);
 
-                    // Add fifth td
+                                        
+                    // Empty space
                     var td = document.createElement('td');
-                    td.style.paddingRight = "55px"
                     td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "10 px"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.innerHTML = ""
+                    document.getElementById("row" +i).appendChild(td);
+
+
+                    // Add fifth td W
+                    var td = document.createElement('td');
+                    td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "50 px"
+                    // td.style.border = "1px solid #FFFF00";
                     td.innerHTML = data1[5]
                     document.getElementById("row" +i).appendChild(td);
 
-                    // Add sixth td
+                    // Empty space
                     var td = document.createElement('td');
-                    td.style.paddingRight = "48px"
                     td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "13 px"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.innerHTML = ""
+                    document.getElementById("row" +i).appendChild(td);
+
+                    // Add sixth td N
+                    var td = document.createElement('td');
+                    td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "50 px"
+                    // td.style.border = "1px solid #FFFF00";
                     td.innerHTML = data1[6]
                     document.getElementById("row" +i).appendChild(td);
 
-                    // Add seventh td
+                    // Empty space
                     var td = document.createElement('td');
-                    td.style.paddingRight = "51px"
+                    td.fontWeight = "bold"
+                    td.align = "center";
+                    td.width = "8 px"
+                    // td.style.border = "1px solid #FFFF00";
+                    td.innerHTML = ""
+                    document.getElementById("row" +i).appendChild(td);
+
+                    // Add seventh td P
+                    var td = document.createElement('td');
+                    td.align = "center";
+                    td.width = "50 px"
+                    // td.style.border = "1px solid #FFFF00";
                     td.fontWeight = "bold"
                     td.innerHTML = data1[7]
                     document.getElementById("row" +i).appendChild(td);
