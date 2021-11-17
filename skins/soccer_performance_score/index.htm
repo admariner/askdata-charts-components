@@ -82,15 +82,38 @@
 
         .performance-score {
             position: absolute;
-            top: 202px;
+            top: 195px;
             left: 500px;
             width: 94px;
             text-align: center;
-            font-size: 50px;
+            font-size: 60px;
             font-family: TIMSans;
             font-style: italic;
             font-weight: bold;
-            text-shadow: 3px 3px #424242;
+            color: #011a66;
+        }
+
+        .home-away {
+            position: absolute;
+            top: 285px;
+            left: 475px;
+            width: 134px;
+            text-align: center;
+            font-size: 18px;
+            font-style: italic;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            background: #d6a954;
+            display: inline-block;
+            margin: 0 10px;
         }
 
         .team-image {
@@ -146,6 +169,29 @@
             text-align: center;
         }
 
+        .season-text {
+            color: #8bdff2;
+            position: absolute;
+            top: 355px;
+            right: 430px;
+            font-size: 12px;
+            width: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .player-role {
+            color: #8bdff2;
+            position: absolute;
+            top: 355px;
+            left: 360px;
+            font-size: 16px;
+            width: 45px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
         .jq-ry-container {
             display: inline-block;
         }
@@ -159,12 +205,15 @@
 <div id="container" style="height: 100%">
     <div class="card">
         <div class="performance-score">{{performanceScore}}</div>
+        <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
         <img class="team-image" src="{{teamImageUrl}}" />
         <div class="shirt">
             <img class="shirt-image" src="{{shirtImageUrl}}" />
             <div class="shirt-number" style="color: {{shirtNumberColor}}">{{shirtNumber}}</div>
         </div>
         <div class="player-name">{{playerName}}</div>
+        <div class="season-text">21/22</div>
+        <div class="player-role">{{playerRole}}</div>
         <table class="score-table">
             <tr>
                 <td>TIR</td>
@@ -211,7 +260,7 @@
 
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
     // environment_widget = "https://api-dev.askdata.com";
-    //environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+    // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
 
     const teamIdMap = {
         t120: {
@@ -341,9 +390,12 @@
                     console.log(cardData);
                     const teamId = cardData.rows[0][cardData.columns.indexOf('teamId')];
                     const teamData = teamIdMap[teamId];
+                    const playerType = cardData.rows[0][cardData.columns.indexOf('Type')].toLowerCase();
                     const playerRole = cardData.rows[0][cardData.columns.indexOf('Role')].toLowerCase();
                     const shirtNumber = cardData.rows[0][cardData.columns.indexOf('Shirt Number')];
                     const playerName = cardData.rows[0][cardData.columns.indexOf('Nome')];
+                    const homeSlug = cardData.rows[0][cardData.columns.indexOf('Home slug')];
+                    const awaySlug = cardData.rows[0][cardData.columns.indexOf('Away slug')];
                     const performanceScore = cardData.rows[0][cardData.columns.indexOf('Overall')];
                     const TIRScore = Number(cardData.rows[0][cardData.columns.indexOf('Tiro')]);
                     const TECScore = Number(cardData.rows[0][cardData.columns.indexOf('Tecnica')]);
@@ -385,10 +437,13 @@
                     const parsedData = {
                         performanceScore,
                         teamImageUrl: `../_lib/images/teams/${teamId}.png`,
-                        shirtImageUrl: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerRole}.png`,
-                        shirtNumberColor: teamData[`${playerRole}NumberColor`],
+                        shirtImageUrl: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerType}.png`,
+                        shirtNumberColor: teamData[`${playerType}NumberColor`],
+                        playerRole,
                         shirtNumber,
                         playerName,
+                        homeSlug,
+                        awaySlug,
                         TIRScore,
                         TECScore,
                         FISScore,
