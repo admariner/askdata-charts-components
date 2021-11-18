@@ -1,16 +1,15 @@
 {
   "workspaces": [
+    "terna",
+    "leaseplan",
     "istat",
     "bls_gov",
     "worldbank",
     "eurostat",
     "askdatacovid",
     "sales_demo",
-    "sales_demo",
     "our_world_in_data",
     "nytimes",
-    "featured",
-    "tim_data_room",
     "20210326_trend_datacard",
     "20210326_trend_datacard",
     "20210326_trend_datacard",
