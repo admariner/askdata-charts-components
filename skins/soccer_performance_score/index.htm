@@ -206,7 +206,7 @@
     <div class="card">
         <div class="performance-score">{{performanceScore}}</div>
         <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
-        <img class="team-image" src="{{teamImageUrl}}" />
+        <img class="team-image" src="{{teamImage}}" />
         <div class="shirt">
             <img class="shirt-image" src="{{shirtImageUrl}}" />
             <div class="shirt-number" style="color: {{shirtNumberColor}}">{{shirtNumber}}</div>
@@ -390,6 +390,7 @@
                     console.log(cardData);
                     const teamId = cardData.rows[0][cardData.columns.indexOf('teamId')];
                     const teamData = teamIdMap[teamId];
+                    const teamImage = cardData.rows[0][cardData.columns.indexOf('Team Image')];
                     const playerType = cardData.rows[0][cardData.columns.indexOf('Type')].toLowerCase();
                     const playerRole = cardData.rows[0][cardData.columns.indexOf('Role')].toLowerCase();
                     const shirtNumber = cardData.rows[0][cardData.columns.indexOf('Shirt Number')];
