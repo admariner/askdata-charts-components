@@ -1,0 +1,205 @@
+<!--
+    EXAMPLE DOWNLOADED FROM https://github.com/AskdataHQ/askdata-charts-components/tree/main/skins/askdata/_skin_example/index.htm
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+
+    <!-- BEGINNING OF THE HEADER SNIPPET -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- These imports are required -->
+    <script src="/lib/scripts/utils.js"></script>
+    <script src="/lib/scripts/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+    <script src="/lib/scripts/jquery.min.js"></script>
+
+    <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- Default styling -->
+    <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+
+    <!-- Other JS libraries or CSS import-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: normal;
+            font-weight: normal;
+            src: url('../_lib/fonts/TIMSans-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            src: url('../_lib/fonts/TIMSans-Bold.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-BoldItalic.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 500;
+            src: url('../_lib/fonts/TIMSans-Medium.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1350px;
+            padding: 20px;
+            background: url('../_lib/images/classification_background.jpg');
+            font-family: TIMSans;
+            color: #0032a0;
+        }
+
+        .match-day {
+            position: absolute;
+            top: 130px;
+            left: 275px;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+        }
+
+        .classification-table {
+            position: absolute;
+            top: 237px;
+            left: 172px;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        .table-row {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .table-column {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*border: 1px solid red;*/
+        }
+
+        .table-column img {
+            max-height: 45px;
+            max-width: 45px;
+            height: 50px;
+        }
+
+
+    </style>
+    <!-- Put your libaries here --->
+
+    <!-- END OF THE HEADER SNIPPET -->
+</head>
+
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%">
+    <div class="card">
+        <div class="match-day">CLASSIFICA {{matchDay}}<sup>a</sup> GIORNATA</div>
+        <!--NOT SURE WHY LOOP INSIDE TABLES DON'T WORK-->
+        <div class="classification-table">
+            {{#items}}
+            <div class="table-row" style="top: {{top}}px">
+                <div class="table-column" style="width: 78px"><img src="{{teamImage}}" /></div>
+                <div class="table-column" style="left: 78px; font-weight: bold; width: 332px; padding-left: 15px; justify-content: flex-start;">{{teamName}}</div>
+                <div class="table-column" style="left: 410px; font-weight: bold; width: 84px;">{{points}}</div>
+                <div class="table-column" style="left: 494px; width: 102px;">{{matches}}</div>
+                <div class="table-column" style="left: 596px; width: 52px;">{{won}}</div>
+                <div class="table-column" style="left: 648px; width: 98px;">{{draw}}</div>
+                <div class="table-column" style="left: 746px; width: 48px;">{{lost}}</div>
+            </div>
+            {{/items}}
+        </div>
+    </div>
+</div>
+</body>
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+    // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+    // environment_widget = "https://api-dev.askdata.com";
+    // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+
+    // console.log("I'm going to request data");
+    // Requesting agent data
+    $.ajax({
+        url: `${environment_widget}/smartbot/agents/agentslug/${getUrlParameter('agentSlug')}`,
+        type: "GET",
+        async: false,
+        beforeSend: (xhr) => setAuthHeader(xhr),
+        success: (agentData) => {
+
+            // console.log("Requesting data if the WS answers 200");
+
+            // Requesting card data
+            $.ajax({
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                type: "GET",
+                async: false,
+                beforeSend: (xhr) => setAuthHeader(xhr),
+                success: (data) => {
+                    // Select the HTML to render as temple
+                    const template = document.getElementById('container').innerHTML;
+                    const cardData = data[1].attachment.body[0].details;
+                    // console.log(cardData);
+                    const rows = cardData.rows.map((rowArray, index) => {
+                       return {
+                           teamImage: rowArray[cardData.columns.indexOf('Team Image')],
+                           teamName: rowArray[cardData.columns.indexOf('short_club_name')],
+                           points: rowArray[cardData.columns.indexOf('points')],
+                           matches: rowArray[cardData.columns.indexOf('matches')],
+                           won: rowArray[cardData.columns.indexOf('won')],
+                           lost: rowArray[cardData.columns.indexOf('lost')],
+                           draw: rowArray[cardData.columns.indexOf('draw')],
+                           top: index * 52
+                       }
+                    });
+                    console.log(cardData.rows[0][cardData.columns.indexOf('match_day')]);
+                    const parsedData = {
+                        items: rows,
+                        matchDay: cardData.rows[0][cardData.columns.indexOf('match_day')]
+                    };
+
+                    // replace of the content
+                    document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
+                }
+            });
+        }
+    });
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
