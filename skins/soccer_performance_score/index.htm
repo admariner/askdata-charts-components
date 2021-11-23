@@ -368,7 +368,7 @@
     console.log("I'm going to request data");
     // Requesting agent data
     $.ajax({
-        url: `${environment_widget}/smartbot/agents/agentslug/${getUrlParameter('agentSlug')}`,
+        url: `${environment_widget}/smartbot/agent-slugs/${getUrlParameter('agentSlug')}`,
         type: "GET",
         async: false,
         beforeSend: (xhr) => setAuthHeader(xhr),
