@@ -1,0 +1,276 @@
+<!--
+    EXAMPLE DOWNLOADED FROM https://github.com/AskdataHQ/askdata-charts-components/tree/main/skins/askdata/_skin_example/index.htm
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+
+    <!-- BEGINNING OF THE HEADER SNIPPET -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- These imports are required -->
+    <script src="/lib/scripts/utils.js"></script>
+    <script src="/lib/scripts/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+    <script src="/lib/scripts/jquery.min.js"></script>
+
+    <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- Default styling -->
+    <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+
+    <!-- Other JS libraries or CSS import-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: normal;
+            font-weight: normal;
+            src: url('../_lib/fonts/TIMSans-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            src: url('../_lib/fonts/TIMSans-Bold.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-BoldItalic.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 500;
+            src: url('../_lib/fonts/TIMSans-Medium.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            padding: 20px;
+            background: url('../_lib/images/coach_analysis_background.jpg');
+            font-family: TIMSans;
+            color: #0032a0;
+            position: relative;
+        }
+
+        .coach {
+            font-size: 46px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            position: absolute;
+            top: 188px;
+            left: 70px;
+            width: 450px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+
+        .right-coach {
+            left: 566px;
+        }
+
+        .team {
+            font-size: 24px;
+            font-weight: normal;
+            color: #68edf6;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+
+        }
+
+        .chart-row {
+            position: absolute;
+            top: 608px;
+            left: 0;
+            right: 0;
+        }
+
+        .chart-left-wrapper, .chart-right-wrapper {
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            height: 35px;
+            width: 460px;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .chart-left-wrapper {
+            right: 541px;
+            justify-content: end;
+        }
+
+        .left-text, .right-text {
+            color: #0023b0;
+            font-weight: bold;
+            font-size: 24px;
+            position: relative;
+        }
+
+        .chart-left, .chart-right {
+            position: absolute;
+            top: 0;
+            height: 38px;
+            width: 458px;
+            transform: skewX(-37deg);
+        }
+
+        .chart-left {
+            right: -15px;
+            background: #6addf0;
+        }
+
+        .chart-right-wrapper {
+            left: 541px;
+            justify-content: start;
+        }
+
+        .chart-right {
+            left: -15px;
+            background: #58e5ac;
+        }
+    </style>
+    <!-- Put your libaries here --->
+
+    <!-- END OF THE HEADER SNIPPET -->
+</head>
+
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%">
+    <div class="card">
+        <div class="coach left-coach">
+            {{leftCoach}}
+            <div class="team">{{leftTeam}}</div>
+        </div>
+        <div class="coach right-coach">
+            {{rightCoach}}
+            <div class="team">{{rightTeam}}</div>
+        </div>
+        <div class="chart-row">
+            <div class="chart-left-wrapper">
+                <div class="chart-left" style="width: {{leftItem1Width}}px"></div>
+                <div class="left-text">{{leftItem1}}</div>
+            </div>
+            <div class="chart-right-wrapper">
+                <div class="chart-right" style="width: {{rightItem1Width}}px"></div>
+                <div class="right-text">{{rightItem1}}</div>
+            </div>
+        </div>
+        <div class="chart-row" style="top: 694px">
+            <div class="chart-left-wrapper">
+                <div class="chart-left" style="width: {{leftItem2Width}}px"></div>
+                <div class="left-text">{{leftItem2}}</div>
+            </div>
+            <div class="chart-right-wrapper">
+                <div class="chart-right" style="width: {{rightItem2Width}}px"></div>
+                <div class="right-text">{{rightItem2}}</div>
+            </div>
+        </div>
+        <div class="chart-row" style="top: 780px">
+            <div class="chart-left-wrapper">
+                <div class="chart-left" style="width: {{leftItem3Width}}px"></div>
+                <div class="left-text">{{leftItem3}}</div>
+            </div>
+            <div class="chart-right-wrapper">
+                <div class="chart-right" style="width: {{rightItem3Width}}px"></div>
+                <div class="right-text">{{rightItem3}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+    // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+    // environment_widget = "https://api-dev.askdata.com";
+    // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+
+    // console.log("I'm going to request data");
+    // Requesting agent data
+    $.ajax({
+        url: `${environment_widget}/smartbot/agents/agentslug/${getUrlParameter('agentSlug')}`,
+        type: "GET",
+        async: false,
+        beforeSend: (xhr) => setAuthHeader(xhr),
+        success: (agentData) => {
+
+            // console.log("Requesting data if the WS answers 200");
+
+            // Requesting card data
+            $.ajax({
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                type: "GET",
+                async: false,
+                beforeSend: (xhr) => setAuthHeader(xhr),
+                success: (data) => {
+                    // Select the HTML to render as temple
+                    const template = document.getElementById('container').innerHTML;
+                    const cardData = data[1].attachment.body[0].details;
+                    // console.log(cardData);
+                    const FULL_WIDTH = 458;
+                    const leftItem1 = Number(cardData.rows[0][cardData.columns.indexOf('Impatto')].trim());
+                    const leftItem2 = Number(cardData.rows[0][cardData.columns.indexOf('Spettacolarita')].trim());
+                    const leftItem3 = Number(cardData.rows[0][cardData.columns.indexOf('Solidita')].trim());
+                    const rightItem1 = Number(cardData.rows[1][cardData.columns.indexOf('Impatto')].trim());
+                    const rightItem2 = Number(cardData.rows[1][cardData.columns.indexOf('Spettacolarita')].trim());
+                    const rightItem3 = Number(cardData.rows[1][cardData.columns.indexOf('Solidita')].trim());
+                    const parsedData = {
+                        leftCoach: cardData.rows[0][cardData.columns.indexOf('Coach')].trim(),
+                        leftTeam: cardData.rows[0][cardData.columns.indexOf('Team')].trim(),
+                        leftItem1,
+                        leftItem1Width: leftItem1 * FULL_WIDTH / 100,
+                        leftItem2,
+                        leftItem2Width: leftItem2 * FULL_WIDTH / 100,
+                        leftItem3,
+                        leftItem3Width: leftItem3 * FULL_WIDTH / 100,
+                        rightCoach: cardData.rows[1][cardData.columns.indexOf('Coach')].trim(),
+                        rightTeam: cardData.rows[1][cardData.columns.indexOf('Team')].trim(),
+                        rightItem1,
+                        rightItem1Width: rightItem1 * FULL_WIDTH / 100,
+                        rightItem2,
+                        rightItem2Width: rightItem2 * FULL_WIDTH / 100,
+                        rightItem3,
+                        rightItem3Width: rightItem3 * FULL_WIDTH / 100,
+                    };
+
+                    // replace of the content
+                    document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
+                }
+            });
+        }
+    });
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
