@@ -1,0 +1,229 @@
+<!--
+    EXAMPLE DOWNLOADED FROM https://github.com/AskdataHQ/askdata-charts-components/tree/main/skins/askdata/_skin_example/index.htm
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+
+    <!-- BEGINNING OF THE HEADER SNIPPET -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- These imports are required -->
+    <script src="/lib/scripts/utils.js"></script>
+    <script src="/lib/scripts/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+    <script src="/lib/scripts/jquery.min.js"></script>
+
+    <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- Default styling -->
+    <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+
+    <!-- Other JS libraries or CSS import-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: normal;
+            font-weight: normal;
+            src: url('../_lib/fonts/TIMSans-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            src: url('../_lib/fonts/TIMSans-Bold.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-BoldItalic.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 500;
+            src: url('../_lib/fonts/TIMSans-Medium.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            padding: 20px;
+            background: url('../_lib/images/contentment_background.jpg');
+            font-family: TIMSans;
+            color: #0032a0;
+            position: relative;
+        }
+
+        .row {
+            position: absolute;
+            top: 372px;
+            left: 90px;
+            height: 80px;
+            font-size: 30px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-right: 10px;
+        }
+
+        .row-name {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .chart-wrapper {
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            height: 80px;
+            width: 590px;
+            display: flex;
+            align-items: center;
+            right: -595px;
+            justify-content: start;
+        }
+
+        .chart {
+            position: absolute;
+            top: 0;
+            height: 80px;
+            width: 535px;
+            transform: skewX(-27deg);
+            left: 35px;
+            justify-content: start;
+            background: #71faff;
+        }
+
+        .chart-text {
+            color: #0023b0;
+            font-weight: bold;
+            font-size: 36px;
+            position: relative;
+            background: #71faff;
+            padding: 13px 5px;
+            width: 65px;
+            text-align: center;
+        }
+
+        .team-image-wrapper {
+            height: 80px;
+            width: 145px;
+            position: absolute;
+            top: 206px;
+            right: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-image {
+            height: 100%;
+        }
+    </style>
+    <!-- Put your libaries here --->
+
+    <!-- END OF THE HEADER SNIPPET -->
+</head>
+
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%">
+    <div class="card">
+        <div class="team-image-wrapper">
+            <img src="{{teamImage}}" class="team-image" />
+        </div>
+        {{#rowsData}}
+        <div class="row" style="top: {{top}}px">
+            <div class="row-name">{{name}}</div>
+            <div class="chart-wrapper">
+                <div class="chart" style="width: {{chartWidth}}px"></div>
+                <div class="chart-text">{{value}}</div>
+            </div>
+        </div>
+        {{/rowsData}}
+    </div>
+</div>
+</body>
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+    // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+    // environment_widget = "https://api-dev.askdata.com";
+    // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+
+    // console.log("I'm going to request data");
+    // Requesting agent data
+    $.ajax({
+        url: `${environment_widget}/smartbot/agents/agentslug/${getUrlParameter('agentSlug')}`,
+        type: "GET",
+        async: false,
+        beforeSend: (xhr) => setAuthHeader(xhr),
+        success: (agentData) => {
+
+            // console.log("Requesting data if the WS answers 200");
+
+            // Requesting card data
+            $.ajax({
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                type: "GET",
+                async: false,
+                beforeSend: (xhr) => setAuthHeader(xhr),
+                success: (data) => {
+                    // Select the HTML to render as temple
+                    const template = document.getElementById('container').innerHTML;
+                    const cardData = data[1].attachment.body[0].details;
+                    // console.log(cardData);
+                    const teamImage = cardData.rows[0][cardData.columns.indexOf('Team Image')];
+                    const ROW_HEIGHT = 101.2;
+                    const START_POS = 372;
+                    const FULL_WIDTH = 535;
+                    const rowsData = cardData.rows.map((row, index) => {
+                       const value = Number(row[cardData.columns.indexOf('Gradimento')]);
+                       return {
+                         name: row[cardData.columns.indexOf('Nome')],
+                         value,
+                         top: START_POS + ROW_HEIGHT * index,
+                         chartWidth: value * FULL_WIDTH / 100,
+                       };
+                    });
+                    // console.log(rowsData);
+                    const parsedData = {
+                        rowsData,
+                        teamImage
+                    };
+
+                    // replace of the content
+                    document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
+                }
+            });
+        }
+    });
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
