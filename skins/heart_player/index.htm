@@ -1,0 +1,320 @@
+<!--
+    EXAMPLE DOWNLOADED FROM https://github.com/AskdataHQ/askdata-charts-components/tree/main/skins/askdata/_skin_example/index.htm
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+
+    <!-- BEGINNING OF THE HEADER SNIPPET -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- These imports are required -->
+    <script src="/lib/scripts/utils.js"></script>
+    <script src="/lib/scripts/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+    <script src="/lib/scripts/jquery.min.js"></script>
+
+    <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- Default styling -->
+    <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+
+    <!-- Other JS libraries or CSS import-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: normal;
+            font-weight: normal;
+            src: url('../_lib/fonts/TIMSans-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            src: url('../_lib/fonts/TIMSans-Bold.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-BoldItalic.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 300;
+            src: url('../_lib/fonts/TIMSans-Light.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-Italic.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 500;
+            src: url('../_lib/fonts/TIMSans-Medium.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-HeavyItalic.otf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            padding: 20px;
+            background: url('../_lib/images/heart_player_background.jpg');
+            font-family: TIMSans;
+            color: #0032a0;
+            position: relative;
+        }
+
+        .team-image-wrapper {
+            height: 135px;
+            width: 195px;
+            position: absolute;
+            top: 306px;
+            left: 223px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .team-image {
+            height: 100%;
+        }
+
+        .player-name {
+            position: absolute;
+            left: 446px;
+            top: 308px;
+            font-family: TIMSans;
+            font-size: 57px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .team-name {
+            position: absolute;
+            left: 446px;
+            top: 382px;
+            font-family: TIMSans;
+            font-size: 25.5px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 15.3px;
+            color: #5ee1ef;
+            text-transform: uppercase;
+        }
+
+        .player-number {
+            font-family: TIMSans;
+            font-size: 17.5px;
+            font-weight: 900;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #0034ba;
+            position: absolute;
+            top: 715px;
+            left: 908px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .quote {
+            font-family: TIMSans;
+            font-size: 39px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: italic;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+            text-transform: uppercase;
+            width: 656px;
+            position: absolute;
+            top: 488px;
+            left: 220px;
+        }
+
+        .quote-blue {
+            color: #57d8e9;
+            font-weight: bold;
+        }
+
+        .value-wrapper {
+            position: absolute;
+            top: 820px;
+            left: 160px;
+            transform: skewX(-25deg);
+            border: 6px solid #0023ae;
+            border-radius: 4px;
+        }
+
+        .value-border {
+            border: 1px solid #75f5fa;
+            background: green;
+            padding: 0 7px;
+        }
+
+        .value {
+            font-family: TIMSans;
+            font-size: 31px;
+            font-weight: 900;
+            font-stretch: normal;
+            font-style: italic;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #0023ae;
+            transform: skewX(25deg);
+        }
+    </style>
+    <!-- Put your libaries here --->
+
+    <!-- END OF THE HEADER SNIPPET -->
+</head>
+
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%">
+    <div class="card">
+        <div class="team-image-wrapper">
+            <img src="{{teamImage}}" class="team-image" />
+        </div>
+        <div class="player-name">{{name}}</div>
+        <div class="team-name">{{teamName}}</div>
+        <div class="player-number">{{playerNumber}}</div>
+        <div class="quote">
+            <span class="quote-blue">«</span> Si parla di <b>{{name}}</b> più di <b>{{buzzValue}}x</b> volte più degli altri giocatori <span class="quote-blue">»</span>
+        </div>
+        <div class="value-wrapper" style="left: {{valuePosition}}px">
+            <div class="value-border" style="background: {{valueBackground}}">
+                <div class="value">{{value}}%</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+    const percentColors = [
+        { pct: 0.0, color: { r: 0xfe, g: 0x25, b: 0x00 } },
+        { pct: 0.5, color: { r: 0xee, g: 0xe8, b: 0x00 } },
+        { pct: 1.0, color: { r: 0x31, g: 0xd9, b: 0x16 } }
+    ];
+
+    function getColorForPercentage(pct) {
+        for (var i = 1; i < percentColors.length - 1; i++) {
+            if (pct < percentColors[i].pct) {
+                break;
+            }
+        }
+        const lower = percentColors[i - 1];
+        const upper = percentColors[i];
+        const range = upper.pct - lower.pct;
+        const rangePct = (pct - lower.pct) / range;
+        const pctLower = 1 - rangePct;
+        const pctUpper = rangePct;
+        const color = {
+            r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
+            g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
+            b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
+        };
+        return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
+        // or output as hex if preferred
+    }
+
+    // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+    // environment_widget = "https://api-dev.askdata.com";
+    // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+
+    // console.log("I'm going to request data");
+    // Requesting agent data
+    $.ajax({
+        url: `${environment_widget}/smartbot/agents/agentslug/${getUrlParameter('agentSlug')}`,
+        type: "GET",
+        async: false,
+        beforeSend: (xhr) => setAuthHeader(xhr),
+        success: (agentData) => {
+
+            // console.log("Requesting data if the WS answers 200");
+
+            // Requesting card data
+            $.ajax({
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                type: "GET",
+                async: false,
+                beforeSend: (xhr) => setAuthHeader(xhr),
+                success: (data) => {
+                    // Select the HTML to render as temple
+                    const template = document.getElementById('container').innerHTML;
+                    const cardData = data[1].attachment.body[0].details;
+                    console.log(cardData);
+                    const teamImage = cardData.rows[0][cardData.columns.indexOf('Team Image')];
+                    const name = cardData.rows[0][cardData.columns.indexOf('Nome')];
+                    const teamName = cardData.rows[0][cardData.columns.indexOf('Squadra')];
+                    const value = cardData.rows[0][cardData.columns.indexOf('Gradimento')];
+                    const buzzValue = cardData.rows[0][cardData.columns.indexOf('BuzzValue')];
+                    const playerNumber = cardData.rows[0][cardData.columns.indexOf('PlayerNumber')];
+                    const START_POS = 160;
+                    const FULL_WIDTH = 700;
+                    // console.log(rowsData);
+                    const parsedData = {
+                        teamImage,
+                        teamName,
+                        name,
+                        value,
+                        buzzValue,
+                        playerNumber,
+                        valuePosition: START_POS + value * FULL_WIDTH / 100,
+                        valueBackground: getColorForPercentage(value/100)
+                    };
+
+                    // replace of the content
+                    document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
+                }
+            });
+        }
+    });
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
