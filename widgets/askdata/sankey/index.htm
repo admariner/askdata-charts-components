@@ -47,14 +47,14 @@ var option;
 // From
 
 // var nomi =  ["Donnarumma","Romagnoli","Kjaer","Florenzi","Kolarov","Bennacer","De Rossi","Tonali","Diaz","Ibra","Under"]
-// var sources= ["Donnarumma", "Donnarumma", "Donnarumma", "Donnarumma", "Florenzi", "Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Bennacer","De Rossi","Tonali"]
-// var targets = ["Florenzi","Kolarov","Kjaer","Romagnoli","Bennacer","Bennacer", "Bennacer","Bennacer","Tonali","Tonali","Tonali","Tonali","De Rossi","De Rossi","De Rossi","De Rossi","Diaz","Ibra",  "Under"]
-// var scores = [ 0.342284047256003,0.42322870366987,0.177682517071359,0.0433076373512774,0.137241325342711,0.137241325342711,0.137241325342711, 0.137241325342711, 0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,  0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,0.237241325342711,0.237241325342711,0.237241325342711]
+var sources= ["Donnarumma", "Donnarumma", "Donnarumma", "Donnarumma", "Florenzi", "Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Florenzi","Kolarov","Romagnoli","Kjaer","Bennacer","De Rossi","Tonali"]
+var targets = ["Florenzi","Kolarov","Kjaer","Romagnoli","Bennacer","Bennacer", "Bennacer","Bennacer","Tonali","Tonali","Tonali","Tonali","De Rossi","De Rossi","De Rossi","De Rossi","Diaz","Ibra",  "Under"]
+var scores = [ 0.342284047256003,0.42322870366987,0.177682517071359,0.0433076373512774,0.137241325342711,0.137241325342711,0.137241325342711, 0.137241325342711, 0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,  0.137241325342711,0.137241325342711,0.137241325342711,0.137241325342711,0.237241325342711,0.237241325342711,0.237241325342711]
 
 // var nomi =  data.fields.m1_id.data
-var sources= data.fields.m1_id.data
-var targets = data.fields.m2_id.data
-var scores = data.fields.m3_id.data
+// var sources= data.fields.m1_id.data
+// var targets = data.fields.m2_id.data
+// var scores = data.fields.m3_id.data
 
 var nomi = [...sources, ...targets];
 nomi = [...new Set(nomi)];
