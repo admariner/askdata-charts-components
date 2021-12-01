@@ -1,0 +1,33 @@
+datasets:
+-   code : Hubspot
+    name: Hubspot
+    description : This dataset can be used to read from a Hubspot source
+    driver: Default
+    documentation : https://docs.askdata.com/docs/dataset-hubspot
+    icon : "https://icons.askdata.com/datasets/Hubspot.png"
+    github: "AskdataHQ/askdata-dataset-integration/<code>"
+    fields:
+    -    code: "settings.fields.token"
+         label: "Access token"
+         type: "string"
+         viewType: "text"
+         readOnly: false
+         mandatory: true
+-   code : PARQUET
+    name: Parquet
+    description : This dataset can be used to read from a Parquet file
+    driver: Default
+    documentation : https://docs.askdata.com/docs/dataset-parquet
+    icon : "https://icons.askdata.com/datasets/Parquet.png"
+    github: "AskdataHQ/askdata-dataset-integration/<code>"
+    fields:
+    -  code: "settings.fields.content"
+       label: "Local File"
+       type: "string"
+       viewType: "upload"
+       readOnly: true
+       mandatory: true
+       settings:
+         accept: [ "application/gzip" ]
+         folder: "dataset"
+         uploadUrl: "{{host}}/smartdataset/files/{{agentId}}/dataset/{{datasetId}}"
