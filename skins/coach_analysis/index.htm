@@ -20,6 +20,10 @@
 
     <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
     <script src="/lib/scripts/jquery.min.js"></script>
+    
+    <!-- Rating jquery plugin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 
     <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
     <script src="https://unpkg.com/mustache@latest"></script>
@@ -71,20 +75,20 @@
             width: 1080px;
             height: 1080px;
             padding: 20px;
-            background: url('../_lib/images/coach_analysis_background.jpg');
+            background: url('../_lib/images/coach.png');
             font-family: TIMSans;
             color: #0032a0;
             position: relative;
         }
 
         .coach {
-            font-size: 46px;
+            font-size: 25px;
             font-weight: bold;
             color: white;
             text-transform: uppercase;
             position: absolute;
-            top: 188px;
-            left: 70px;
+            top: 470px;
+            left: 80px;
             width: 450px;
             height: 120px;
             display: flex;
@@ -94,21 +98,42 @@
         }
 
         .right-coach {
-            left: 566px;
+            left: 555px;
         }
 
         .team {
-            font-size: 24px;
+            font-size: 10px;
             font-weight: normal;
             color: #68edf6;
             text-transform: uppercase;
             letter-spacing: 10px;
 
         }
+        .team-image {
+            position: absolute;
+            top: 330px;
+            left: 160px;
+            height: 120px;
+        }
+        .right-team {
+            left: 610px;
+        }
 
+        .coach-image {
+            position: absolute;
+            top: 304px;
+            left: 245px;
+            height: 200px;
+        }
+        .right-coach-image {
+            left: 760px;
+        }
+        .right-coach {
+            left: 559px;
+        }
         .chart-row {
             position: absolute;
-            top: 608px;
+            top: 720px;
             left: 0;
             right: 0;
         }
@@ -125,7 +150,7 @@
         }
 
         .chart-left-wrapper {
-            right: 541px;
+            right: 600px;
             justify-content: end;
         }
 
@@ -150,13 +175,24 @@
         }
 
         .chart-right-wrapper {
-            left: 541px;
+            left: 600px;
             justify-content: start;
         }
 
         .chart-right {
             left: -15px;
             background: #58e5ac;
+        }
+        .score-table {
+            position: absolute;
+            left: 391px;
+            top: 675px;
+            font-size: 24px;
+            width: 320px;
+            text-align: center;
+        }
+        .score-table-right {
+            left: 91px;
         }
     </style>
     <!-- Put your libaries here --->
@@ -167,44 +203,31 @@
 <body style="height: 100%; margin: 0">
 <div id="container" style="height: 100%">
     <div class="card">
+        <img class="team-image left-team" src="{{leftTeamImage}}" />
+        <img class="coach-image" src="{{leftCoachImage}}" />
         <div class="coach left-coach">
-            {{leftCoach}}
+           {{leftCoach}}
             <div class="team">{{leftTeam}}</div>
         </div>
+        <img class="team-image right-team" src="{{rightTeamImage}}" />
+        <img class="coach-image right-coach-image" src="{{rightCoachImage}}" />
         <div class="coach right-coach">
             {{rightCoach}}
             <div class="team">{{rightTeam}}</div>
         </div>
         <div class="chart-row">
-            <div class="chart-left-wrapper">
-                <div class="chart-left" style="width: {{leftItem1Width}}px"></div>
-                <div class="left-text">{{leftItem1}}</div>
+            <div id="leftItem1" class="chart-left-wrapper">
             </div>
-            <div class="chart-right-wrapper">
-                <div class="chart-right" style="width: {{rightItem1Width}}px"></div>
-                <div class="right-text">{{rightItem1}}</div>
+            <div id="rightItem1" class="chart-right-wrapper">
             </div>
         </div>
-        <div class="chart-row" style="top: 694px">
-            <div class="chart-left-wrapper">
-                <div class="chart-left" style="width: {{leftItem2Width}}px"></div>
-                <div class="left-text">{{leftItem2}}</div>
+        <div class="chart-row" style="top: 852px">
+            <div id="leftItem2" class="chart-left-wrapper">
             </div>
-            <div class="chart-right-wrapper">
-                <div class="chart-right" style="width: {{rightItem2Width}}px"></div>
-                <div class="right-text">{{rightItem2}}</div>
+            <div id="rightItem2" class="chart-right-wrapper">
             </div>
         </div>
-        <div class="chart-row" style="top: 780px">
-            <div class="chart-left-wrapper">
-                <div class="chart-left" style="width: {{leftItem3Width}}px"></div>
-                <div class="left-text">{{leftItem3}}</div>
-            </div>
-            <div class="chart-right-wrapper">
-                <div class="chart-right" style="width: {{rightItem3Width}}px"></div>
-                <div class="right-text">{{rightItem3}}</div>
-            </div>
-        </div>
+
     </div>
 </div>
 </body>
@@ -237,33 +260,63 @@
                     // Select the HTML to render as temple
                     const template = document.getElementById('container').innerHTML;
                     const cardData = data[1].attachment.body[0].details;
-                    // console.log(cardData);
+                    console.log(cardData);
                     const FULL_WIDTH = 458;
                     const leftItem1 = Number(cardData.rows[0][cardData.columns.indexOf('Impatto')].trim());
-                    const leftItem2 = Number(cardData.rows[0][cardData.columns.indexOf('Spettacolarita')].trim());
-                    const leftItem3 = Number(cardData.rows[0][cardData.columns.indexOf('Solidita')].trim());
+                    const leftItem2 = Number(cardData.rows[0][cardData.columns.indexOf('Sostituzioni')].trim());
                     const rightItem1 = Number(cardData.rows[1][cardData.columns.indexOf('Impatto')].trim());
-                    const rightItem2 = Number(cardData.rows[1][cardData.columns.indexOf('Spettacolarita')].trim());
-                    const rightItem3 = Number(cardData.rows[1][cardData.columns.indexOf('Solidita')].trim());
+                    const rightItem2 = Number(cardData.rows[1][cardData.columns.indexOf('Sostituzioni')].trim());
+                    const leftCoach = cardData.rows[0][cardData.columns.indexOf('Coach')].trim();
+                    const leftTeam = cardData.rows[0][cardData.columns.indexOf('Team')].trim();
+                    const rightCoach = cardData.rows[1][cardData.columns.indexOf('Coach')].trim();
+                    const rightTeam = cardData.rows[1][cardData.columns.indexOf('Team')].trim();
+                    const ratingStyleObj = {
+                        starWidth: "40px",
+                        readOnly: true,
+                        normalFill: '#424984',
+                        ratedFill: '#fac66d',
+                        spacing: "25px"
+                    };
+                    function parseRating(rating) {
+                        return rating * 5 / 100;
+                        }
+                    $(function () {
+                        $("#leftItem1").rateYo({
+                            rating: parseRating(leftItem1),
+                            ...ratingStyleObj
+                        });
+                        $("#leftItem2").rateYo({
+                            rating: parseRating(leftItem2),
+                            ...ratingStyleObj
+                        });
+                        $("#rightItem1").rateYo({
+                            rating: parseRating(rightItem1),
+                            ...ratingStyleObj
+                        });
+                        $("#rightItem2").rateYo({
+                            rating: parseRating(rightItem2),
+                            ...ratingStyleObj
+                        });    
+                    });
                     const parsedData = {
-                        leftCoach: cardData.rows[0][cardData.columns.indexOf('Coach')].trim(),
-                        leftTeam: cardData.rows[0][cardData.columns.indexOf('Team')].trim(),
                         leftItem1,
                         leftItem1Width: leftItem1 * FULL_WIDTH / 100,
                         leftItem2,
                         leftItem2Width: leftItem2 * FULL_WIDTH / 100,
-                        leftItem3,
-                        leftItem3Width: leftItem3 * FULL_WIDTH / 100,
-                        rightCoach: cardData.rows[1][cardData.columns.indexOf('Coach')].trim(),
-                        rightTeam: cardData.rows[1][cardData.columns.indexOf('Team')].trim(),
                         rightItem1,
                         rightItem1Width: rightItem1 * FULL_WIDTH / 100,
                         rightItem2,
                         rightItem2Width: rightItem2 * FULL_WIDTH / 100,
-                        rightItem3,
-                        rightItem3Width: rightItem3 * FULL_WIDTH / 100,
+                        leftCoachImage: `../_lib/images/coaches/${leftCoach}.png`,
+                        rightCoachImage: `../_lib/images/coaches/${rightCoach}.png`,
+                        leftTeamImage: `../_lib/images/teams/${leftTeam}.png`,
+                        rightTeamImage: `../_lib/images/teams/${rightTeam}.png`,
+                         leftCoach: cardData.rows[0][cardData.columns.indexOf('Coach')].trim(),
+                     leftTeam: cardData.rows[0][cardData.columns.indexOf('Team')].trim(),
+                     rightCoach: cardData.rows[1][cardData.columns.indexOf('Coach')].trim(),
+                     rightTeam: cardData.rows[1][cardData.columns.indexOf('Team')].trim()
                     };
-
+console.log('Coach ', leftCoach);
                     // replace of the content
                     document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
                 }
