@@ -262,10 +262,10 @@
                     const cardData = data[1].attachment.body[0].details;
                     console.log(cardData);
                     const FULL_WIDTH = 458;
-                    const leftItem1 = Number(cardData.rows[0][cardData.columns.indexOf('Impatto')].trim());
-                    const leftItem2 = Number(cardData.rows[0][cardData.columns.indexOf('Sostituzioni')].trim());
-                    const rightItem1 = Number(cardData.rows[1][cardData.columns.indexOf('Impatto')].trim());
-                    const rightItem2 = Number(cardData.rows[1][cardData.columns.indexOf('Sostituzioni')].trim());
+                    const leftItem1 = Number(cardData.rows[0][cardData.columns.indexOf('Sostituzioni')].trim());
+                    const leftItem2 = Number(cardData.rows[0][cardData.columns.indexOf('Impatto')].trim());
+                    const rightItem1 = Number(cardData.rows[1][cardData.columns.indexOf('Sostituzioni')].trim());
+                    const rightItem2 = Number(cardData.rows[1][cardData.columns.indexOf('Impatto')].trim());
                     const leftCoach = cardData.rows[0][cardData.columns.indexOf('Coach')].trim();
                     const leftTeam = cardData.rows[0][cardData.columns.indexOf('Team')].trim();
                     const rightCoach = cardData.rows[1][cardData.columns.indexOf('Coach')].trim();
