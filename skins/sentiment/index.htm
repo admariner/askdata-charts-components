@@ -170,22 +170,24 @@
             top:220px;
             left:640px;
         }
-        .value-wrapper-home {
+        .value-wrapper-win {
             position: absolute;
-            top: 820px;
-            left: 60px;
+            top: 382px;
+            left: 156px;
             transform: skewX(-25deg);
-            border: 6px solid #0023ae;
+
             border-radius: 4px;
         }
 
-        .value-wrapper-away {
+        .value-wrapper-hard {
             position: absolute;
-            top: 820px;
-            left: 360px;
+            top: 511px;
+            left: 156px;
             transform: skewX(-25deg);
-            border: 6px solid #0023ae;
             border-radius: 4px;
+        }
+        .hard{
+            top:476px;
         }
         .value-border {
             border: 1px solid #75f5fa;
@@ -193,7 +195,7 @@
             padding: 0 7px;
         }
 
-        .value-win {
+        .value-home {
             font-family: TIMSans;
             font-size: 31px;
             font-weight: 900;
@@ -201,11 +203,13 @@
             font-style: italic;
             line-height: normal;
             letter-spacing: normal;
-            text-align: center;
-            color: #00ae43;
-            transform: skewX(25deg);
+            text-align: start;
+            color: #ffffff;
+            margin-top: 10px;
+            margin-left: 13px;
+
         }
-        .value-hard {
+        .value-away {
             font-family: TIMSans;
             font-size: 31px;
             font-weight: 900;
@@ -213,9 +217,44 @@
             font-style: italic;
             line-height: normal;
             letter-spacing: normal;
+            text-align: end;
+            color: #ffffff;
+            margin-top: 10px;
+            margin-right: 13px;
+
+        }
+        .chartWin {
+            position: absolute;
+            top: 2px;
+            height: 60px;
+            right: -350px;
+            justify-content: start;
+            background: rgb(102,221,118);
+            background: linear-gradient(180deg, rgba(102,221,118,1) 0%, rgba(102,221,118,1) 70%, rgba(45,102,172,1) 100%);
+        }
+
+        .chart-text {
+            color: #0023b0;
+            font-weight: bold;
+            font-size: 36px;
+            position: relative;
+            background: #71faff;
+            padding: 13px 5px;
+            width: 65px;
             text-align: center;
-            color: #ae2900;
-            transform: skewX(25deg);
+        }
+
+        .chartHard {
+            position: absolute;
+            top: 2px;
+            height: 60px;
+            right: -350px;
+            justify-content: start;
+            background: rgb(210,65,82);
+            background: linear-gradient(180deg, rgba(210,65,82,1) 0%, rgba(210,65,82,1) 70%, rgba(115,85,186,1) 100%);        
+        }
+        .away{
+            left:300px;
         }
     </style>
     <!-- Put your libaries here --->
@@ -238,26 +277,20 @@
         <div class="away-team-title-wrapper">
             <div class="title">{{teamAway}}</div>
         </div>
-        <div class="value-wrapper-home">
-            <div class="value-border">
-                <div class="value-win">{{winHome}}%</div>
-            </div>
+        <!-- CHARTS -->
+        <div class="value-wrapper-win">
+                <div class="chartWin" style="width: {{chartWidthWinHome}}px"><div class="value-home">{{winHome}}%</div></div>
         </div>
-        <div class="value-wrapper-home">
-            <div class="value-border">
-                <div class="value-hard">{{hardHome}}%</div>
-            </div>
+        <div class="value-wrapper-hard">
+                <div class="chartHard" style="width: {{chartWidthHardHome}}px"><div class="value-home">{{hardHome}}%</div></div>
         </div>
-        <div class="value-wrapper-away">
-            <div class="value-border">
-                <div class="value-win">{{winAway}}%</div>
-            </div>
+        <div class="value-wrapper-win away">
+            <div class="chartWin away" style="width: {{chartWidthWinAway}}px"><div class="value-away">{{winAway}}%</div></div>
         </div>
-        <div class="value-wrapper-away">
-            <div class="value-border">
-                <div class="value-hard">{{hardAway}}%</div>
-            </div>
+        <div class="value-wrapper-hard away">
+            <div class="chartHard away" style="width: {{chartWidthHardAway}}px"><div class="value-away">{{hardAway}}%</div></div>
         </div>
+        <!-- END CHARTS -->
     </div>
 </div>
 </body>
@@ -292,8 +325,8 @@
     }
 
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
-     environment_widget = "https://api-dev.askdata.com";
-    // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+     //environment_widget = "https://api-dev.askdata.com";
+    environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
 
     // console.log("I'm going to request data");
     // Requesting agent data
@@ -324,7 +357,7 @@
                     const winAway = cardData.rows[1][cardData.columns.indexOf('Win')];
                     const hardAway = cardData.rows[1][cardData.columns.indexOf('Hard')];
                     const START_POS = 160;
-                    const FULL_WIDTH = 700;
+                    const FULL_WIDTH = 355;
                     const parsedData = {
                         teamHome,
                         winHome,
@@ -334,8 +367,13 @@
                         hardAway,
                         leftTeamImage: `../_lib/images/teams/${teamHome}.png`,
                         rightTeamImage: `../_lib/images/teams/${teamAway}.png`,
-                        valuePosition: START_POS + winAway * FULL_WIDTH / 100,
-                        valueBackground: getColorForPercentage(winAway/100)
+                        valuePositionLeft: START_POS + winHome * FULL_WIDTH / 100,
+                        valuePositionRight: START_POS + winAway * FULL_WIDTH / 100,
+                        valueBackground: getColorForPercentage(winAway/100),
+                        chartWidthWinHome: winHome * FULL_WIDTH / 100,
+                        chartWidthWinAway: winAway * FULL_WIDTH / 100,
+                        chartWidthHardHome: hardHome * FULL_WIDTH / 100,
+                        chartWidthHardAway: hardAway * FULL_WIDTH / 100,
                     };
 
                     // replace of the content
