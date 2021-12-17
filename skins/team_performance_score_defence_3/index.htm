@@ -254,7 +254,7 @@
             </tr>
         </table>
     </div>
-    <div id="player2" style="position:absolute; top: -350px; left: -320px">
+    <div id="player2" style="position:absolute; top: -366px; left: -320px">
         <div class="performance-score">{{performanceScore2}}</div>
         <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
         <img class="team-image" src="{{teamImage}}" />
@@ -303,7 +303,7 @@
             </tr>
         </table>
     </div>
-    <div id="player3" style="position:absolute; top: -350px; left: 0px">
+    <div id="player3" style="position:absolute; top: -366px; left: 0px">
         <div class="performance-score">{{performanceScore3}}</div>
         <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
         <img class="team-image" src="{{teamImage}}" />
@@ -352,7 +352,7 @@
             </tr>
         </table>
     </div>
-    <div id="player4" style="position:absolute; top: -350px; left: 322px">
+    <div id="player4" style="position:absolute; top: -366px; left: 322px">
         <div class="performance-score">{{performanceScore4}}</div>
         <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
         <img class="team-image" src="{{teamImage}}" />
@@ -587,26 +587,26 @@
                     const FISScore2 = Number(cardData.rows[1][cardData.columns.indexOf('Fisico')]);
                     const PASScore2 = Number(cardData.rows[1][cardData.columns.indexOf('Passaggio')]);
                     const DIFScore2 = Number(cardData.rows[1][cardData.columns.indexOf('Difesa')]);
-                    const playerType3 = cardData.rows[1][cardData.columns.indexOf('Type')].toLowerCase();
-                    const playerRole3 = cardData.rows[1][cardData.columns.indexOf('Role')].toLowerCase();
-                    const shirtNumber3 = cardData.rows[1][cardData.columns.indexOf('Shirt Number')];
-                    const playerName3 = cardData.rows[1][cardData.columns.indexOf('Nome')];
-                    const performanceScore3 = cardData.rows[1][cardData.columns.indexOf('Overall')];
-                    const TIRScore3 = Number(cardData.rows[1][cardData.columns.indexOf('Tiro')]);
-                    const TECScore3 = Number(cardData.rows[1][cardData.columns.indexOf('Tecnica')]);
-                    const FISScore3 = Number(cardData.rows[1][cardData.columns.indexOf('Fisico')]);
-                    const PASScore3 = Number(cardData.rows[1][cardData.columns.indexOf('Passaggio')]);
-                    const DIFScore3 = Number(cardData.rows[1][cardData.columns.indexOf('Difesa')]);
-                    const playerType4 = cardData.rows[1][cardData.columns.indexOf('Type')].toLowerCase();
-                    const playerRole4 = cardData.rows[1][cardData.columns.indexOf('Role')].toLowerCase();
-                    const shirtNumber4 = cardData.rows[1][cardData.columns.indexOf('Shirt Number')];
-                    const playerName4 = cardData.rows[1][cardData.columns.indexOf('Nome')];
-                    const performanceScore4 = cardData.rows[1][cardData.columns.indexOf('Overall')];
-                    const TIRScore4 = Number(cardData.rows[1][cardData.columns.indexOf('Tiro')]);
-                    const TECScore4 = Number(cardData.rows[1][cardData.columns.indexOf('Tecnica')]);
-                    const FISScore4 = Number(cardData.rows[1][cardData.columns.indexOf('Fisico')]);
-                    const PASScore4 = Number(cardData.rows[1][cardData.columns.indexOf('Passaggio')]);
-                    const DIFScore4 = Number(cardData.rows[1][cardData.columns.indexOf('Difesa')]);
+                    const playerType3 = cardData.rows[2][cardData.columns.indexOf('Type')].toLowerCase();
+                    const playerRole3 = cardData.rows[2][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber3 = cardData.rows[2][cardData.columns.indexOf('Shirt Number')];
+                    const playerName3 = cardData.rows[2][cardData.columns.indexOf('Nome')];
+                    const performanceScore3 = cardData.rows[2][cardData.columns.indexOf('Overall')];
+                    const TIRScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Tiro')]);
+                    const TECScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Tecnica')]);
+                    const FISScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Fisico')]);
+                    const PASScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Passaggio')]);
+                    const DIFScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Difesa')]);
+                    const playerType4 = cardData.rows[3][cardData.columns.indexOf('Type')].toLowerCase();
+                    const playerRole4 = cardData.rows[3][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber4 = cardData.rows[3][cardData.columns.indexOf('Shirt Number')];
+                    const playerName4 = cardData.rows[3][cardData.columns.indexOf('Nome')];
+                    const performanceScore4 = cardData.rows[3][cardData.columns.indexOf('Overall')];
+                    const TIRScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Tiro')]);
+                    const TECScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Tecnica')]);
+                    const FISScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Fisico')]);
+                    const PASScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Passaggio')]);
+                    const DIFScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Difesa')]);
                     
                     const ratingStyleObj = {
                         starWidth: "10px",
