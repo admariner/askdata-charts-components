@@ -75,7 +75,7 @@
             width: 1080px;
             height: 1080px;
             padding: 20px;
-            background: url('../_lib/images/midfield/3.png');
+            background: url('../_lib/images/forward/3.png');
             font-family: TIMSans;
             color: #FFFFFF;
         }
@@ -204,7 +204,7 @@
 <div id="container" style="height: 100%">
 
     <div class="card">
-        <div id="player1" style="position:absolute; top: -273px; left: -326px">
+        <div id="player1" style="position:absolute; top: -175px; left: -333px">
         <div class="performance-score">{{performanceScore1}}</div>
         <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
         <img class="team-image" src="{{teamImage}}" />
@@ -253,7 +253,7 @@
             </tr>
         </table>
     </div>
-    <div id="player2" style="position:absolute; top: -188px; left: -9px">
+    <div id="player2" style="position:absolute; top: -252px; left: -14px">
         <div class="performance-score">{{performanceScore2}}</div>
         <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
         <img class="team-image" src="{{teamImage}}" />
@@ -302,7 +302,7 @@
             </tr>
         </table>
     </div>
-    <div id="player3" style="position:absolute; top: -273px; left: 336px">
+    <div id="player3" style="position:absolute; top: -175px; left: 327px">
         <div class="performance-score">{{performanceScore3}}</div>
         <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
         <img class="team-image" src="{{teamImage}}" />
@@ -360,8 +360,8 @@
 <script type="text/javascript">
 
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
-     // environment_widget = "https://api-dev.askdata.com";
-     environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+     //environment_widget = "https://api-dev.askdata.com";
+    environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
 
     const teamIdMap = {
         t120: {
