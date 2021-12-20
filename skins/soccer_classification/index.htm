@@ -149,7 +149,7 @@
 <script type="text/javascript">
 
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
-    // environment_widget = "https://api-dev.askdata.com";
+    environment_widget = "https://api-dev.askdata.com";
     // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
 
     // console.log("I'm going to request data");
@@ -172,12 +172,13 @@
                 success: (data) => {
                     // Select the HTML to render as temple
                     const template = document.getElementById('container').innerHTML;
-                    if (data[1].attachment.body.size() > 1){
-                        const cardData = data[1].attachment.body[1].details;
+                    const bodyObject = data[1].attachment.body
+                    let cardData
+                    if (data[1].attachment.body[0].component_type ==  "table"){
+                        cardData = data[1].attachment.body[0].details;
                     }else{
-                        const cardData = data[1].attachment.body[0].details;
+                        cardData = data[1].attachment.body[1].details;
                     }
-                    
                     // console.log(cardData);
                     const rows = cardData.rows.map((rowArray, index) => {
                        return {
