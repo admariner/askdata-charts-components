@@ -172,7 +172,7 @@
                 success: (data) => {
                     // Select the HTML to render as temple
                     const template = document.getElementById('container').innerHTML;
-                    const cardData = data[1].attachment.body[1].details;
+                    const cardData = data[1].attachment.body[0].details;
                     // console.log(cardData);
                     const rows = cardData.rows.map((rowArray, index) => {
                        return {
