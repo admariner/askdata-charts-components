@@ -491,7 +491,14 @@
                 success: (data) => {
                     // Select the HTML to render as temple
                     const template = document.getElementById('container').innerHTML;
-                    const cardData = data[1].attachment.body[1].details;
+                    //const cardData = data[1].attachment.body[1].details;
+                    const bodyObject = data[1].attachment.body
+                    let cardData
+                    if (data[1].attachment.body[0].component_type ==  "table"){
+                        cardData = data[1].attachment.body[0].details;
+                    }else{
+                        cardData = data[1].attachment.body[1].details;
+                    }
                     console.log(cardData);
                     //TEAM DATA
                     const teamId = cardData.rows[0][cardData.columns.indexOf('teamId')];
