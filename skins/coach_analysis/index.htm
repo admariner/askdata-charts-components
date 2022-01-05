@@ -116,7 +116,7 @@
             height: 100px;
         }
         .right-team {
-            left: 628px;
+            left: 632px;
         }
 
         .coach-image {
@@ -127,7 +127,7 @@
             max-width: 180px;
         }
         .right-coach-image {
-            left: 691px;
+            left: 730px;
         }
         .right-coach {
             left: 552px;
@@ -315,8 +315,8 @@
                         rightItem1Width: rightItem1 * FULL_WIDTH / 100,
                         rightItem2,
                         rightItem2Width: rightItem2 * FULL_WIDTH / 100,
-                        leftCoachImage: `../_lib/images/coaches/${leftCoach}.png`,
-                        rightCoachImage: `../_lib/images/coaches/${rightCoach}.png`,
+                        leftCoachImage: `../_lib/images/coaches/${leftCoach.replace(/[^a-zA-Z ]/g, "")}.png`,
+                        rightCoachImage: `../_lib/images/coaches/${rightCoach.replace(/[^a-zA-Z ]/g, "")}.png`,
                         leftTeamImage: `../_lib/images/teams/${leftTeam}.png`,
                         rightTeamImage: `../_lib/images/teams/${rightTeam}.png`,
                          leftCoach: cardData.rows[0][cardData.columns.indexOf('Coach')].trim(),
