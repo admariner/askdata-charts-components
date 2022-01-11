@@ -284,20 +284,13 @@
                     // Select the HTML to render as temple
                     const template = document.getElementById('container').innerHTML;
                     // const cardData = data[1].attachment.body[1];
+                    const bodyObject = data[1].attachment.body
                     let cardData
                     if (data[1].attachment.body[0].component_type ==  "table"){
-                        cardData = data[1].attachment.body[0].details;
+                        cardData = data[1].attachment.body[0];
                     }else{
-                        cardData = data[1].attachment.body[1].details;
+                        cardData = data[1].attachment.body[1];
                     }
-                    const bodyObject = data[1].attachment.body
-                    //let cardData
-                    // if (data[1].attachment.body[0].component_type ==  "table"){
-                    //     cardData = data[1].attachment.body[0].details;
-                    // }else{
-                    //     cardData = data[1].attachment.body[1].details;
-                    // }
-                    console.log(cardData);
                     const parsedData = {
                         homeTeamImageUrl: cardData.details['rows'][0][1],
                         awayTeamImageUrl: cardData.details['rows'][1][1],
