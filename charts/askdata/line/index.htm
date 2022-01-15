@@ -42,14 +42,46 @@ function displayChart(data) {
         console.log("Warning: numericValues Not numeric!")
       }
     }
+      
+    // Check if item has the format property otherwise set it to null
+    if(typeof item.format != 'undefined'){
+      item.format = item.format;
+      console.log("Applied formatting")
+    } else {
+      item.format = null;
+      console.log("NOT applied formatting")
+    }
     
-    measures.push({ 
+    measures.push({
         "label" : item.name,
         "data" : item.numericValues,
         "backgroundColor": item.color,
+        "format": item.format,
         "borderColor": item.color
     });
 
+    }
+  
+    // If format for the first measure is different from null apply tick to scale y
+    if((measures[0].format !== null) && (measures[0].format.indexOf("$")>-1)){
+      var yAxes = {
+        ticks: {
+          beginAtZero: true
+        }
+      }
+    } else {
+      var yAxes = {
+        ticks: {
+           callback: function(value, index, values) {
+               // if value is numeric                
+               if (typeof value === 'number') {
+                  return value.toLocaleString("en-US",{style:"currency", currency:"USD"});
+                  } else {
+                  return value;
+                }
+            }
+        }
+      }
     }
 
     // Show legend if measures more than one
@@ -57,7 +89,6 @@ function displayChart(data) {
     
     if (measures.length == 1) {
       displayLegend = false;
-
     }
 
     var chartData = {
@@ -74,13 +105,14 @@ function displayChart(data) {
     var labelFontFamily = "'Helvetica', sans-serif";
     var lebelNumberCurrency = null;
     var lebelNumberMeasurmenentUnit = null;
-
+  
       var ctx = document.getElementById('canvas').getContext('2d');
       window.myHorizontalBar = new Chart(ctx, {
         type: 'line',
         data: chartData,
         options: {
-
+           scales: {
+           yAxes: [yAxes],
           // Elements options apply to all of the options unless overridden in a dataset
           // In this case, we are setting the border of each horizontal bar to be 2px wide
           responsive: true,
