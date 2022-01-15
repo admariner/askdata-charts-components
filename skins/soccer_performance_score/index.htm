@@ -469,6 +469,27 @@
     function parseRating(rating) {
         return rating * 5 / 100;
     }
+
+// Dynamic zoom level
+
+// Get the width of the DIV with id "container" without jquery
+var children = document.getElementById('container').children;
+var targetWidth = 0;
+
+for (var i = 0; i < children.length; i++) {
+    targetWidth += children[i].offsetWidth;
+}
+
+// Calculate screen width
+screenWidth = window.innerWidth
+console.log(screenWidth)
+
+// Get zoom level
+currentZoomLevel = window.parent.document.body.style.zoom;
+
+// Set the zoom level to the target width
+window.parent.document.body.style.zoom = screenWidth / targetWidth
+console.log("New zoom level:" + screenWidth / targetWidth)
 </script>
 <!-- END OF THE DATA LOADER SNIPPET -->
 
