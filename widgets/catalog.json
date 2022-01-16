@@ -89,6 +89,12 @@
 			"description": "This horizontal barplot provides several information inside one graph. The length provides the value, the color the improvement/declination of the value w.r.t. to the total value (shown as a black vertical bar)"
 		},
 		{
+			"code": "barchart_with_line_control",
+			"name": "Barchart With Line Control",
+			"icon": "barchart_with_line_control/info.PNG",
+			"description": "This horizontal barchartis ideal when you want to contront a main dimension with another dimension for the same metric. Default color is red. Automatically turn in red bars below the control line."
+		},
+		{
 		    "code": "scatter-with-regression",
 		    "name": "Scatter with regression line",
 		    "icon": "scatter-with-regression/scatter.png",
