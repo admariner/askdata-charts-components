@@ -69,7 +69,7 @@ function displayChart(data) {
            callback: function(value, index, values) {
                // if value is numeric                
                if (typeof value === 'number') {
-                    return formatNumber(value, format)
+                    return formatNumber(value, measures[0].format)
                   } else {
                     return value;
                   }
