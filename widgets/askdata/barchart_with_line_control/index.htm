@@ -1,0 +1,120 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=funnel
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
+    </head>
+
+
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+    </body>
+
+    
+        <script type="text/javascript">
+
+
+// environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+ console.log(data)        
+ var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+var option;
+
+try{
+    var val = parseFloat(data.fields.m2_id.data)
+}
+catch(error){
+    var val = 0
+}
+
+
+baseColor = "#929BA7"
+alertColor = "#F34220"
+positiveColor = "#84C442"
+
+option = {
+  xAxis: {
+    type: 'category',
+    data: dimensionLabels
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: barChartDataSeries,
+      type: 'bar'
+    }
+  ]
+};
+
+// Change option adding a line series with value 50 for all the data
+option.series.push({
+  data: lineChartDataSeries,
+  type: 'line',
+  itemStyle: {color : '#ccc'}
+});
+
+// When the bar data values are more than the line data values set the bar item color to #a90000
+option.series[0].data.forEach((item, index) => {
+  if (item.value >= option.series[1].data[index]) {
+    // create property itemStyle if missing
+    if (!item.itemStyle) {
+      item.itemStyle = {};
+    }
+    item.itemStyle.color = positiveColor;
+  } else {
+    item.itemStyle.color = alertColor;
+  }
+});
+
+// Add labels on top of each bars
+option.series[0].data.forEach((item, index) => {
+  option.series[0].data[index].label = {
+    show: true,
+    position: 'top',
+    formatter: function () {
+      // divide each value for the data item of the line chart
+      value = option.series[0].data[index].value / option.series[1].data[index];
+      percentage = (value * 100).toFixed(0) + '%';
+      // Print x asis label to the line below
+      return option.xAxis.data[index] + '\n' + percentage;
+    }
+  };
+});
+
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+    }
+  });
+</script>
+
+</html>
