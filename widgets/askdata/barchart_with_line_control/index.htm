@@ -41,7 +41,117 @@ $.ajax({
   success: function(data) { 
 
     console.log(data)        
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
 
+    // Deimensions labels
+    //TODO put back dimensionLabels = data.fields.s1_id.data;
+    dimensionLabels = ["Alphafox", "Betaion", "Gammawolf","D3"];
+    console.log("Dimensions:")
+    console.log(dimensionLabels)
+
+    // TODO mainMeasureValues = data.fields.m1_id.data
+    mainMeasureValues = [100, 120, 30, 44]
+
+    // TODO controlMeasureValues = data.fields.m1_id.data
+    controlValues = [50, 50, 200, 200]
+
+    lineChartDataSeries = controlValues;
+    barChartDataSeries = [];
+
+    console.log("controlValues")
+    console.log(controlValues)
+
+    // Set default colors
+    baseColor = "#929BA7";
+    alertColor = "#F34220";
+    positiveColor = "#84C442";
+
+    // For barchart coming from m1_id.data
+    for (var i = 0; i < mainMeasureValues.length; i++) {
+        // Set set itemStyle: { color: baseColor }}
+        barChartDataSeries[i] = {
+            value: parseFloat(mainMeasureValues[i]),
+            itemStyle: {
+                color: baseColor
+            }
+        };
+    }
+
+    console.log("Bar chart objects");
+    console.log(barChartDataSeries);
+
+    // Options object to initialize the chart
+    option = {
+      xAxis: {
+        type: 'category',
+        data: dimensionLabels
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          data: barChartDataSeries,
+          type: 'bar'
+        },
+        {
+          data: lineChartDataSeries,
+          type: 'line',
+          itemStyle: {color : '#ccc'}
+        }
+      ]
+    };
+
+    console.log("Before for each:")
+    console.log(option)
+    console.log(option.series[0].data)
+    console.log(option.series[1].data)
+
+    // When the bar data values are more than the line data values set the bar item color to #a90000
+    option.series[0].data.forEach((item, index) => {
+
+        // create property itemStyle if missing
+        if (!item.itemStyle) {
+          item.itemStyle = {};
+        }
+
+        // create property itemStyle if missing
+        if (!item.itemStyle.color) {
+          item.itemStyle['color'] = null;
+        }
+
+      if (item.value >= option.series[1].data[index]) {
+
+        item.itemStyle.color = positiveColor;
+
+      } else {
+        item.itemStyle.color = alertColor;
+      }
+    });
+
+    // Add labels on top of each bars
+    option.series[0].data.forEach((item, index) => {
+      option.series[0].data[index].label = {
+        show: true,
+        position: 'top',
+        formatter: function () {
+          // divide each value for the data item of the line chart
+          value = option.series[0].data[index].value / option.series[1].data[index];
+          percentage = (value * 100).toFixed(0) + '%';
+          // Print x asis label to the line below
+          return option.xAxis.data[index] + '\n' + percentage;
+        }
+      };
+    });
+
+
+      if (option && typeof option === 'object') {
+          myChart.setOption(option);
+          console.log("Load chart")
+      }
 
   }
 
