@@ -45,8 +45,7 @@ function displayChart(data) {
       
     // Check if item has the format property otherwise set it to null
     if(typeof item.format != 'undefined'){
-      item.format = item.format;
-      console.log("Applied formatting")
+      console.log("Applying formatting")
     } else {
       item.format = null;
       console.log("NOT applied formatting")
@@ -56,7 +55,7 @@ function displayChart(data) {
         "label" : item.name,
         "data" : item.numericValues,
         "backgroundColor": item.color,
-        "format": "$ ###,##0.##",
+        "format": item.format,
         "borderColor": item.color
     });
 
