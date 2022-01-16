@@ -56,7 +56,7 @@ function displayChart(data) {
         "label" : item.name,
         "data" : item.numericValues,
         "backgroundColor": item.color,
-        "format": item.format,
+        "format": "$ ###,##0.##",
         "borderColor": item.color
     });
 
@@ -111,16 +111,9 @@ function displayChart(data) {
         type: 'line',
         data: chartData,
         options: {
-          elements: {
-                    point:{
-                        radius: 0
-                    }
-                  },
            scales: {
               yAxes: [yAxes]
            },
-          // Elements options apply to all of the options unless overridden in a dataset
-          // In this case, we are setting the border of each horizontal bar to be 2px wide
           responsive: true,
           maintainAspectRatio:false,
           legend: {
@@ -139,10 +132,9 @@ function displayChart(data) {
             fontStyle:'normal'
           },
         elements: {
-                line: {
-                 fill: false
-                }
-              }
+          line: {fill: false},
+          point: {radius: 0}
+          }
         
         }
       });
