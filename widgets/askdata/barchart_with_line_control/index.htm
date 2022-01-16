@@ -25,8 +25,8 @@
     
         <script type="text/javascript">
 
-
- environment_widget = "https://api-dev.askdata.com";
+// Debug for each env
+//environment_widget = "https://api-dev.askdata.com";
 // environment_widget = "https://api-qa.askdata.com"
 // environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
@@ -47,16 +47,17 @@ $.ajax({
     var option;
 
     // Deimensions labels
-    //TODO put back dimensionLabels = data.fields.s1_id.data;
-    dimensionLabels = ["Alphafox", "Betaion", "Gammawolf","D3"];
+    dimensionLabels = data.fields.s1_id.data;
+    // debug: dimensionLabels = ["Alphafox", "Betaion", "Gammawolf","D3"];
+
+    mainMeasureValues = data.fields.m1_id.data
+    // debug: mainMeasureValues = [100, 120, 30, 44]
+
+    controlValues = data.fields.m2_id.data
+    // debug: controlValues = [50, 50, 200, 200]
+
     console.log("Dimensions:")
     console.log(dimensionLabels)
-
-    // TODO mainMeasureValues = data.fields.m1_id.data
-    mainMeasureValues = [100, 120, 30, 44]
-
-    // TODO controlMeasureValues = data.fields.m1_id.data
-    controlValues = [50, 50, 200, 200]
 
     lineChartDataSeries = controlValues;
     barChartDataSeries = [];
