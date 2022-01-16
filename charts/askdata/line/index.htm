@@ -64,24 +64,24 @@ function displayChart(data) {
   
     // If format for the first measure is different from null apply tick to scale y
     if((measures[0].format !== null) && (measures[0].format.indexOf("$")>-1)){
-      var yAxes = {
-        ticks: {
-          beginAtZero: true
-        }
-      }
-    } else {
-      var yAxes = {
+       var yAxes = {
         ticks: {
            callback: function(value, index, values) {
                // if value is numeric                
                if (typeof value === 'number') {
-                  return value.toLocaleString("en-US",{style:"currency", currency:"USD"});
+                    return formatNumber(value, format)
                   } else {
-                  return value;
-                }
+                    return value;
+                  }
             }
         }
       }
+    } else {
+            var yAxes = {
+              ticks: {
+                beginAtZero: true
+            }
+        }
     }
 
     // Show legend if measures more than one
@@ -111,6 +111,11 @@ function displayChart(data) {
         type: 'line',
         data: chartData,
         options: {
+          elements: {
+                    point:{
+                        radius: 0
+                    }
+                  },
            scales: {
               yAxes: [yAxes]
            },
@@ -134,9 +139,9 @@ function displayChart(data) {
             fontStyle:'normal'
           },
         elements: {
-                        line: {
-                                fill: false
-                        }
+                line: {
+                 fill: false
+                }
               }
         
         }
