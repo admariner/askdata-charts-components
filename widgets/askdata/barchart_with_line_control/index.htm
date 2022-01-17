@@ -90,7 +90,12 @@ $.ajax({
     console.log(barChartDataSeries);
 
     // Options object to initialize the chart
-    option = {
+    option = {grid: {
+              left: 10,
+              top: 10,
+              right: 0,
+              bottom: 0
+            },
       xAxis: {
         type: 'category',
         data: dimensionLabels
