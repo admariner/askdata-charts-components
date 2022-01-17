@@ -73,6 +73,6 @@
 		}
 	],
 	"base_url": "/charts/askdata",
-	"palette" : ["#266ff2","#52c173","#fa6410","#707782","#c76bc5","#7ee8fa","#ff5ca8","#f9c8cd","#ffc100","#5b7cd7","#90b1f2","#a5d9b7","#f0a782","#adb0b6","#ddb4de","#d4f3fb","#f7b5d7","#fcf2f4","#f4da8e","#abbbe6"]
+	"palette" : ["#266ff2","#52c173","#fa6410","#707782","#c76bc5","#7ee8fa","#ff5ca8","#f9c8cd","#ffc100","#5b7cd7","#90b1f2","#a5d9b7","#f0a782","#adb0b6","#ddb4de","#d4f3fb","#f7b5d7","#fcf2f4","#f4da8e","#abbbe6","f72585","b5179e","7209b7","560bad","480ca8","3a0ca3","3f37c9","4361ee","4895ef","4cc9f0","ef476f","ffd166","06d6a0","118ab2","073b4c","ffadad","ffd6a5","fdffb6","caffbf","9bf6ff","a0c4ff","bdb2ff","ffc6ff"]]
 
 }
