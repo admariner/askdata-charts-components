@@ -47,17 +47,17 @@ $.ajax({
     var option;
 
     // Dimension labels
-    dimensionLabels = data.fields.s1_id.data;
+    dimensionLabels = data.fields.s1_id.rawData;
     // debug: 
     //dimensionLabels = ["Alphafox", "Betaion", "Gammawolf","D3"];
 
     // Measure values
-    mainMeasureValues = data.fields.m1_id.data
+    mainMeasureValues = data.fields.m1_id.rawData
     // debug:
     // mainMeasureValues = ["100", "120", "30", "44"]
 
     // Control values
-    controlValues = data.fields.m2_id.data
+    controlValues = data.fields.m2_id.rawData
     // debug: 
     //controlValues = ["50", "50", "200", "200"]
 
@@ -91,10 +91,10 @@ $.ajax({
 
     // Options object to initialize the chart
     option = {grid: {
-              left: '10%',
-              top: '5%',
-              right: '10%',
-              bottom: '5%'
+              left: '0',
+              top: '0',
+              right: '0',
+              bottom: '0'
             },
       xAxis: {
         type: 'category',
