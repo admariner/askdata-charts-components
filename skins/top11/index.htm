@@ -1,0 +1,416 @@
+<!--
+    EXAMPLE DOWNLOADED FROM https://github.com/AskdataHQ/askdata-charts-components/tree/main/skins/askdata/_skin_example/index.htm
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+
+    <!-- BEGINNING OF THE HEADER SNIPPET -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- These imports are required -->
+    <script src="/lib/scripts/utils.js"></script>
+    <script src="/lib/scripts/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+    <script src="/lib/scripts/jquery.min.js"></script>
+
+    <!-- Rating jquery plugin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
+    <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- Default styling -->
+    <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+
+    <!-- Other JS libraries or CSS import-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: normal;
+            font-weight: normal;
+            src: url('../_lib/fonts/TIMSans-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            src: url('../_lib/fonts/TIMSans-Bold.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-BoldItalic.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 500;
+            src: url('../_lib/fonts/TIMSans-Medium.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .card {
+            width: 545px;
+            height: 634px;
+            padding: 20px;
+            background: url('../_lib/images/TOP11.png');
+            font-family: TIMSans;
+            color: #FFFFFF;
+        }
+
+        .performance-score {
+            position: absolute;
+    top: -11px;
+    left: 221px;
+    width: 91px;
+    text-align: center;
+    font-size: 100px;
+    font-family: TIMSans;
+    font-style: italic;
+    font-weight: bold;
+    color: #011a66;
+        }
+
+        .home-away {
+            position: absolute;
+            top: 295px;
+            left: 475px;
+            width: 134px;
+            text-align: center;
+            font-size: 18px;
+            font-style: italic;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            background: #d6a954;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .team-image {
+            position: absolute;
+    top: 122px;
+    left: 36px;
+    height: 67px;
+        }
+
+        .shirt {
+            position: absolute;
+            top: 138px;
+    left: 124px;
+    /* width: 298px; */
+    height: 311px;
+        }
+
+        .shirt-image {
+            height: 100%;
+            position: absolute;
+            left: -7px;
+            top: 10px;
+        }
+
+        .shirt-number {
+            position: absolute;
+    top: 71px;
+    left: 0;
+    width: 298px;
+    text-align: center;
+    font-size: 100px;
+    font-family: TIMSans;
+    font-weight: 500;
+        }
+
+        .player-name {
+            position: absolute;
+    top: 485px;
+    left: 75px;
+    width: 380px;
+    font-size: 53px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+        }
+
+        .score-table {
+            position: absolute;
+            left: 391px;
+            top: 675px;
+            font-size: 24px;
+            width: 320px;
+            text-align: center;
+        }
+
+
+        .season-text {
+            color: #8bdff2;
+    position: absolute;
+    top: 195px;
+    left: 443px;
+    font-size: 12px;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+        }
+
+        .player-role {
+            color: #8bdff2;
+    position: absolute;
+    top: 195px;
+    left: 40px;
+    font-size: 16px;
+    width: 45px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+        }
+
+        .jq-ry-container {
+            display: inline-block;
+        }
+    </style>
+    <!-- Put your libaries here --->
+
+    <!-- END OF THE HEADER SNIPPET -->
+</head>
+
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%">
+    <div class="card">
+        <div class="performance-score">{{performanceScore}}</div>
+        <img class="team-image" src="{{teamImage}}" />
+        <div class="shirt">
+            <img class="shirt-image" src="{{shirtImageUrl}}" />
+            <div class="shirt-number" style="color: {{shirtNumberColor}}">{{shirtNumber}}</div>
+        </div>
+        <div class="player-name">{{playerName}}</div>
+        <div class="season-text">21/22</div>
+        <div class="player-role">{{playerRole}}</div>
+    </div>
+</div>
+</body>
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+    // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+    // environment_widget = "https://api-dev.askdata.com";
+    // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+
+    const teamIdMap = {
+        t120: {
+            name: 'Milan',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t121: {
+            name: 'Roma',
+            playerNumberColor: '#ea9e51',
+            goalkeeperNumberColor: '#000000'
+        },
+        t123: {
+            name: 'Bologna',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t124: {
+            name: 'Cagliari',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t125: {
+            name: 'Fiorentina',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t127: {
+            name: 'Internazionale',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t128: {
+            name: 'Juventus',
+            playerNumberColor: '#000000',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t129: {
+            name: 'Lazio',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#2c2a2a'
+        },
+        t135: {
+            name: 'Torino',
+            playerNumberColor: '#fefcfc',
+            goalkeeperNumberColor: '#214c43'
+        },
+        t136: {
+            name: 'Udinese',
+            playerNumberColor: '#fefcfc',
+            goalkeeperNumberColor: '#030101'
+        },
+        t456: {
+            name: 'Atalanta',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t459: {
+            name: 'Napoli',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t603: {
+            name: 'Sampdoria',
+            playerNumberColor: '#fefefe',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t990: {
+            name: 'Genoa',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#071319'
+        },
+        t695: {
+            name: 'Empoli',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t126: {
+            name: 'Verona',
+            playerNumberColor: '#fcd22e',
+            goalkeeperNumberColor: '#2c2a2a'
+        },
+        t2182: {
+            name: 'Sassuolo',
+            playerNumberColor: '#fefefe',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t1025: {
+            name: 'Salernitana',
+            playerNumberColor: '#efeddb',
+            goalkeeperNumberColor: '#1d4689'
+        },
+        t2036: {
+            name: 'Spezia',
+            playerNumberColor: '#010000',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t137: {
+            name: 'Venezia',
+            playerNumberColor: '#FFFFFF',
+            goalkeeperNumberColor: '#071319'
+        },
+    };
+
+    console.log("I'm going to request data");
+    // Requesting agent data
+    $.ajax({
+        url: `${environment_widget}/smartbot/agent-slugs/${getUrlParameter('agentSlug')}`,
+        type: "GET",
+        async: false,
+        beforeSend: (xhr) => setAuthHeader(xhr),
+        success: (agentData) => {
+
+            console.log("Requesting data if the WS answers 200");
+
+            // Requesting card data
+            $.ajax({
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                type: "GET",
+                async: false,
+                beforeSend: (xhr) => setAuthHeader(xhr),
+                success: (data) => {
+                    // Select the HTML to render as temple
+                    const template = document.getElementById('container').innerHTML;
+                    //const cardData = data[1].attachment.body[0].details;
+                    const bodyObject = data[1].attachment.body
+                    let cardData
+                    if (data[1].attachment.body[0].component_type ==  "table"){
+                        cardData = data[1].attachment.body[0].details;
+                    }else{
+                        cardData = data[1].attachment.body[1].details;
+                    }
+                    console.log(cardData);
+                    const teamId = cardData.rows[0][cardData.columns.indexOf('teamId')];
+                    const teamData = teamIdMap[teamId];
+                    const teamImage = cardData.rows[0][cardData.columns.indexOf('Team Image')];
+                    const playerType = cardData.rows[0][cardData.columns.indexOf('Type')].toLowerCase();
+                    const playerRole = cardData.rows[0][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber = cardData.rows[0][cardData.columns.indexOf('Shirt Number')];
+                    const playerName = cardData.rows[0][cardData.columns.indexOf('Nome')];
+                    const homeSlug = cardData.rows[0][cardData.columns.indexOf('Home slug')];
+                    const awaySlug = cardData.rows[0][cardData.columns.indexOf('Away slug')];
+                    const performanceScore = cardData.rows[0][cardData.columns.indexOf('Overall')];
+
+                    const parsedData = {
+                        performanceScore,
+                        teamImage,
+                        teamImageUrl: `../_lib/images/teams/${teamId}.png`,
+                        shirtImageUrl: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerType}.png`,
+                        shirtNumberColor: teamData[`${playerType}NumberColor`],
+                        playerRole,
+                        shirtNumber,
+                        playerName
+                    };
+
+                    // replace of the content
+                    document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
+                }
+            });
+        }
+    });
+
+    function parseRating(rating) {
+        return rating * 5 / 100;
+    }
+
+// Dynamic zoom level
+
+// Get the width of the DIV with id "container" without jquery
+var children = document.getElementById('card').children;
+var targetWidth = 0;
+
+for (var i = 0; i < children.length; i++) {
+    targetWidth += children[i].offsetWidth;
+}
+
+// Calculate screen width
+screenWidth = window.innerWidth
+console.log(screenWidth)
+
+// Get zoom level
+currentZoomLevel = window.parent.document.body.style.zoom;
+
+// Set the zoom level to the target width
+window.parent.document.body.style.zoom = screenWidth / targetWidth
+console.log("New zoom level:" + screenWidth / targetWidth)
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
