@@ -1,0 +1,857 @@
+<!--
+    EXAMPLE DOWNLOADED FROM https://github.com/AskdataHQ/askdata-charts-components/tree/main/skins/askdata/_skin_example/index.htm
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+
+    <!-- BEGINNING OF THE HEADER SNIPPET -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- These imports are required -->
+    <script src="/lib/scripts/utils.js"></script>
+    <script src="/lib/scripts/env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <!-- You can leave this library import if you use JQuery. Beware that tThis example uses JQuery -->
+    <script src="/lib/scripts/jquery.min.js"></script>
+
+    <!-- Rating jquery plugin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
+    <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- Default styling -->
+    <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+
+    <!-- Other JS libraries or CSS import-->
+    <style type="text/css">
+        @font-face {
+            font-family: 'TIMSans';
+            font-style: normal;
+            font-weight: normal;
+            src: url('../_lib/fonts/TIMSans-Regular.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            src: url('../_lib/fonts/TIMSans-Bold.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('../_lib/fonts/TIMSans-BoldItalic.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 500;
+            src: url('../_lib/fonts/TIMSans-Medium.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'TIMSans';
+            font-weight: 900;
+            src: url('../_lib/fonts/TIMSans-Heavy.otf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            padding: 20px;
+            background: url('../_lib/images/midfield/3_2.png');
+            font-family: TIMSans;
+            color: #FFFFFF;
+        }
+
+        .performance-score {
+            position: absolute;
+            top: 529px;
+    left: 488px;
+            width: 94px;
+            text-align: center;
+            font-size: 34px;
+            font-family: TIMSans;
+            font-style: italic;
+            font-weight: bold;
+            color: #011a66;
+        }
+
+        .home-away {
+            position: absolute;
+            top: 584px;
+            left: 468px;
+            width: 134px;
+            text-align: center;
+            font-size: 9px;
+            font-style: italic;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            background: #d6a954;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .team-image {
+            position: absolute;
+            top: 571px;
+    left: 447px;
+            height: 36px;
+        }
+
+        .shirt {
+            position: absolute;
+            top: 597px;
+            left: 488px;
+            width: 110px;
+            height: 110px;
+        }
+
+        .shirt-image {
+            height: 100%;
+            position: absolute;
+            left: -7px;
+            top: 10px;
+        }
+
+        .shirt-number {
+            position: absolute;
+            top: 24px;
+            left: -7px;
+            width: 110px;
+            text-align: center;
+            font-size: 39px;
+            font-family: TIMSans;
+            font-weight: 500;
+        }
+
+        .player-name {
+            position: absolute;
+            top: 731px;
+            left: 348px;
+            width: 380px;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .score-table {
+            position: absolute;
+            left: 458px;
+            top: 773px;
+            font-size: 10px;
+            width: 180px;
+            text-align: center;
+        }
+
+        .season-text {
+            color: #8bdff2;
+            position: absolute;
+            top: 610px;
+    left: 589px;
+            font-size: 8px;
+            width: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .player-role {
+            color: #8bdff2;
+            position: absolute;
+            top: 610px;
+    left: 438px;
+            font-size: 10px;
+            width: 45px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .jq-ry-container {
+            display: inline-block;
+        }
+    </style>
+    <!-- Put your libaries here --->
+
+    <!-- END OF THE HEADER SNIPPET -->
+</head>
+
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%">
+
+    <div class="card">
+        <div id="player1" style="position:absolute; top: 42px; left: -347px">
+        <div class="performance-score">{{performanceScore1}}</div>
+        <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
+        <img class="team-image" src="{{teamImage}}" />
+        <div class="shirt">
+            <img class="shirt-image" src="{{shirtImageUrl1}}" />
+            <div class="shirt-number" style="color: {{shirtNumberColor1}}">{{shirtNumber1}}</div>
+        </div>
+        <div class="player-name">{{playerName1}}</div>
+        <div class="season-text">21/22</div>
+        <div class="player-role">{{playerRole1}}</div>
+        <table class="score-table">
+            <tr>
+                <td>TIR</td>
+                <td>{{TIRScore1}}</td>
+                <td>
+                    <div id="TIRScore1"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>TEC</td>
+                <td>{{TECScore1}}</td>
+                <td>
+                    <div id="TECScore1"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>FIS</td>
+                <td>{{FISScore1}}</td>
+                <td>
+                    <div id="FISScore1"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>PAS</td>
+                <td>{{PASScore1}}</td>
+                <td>
+                    <div id="PASScore1"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>DIF</td>
+                <td>{{DIFScore1}}</td>
+                <td>
+                    <div id="DIFScore1"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="player2" style="position:absolute; top: 42px; left: 0px">
+        <div class="performance-score">{{performanceScore2}}</div>
+        <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
+        <img class="team-image" src="{{teamImage}}" />
+        <div class="shirt">
+            <img class="shirt-image" src="{{shirtImageUrl2}}" />
+            <div class="shirt-number" style="color: {{shirtNumberColor2}}">{{shirtNumber2}}</div>
+        </div>
+        <div class="player-name">{{playerName2}}</div>
+        <div class="season-text">21/22</div>
+        <div class="player-role">{{playerRole2}}</div>
+        <table class="score-table">
+            <tr>
+                <td>TIR</td>
+                <td>{{TIRScore2}}</td>
+                <td>
+                    <div id="TIRScore2"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>TEC</td>
+                <td>{{TECScore2}}</td>
+                <td>
+                    <div id="TECScore2"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>FIS</td>
+                <td>{{FISScore2}}</td>
+                <td>
+                    <div id="FISScore2"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>PAS</td>
+                <td>{{PASScore2}}</td>
+                <td>
+                    <div id="PASScore2"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>DIF</td>
+                <td>{{DIFScore2}}</td>
+                <td>
+                    <div id="DIFScore2"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="player3" style="position:absolute; top: 42px; left: 347px">
+        <div class="performance-score">{{performanceScore3}}</div>
+        <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
+        <img class="team-image" src="{{teamImage}}" />
+        <div class="shirt">
+            <img class="shirt-image" src="{{shirtImageUrl3}}" />
+            <div class="shirt-number" style="color: {{shirtNumberColor3}}">{{shirtNumber3}}</div>
+        </div>
+        <div class="player-name">{{playerName3}}</div>
+        <div class="season-text">21/22</div>
+        <div class="player-role">{{playerRole3}}</div>
+        <table class="score-table">
+            <tr>
+                <td>TIR</td>
+                <td>{{TIRScore3}}</td>
+                <td>
+                    <div id="TIRScore3"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>TEC</td>
+                <td>{{TECScore3}}</td>
+                <td>
+                    <div id="TECScore3"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>FIS</td>
+                <td>{{FISScore3}}</td>
+                <td>
+                    <div id="FISScore3"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>PAS</td>
+                <td>{{PASScore3}}</td>
+                <td>
+                    <div id="PASScore3"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>DIF</td>
+                <td>{{DIFScore3}}</td>
+                <td>
+                    <div id="DIFScore3"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="player4" style="position:absolute; top: -331px; left: -184px">
+        <div class="performance-score">{{performanceScore4}}</div>
+        <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
+        <img class="team-image" src="{{teamImage}}" />
+        <div class="shirt">
+            <img class="shirt-image" src="{{shirtImageUrl4}}" />
+            <div class="shirt-number" style="color: {{shirtNumberColor4}}">{{shirtNumber4}}</div>
+        </div>
+        <div class="player-name">{{playerName4}}</div>
+        <div class="season-text">21/22</div>
+        <div class="player-role">{{playerRole4}}</div>
+        <table class="score-table">
+            <tr>
+                <td>TIR</td>
+                <td>{{TIRScore4}}</td>
+                <td>
+                    <div id="TIRScore4"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>TEC</td>
+                <td>{{TECScore4}}</td>
+                <td>
+                    <div id="TECScore4"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>FIS</td>
+                <td>{{FISScore4}}</td>
+                <td>
+                    <div id="FISScore4"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>PAS</td>
+                <td>{{PASScore4}}</td>
+                <td>
+                    <div id="PASScore4"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>DIF</td>
+                <td>{{DIFScore4}}</td>
+                <td>
+                    <div id="DIFScore4"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="player5" style="position:absolute; top: -331px; left: 174px">
+        <div class="performance-score">{{performanceScore5}}</div>
+        <div class="home-away">{{homeSlug}} <span class="circle"></span> {{awaySlug}}</div>
+        <img class="team-image" src="{{teamImage}}" />
+        <div class="shirt">
+            <img class="shirt-image" src="{{shirtImageUrl5}}" />
+            <div class="shirt-number" style="color: {{shirtNumberColor5}}">{{shirtNumber5}}</div>
+        </div>
+        <div class="player-name">{{playerName5}}</div>
+        <div class="season-text">21/22</div>
+        <div class="player-role">{{playerRole5}}</div>
+        <table class="score-table">
+            <tr>
+                <td>TIR</td>
+                <td>{{TIRScore5}}</td>
+                <td>
+                    <div id="TIRScore5"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>TEC</td>
+                <td>{{TECScore5}}</td>
+                <td>
+                    <div id="TECScore5"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>FIS</td>
+                <td>{{FISScore5}}</td>
+                <td>
+                    <div id="FISScore5"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>PAS</td>
+                <td>{{PASScore5}}</td>
+                <td>
+                    <div id="PASScore5"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>DIF</td>
+                <td>{{DIFScore5}}</td>
+                <td>
+                    <div id="DIFScore5"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</div>
+</body>
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+    // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+     //environment_widget = "https://api-dev.askdata.com";
+    environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+
+    const teamIdMap = {
+        t120: {
+            name: 'Milan',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t121: {
+            name: 'Roma',
+            playerNumberColor: '#ea9e51',
+            goalkeeperNumberColor: '#000000'
+        },
+        t123: {
+            name: 'Bologna',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t124: {
+            name: 'Cagliari',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t125: {
+            name: 'Fiorentina',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t127: {
+            name: 'Internazionale',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t128: {
+            name: 'Juventus',
+            playerNumberColor: '#000000',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t129: {
+            name: 'Lazio',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#2c2a2a'
+        },
+        t135: {
+            name: 'Torino',
+            playerNumberColor: '#fefcfc',
+            goalkeeperNumberColor: '#214c43'
+        },
+        t136: {
+            name: 'Udinese',
+            playerNumberColor: '#fefcfc',
+            goalkeeperNumberColor: '#030101'
+        },
+        t456: {
+            name: 'Atalanta',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t459: {
+            name: 'Napoli',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t603: {
+            name: 'Sampdoria',
+            playerNumberColor: '#fefefe',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t990: {
+            name: 'Genoa',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#071319'
+        },
+        t695: {
+            name: 'Empoli',
+            playerNumberColor: '#ffffff',
+            goalkeeperNumberColor: '#000000'
+        },
+        t126: {
+            name: 'Verona',
+            playerNumberColor: '#fcd22e',
+            goalkeeperNumberColor: '#2c2a2a'
+        },
+        t2182: {
+            name: 'Sassuolo',
+            playerNumberColor: '#fefefe',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t1025: {
+            name: 'Salernitana',
+            playerNumberColor: '#efeddb',
+            goalkeeperNumberColor: '#1d4689'
+        },
+        t2036: {
+            name: 'Spezia',
+            playerNumberColor: '#010000',
+            goalkeeperNumberColor: '#ffffff'
+        },
+        t137: {
+            name: 'Venezia',
+            playerNumberColor: '#FFFFFF',
+            goalkeeperNumberColor: '#071319'
+        },
+    };
+
+    console.log("I'm going to request data");
+    
+    function parseRating(rating) {
+        return rating * 5 / 100;
+    }
+
+    // Requesting agent data
+    $.ajax({
+        url: `${environment_widget}/smartbot/agent-slugs/${getUrlParameter('agentSlug')}`,
+        type: "GET",
+        async: false,
+        beforeSend: (xhr) => setAuthHeader(xhr),
+        success: (agentData) => {
+
+            console.log("Requesting data if the WS answers 200");
+
+            // Requesting card data
+            $.ajax({
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                type: "GET",
+                async: false,
+                beforeSend: (xhr) => setAuthHeader(xhr),
+                success: (data) => {
+                    // Select the HTML to render as temple
+                    const template = document.getElementById('container').innerHTML;
+                    //const cardData = data[1].attachment.body[1].details;
+                    const bodyObject = data[1].attachment.body
+                    let cardData
+                    if (data[1].attachment.body[0].component_type ==  "table"){
+                        cardData = data[1].attachment.body[0].details;
+                    }else{
+                        cardData = data[1].attachment.body[1].details;
+                    }
+                    console.log(cardData);
+                    //TEAM DATA
+                    const teamId = cardData.rows[0][cardData.columns.indexOf('teamId')];
+                    const teamData = teamIdMap[teamId];
+                    const teamImage = cardData.rows[0][cardData.columns.indexOf('Team Image')];
+                    const homeSlug = cardData.rows[0][cardData.columns.indexOf('Home slug')];
+                    const awaySlug = cardData.rows[0][cardData.columns.indexOf('Away slug')];
+                    //PLAYER DATA
+                    // const rows = cardData.rows.map((rowArray, index) => {
+                    //    return {
+                    //         index: index,
+                    //         playerType : rowArray[cardData.columns.indexOf('Type')],
+                    //         playerRole : rowArray[cardData.columns.indexOf('Role')],
+                    //         shirtNumber : rowArray[cardData.columns.indexOf('Shirt Number')],
+                    //         playerName : rowArray[cardData.columns.indexOf('Nome')],
+                    //         shirtImageUrl: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${rowArray[cardData.columns.indexOf('Type')]}.png`,
+                    //         shirtNumberColor: teamData[`${rowArray[cardData.columns.indexOf('Type')]}NumberColor`],
+                    //         performanceScore : rowArray[cardData.columns.indexOf('Overall')],
+                    //         TIRScore : rowArray[Number(cardData.rows[0][cardData.columns.indexOf('Tiro')])],
+                    //         TECScore : rowArray[Number(cardData.rows[0][cardData.columns.indexOf('Tecnica')])],
+                    //         FISScore : rowArray[Number(cardData.rows[0][cardData.columns.indexOf('Fisico')])],
+                    //         PASScore : rowArray[Number(cardData.rows[0][cardData.columns.indexOf('Passaggio')])],
+                    //         DIFScore : rowArray[Number(cardData.rows[0][cardData.columns.indexOf('Difesa')])]
+                    //     }
+
+                    // });
+                    const playerType1 = cardData.rows[0][cardData.columns.indexOf('Type')].toLowerCase();
+                    const playerRole1 = cardData.rows[0][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber1 = cardData.rows[0][cardData.columns.indexOf('Shirt Number')];
+                    const playerName1 = cardData.rows[0][cardData.columns.indexOf('Nome')];
+                    const performanceScore1 = cardData.rows[0][cardData.columns.indexOf('Overall')];
+                    const TIRScore1 = Number(cardData.rows[0][cardData.columns.indexOf('Tiro')]);
+                    const TECScore1 = Number(cardData.rows[0][cardData.columns.indexOf('Tecnica')]);
+                    const FISScore1 = Number(cardData.rows[0][cardData.columns.indexOf('Fisico')]);
+                    const PASScore1 = Number(cardData.rows[0][cardData.columns.indexOf('Passaggio')]);
+                    const DIFScore1 = Number(cardData.rows[0][cardData.columns.indexOf('Difesa')]);
+                    const playerType2 = cardData.rows[1][cardData.columns.indexOf('Type')].toLowerCase();
+                    const playerRole2 = cardData.rows[1][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber2 = cardData.rows[1][cardData.columns.indexOf('Shirt Number')];
+                    const playerName2 = cardData.rows[1][cardData.columns.indexOf('Nome')];
+                    const performanceScore2 = cardData.rows[1][cardData.columns.indexOf('Overall')];
+                    const TIRScore2 = Number(cardData.rows[1][cardData.columns.indexOf('Tiro')]);
+                    const TECScore2 = Number(cardData.rows[1][cardData.columns.indexOf('Tecnica')]);
+                    const FISScore2 = Number(cardData.rows[1][cardData.columns.indexOf('Fisico')]);
+                    const PASScore2 = Number(cardData.rows[1][cardData.columns.indexOf('Passaggio')]);
+                    const DIFScore2 = Number(cardData.rows[1][cardData.columns.indexOf('Difesa')]);
+                    const playerType3 = cardData.rows[2][cardData.columns.indexOf('Type')].toLowerCase();
+                    const playerRole3 = cardData.rows[2][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber3 = cardData.rows[2][cardData.columns.indexOf('Shirt Number')];
+                    const playerName3 = cardData.rows[2][cardData.columns.indexOf('Nome')];
+                    const performanceScore3 = cardData.rows[2][cardData.columns.indexOf('Overall')];
+                    const TIRScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Tiro')]);
+                    const TECScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Tecnica')]);
+                    const FISScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Fisico')]);
+                    const PASScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Passaggio')]);
+                    const DIFScore3 = Number(cardData.rows[2][cardData.columns.indexOf('Difesa')]);
+                    const playerType4 = cardData.rows[3][cardData.columns.indexOf('Type')].toLowerCase();
+                    const playerRole4 = cardData.rows[3][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber4 = cardData.rows[3][cardData.columns.indexOf('Shirt Number')];
+                    const playerName4 = cardData.rows[3][cardData.columns.indexOf('Nome')];
+                    const performanceScore4 = cardData.rows[3][cardData.columns.indexOf('Overall')];
+                    const TIRScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Tiro')]);
+                    const TECScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Tecnica')]);
+                    const FISScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Fisico')]);
+                    const PASScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Passaggio')]);
+                    const DIFScore4 = Number(cardData.rows[3][cardData.columns.indexOf('Difesa')]);
+                    const playerType5 = cardData.rows[4][cardData.columns.indexOf('Type')].toLowerCase();
+                    const playerRole5 = cardData.rows[4][cardData.columns.indexOf('Role')].toLowerCase();
+                    const shirtNumber5 = cardData.rows[4][cardData.columns.indexOf('Shirt Number')];
+                    const playerName5 = cardData.rows[4][cardData.columns.indexOf('Nome')];
+                    const performanceScore5 = cardData.rows[4][cardData.columns.indexOf('Overall')];
+                    const TIRScore5 = Number(cardData.rows[4][cardData.columns.indexOf('Tiro')]);
+                    const TECScore5 = Number(cardData.rows[4][cardData.columns.indexOf('Tecnica')]);
+                    const FISScore5 = Number(cardData.rows[4][cardData.columns.indexOf('Fisico')]);
+                    const PASScore5 = Number(cardData.rows[4][cardData.columns.indexOf('Passaggio')]);
+                    const DIFScore5 = Number(cardData.rows[4][cardData.columns.indexOf('Difesa')]);
+                    const ratingStyleObj = {
+                        starWidth: "10px",
+                        readOnly: true,
+                        normalFill: '#424984',
+                        ratedFill: '#fac66d',
+                        spacing: "1px"
+                    };
+                    $(function () {
+                        $("#TIRScore1").rateYo({
+                            rating: parseRating(TIRScore1),
+                            ...ratingStyleObj
+                        });
+                        $("#TECScore1").rateYo({
+                            rating: parseRating(TECScore1),
+                            ...ratingStyleObj
+                        });
+                        $("#FISScore1").rateYo({
+                            rating: parseRating(FISScore1),
+                            ...ratingStyleObj
+                        });
+                        $("#PASScore1").rateYo({
+                            rating: parseRating(PASScore1),
+                            ...ratingStyleObj
+                        });
+                        $("#DIFScore1").rateYo({
+                            rating: parseRating(DIFScore1),
+                            ...ratingStyleObj
+                        });
+                        $("#TIRScore2").rateYo({
+                            rating: parseRating(TIRScore2),
+                            ...ratingStyleObj
+                        });
+                        $("#TECScore2").rateYo({
+                            rating: parseRating(TECScore2),
+                            ...ratingStyleObj
+                        });
+                        $("#FISScore2").rateYo({
+                            rating: parseRating(FISScore2),
+                            ...ratingStyleObj
+                        });
+                        $("#PASScore2").rateYo({
+                            rating: parseRating(PASScore2),
+                            ...ratingStyleObj
+                        });
+                        $("#DIFScore2").rateYo({
+                            rating: parseRating(DIFScore2),
+                            ...ratingStyleObj
+                        });
+                        $("#TIRScore3").rateYo({
+                            rating: parseRating(TIRScore3),
+                            ...ratingStyleObj
+                        });
+                        $("#TECScore3").rateYo({
+                            rating: parseRating(TECScore3),
+                            ...ratingStyleObj
+                        });
+                        $("#FISScore3").rateYo({
+                            rating: parseRating(FISScore3),
+                            ...ratingStyleObj
+                        });
+                        $("#PASScore3").rateYo({
+                            rating: parseRating(PASScore3),
+                            ...ratingStyleObj
+                        });
+                        $("#DIFScore3").rateYo({
+                            rating: parseRating(DIFScore3),
+                            ...ratingStyleObj
+                        });
+                        $("#TIRScore4").rateYo({
+                            rating: parseRating(TIRScore4),
+                            ...ratingStyleObj
+                        });
+                        $("#TECScore4").rateYo({
+                            rating: parseRating(TECScore4),
+                            ...ratingStyleObj
+                        });
+                        $("#FISScore4").rateYo({
+                            rating: parseRating(FISScore4),
+                            ...ratingStyleObj
+                        });
+                        $("#PASScore4").rateYo({
+                            rating: parseRating(PASScore4),
+                            ...ratingStyleObj
+                        });
+                        $("#DIFScore4").rateYo({
+                            rating: parseRating(DIFScore4),
+                            ...ratingStyleObj
+                        });
+                        $("#TIRScore5").rateYo({
+                            rating: parseRating(TIRScore5),
+                            ...ratingStyleObj
+                        });
+                        $("#TECScore5").rateYo({
+                            rating: parseRating(TECScore5),
+                            ...ratingStyleObj
+                        });
+                        $("#FISScore5").rateYo({
+                            rating: parseRating(FISScore5),
+                            ...ratingStyleObj
+                        });
+                        $("#PASScore5").rateYo({
+                            rating: parseRating(PASScore5),
+                            ...ratingStyleObj
+                        });
+                        $("#DIFScore5").rateYo({
+                            rating: parseRating(DIFScore5),
+                            ...ratingStyleObj
+                        });
+                    });
+
+                    const parsedData = {
+                        teamImage,
+                        teamImageUrl: `../_lib/images/teams/${teamId}.png`,
+                        homeSlug,
+                        awaySlug,
+                        performanceScore1,
+                        shirtNumber1,
+                        shirtImageUrl1: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerType1}.png`,
+                        shirtNumberColor1: teamData[`${playerType1}NumberColor`],
+                        playerRole1,
+                        playerName1,
+                        TIRScore1,
+                        TECScore1,
+                        FISScore1,
+                        PASScore1,
+                        DIFScore1,
+                        performanceScore2,
+                        shirtNumber2,
+                        shirtImageUrl2: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerType4}.png`,
+                        shirtNumberColor2: teamData[`${playerType2}NumberColor`],
+                        playerRole2,
+                        playerName2,
+                        TIRScore2,
+                        TECScore2,
+                        FISScore2,
+                        PASScore2,
+                        DIFScore2,
+                        performanceScore3,
+                        shirtNumber3,
+                        shirtImageUrl3: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerType4}.png`,
+                        shirtNumberColor3: teamData[`${playerType3}NumberColor`],
+                        playerRole3,
+                        playerName3,
+                        TIRScore3,
+                        TECScore3,
+                        FISScore3,
+                        PASScore3,
+                        DIFScore3,
+                        performanceScore4,
+                        shirtNumber4,
+                        shirtImageUrl4: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerType4}.png`,
+                        shirtNumberColor4: teamData[`${playerType4}NumberColor`],
+                        playerRole4,
+                        playerName4,
+                        TIRScore4,
+                        TECScore4,
+                        FISScore4,
+                        PASScore4,
+                        DIFScore4,
+                        performanceScore5,
+                        shirtNumber5,
+                        shirtImageUrl5: `../_lib/images/shirts/${teamData.name.toLowerCase()}_${playerType4}.png`,
+                        shirtNumberColor5: teamData[`${playerType3}NumberColor`],
+                        playerRole5,
+                        playerName5,
+                        TIRScore5,
+                        TECScore5,
+                        FISScore5,
+                        PASScore5,
+                        DIFScore5,
+                    };
+                    // replace of the content
+                    document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
+                }
+            });
+        }
+    });
+
+
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
