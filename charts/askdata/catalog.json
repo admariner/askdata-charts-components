@@ -62,7 +62,7 @@
 			"name" : "Radar Chart",
 			"description" : "Radar Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-radar", 
-			"icon" : "_lib/icons/IcoChartStackedVert.png"
+			"icon" : "_lib/icons/IcoChartRadar.png"
 		}
 	],
 	"base_url": "/charts/askdata",
