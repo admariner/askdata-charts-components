@@ -62,14 +62,7 @@
 			"name" : "Radar Chart",
 			"description" : "Radar Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-radar", 
-			"icon" : "_lib/icons/IcoChartStackedVert.png"
-		},
-		{
-			"code": "streamgraph", 
-			"name" : "Stream Graph",
-			"description" : "Stream Graph",
-			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "_lib/icons/IcoChartStreamgraph.png"
+			"icon" : "_lib/icons/IcoChartRadar.png"
 		}
 	],
 	"base_url": "/charts/askdata",
