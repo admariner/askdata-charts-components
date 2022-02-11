@@ -61,55 +61,44 @@ var max1 = Math.max.apply(Math, values);
 var min1 = Math.min.apply(Math, values);
 console.log(min1)
 console.log(max1)
+
 option = {
- legend: {
-        data: names,
-        textStyle:{
-            fontFamily: 'Roboto'
-        }
+  tooltip: {
+        trigger: 'item'
+      },
+  title: {
+    text: 'Basic Radar Chart'
+  },
+  legend: {
+    data: legenda
+  },
+  radar: {
+    // shape: 'circle',
+    indicator: data_for_indicators,
+    axisName: {
+    formatter: '{value}',
+    color: '#3579f3',
+    fontSize:19,
+    fontFamily: 'roboto'
     },
-    series: [
-        {
-            name:'Funnel',
-            type:'funnel',
-            left: '10%',
-            top: 40,
-            //x2: 80,
-            bottom: 10,
-            width: '80%',
-            // height: {totalHeight} - y - y2,
-            min: min1-min1,
-            max: max1,
-            minSize: '0%',
-            maxSize: '100%',
-            sort: 'descending',
-            gap: 2,
-            label: {
-                // true if you want to show labels
-                show: false,
-                position: 'inside',
-                fontFamily: 'roboto',
-                fontSize: 16
-            },
-            labelLine: {
-                length: 10,
-                lineStyle: {
-                    width: 1,
-                    type: 'solid'
-                }
-            },
-            itemStyle: {
-                borderColor: '#fff',
-                borderWidth: 1
-            },
-            emphasis: {
-                label: {
-                    fontSize: 20
-                }
-            },
-            data: data1
-        }
-    ]
+    axisLabel: {
+      show: true,
+      showMinLabel: false,
+      fontSize:12,
+      fontFamily: 'roboto'
+    }
+  },
+  series: [
+    {
+      name: '',
+      type: 'radar',
+      data: data_for_series,
+      lineStyle: {
+        width: 2.5
+      }
+      
+    }
+  ]
 };
 
 if (option && typeof option === 'object') {
