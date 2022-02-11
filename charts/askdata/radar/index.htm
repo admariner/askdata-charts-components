@@ -45,14 +45,13 @@ data_for_series = []
 
 
 for(var i in data.resultSet.dimension.labels){
-  legenda.push(i)
+  legenda.push(data.resultSet.dimension.labels[i])
 }
 
 console.log(legenda)
 
 // Create a variable to store info related to each row
-
-for(var j in data.resultSet.dimension.labels.length){
+for (let j = 0; j < data.resultSet.dimension.labels.length; j++){
   this["values_"+ j] = [];
 
 }
@@ -92,6 +91,8 @@ for (let i = 0; i < data.resultSet.measures.length; i++)
 
   data_for_indicators.push({name: legenda[i], max: massimo + 1/20*massimo}); 
 }
+
+
 
 option = {
   tooltip: {
