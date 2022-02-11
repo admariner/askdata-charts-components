@@ -59,15 +59,18 @@ for (let j = 0; j < data.resultSet.dimension.labels.length; j++){
 
 
 for(var j in data.resultSet.measures){
-  console.log(j)
   //  Select Row
   var item = data.resultSet.measures[j];
-  console.log(item)
   for (let x = 0; x < item.numericValues.length; x++){
     (eval("values_" + String(x))).push(item.numericValues[x])
   }
 
 }
+console.log("values_0")
+console.log(values_0)
+console.log("values_1")
+console.log(values_1)
+
 
 
 for (let s = 0; s < legenda.length; s++){
@@ -76,6 +79,7 @@ for (let s = 0; s < legenda.length; s++){
 
 }
 
+console.log(data_for_series)
 
 
 for (let i = 0; i < data.resultSet.measures.length; i++)
@@ -92,6 +96,7 @@ for (let i = 0; i < data.resultSet.measures.length; i++)
   data_for_indicators.push({name: legenda[i], max: massimo + 1/20*massimo}); 
 }
 
+console.log(data_for_indicators)
 
 
 option = {
