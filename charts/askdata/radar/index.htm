@@ -82,17 +82,11 @@ for (let s = 0; s < legenda.length; s++){
 }
 
 // console.log(data_for_series)
-console.log("Updated")
+console.log("Updateddd")
 
 for (let i = 0; i < names.length; i++)
 { 
-  // Find maximum value across all arrays we have
-  // massimo = 0
-  // for(var j in legenda.length){
-  //   if (eval("massimo_"+ String(j))> max){
-  //     massimo = eval("massimo_"+ String(j)) 
-  //   }
-  // }
+
 
   data_for_indicators.push({name: names[i], max: eval("massimo_"+ String(i)) + 1/20*eval("massimo_"+ String(i))}); 
 }
@@ -110,7 +104,8 @@ option = {
   },
   legend: {
     data: legenda,
-    bottom: 5
+    bottom: 5,
+    right: 5
   },
   radar: {
     // shape: 'circle',
