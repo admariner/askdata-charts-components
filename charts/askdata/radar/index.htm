@@ -99,7 +99,12 @@ option = {
         trigger: 'item'
       },
   title: {
-    text: data.title
+    text: data.title,
+    textStyle:{
+       fontSize:25,
+       fontFamily: 'Roboto',
+       fontWeight: 'normal'
+    }
   },
   legend: {
     data: legenda,
@@ -119,7 +124,7 @@ option = {
       show: true,
       showMinLabel: false,
       formatter: function (d) {
-          return d.toFixed(0);
+          return d.toFixed(1);
         },
       fontSize:12,
       fontFamily: 'roboto'
