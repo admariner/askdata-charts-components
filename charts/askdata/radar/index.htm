@@ -42,13 +42,13 @@ legenda = []
 names = []
 data_for_indicators = []
 data_for_series = []
-
+names = []
 
 for(var i in data.resultSet.dimension.labels){
   legenda.push(data.resultSet.dimension.labels[i])
 }
 
-console.log(legenda)
+// console.log(legenda)
 
 // Create a variable to store info related to each row
 for (let j = 0; j < data.resultSet.dimension.labels.length; j++){
@@ -61,15 +61,16 @@ for (let j = 0; j < data.resultSet.dimension.labels.length; j++){
 for(var j in data.resultSet.measures){
   //  Select Row
   var item = data.resultSet.measures[j];
+  names.push(item.name)
   for (let x = 0; x < item.numericValues.length; x++){
     (eval("values_" + String(x))).push(item.numericValues[x])
   }
 
 }
-console.log("values_0")
-console.log(values_0)
-console.log("values_1")
-console.log(values_1)
+// console.log("values_0")
+// console.log(values_0)
+// console.log("values_1")
+// console.log(values_1)
 
 
 
@@ -79,21 +80,22 @@ for (let s = 0; s < legenda.length; s++){
 
 }
 
-console.log(data_for_series)
+// console.log(data_for_series)
 
+console.log(names)
 
-for (let i = 0; i < data.resultSet.measures.length; i++)
+for (let i = 0; i < names.length; i++)
 { 
   // Find maximum value across all arrays we have
   massimo = 0
   for(var j in legenda.length){
     if (eval("values_"+ String(j)[i])> max){
-
+      console.log(eval("values_"+ String(j)[i]))
       massimo = eval("values_"+ String(j)[i])
     }
   }
 
-  data_for_indicators.push({name: legenda[i], max: massimo + 1/20*massimo}); 
+  data_for_indicators.push({name: names[i], max: massimo + 1/20*massimo}); 
 }
 
 console.log(data_for_indicators)
