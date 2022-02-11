@@ -62,6 +62,7 @@ for(var j in data.resultSet.measures){
   //  Select Row
   var item = data.resultSet.measures[j];
   names.push(item.name)
+  this["massimo_"+ j] = Math.max(...item.numericValues)
   for (let x = 0; x < item.numericValues.length; x++){
     (eval("values_" + String(x))).push(item.numericValues[x])
   }
@@ -81,21 +82,19 @@ for (let s = 0; s < legenda.length; s++){
 }
 
 // console.log(data_for_series)
-console.log("Nomi")
-console.log(names)
+console.log("Updated")
 
 for (let i = 0; i < names.length; i++)
 { 
   // Find maximum value across all arrays we have
-  massimo = 0
-  for(var j in legenda.length){
-    if (eval("values_"+ String(j)[i])> max){
-      console.log(eval("values_"+ String(j)[i]))
-      massimo = eval("values_"+ String(j)[i]) 
-    }
-  }
+  // massimo = 0
+  // for(var j in legenda.length){
+  //   if (eval("massimo_"+ String(j))> max){
+  //     massimo = eval("massimo_"+ String(j)) 
+  //   }
+  // }
 
-  data_for_indicators.push({name: names[i], max: massimo + 1/20*massimo}); 
+  data_for_indicators.push({name: names[i], max: eval("massimo_"+ String(i)) + 1/20*eval("massimo_"+ String(i))}); 
 }
 
 console.log(data_for_indicators)
