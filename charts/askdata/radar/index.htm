@@ -42,7 +42,7 @@ function displayChart(data) {
 
     // iterate measures
     for(var j in data.resultSet.measures) {
-      
+
       console.log(j)
       var item = data.resultSet.measures[j];
 
@@ -64,7 +64,8 @@ function displayChart(data) {
           item.color = data.resultSet.color.palette[i];
           if (i==0) {item.color = data.resultSet.color.accent; }
         }
-        
+        console.log(data.resultSet.dimension.labels[i])
+        console.log(data.resultSet.measures[j].numericValues[i])
         // Add element for label
         labelMap[data.resultSet.dimension.labels[i]].push(data.resultSet.measures[j].numericValues[i]);
 
