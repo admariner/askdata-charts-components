@@ -13,6 +13,8 @@
 
 <div id="container">
   <canvas id="canvas"></canvas></div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+
 <script>
 
 function displayChart(data) {
@@ -28,117 +30,115 @@ function displayChart(data) {
 
   calculateScreen()
 // End include prepare-layout
+// START
 
-    console.log(data);
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
 
-    var MONTHS = [data.resultSet.dimension.labels];
-    var color = Chart.helpers.color;
-    
-// delete
+var option;
 
-    var datasets = [];
-    var labels = [];
-    var labelMap = [];
-
-    // iterate measures
-    for(var j in data.resultSet.measures) {
-
-      console.log(j)
-      var item = data.resultSet.measures[j];
-
-      // creaate label for each datasest/measure
-      labels.push(item.name)
-
-        var subItemData = [];
-        var subItemLabel = [];
-        var subItemColor = [];
-
-      // iterate label of the dimension
-      for(var i in data.resultSet.dimension.labels) {
+legenda = []
+names = []
+data_for_indicators = []
+data_for_series = []
 
 
-        // theme handling
-        if (theme.length > 0) {
-          item.color = theme.palette[i]
-        } else {
-          item.color = data.resultSet.color.palette[i];
-          if (i==0) {item.color = data.resultSet.color.accent; }
-        }
-        console.log(data.resultSet.dimension.labels[i])
-        console.log("OK")
-        console.log(data.resultSet.measures[j].numericValues[i])
-        // Add element for label
-        // labelMap[data.resultSet.dimension.labels[i]].push(data.resultSet.measures[j].numericValues[i]);
+for(var i in data.resultSet.dimension.labels){
+  legenda.push(i)
+}
 
-    }
+console.log(legenda)
 
+// Create a variable to store info related to each row
+
+for(var j in data.resultSet.dimension.labels.length){
+  this["values_"+i] = [];
+
+}
+
+
+
+for(var j in data.resultSet.measures){
+  console.log(j)
+  //  Select Row
+  var item = data.resultSet.measures[j];
+  console.log(item)
+  for (let x = 0; x < item.numericValues.length; x++){
+    (eval("values_" + String(x))).push(item.numericValues[x])
   }
 
-    datasets.push({ 
-            "label" : subItemLabel,
-            "data" : subItemData
-        });
+}
 
-    // Show legend if measures more than one
-    var displayLegend = true
-    
-    if (datasets.length == 1) {
-      displayLegend = false;
 
+for (let s = 0; s < legenda.length; s++){
+
+  data_for_series.push({value: eval("values_"+ String(s)) , name: legenda[s]}); 
+
+}
+
+
+
+for (let i = 0; i < data.resultSet.measures.length; i++)
+{ 
+  // Find maximum value across all arrays we have
+  massimo = 0
+  for(var j in legenda.length){
+    if (eval("values_"+ String(j)[i])> max){
+
+      massimo = eval("values_"+ String(j)[i])
     }
+  }
 
-    var chartData = {
-      labels: labels,
-      datasets: datasets,
-    };
+  data_for_indicators.push({name: legenda[i], max: massimo + 1/20*massimo}); 
+}
 
-    // Todo - replace with dynamic locale, rounding, currency and measurement units
-    // Scales should be aggregated by measurement units
-    // Color is used as 3rd axis if the measurements units are greaten than 2
+option = {
+  tooltip: {
+        trigger: 'item'
+      },
+  title: {
+    text: data.title,
+    left:"44.5%"
+  },
+  legend: {
+    data: legenda,
+    bottom: 5
+  },
+  radar: {
+    // shape: 'circle',
+    indicator: data_for_indicators,
+    axisName: {
+    formatter: '{value}',
+    color: '#000000',
+    fontSize:19,
+    fontFamily: 'roboto'
+    },
+    axisLabel: {
+      show: true,
+      showMinLabel: false,
+      fontSize:12,
+      fontFamily: 'roboto'
+    }
+  },
+  series: [
+    {
+      name: '',
+      type: 'radar',
+      data: data_for_series,
+      lineStyle: {
+        width: 2.5
+      }
+      
+    }
+  ]
+};
 
-    var labelNumberRoundTo = 2;
-    var labelNumberLocale = 'en-US';
-    var labelFontSize = 20;
-    var labelFontFamily = "'Helvetica', sans-serif";
-    var lebelNumberCurrency = null;
-    var lebelNumberMeasurmenentUnit = null;
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
 
-      var ctx = document.getElementById('canvas').getContext('2d');
-      window.myHorizontalBar = new Chart(ctx, {
-        type: 'radar',
-        data: chartData,
-        options: {
-          // Elements options apply to all of the options unless overridden in a dataset
-          // In this case, we are setting the border of each horizontal bar to be 2px wide
-          elements: {
-            rectangle: {
-              borderWidth: 2,
-            }
-          },
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-            display : displayLegend,
-            position: 'top',
-            align: 'center',
-            fontSize:30,
-            padding: 5,
-          },
-          title: {
-            display: true,
-            text: data.title,
-            fontSize: 30,
-            fontSize: titleSize(data.title),
-          },
-          elements: {
-                        line: {
-                                fill: false
-                        }
-              }
-        }
-      });
-    var colorNames = Object.keys(window.chartColors);
-
+// END
 }
 
 // Beinning include Request-data
