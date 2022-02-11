@@ -57,9 +57,10 @@ for (let i = 0; i < names.length; i++)
   data_for_indicators.push({name: names[i], max: result + 1/10*result}); 
 }
 
-
-
 option = {
+  tooltip: {
+        trigger: 'item'
+      },
   title: {
     text: 'Basic Radar Chart'
   },
@@ -68,13 +69,29 @@ option = {
   },
   radar: {
     // shape: 'circle',
-    indicator: data_for_indicators
+    indicator: data_for_indicators,
+    axisName: {
+    formatter: '{value}',
+    color: '#3579f3',
+    fontSize:19,
+    fontFamily: 'roboto'
+    },
+    axisLabel: {
+      show: true,
+      showMinLabel: false,
+      fontSize:12,
+      fontFamily: 'roboto'
+    }
   },
   series: [
     {
       name: '',
       type: 'radar',
-      data: data_for_series
+      data: data_for_series,
+      lineStyle: {
+        width: 2.5
+      }
+      
     }
   ]
 };

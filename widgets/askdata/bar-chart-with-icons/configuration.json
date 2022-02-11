@@ -83,5 +83,14 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the color for the bars"
+    },
+    {
+        "code": "settings.s7_id",
+        "label": "Measure Name",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the name of the measure"
     }]
 }
