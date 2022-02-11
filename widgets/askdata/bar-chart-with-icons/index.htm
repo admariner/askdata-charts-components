@@ -44,8 +44,11 @@ var myChart = echarts.init(dom);
 var app = {};
 
 var option;
-var measure_name = data.fields.s7_id.data
+
 var misura= data.fields.m1_id.data
+try{var measure_name = data.fields.s7_id.data
+}
+catch{var measure_name = "Measure"}
 var nomi = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 
@@ -102,35 +105,35 @@ option = {
         value: {
           align: 'center'
         },
-        a: {
+        first: {
           height: 30,
           align: 'center',
           backgroundColor: {
             image: weatherIcons.first
           }
         },
-        b: {
+        second: {
           height: 30,
           align: 'center',
           backgroundColor: {
             image: weatherIcons.second
           }
         },
-        c: {
+        third: {
           height: 30,
           align: 'center',
           backgroundColor: {
             image: weatherIcons.third
           }
         },
-        d: {
+        fourth: {
           height: 30,
           align: 'center',
           backgroundColor: {
             image: weatherIcons.fourth
           }
         },
-        e: {
+        fifth: {
           height: 30,
           align: 'center',
           backgroundColor: {

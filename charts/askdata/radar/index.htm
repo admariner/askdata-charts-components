@@ -54,7 +54,7 @@ for (let i = 0; i < names.length; i++)
 {
   var result = Math.max(val_a[i],val_b[i])
 
-  data_for_indicators.push({name: names[i], max: result + 1/10*result}); 
+  data_for_indicators.push({name: names[i], max: result + 1/20*result}); 
 }
 
 option = {
@@ -62,7 +62,8 @@ option = {
         trigger: 'item'
       },
   title: {
-    text: 'Basic Radar Chart'
+    text: 'Radar Chart',
+    left:"44.5%"
   },
   legend: {
     data: legenda
