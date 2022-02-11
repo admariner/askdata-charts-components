@@ -99,13 +99,12 @@ option = {
         trigger: 'item'
       },
   title: {
-    text: data.title,
-    left:"44.5%"
+    text: data.title
   },
   legend: {
     data: legenda,
     bottom: 5,
-    right: 5
+    right: 35
   },
   radar: {
     // shape: 'circle',
@@ -119,6 +118,9 @@ option = {
     axisLabel: {
       show: true,
       showMinLabel: false,
+      formatter: function (d) {
+          return d.toFixed(0);
+        },
       fontSize:12,
       fontFamily: 'roboto'
     }
