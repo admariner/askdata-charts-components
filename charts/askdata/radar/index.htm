@@ -1,60 +1,96 @@
-<!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=radar
--->
 <!DOCTYPE html>
-<html style="height: 100%">
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body style="height: 100%; margin: 0">
-        <div id="container" style="height: 100%"></div>
+<html>
+<head>
+<title>Askdata - Radar Chart</title>
+<!-- Beginning Include Header -->
+<!--# include virtual="/charts/askdata/_includes/header.html" -->
+<!-- End Include Header -->
+</head>
+<body>
+<!-- Beginning Include Watermak -->
+<!--# include virtual="/charts/askdata/_includes/watermark.html" -->
+<!-- End Include Watermak -->
 
-        
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
-        <!-- Uncomment this line if you want to dataTool extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/extension/dataTool.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to use gl extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to echarts-stat extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to use map
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/map/js/china.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/map/js/world.js"></script>
-        -->
-        <!-- Uncomment these two lines if you want to use bmap extension
-        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/extension/bmap.min.js"></script>
-        -->
+<div id="container">
+  <canvas id="canvas"></canvas></div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
 
-        <script type="text/javascript">
+<script>
+
+function displayChart(data) {
+
+// Beinning include prepare-layout
+  function calculateScreen() {
+    var w = window.innerWidth;
+    var h = w/2;
+    document.getElementById("container").style.width =  w + "px";
+    document.getElementById("container").style.height = h + "px";
+
+  }
+
+  calculateScreen()
+// End include prepare-layout
+// START
+
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
 
 var option;
 
-
-
-
-legenda = ['Allocated Budget', 'Actual Spending']
-names = ["Sales", "Administration", "Information Technology", "Customer Support", "Development", "Marketing"]
-val_a =  [4200, 3000, 20000, 35000, 50000, 18000]
-val_b = [5000, 14000, 28000, 26000, 42000, 21000]
-label_a = 'Allocated Budget'
-label_b = 'Actual Spending'
+legenda = []
+names = []
 data_for_indicators = []
 data_for_series = []
 
-data_for_series.push({value: val_a, name: label_a}); 
-data_for_series.push({value: val_b, name: label_b}); 
-for (let i = 0; i < names.length; i++)
-{
-  var result = Math.max(val_a[i],val_b[i])
 
-  data_for_indicators.push({name: names[i], max: result + 1/20*result}); 
+for(var i in data.resultSet.dimension.labels){
+  legenda.push(i)
+}
+
+console.log(legenda)
+
+// Create a variable to store info related to each row
+
+for(var j in data.resultSet.dimension.labels.length){
+  this["values_"+i] = [];
+
+}
+
+
+
+for(var j in data.resultSet.measures){
+  console.log(j)
+  //  Select Row
+  var item = data.resultSet.measures[j];
+  console.log(item)
+  for (let x = 0; x < item.numericValues.length; x++){
+    (eval("values_" + String(x))).push(item.numericValues[x])
+  }
+
+}
+
+
+for (let s = 0; s < legenda.length; s++){
+
+  data_for_series.push({value: eval("values_"+ String(s)) , name: legenda[s]}); 
+
+}
+
+
+
+for (let i = 0; i < data.resultSet.measures.length; i++)
+{ 
+  // Find maximum value across all arrays we have
+  massimo = 0
+  for(var j in legenda.length){
+    if (eval("values_"+ String(j)[i])> max){
+
+      massimo = eval("values_"+ String(j)[i])
+    }
+  }
+
+  data_for_indicators.push({name: legenda[i], max: massimo + 1/20*massimo}); 
 }
 
 option = {
@@ -62,7 +98,7 @@ option = {
         trigger: 'item'
       },
   title: {
-    text: 'Radar Chart',
+    text: data.title,
     left:"44.5%"
   },
   legend: {
@@ -102,7 +138,76 @@ if (option && typeof option === 'object') {
     myChart.setOption(option);
 }
 
-        </script>
-    </body>
+// END
+}
+
+// Beinning include Request-data
+// Retrieve auth token
+console.log("Environment: " + environment);
+console.log("Data Environment: " + environment_data);
+
+if (getUrlParameter('token') != undefined){
+  var token = getUrlParameter('token');
+}else{
+  var token = Cookies.get('access_token')
+}
+
+var theme = []
+
+// Retrieve theme
+if (getUrlParameter('theme')) {
+
+    $.getJSON( environment + "/charts/"+getUrlParameter('theme')+"/catalog.json", function( data ) {
+      
+      console.log("retrieving theme")
+      console.log(data)
+      
+      window.theme = data;
+
+  })
+
+} else {
+
+      $.getJSON( environment + "/charts/askdata/catalog.json", function( data ) {
+      
+      console.log("retrieving theme")
+      console.log(data)
+      
+      window.theme = data;
+
+     })
+}
+
+function setAuthHeader(xhr) {
+  if (token) {
+    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+  }
+  xhr.setRequestHeader('Content-Type', 'application/json');
+}
+
+// Request charting data
+$.ajax({
+         url: environment_data + "/charts/" + getUrlParameter('chartId'),
+         type: "GET",
+         beforeSend: (xhr) => setAuthHeader(xhr),
+         success: function(data) { 
+
+         displayChart(data);
+
+}
+});  
+
+// Redirect to login if not authenticated 
+$( document ).ajaxError(function( event, jqxhr, settings, exception ) {
+    if ( jqxhr.status== 401 ) {
+      location.replace(environment_auth+"/login");
+
+    }
+});
+
+// End include Request-data
+
+</script>
+
+</body>
 </html>
-    
