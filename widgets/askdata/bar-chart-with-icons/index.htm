@@ -53,11 +53,19 @@ var nomi = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 var icons = {}
 
+if (Object.keys(icons).length != 0){
+  delete icons["first"]
+  delete icons["second"]
+  delete icons["third"]
+  delete icons["fourth"]
+  delete icons["fifth"]
+}
+
 try{
  icons['first']= data.fields.s1_id.data
 }
 catch(error){
-  icons['first']= 'https://cdn.motor1.com/images/mgl/9Yv30/s3/ford-fiesta-st-line-2022.jpg'
+  icons['first']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png'
 }
 
 try{
