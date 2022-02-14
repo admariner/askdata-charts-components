@@ -51,26 +51,63 @@ try{var measure_name = data.fields.s7_id.data
 catch{var measure_name = "Measure"}
 var nomi = ['first', 'second', 'third', 'fourth', 'fifth'];
 
+var icons = {}
 
 try{
-    var weatherIcons = {
-    'first': data.fields.s1_id.data,
-    'second': data.fields.s2_id.data,
-    'third': data.fields.s3_id.data,
-    'fourth': data.fields.s4_id.data,
-    'fifth': data.fields.s5_id.data
-};
-} 
-catch (error) {
-    console.error(error);
-    var weatherIcons = {
-    'first': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png',
-    'second': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png',
-    'third': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png',
-    'fourth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png',
-    'fifth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
-};
+ icons['first']= data.fields.s1_id.data
 }
+catch(error){
+  icons['first']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png'
+}
+
+try{
+ icons['second']= data.fields.s2_id.data
+}
+catch(error){
+  icons['second']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png'
+}
+
+try{
+ icons['third']= data.fields.s3_id.data
+}
+catch(error){
+  icons['third']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png'
+}
+
+try{
+ icons['fourth']= data.fields.s4_id.data
+}
+catch(error){
+  icons['fourth']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png'
+}
+
+try{
+ icons['fifth']= data.fields.s5_id.data
+}
+catch(error){
+  icons['fifth']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
+}
+
+
+// try{
+//     var icons = {
+//     'first': data.fields.s1_id.data,
+//     'second': data.fields.s2_id.data,
+//     'third': data.fields.s3_id.data,
+//     'fourth': data.fields.s4_id.data,
+//     'fifth': data.fields.s5_id.data
+// };
+// } 
+// catch (error) {
+//     console.error(error);
+//     var icons = {
+//     'first': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png',
+//     'second': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png',
+//     'third': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png',
+//     'fourth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png',
+//     'fifth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
+// };
+// }
 
 try {
   var col1 = data.fields.s6_id.data;
@@ -79,7 +116,6 @@ try {
 }
 
 option = {
-  tooltip: {},
   grid: { show: true, top: 10, bottom: 50 },
   xAxis: {
     type: 'value',
@@ -109,35 +145,35 @@ option = {
           height: 30,
           align: 'center',
           backgroundColor: {
-            image: weatherIcons.first
+            image: icons.first
           }
         },
         second: {
           height: 30,
           align: 'center',
           backgroundColor: {
-            image: weatherIcons.second
+            image: icons.second
           }
         },
         third: {
           height: 30,
           align: 'center',
           backgroundColor: {
-            image: weatherIcons.third
+            image: icons.third
           }
         },
         fourth: {
           height: 30,
           align: 'center',
           backgroundColor: {
-            image: weatherIcons.fourth
+            image: icons.fourth
           }
         },
         fifth: {
           height: 30,
           align: 'center',
           backgroundColor: {
-            image: weatherIcons.fifth
+            image: icons.fifth
           }
         }
       }
