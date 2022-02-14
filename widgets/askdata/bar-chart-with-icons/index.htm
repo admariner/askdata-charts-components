@@ -48,7 +48,7 @@ var option;
 var misura= data.fields.m1_id.data
 try{var measure_name = data.fields.s7_id.data
 }
-catch{var measure_name = "Measure"}
+catch(error){var measure_name = "Measure"}
 var nomi = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 var icons = {}
@@ -57,7 +57,7 @@ try{
  icons['first']= data.fields.s1_id.data
 }
 catch(error){
-  icons['first']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png'
+  icons['first']= 'https://cdn.motor1.com/images/mgl/9Yv30/s3/ford-fiesta-st-line-2022.jpg'
 }
 
 try{
