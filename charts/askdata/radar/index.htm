@@ -44,11 +44,13 @@ data_for_indicators = []
 data_for_series = []
 names = []
 
+console.log(data)
+
 for(var i in data.resultSet.dimension.labels){
   legenda.push(data.resultSet.dimension.labels[i])
 }
 
-// console.log(legenda)
+
 
 // Create a variable to store info related to each row
 for (let j = 0; j < data.resultSet.dimension.labels.length; j++){
@@ -82,7 +84,6 @@ for (let s = 0; s < legenda.length; s++){
 }
 
 // console.log(data_for_series)
-console.log("Updateddd")
 
 for (let i = 0; i < names.length; i++)
 { 
@@ -91,7 +92,7 @@ for (let i = 0; i < names.length; i++)
   data_for_indicators.push({name: names[i], max: eval("massimo_"+ String(i)) + 2/20*eval("massimo_"+ String(i))}); 
 }
 
-console.log(data_for_indicators)
+// console.log(data_for_indicators)
 
 
 option = {
