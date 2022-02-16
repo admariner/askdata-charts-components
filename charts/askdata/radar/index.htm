@@ -88,7 +88,7 @@ for (let i = 0; i < names.length; i++)
 { 
 
 
-  data_for_indicators.push({name: names[i], max: eval("massimo_"+ String(i)) + 1/20*eval("massimo_"+ String(i))}); 
+  data_for_indicators.push({name: names[i], max: eval("massimo_"+ String(i)) + 2/20*eval("massimo_"+ String(i))}); 
 }
 
 console.log(data_for_indicators)
@@ -99,6 +99,9 @@ option = {
         trigger: 'item'
       },
   title: {
+    left : 'center', 
+    top: 'top',
+    padding: 0,
     text: data.title,
     textStyle:{
        fontSize:25,
@@ -107,11 +110,12 @@ option = {
     }
   },
   legend: {
-    data: legenda,
-    bottom: 5,
-    right: 35
+    bottom:'bottom',
+    left: 'center',
+    data: legenda
   },
   radar: {
+    nameGap:-2,
     // shape: 'circle',
     indicator: data_for_indicators,
     axisName: {
