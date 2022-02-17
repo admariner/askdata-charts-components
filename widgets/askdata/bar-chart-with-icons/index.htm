@@ -51,6 +51,10 @@ try{var measure_name = data.fields.s7_id.data
 catch(error){var measure_name = "Measure"}
 var nomi = ['first', 'second', 'third', 'fourth', 'fifth'];
 
+try{var icons_sizes = data.fields.m2_id.data
+}
+catch(error){var icons_sizes = [30, 30, 30, 30, 30]}
+
 var icons = {}
 
 if (Object.keys(icons).length != 0){
@@ -151,35 +155,35 @@ option = {
           align: 'center'
         },
         first: {
-          height: 30,
+          height: icons_sizes[0],
           align: 'center',
           backgroundColor: {
             image: icons.first
           }
         },
         second: {
-          height: 30,
+          height: icons_sizes[1],
           align: 'center',
           backgroundColor: {
             image: icons.second
           }
         },
         third: {
-          height: 30,
+          height: icons_sizes[2],
           align: 'center',
           backgroundColor: {
             image: icons.third
           }
         },
         fourth: {
-          height: 30,
+          height: icons_sizes[3],
           align: 'center',
           backgroundColor: {
             image: icons.fourth
           }
         },
         fifth: {
-          height: 30,
+          height: icons_sizes[4],
           align: 'center',
           backgroundColor: {
             image: icons.fifth

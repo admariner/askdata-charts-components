@@ -92,5 +92,13 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the name of the measure"
+    },    {
+        "code": "settings.m2_id",
+        "label": "Icons size (Px)",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the column with the corresponding heights"
     }]
 }
