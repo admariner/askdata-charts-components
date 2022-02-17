@@ -101,6 +101,12 @@
 		    "description": "4 different Scatter plots with regression lines."
 		},
 		{
+		    "code": "vertical_comparison_pictorial",
+		    "name": "Vertical Pictorial Comparison",
+		    "icon": "vertical_comparison_pictorial/pictorial.png",
+		    "description": "A visualisation method that allowa you to compare different categories. For example, different kind of trasports. Colors and Icons can be customized."
+		},
+		{
 		    "code": "word_cloud",
 		    "name": "Word Cloud",
 		    "icon": "word_cloud/word.png",

@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
+    </head>
+
+
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+    </body>
+
+    
+        <script type="text/javascript">
+
+
+//environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+ console.log(data)        
+ //  From here
+ var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+
+var nomi_x = data.fields.s7_id.data
+var numerical_measures = data.fields.m1_id.data
+var simboli = ["https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg"]
+
+try {
+  var colore = data.fields.s6_id.data;
+} catch (error) {
+  var colore = '#e54035';
+}
+// var colore = "#000000"
+// '#e54035'
+
+data_for_series = []
+for (let s = 0; s < nomi_x.length; s++){
+
+  data_for_series.push({value: numerical_measures[s] , symbol: "image://".concat(simboli[s]),symbolSize: [75, 45] }); 
+
+}
+
+
+option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'none'
+    },
+    formatter: function (params) {
+      return params[0].name + ': ' + params[0].value;
+    }
+  },
+  xAxis: {
+    data: nomi_x,
+    axisTick: { show: false },
+    axisLine: { show: false },
+    axisLabel: {
+      color: colore
+    }
+  },
+  yAxis: {
+    splitLine: { show: false },
+    axisTick: { show: false },
+    axisLine: { show:false },
+    axisLabel: { show: false }
+  },
+  color: [colore],
+  series: [
+    {
+      name: 'hill',
+      type: 'pictorialBar',
+      barCategoryGap: '-130%',
+      // symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
+      symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
+      itemStyle: {
+        opacity: 0.5
+      },
+      emphasis: {
+        itemStyle: {
+          opacity: 1
+        }
+      },
+      data: numerical_measures,
+      z: 10
+    },
+    {
+      name: 'glyph',
+      type: 'pictorialBar',
+      barGap: '-100%',
+      symbolPosition: 'end',
+      symbolSize: 50,
+      symbolOffset: [0, '-120%'],
+      data: data_for_series
+    }
+  ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+ 
+ //To here
+ 
+    }
+  });
+        </script>
+
+</html>
