@@ -50,8 +50,16 @@ var option;
 
 var nomi_x = data.fields.s7_id.data
 var numerical_measures = data.fields.m1_id.data
-var simboli = ["https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg","https://motori.ilgiornale.it/wp-content/uploads/2021/09/Ford-Fiesta-2.jpeg"]
-
+var simboli = data.fields.s1_id.data
+try {
+var sizes = data.fields.s2_id.data
+}
+catch (error) {
+  var sizes = []
+  for (let s = 0; s < nomi_x.length; s++){
+    sizes.push([75, 45])
+  }
+}
 try {
   var colore = data.fields.s6_id.data;
 } catch (error) {
@@ -63,7 +71,7 @@ try {
 data_for_series = []
 for (let s = 0; s < nomi_x.length; s++){
 
-  data_for_series.push({value: numerical_measures[s] , symbol: "image://".concat(simboli[s]),symbolSize: [75, 45] }); 
+  data_for_series.push({value: numerical_measures[s] , symbol: "image://".concat(simboli[s]),symbolSize: sizes[s] }); 
 
 }
 
@@ -75,7 +83,7 @@ option = {
       type: 'none'
     },
     formatter: function (params) {
-      return params[0].name + ': ' + params[0].value;
+      return params[0].name + ': ' + String(params[0].value).replace(/(.)(?=(\d{3})+$)/g, '$1,');
     }
   },
   xAxis: {

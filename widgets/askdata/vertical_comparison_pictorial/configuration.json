@@ -27,6 +27,14 @@
         "readOnly": false,
         "viewType": "dropdown",
         "mandatory": true
+    },    {
+        "code": "settings.s7_id",
+        "label": "Categories",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the name of the categories (xlabel)"
     }, {
         "code": "settings.m1_id",
         "label": "Measure",
@@ -43,6 +51,14 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the columns with custom icon"
+    },{
+        "code": "settings.s2_id",
+        "label": "Icon Sizes",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the size for custom icon (format: [xx,yy]"
     }, {
         "code": "settings.s6_id",
         "label": "Color",
@@ -51,14 +67,5 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the color for the chart"
-    },
-    {
-        "code": "settings.s7_id",
-        "label": "Categories",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the name of the categories (xlabel)"
     }]
 }
