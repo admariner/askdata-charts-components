@@ -51,8 +51,11 @@ var option;
 var nomi_x = data.fields.s7_id.data
 var numerical_measures = data.fields.m1_id.data
 var simboli = data.fields.s1_id.data
+var check = false
+
 try {
 var sizes = data.fields.s2_id.data
+check = true
 }
 catch (error) {
   var sizes = []
@@ -69,11 +72,21 @@ try {
 // '#e54035'
 
 data_for_series = []
-for (let s = 0; s < nomi_x.length; s++){
+if (check == true){
+  for (let s = 0; s < nomi_x.length; s++){
+
+  data_for_series.push({value: numerical_measures[s] , symbol: "image://".concat(simboli[s]),symbolSize: JSON.parse(sizes[s]) }); 
+
+}
+}
+else{
+  for (let s = 0; s < nomi_x.length; s++){
 
   data_for_series.push({value: numerical_measures[s] , symbol: "image://".concat(simboli[s]),symbolSize: sizes[s] }); 
 
 }
+}
+
 
 
 option = {
