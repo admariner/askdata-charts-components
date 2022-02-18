@@ -33,7 +33,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
+        "mandatory": true,
         "tooltip": "Choose the name of the categories (xlabel)"
     }, {
         "code": "settings.m1_id",
@@ -49,7 +49,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
+        "mandatory": true,
         "tooltip": "Choose the columns with custom icon"
     },{
         "code": "settings.s2_id",
