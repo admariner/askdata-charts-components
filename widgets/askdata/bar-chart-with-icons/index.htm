@@ -57,77 +57,77 @@ catch(error){var icons_sizes = [30, 30, 30, 30, 30]}
 
 
 
-var temp1 = {
-    'first': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png',
-    'second': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png',
-    'third': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png',
-    'fourth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png',
-    'fifth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
-};
+// var temp1 = {
+//     'first': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png',
+//     'second': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png',
+//     'third': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png',
+//     'fourth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png',
+//     'fifth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
+// };
+
+
+
+// try{
+//   icone = data.fields.s1_id.data
+//   var icons = {}
+  
+//   for (let s = 0; s < icone.length; s++){
+//     if((icone[s]= "")||(icone[s]= " ")){
+//       icons[nomi[s]] = temp1[nomi[s]]
+//     }
+//     else{
+//       icons[nomi[s]] = icone[s]
+//     }
+//   }
+// }
+// catch(error){
+//   var icons = {
+//     'first': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png',
+//     'second': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png',
+//     'third': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png',
+//     'fourth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png',
+//     'fifth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
+// };
+// }
+
+
 
 
 
 try{
-  icone = data.fields.s1_id.data
-  var icons = {}
-  
-  for (let s = 0; s < icone.length; s++){
-    if((icone[s]= "")||(icone[s]= " ")){
-      icons[nomi[s]] = temp1[nomi[s]]
-    }
-    else{
-      icons[nomi[s]] = icone[s]
-    }
-  }
+ icons['first']= data.fields.s1_id.data
 }
 catch(error){
-  var icons = {
-    'first': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png',
-    'second': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png',
-    'third': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png',
-    'fourth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png',
-    'fifth': 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
-};
+  icons['first']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png'
 }
 
+try{
+ icons['second']= data.fields.s2_id.data
+}
+catch(error){
+  icons['second']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png'
+}
 
+try{
+ icons['third']= data.fields.s3_id.data
+}
+catch(error){
+  icons['third']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png'
+}
 
+try{
+ icons['fourth']= data.fields.s4_id.data
+}
+catch(error){
+  icons['fourth']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png'
+}
 
-
-// try{
-//  icons['first']= data.fields.s1_id.data
-// }
-// catch(error){
-//   icons['first']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/first_new.png'
-// }
-
-// try{
-//  icons['second']= data.fields.s2_id.data
-// }
-// catch(error){
-//   icons['second']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/second.png'
-// }
-
-// try{
-//  icons['third']= data.fields.s3_id.data
-// }
-// catch(error){
-//   icons['third']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/third.png'
-// }
-
-// try{
-//  icons['fourth']= data.fields.s4_id.data
-// }
-// catch(error){
-//   icons['fourth']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fourth.png'
-// }
-
-// try{
-//  icons['fifth']= data.fields.s5_id.data
-// }
-// catch(error){
-//   icons['fifth']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
-// }
+try{
+ icons['fifth']= data.fields.s5_id.data
+}
+catch(error){
+  icons['fifth']= 'https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/widgets_default/fifth_new.png'
+}
 
 
 // try{

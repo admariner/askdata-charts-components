@@ -37,7 +37,7 @@
         "tooltip": "Choose the measures to be displayed"
     }, {
         "code": "settings.s1_id",
-        "label": "First Link",
+        "label": "Icons Link",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
