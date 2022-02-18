@@ -104,7 +104,12 @@ option = {
     axisTick: { show: false },
     axisLine: { show: false },
     axisLabel: {
-      color: colore
+      color: colore,
+      formatter: function (value) {
+      if (value.length>10)
+      {return value.substring(0, 10)}
+      else{return value}
+    }
     }
   },
   yAxis: {
