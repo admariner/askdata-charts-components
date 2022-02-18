@@ -37,13 +37,45 @@
         "tooltip": "Choose the measures to be displayed"
     }, {
         "code": "settings.s1_id",
-        "label": "Icons Link",
+        "label": "First Link",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": false,
-        "tooltip": "Choose the column with links to custom icon"
-    },{
+        "tooltip": "Choose the first custom icon"
+    }, {
+        "code": "settings.s2_id",
+        "label": "Second Link",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the second custom icon"
+    }, {
+        "code": "settings.s3_id",
+        "label": "Third Link",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the third custom icon"
+    }, {
+        "code": "settings.s4_id",
+        "label": "Fourth Link",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the fourth custom icon"
+    }, {
+        "code": "settings.s5_id",
+        "label": "Fifth Link",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the fifth custom icon"
+    }, {
         "code": "settings.s6_id",
         "label": "Color",
         "type": "params",
