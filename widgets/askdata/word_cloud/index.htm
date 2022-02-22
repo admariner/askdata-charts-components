@@ -325,17 +325,17 @@
 //   ];
 
 
-$("#word-cloud").jQCloud(word_arrays, {
-    width: 1000,
-    height: 500,
-    afterCloudRender: function() {
-      $('#word-cloud > span').on('click', function(e){
-        e.preventDefault();
-        console.log(e.target.innerHTML);
-        $('.detailed-tags').prepend("<div class='tag'>" + e.target.innerHTML + "</div>")
-      });
-    }
-  });
+// $("#word-cloud").jQCloud(word_arrays, {
+//     width: 1000,
+//     height: 500,
+//     afterCloudRender: function() {
+//       $('#word-cloud > span').on('click', function(e){
+//         e.preventDefault();
+//         console.log(e.target.innerHTML);
+//         $('.detailed-tags').prepend("<div class='tag'>" + e.target.innerHTML + "</div>")
+//       });
+//     }
+//   });
 
 
       </script>
@@ -345,9 +345,9 @@ $("#word-cloud").jQCloud(word_arrays, {
         <script type="text/javascript">
 
 
-// environment_widget = "https://api-dev.askdata.com";
+environment_widget = "https://api-dev.askdata.com";
 // environment_widget = "https://api-qa.askdata.com"
-environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
 
 $.ajax({
