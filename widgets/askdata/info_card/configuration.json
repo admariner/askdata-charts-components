@@ -27,21 +27,5 @@
         "readOnly": false,
         "viewType": "dropdown",
         "mandatory": true
-    }, {
-        "code": "settings.m1_id",
-        "label": "Value",
-        "type": "params",
-        "viewType": "text",
-        "readOnly": false,
-        "mandatory": true,
-        "tooltip": "Choose the value"
-    }, {
-        "code": "settings.s1_id",
-        "label": "Color",
-        "type": "params",
-        "viewType": "text",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the graph's color"
     }]
 }
