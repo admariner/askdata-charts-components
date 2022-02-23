@@ -117,6 +117,12 @@
 		    "name": "New Sankey",
 		    "icon": "sankey/sankey.png",
 		    "description": "Sankey with football field as bg."
+		},
+		{
+		    "code": "info_card",
+		    "name": "Info Card",
+		    "icon": "sankey/sankey.png",
+		    "description": "Info Card"
 		}
 	],
 	"background-color": "#CCCCCC"
