@@ -338,7 +338,6 @@
                     </g>
                   </svg>
                 </div>
-                {{fields.s3_id.data}}
               </div>
               <div id="third">
                 <div class="icon big">
@@ -498,6 +497,7 @@ success: function(data) {
     // replace of the SVG
     document.getElementById('container').innerHTML = rendered;
 
+// Color
     try
     {
     var col1 = data.fields.s1_id.data
@@ -508,7 +508,30 @@ success: function(data) {
     var col1 = "#71a0f6"
     }
 
-    document.getElementById("first").innerHTML = data.fields.s2_id.data;
+// Welcome tab
+try
+    {
+    var s2 = data.fields.s2_id.data
+    } 
+    catch (error) 
+    {
+    console.error(error);
+    var s2 = "Configure Welcome tab"
+    }
+// Queries tab
+try
+    {
+    var s3 = data.fields.s3_id.data
+    } 
+    catch (error) 
+    {
+    var s3 = "Configure Queries"
+    }
+
+
+    document.getElementById("first").innerHTML = s2;
+    document.getElementById("second").innerHTML = s3;
+
     document.getElementById("container").style.backgroundColor = col1    
     }
 
