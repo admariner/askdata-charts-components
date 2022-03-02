@@ -328,7 +328,8 @@
                       <use xlink:href="#askdata_black"></use>
                     </g>
                   </svg>
-                </div>{{fields.s2_id.data}}</div>
+                  <!-- {{fields.s2_id.data}} -->
+                </div></div>
               <div id="second">
                 <div class="icon big">
                   <svg viewBox="0 -5 29 50">
@@ -507,6 +508,7 @@ success: function(data) {
     var col1 = "#71a0f6"
     }
 
+    document.getElementById("first").innerHTML = "data.fields.s2_id.data";
     document.getElementById("container").style.backgroundColor = col1    
     }
 
