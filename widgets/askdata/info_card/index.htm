@@ -528,9 +528,12 @@ try
     var s3 = "Configure Queries"
     }
 
-
-    document.getElementById("first").innerHTML = s2;
-    document.getElementById("second").innerHTML = s3;
+    // #Welcome
+    var div = document.getElementById('first');
+    div.innerHTML += s2;
+    // #queries
+    var div = document.getElementById('second');
+    div.innerHTML += s3;
 
     document.getElementById("container").style.backgroundColor = col1    
     }
