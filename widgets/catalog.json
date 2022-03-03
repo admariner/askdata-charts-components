@@ -121,8 +121,8 @@
 		{
 		    "code": "info_card",
 		    "name": "Info Card",
-		    "icon": "sankey/sankey.png",
-		    "description": "Info Card"
+		    "icon": "info_card/welcome.png",
+		    "description": "Info Card to guide new users through the Askdata platform. Background color and text can be customized."
 		}
 	],
 	"background-color": "#CCCCCC"
