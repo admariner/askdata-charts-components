@@ -192,7 +192,7 @@
 
     </head>
 
-    <body id = "container" style="background-color: #ffffff";>
+    <body id = "container" style="background-color: #71a0f6";>
         <svg id="svg-source" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute">
           
               <g id="query" fill = "#ffffff" fill-rule="evenodd">
@@ -328,7 +328,7 @@
                       <use xlink:href="#askdata_black"></use>
                     </g>
                   </svg>
-                </div>{{fields.s2_id.data.0}}</div>
+                </div></div>
               <div id="second">
                 <div class="icon big">
                   <svg viewBox="0 -5 29 50">
@@ -337,7 +337,6 @@
                     </g>
                   </svg>
                 </div>
-                {{fields.s2.data.0}}
               </div>
               <div id="third">
                 <div class="icon big">
@@ -497,113 +496,147 @@ success: function(data) {
     // replace of the SVG
     document.getElementById('container').innerHTML = rendered;
 
-    try
-    {
-    var col1 = data.fields.s1_id.data
-    } 
-    catch (error) 
-    {
-    console.error(error);
+// Color
+//     try
+//     {
+//     var col1 = data.fields.s1_id.data
+//     } 
+//     catch (error) 
+//     {
+//     console.error(error);
+//     var col1 = "#71a0f6"
+//     }
+
+// // Welcome tab
+// try
+//     {
+//     var s2 = data.fields.s2_id.data
+//     } 
+//     catch (error) 
+//     {
+//     console.error(error);
+//     var s2 = "Configure Welcome tab"
+//     }
+// // Queries tab
+// try
+//     {
+//     var s3 = data.fields.s3_id.data
+//     } 
+//     catch (error) 
+//     {
+//     var s3 = "Configure Queries"
+//     }
+
+
     var col1 = "#71a0f6"
-    }
+    var s2 = "Configure Welcome tab"
+    var s3 = "Configure Queries"
+    // #Welcome
+    var div = document.getElementById('first');
+    div.innerHTML += s2;
+    // #queries
+    var div = document.getElementById('second');
+    div.innerHTML += s3;
 
     document.getElementById("container").style.backgroundColor = col1    
     }
 
+
+
+
   });
 </script>
+<script>
+  $(".choose").click(function () {
+  $(".choose").addClass("active");
+  $(".choose > .icon").addClass("active");
+  $(".pay").removeClass("active");
+  $(".wrap").removeClass("active");
+  $(".ship").removeClass("active");
+  $(".pay > .icon").removeClass("active");
+  $(".wrap > .icon").removeClass("active");
+  $(".ship > .icon").removeClass("active");
+  $("#line").addClass("one");
+  $("#line").removeClass("two");
+  $("#line").removeClass("three");
+  $("#line").removeClass("four");
+});
+
+$(".pay").click(function () {
+  $(".pay").addClass("active");
+  $(".pay > .icon").addClass("active");
+  $(".choose").removeClass("active");
+  $(".wrap").removeClass("active");
+  $(".ship").removeClass("active");
+  $(".choose > .icon").removeClass("active");
+  $(".wrap > .icon").removeClass("active");
+  $(".ship > .icon").removeClass("active");
+  $("#line").addClass("two");
+  $("#line").removeClass("one");
+  $("#line").removeClass("three");
+  $("#line").removeClass("four");
+});
+
+$(".wrap").click(function () {
+  $(".wrap").addClass("active");
+  $(".wrap > .icon").addClass("active");
+  $(".pay").removeClass("active");
+  $(".choose").removeClass("active");
+  $(".ship").removeClass("active");
+  $(".pay > .icon").removeClass("active");
+  $(".choose > .icon").removeClass("active");
+  $(".ship > .icon").removeClass("active");
+  $("#line").addClass("three");
+  $("#line").removeClass("two");
+  $("#line").removeClass("one");
+  $("#line").removeClass("four");
+});
+
+$(".ship").click(function () {
+  $(".ship").addClass("active");
+  $(".ship > .icon").addClass("active");
+  $(".pay").removeClass("active");
+  $(".wrap").removeClass("active");
+  $(".choose").removeClass("active");
+  $(".pay > .icon").removeClass("active");
+  $(".wrap > .icon").removeClass("active");
+  $(".choose > .icon").removeClass("active");
+  $("#line").addClass("four");
+  $("#line").removeClass("two");
+  $("#line").removeClass("three");
+  $("#line").removeClass("one");
+});
+
+$(".choose").click(function () {
+  $("#first").addClass("active");
+  $("#second").removeClass("active");
+  $("#third").removeClass("active");
+  $("#fourth").removeClass("active");
+});
+
+$(".pay").click(function () {
+  $("#first").removeClass("active");
+  $("#second").addClass("active");
+  $("#third").removeClass("active");
+  $("#fourth").removeClass("active");
+});
+
+$(".wrap").click(function () {
+  $("#first").removeClass("active");
+  $("#second").removeClass("active");
+  $("#third").addClass("active");
+  $("#fourth").removeClass("active");
+});
+
+$(".ship").click(function () {
+  $("#first").removeClass("active");
+  $("#second").removeClass("active");
+  $("#third").removeClass("active");
+  $("#fourth").addClass("active");
+});
+
+  </script>
 <!-- END OF THE DATA LOADER SNIPPET -->
 
-<script>
-    $(".choose").click(function () {
-    $(".choose").addClass("active");
-    $(".choose > .icon").addClass("active");
-    $(".pay").removeClass("active");
-    $(".wrap").removeClass("active");
-    $(".ship").removeClass("active");
-    $(".pay > .icon").removeClass("active");
-    $(".wrap > .icon").removeClass("active");
-    $(".ship > .icon").removeClass("active");
-    $("#line").addClass("one");
-    $("#line").removeClass("two");
-    $("#line").removeClass("three");
-    $("#line").removeClass("four");
-  });
-  
-  $(".pay").click(function () {
-    $(".pay").addClass("active");
-    $(".pay > .icon").addClass("active");
-    $(".choose").removeClass("active");
-    $(".wrap").removeClass("active");
-    $(".ship").removeClass("active");
-    $(".choose > .icon").removeClass("active");
-    $(".wrap > .icon").removeClass("active");
-    $(".ship > .icon").removeClass("active");
-    $("#line").addClass("two");
-    $("#line").removeClass("one");
-    $("#line").removeClass("three");
-    $("#line").removeClass("four");
-  });
-  
-  $(".wrap").click(function () {
-    $(".wrap").addClass("active");
-    $(".wrap > .icon").addClass("active");
-    $(".pay").removeClass("active");
-    $(".choose").removeClass("active");
-    $(".ship").removeClass("active");
-    $(".pay > .icon").removeClass("active");
-    $(".choose > .icon").removeClass("active");
-    $(".ship > .icon").removeClass("active");
-    $("#line").addClass("three");
-    $("#line").removeClass("two");
-    $("#line").removeClass("one");
-    $("#line").removeClass("four");
-  });
-  
-  $(".ship").click(function () {
-    $(".ship").addClass("active");
-    $(".ship > .icon").addClass("active");
-    $(".pay").removeClass("active");
-    $(".wrap").removeClass("active");
-    $(".choose").removeClass("active");
-    $(".pay > .icon").removeClass("active");
-    $(".wrap > .icon").removeClass("active");
-    $(".choose > .icon").removeClass("active");
-    $("#line").addClass("four");
-    $("#line").removeClass("two");
-    $("#line").removeClass("three");
-    $("#line").removeClass("one");
-  });
-  
-  $(".choose").click(function () {
-    $("#first").addClass("active");
-    $("#second").removeClass("active");
-    $("#third").removeClass("active");
-    $("#fourth").removeClass("active");
-  });
-  
-  $(".pay").click(function () {
-    $("#first").removeClass("active");
-    $("#second").addClass("active");
-    $("#third").removeClass("active");
-    $("#fourth").removeClass("active");
-  });
-  
-  $(".wrap").click(function () {
-    $("#first").removeClass("active");
-    $("#second").removeClass("active");
-    $("#third").addClass("active");
-    $("#fourth").removeClass("active");
-  });
-  
-  $(".ship").click(function () {
-    $("#first").removeClass("active");
-    $("#second").removeClass("active");
-    $("#third").removeClass("active");
-    $("#fourth").addClass("active");
-  });
-  
-    </script>
- 
 </html>
     
