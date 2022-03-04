@@ -253,7 +253,7 @@
 
             // Requesting card data
             $.ajax({
-                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insights/insightslug/${getUrlParameter('cardSlug')}`,
+                url: `${environment_widget}/smartfeed/agents/${agentData.agentId}/insight-slugs/${getUrlParameter('cardSlug')}`,
                 type: "GET",
                 async: false,
                 beforeSend: (xhr) => setAuthHeader(xhr),
