@@ -78,7 +78,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        margin: 6% 6% 6% 6%;
+        margin: 5% 5% 5% 5%;
         background-color: #fff;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         display: flex;
@@ -497,44 +497,44 @@ success: function(data) {
     document.getElementById('container').innerHTML = rendered;
 
 // Color
-//     try
-//     {
-//     var col1 = data.fields.s1_id.data
-//     } 
-//     catch (error) 
-//     {
-//     console.error(error);
-//     var col1 = "#71a0f6"
-//     }
+    try
+    {
+    var col1 = data.fields.s1_id.data
+    } 
+    catch (error) 
+    {
+    console.error(error);
+    var col1 = "#71a0f6"
+    }
 
 // // Welcome tab
-// try
-//     {
-//     var s2 = data.fields.s2_id.data
-//     } 
-//     catch (error) 
-//     {
-//     console.error(error);
-//     var s2 = "Configure Welcome tab"
-//     }
-// // Queries tab
-// try
-//     {
-//     var s3 = data.fields.s3_id.data
-//     } 
-//     catch (error) 
-//     {
-//     var s3 = "Configure Queries"
-//     }
-
-
-    var col1 = "#71a0f6"
+try
+    {
+    var s2 = data.fields.s2_id.data
+    } 
+    catch (error) 
+    {
+    console.error(error);
     var s2 = "Configure Welcome tab"
+    }
+// Queries tab
+try
+    {
+    var s3 = data.fields.s3_id.data
+    } 
+    catch (error) 
+    {
     var s3 = "Configure Queries"
+    }
+
+
+    // var col1 = "#71a0f6"
+    // var s2 = "Configure Welcome tab"
+    // var s3 = "Configure Queries"
     // #Welcome
     var div = document.getElementById('first');
     div.innerHTML += s2;
-    
+
     // #queries
     var div = document.getElementById('second');
     div.innerHTML += s3;
