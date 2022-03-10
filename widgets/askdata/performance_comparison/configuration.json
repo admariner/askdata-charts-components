@@ -1,0 +1,51 @@
+{
+	"configuration": [{
+        "code": "code",
+        "label": "Chart code",
+        "type": "string",
+        "viewType": "hidden",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "name",
+        "label": "Name",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "description",
+        "label": "Description",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    },
+    {
+        "code": "settings.s2_id",
+        "label": "Askdata Tab",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the Askdata Tab"
+    },
+    {
+        "code": "settings.s3_id",
+        "label": "Queries Tab",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Queries tab"
+    },
+    {
+        "code": "settings.s1_id",
+        "label": "Background Color",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the color"
+    }]
+}
