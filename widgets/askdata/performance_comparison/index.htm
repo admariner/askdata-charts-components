@@ -1,192 +1,227 @@
 <!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=pictorialBar-spirit
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=funnel
 -->
 <!DOCTYPE html>
 <html style="height: 100%">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
     </head>
+
+
     <body style="height: 100%; margin: 0">
         <div id="container" style="height: 100%"></div>
+    </body>
 
-        
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+    
         <script type="text/javascript">
-var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
-var app = {};
-
-var option;
 
 
+//environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
 
 
-try{
-  var icona = data.fields.s4_id.data
-  var spirit ='image://' + icona
-}
-catch(error){
-   var spirit ='image://https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/circle_green_lisghter.png'
-}
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+            console.log(data)      
+            // QUi
+
+
+            var dom = document.getElementById("container");
+      var myChart = echarts.init(dom);
+      var app = {};
+
+      var option;
 
 
 
-try{
-  var backgroundcolor = data.fields.s2_id.data
-}
-catch(error){
-  var backgroundcolor = "#000000"
-}
 
-
-try{
-  var colore = data.fields.s3_id.data
-}
-catch(error){
-  var colore = "#ffffff"
-}
-
-
-try{
-  var titolo = data.fields.s6_id.data
-}
-catch(error){
-  var titolo = "Performances"
-}
-
-
-try{
-  var siz = data.fields.s5_id.data
-}
-catch(error){
-  var siz = 18
-}
-
-
-// var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Gen 21"]
-// var quantities = [891, 1220, 660, 1670, 1000, 1000]
-
-var dates = data.fields.s1_id.data
-var quantities = data.fields.m1_id.data
-
-var somma = quantities.reduce((partialSum, a) => partialSum + a, 0);
-var maxData = Math.max(...quantities) + Math.max(...quantities)*1/10 ;
-
-option = {
-   title: {
-    text: titolo,
-    top: 15,
-    left: "center",
-    color: colore,
-    textStyle: {
-      color: colore,
-      fontSize: 30
-    },
-   },
-  backgroundColor: backgroundcolor,
-  tooltip: {},
-  xAxis: {
-    
-    max: maxData,
-    splitLine: { show: false },
-    offset: 10,
-    axisLine: {
-      lineStyle: {
-        color: '#999'
+      try{
+        var icona = data.fields.s4_id.data
+        var spirit ='image://' + icona
       }
-    },
-    axisLabel: {
-      color:colore,
-      margin: 3
-    }
-  },
-  yAxis: {
-    data: dates,
-    inverse: true,
-    axisTick: { show: false },
-    axisLine: { show: false },
-    axisLabel: {
-      margin: 10,
-      color: colore,
-      fontSize: 16
-    }
-  },
-  grid: {
-    top: 90,
-    left: 120,
-    right: 120,
-    
-  },
-  series: [
-    {
-      // current data
-      type: 'pictorialBar',
-      symbol: spirit,
-      symbolRepeat: 'fixed',
-      symbolMargin: '5%',
-      symbolClip: true,
-      color: colore,
-      symbolSize: siz,
-      symbolBoundingData: maxData,
-      data: quantities,
-      markLine: {
-        symbol: 'none',
-        label: {
-          opacity: 1,
+      catch(error){
+        var spirit ='image://https://s3.eu-central-1.amazonaws.com/innaas.smartfeed/icons/circle_green_lisghter.png'
+      }
+
+
+
+      try{
+        var backgroundcolor = data.fields.s2_id.data
+      }
+      catch(error){
+        var backgroundcolor = "#000000"
+      }
+
+
+      try{
+        var colore = data.fields.s3_id.data
+      }
+      catch(error){
+        var colore = "#ffffff"
+      }
+
+
+      try{
+        var titolo = data.fields.s6_id.data
+      }
+      catch(error){
+        var titolo = "Performances"
+      }
+
+
+      try{
+        var siz = data.fields.s5_id.data
+      }
+      catch(error){
+        var siz = 18
+      }
+
+
+      // var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Gen 21"]
+      // var quantities = [891, 1220, 660, 1670, 1000, 1000]
+
+      var dates = data.fields.s1_id.data
+      var quantities = data.fields.m1_id.data
+
+      var somma = quantities.reduce((partialSum, a) => partialSum + a, 0);
+      var maxData = Math.max(...quantities) + Math.max(...quantities)*1/10 ;
+
+      option = {
+        title: {
+          text: titolo,
+          top: 15,
+          left: "center",
           color: colore,
-          formatter: 'max: {c}',
-          position: 'start'
+          textStyle: {
+            color: colore,
+            fontSize: 30
+          },
         },
-        lineStyle: {
-          color: colore,
-          type: 'dotted',
-          opacity: 0.2,
-          width: 2
+        backgroundColor: backgroundcolor,
+        tooltip: {},
+        xAxis: {
+          
+          max: maxData,
+          splitLine: { show: false },
+          offset: 10,
+          axisLine: {
+            lineStyle: {
+              color: '#999'
+            }
+          },
+          axisLabel: {
+            color:colore,
+            margin: 3
+          }
         },
-        data: [
+        yAxis: {
+          data: dates,
+          inverse: true,
+          axisTick: { show: false },
+          axisLine: { show: false },
+          axisLabel: {
+            margin: 10,
+            color: colore,
+            fontSize: 16
+          }
+        },
+        grid: {
+          top: 90,
+          left: 120,
+          right: 120,
+          
+        },
+        series: [
           {
-            type: 'max'
+            // current data
+            type: 'pictorialBar',
+            symbol: spirit,
+            symbolRepeat: 'fixed',
+            symbolMargin: '5%',
+            symbolClip: true,
+            color: colore,
+            symbolSize: siz,
+            symbolBoundingData: maxData,
+            data: quantities,
+            markLine: {
+              symbol: 'none',
+              label: {
+                opacity: 1,
+                color: colore,
+                formatter: 'max: {c}',
+                position: 'start'
+              },
+              lineStyle: {
+                color: colore,
+                type: 'dotted',
+                opacity: 0.2,
+                width: 2
+              },
+              data: [
+                {
+                  type: 'max'
+                }
+              ]
+            },
+            z: 10
+          },
+          {
+            // full data
+            type: 'pictorialBar',
+            itemStyle: {
+              opacity: 0.2
+            },
+            label: {
+              show: true,
+              formatter: function (params) {
+                return ((params.value / maxData) * 100).toFixed(1) + ' %';
+              },
+              position: 'right',
+              offset: [10, 0],
+              opacity: 1,
+              color:  colore,
+              fontSize: 18
+            },
+            animationDuration: 0,
+            symbolRepeat: 'fixed',
+            symbolMargin: '5%',
+            symbol: spirit,
+            symbolSize: siz,
+            symbolBoundingData: maxData,
+            data: quantities,
+            z: 5
           }
         ]
-      },
-      z: 10
-    },
-    {
-      // full data
-      type: 'pictorialBar',
-      itemStyle: {
-        opacity: 0.2
-      },
-      label: {
-        show: true,
-        formatter: function (params) {
-          return ((params.value / maxData) * 100).toFixed(1) + ' %';
-        },
-        position: 'right',
-        offset: [10, 0],
-        opacity: 1,
-        color:  colore,
-        fontSize: 18
-      },
-      animationDuration: 0,
-      symbolRepeat: 'fixed',
-      symbolMargin: '5%',
-      symbol: spirit,
-      symbolSize: siz,
-      symbolBoundingData: maxData,
-      data: quantities,
-      z: 5
+      };
+
+
+
+      if (option && typeof option === 'object') {
+          myChart.setOption(option);
+      }
+
+
+
+ // QUi
     }
-  ]
-};
-
-
-
-if (option && typeof option === 'object') {
-    myChart.setOption(option);
-}
-
+  });
         </script>
-    </body>
+
 </html>
-    
