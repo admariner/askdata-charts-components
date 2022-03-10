@@ -188,6 +188,22 @@
         opacity: 1;
         transition: all 0.6s ease-in-out;
       }
+
+      
+      @media screen and (max-width: 767px) {
+    html {
+      /* Reducing base font size will reduce all rem sizes */
+      font-size: 13px;
+    }
+
+    /* You can reduce font sizes manually as well */
+    h1 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 1.0rem;
+    }
+}
     </style>
 
     </head>
@@ -329,10 +345,6 @@
                     </g>
                   </svg>
                 </div>
-                <h1>Welcome to Askdata!</h1>
-  
-                <p>This is the workspace dedicated to Sparkle, an interactive ecosystem for the creation and consumption of global communication solutions. <br> This card is meant to guide you through all the different Askdata sections. Let's get started! <br> <br> if you need help, Have a look at <a href="https://www.askdata.com/docs">Our Docs</a>  </p>
-        
               </div>
               <div id="second">
                 <div class="icon big">
@@ -343,6 +355,7 @@
                   </svg>
                 </div>
               </div>
+
               <div id="third">
                 <div class="icon big">
                   <svg viewBox="-5 0 29 42">
@@ -533,12 +546,12 @@ try
     }
 
 
-    // var col1 = "#71a0f6"
-    // var s2 = "Configure Welcome tab"
-    // var s3 = "Configure Queries"
-    // #Welcome
-    // var div = document.getElementById('first');
-    // div.innerHTML += s2;
+    var col1 = "#71a0f6"
+    var s2 = "Configure Welcome tab"
+    var s3 = "Configure Queries"
+    // Welcome
+    var div = document.getElementById('first');
+    div.innerHTML += s2;
 
     // #queries
     var div = document.getElementById('second');
