@@ -20,32 +20,54 @@
         "viewType": "text",
         "readOnly": false,
         "mandatory": false
-    },
-    {
-        "code": "settings.s2_id",
-        "label": "Askdata Tab",
+    },{
+        "code": "settings.m1_id",
+        "label": "Measures",
         "type": "params",
-        "viewType": "text",
+        "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the Askdata Tab"
-    },
-    {
-        "code": "settings.s3_id",
-        "label": "Queries Tab",
-        "type": "params",
-        "viewType": "text",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Queries tab"
+        "mandatory": true,
+        "tooltip": "Choose the measures"
     },
     {
         "code": "settings.s1_id",
+        "label": "Categories",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the categories"
+    },{
+        "code": "settings.s2_id",
         "label": "Background Color",
         "type": "params",
         "viewType": "text",
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the color"
+    },{
+        "code": "settings.s2_id",
+        "label": "Title",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the title for the widget"
+    },{
+        "code": "settings.s3_id",
+        "label": "Text Color",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose text color"
+    },{
+        "code": "settings.s4_id",
+        "label": "Icon",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the icon (link)"
     }]
 }

@@ -11,24 +11,6 @@
 
         
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
-        <!-- Uncomment this line if you want to dataTool extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/extension/dataTool.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to use gl extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to echarts-stat extension
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
-        -->
-        <!-- Uncomment this line if you want to use map
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/map/js/china.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/map/js/world.js"></script>
-        -->
-        <!-- Uncomment these two lines if you want to use bmap extension
-        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/extension/bmap.min.js"></script>
-        -->
-
         <script type="text/javascript">
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
@@ -57,19 +39,36 @@ catch(error){
 }
 
 
+try{
+  var colore = data.ecc
+}
+catch(error){
+  var colore = "#ffffff"
+}
+
+
+try{
+  var titolo = data.ecc
+}
+catch(error){
+  var titolo = "Performances"
+}
+
+
 var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Gen 21"]
 var quantities = [891, 1220, 660, 1670, 1000, 1000]
-var somma = quantities.reduce((partialSum, a) => partialSum + a, 0);
 
+var somma = quantities.reduce((partialSum, a) => partialSum + a, 0);
 var maxData = Math.max(...quantities) + Math.max(...quantities)*1/10 ;
+
 option = {
    title: {
-    text: "Segnalazioni chiuse " + somma,
+    text: titolo,
     top: 15,
     left: "center",
-    color: "white",
+    color: colore,
     textStyle: {
-      color: "white",
+      color: colore,
       fontSize: 30
     },
    },
@@ -86,7 +85,7 @@ option = {
       }
     },
     axisLabel: {
-      color:"white",
+      color:colore,
       margin: 3
     }
   },
@@ -97,13 +96,12 @@ option = {
     axisLine: { show: false },
     axisLabel: {
       margin: 10,
-      color: '#ffffff',
+      color: colore,
       fontSize: 16
     }
   },
   grid: {
     top: 90,
-    height: 190,
     left: 120,
     right: 120,
     
@@ -116,7 +114,7 @@ option = {
       symbolRepeat: 'fixed',
       symbolMargin: '5%',
       symbolClip: true,
-      color: '#ffffff',
+      color: colore,
       symbolSize: 30,
       symbolBoundingData: maxData,
       data: quantities,
@@ -124,12 +122,12 @@ option = {
         symbol: 'none',
         label: {
           opacity: 1,
-          color: '#ffffff',
+          color: colore,
           formatter: 'max: {c}',
           position: 'start'
         },
         lineStyle: {
-          color: '#ffffff',
+          color: colore,
           type: 'dotted',
           opacity: 0.2,
           width: 2
@@ -156,7 +154,7 @@ option = {
         position: 'right',
         offset: [10, 0],
         opacity: 1,
-        color: 'white',
+        color:  colore,
         fontSize: 18
       },
       animationDuration: 0,

@@ -126,8 +126,8 @@
 		},		{
 		    "code": "performance_comparison",
 		    "name": "Comparison Card",
-		    "icon": "info_card/welcome.png",
-		    "description": "Info Card to guide new users through the Askdata platform. Background color and text can be customized."
+		    "icon": "performance_comparison/prev.png",
+		    "description": "Card to compare performances. Background color, icon and text can be customized."
 		}
 	],
 	"background-color": "#CCCCCC"
