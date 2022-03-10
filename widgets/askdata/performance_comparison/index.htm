@@ -22,7 +22,7 @@ var option;
 
 
 try{
-  var icona = data.ecc
+  var icona = data.fields.s4_id.data
   var spirit ='image://' + icona
 }
 catch(error){
@@ -32,7 +32,7 @@ catch(error){
 
 
 try{
-  var backgroundcolor = data.ecc
+  var backgroundcolor = data.fields.s2_id.data
 }
 catch(error){
   var backgroundcolor = "#000000"
@@ -40,7 +40,7 @@ catch(error){
 
 
 try{
-  var colore = data.ecc
+  var colore = data.fields.s3_id.data
 }
 catch(error){
   var colore = "#ffffff"
@@ -48,15 +48,26 @@ catch(error){
 
 
 try{
-  var titolo = data.ecc
+  var titolo = data.fields.s6_id.data
 }
 catch(error){
   var titolo = "Performances"
 }
 
 
-var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Gen 21"]
-var quantities = [891, 1220, 660, 1670, 1000, 1000]
+try{
+  var siz = data.fields.s5_id.data
+}
+catch(error){
+  var siz = 18
+}
+
+
+// var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Gen 21"]
+// var quantities = [891, 1220, 660, 1670, 1000, 1000]
+
+var dates = data.fields.s1_id.data
+var quantities = data.fields.m1_id.data
 
 var somma = quantities.reduce((partialSum, a) => partialSum + a, 0);
 var maxData = Math.max(...quantities) + Math.max(...quantities)*1/10 ;
@@ -115,7 +126,7 @@ option = {
       symbolMargin: '5%',
       symbolClip: true,
       color: colore,
-      symbolSize: 30,
+      symbolSize: siz,
       symbolBoundingData: maxData,
       data: quantities,
       markLine: {
@@ -161,7 +172,7 @@ option = {
       symbolRepeat: 'fixed',
       symbolMargin: '5%',
       symbol: spirit,
-      symbolSize: 30,
+      symbolSize: siz,
       symbolBoundingData: maxData,
       data: quantities,
       z: 5

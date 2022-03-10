@@ -21,6 +21,13 @@
         "readOnly": false,
         "mandatory": false
     },{
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
+        "readOnly": false,
+        "viewType": "dropdown",
+        "mandatory": true
+    },{
         "code": "settings.m1_id",
         "label": "Measures",
         "type": "params",
@@ -33,7 +40,7 @@
         "code": "settings.s1_id",
         "label": "Categories",
         "type": "params",
-        "viewType": "text",
+        "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the categories"
@@ -46,7 +53,7 @@
         "mandatory": false,
         "tooltip": "Choose the color"
     },{
-        "code": "settings.s2_id",
+        "code": "settings.s6_id",
         "label": "Title",
         "type": "params",
         "viewType": "text",
@@ -69,5 +76,13 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the icon (link)"
+    },    {
+        "code": "settings.s5_id",
+        "label": "Icon Size",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the icon size (double)"
     }]
 }
