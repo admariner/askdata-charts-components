@@ -128,6 +128,11 @@
 		    "name": "Comparison Card",
 		    "icon": "performance_comparison/prev.png",
 		    "description": "Card to compare performances. Background color, icon and text can be customized."
+		},{
+		    "code": "bar_race",
+		    "name": "Bar Race",
+		    "icon": "bar_race/race.png",
+		    "description": "Card to compare performances. Background color, icon and text can be customized."
 		}
 	],
 	"background-color": "#CCCCCC"
