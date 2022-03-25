@@ -46,7 +46,7 @@ var count = 1
 
 var voice = [37821154, 	46535284,	54203496,	47278433,	52157095,	59164867,47736691, 56165969,	54310078,	6621824,	51052400,	54078044]
 var datar =[1389089,1336505,1318379,1631587,1480739,1432100,1716844,2188243,959739,	1200884,1862210,1942294]
-var ip = [8925025,9281221,10827507,10410788,8996464,13033929,8856714,9068195, 12615544,9051561,9135366,16571209]
+var ip = [8925025,9281221,10827507,10410788,8996464,13033929,8856714,9068195,85,12615544,9051561,9135366,16571209]
 var messaging = [2319710,	2077577,	2829129,	2342813,	2771483,	2225890,	2199349,	3196656,3256643,	3860252,	2559835,	2770564]
 var network = [3956017,	4240659,	4254764,	4216304,	4186877,	4252795,	5112524,	4934827,	4641680,	5045986,	5205126,	6666506]
 var cloud = [	532056,	508636,	571289,	556150,	596716,	670821,	475513,	737815,	639889,	692539,	487800,	765672,]
@@ -68,6 +68,7 @@ data.push(hub[0])
 console.log(data)
 
 option = {
+  grid: {  left: 150 },
   xAxis: {
     max: 'dataMax',
     
@@ -114,31 +115,45 @@ option = {
   animationEasingUpdate: 'linear'
 };
 function run() {
-  for (var i = 0; i < data.length; ++i) {
-    if (i == 0) {
-      data[i] = voice[count];
-    } 
-    if (i == 1) {
-      data[i] = capacity[count];
+  
+  if (count == 12) {
+      data[0] = voice[count-1];
+      data[1] = capacity[count-1];
+      data[2] = datar[count-1];
+      data[3] = ip[count-1];
+      data[4] = messaging[count-1];
+      data[5] = network[count-1];
+      data[6] = cloud[count-1];
+      data[7] = hub[count-1];
     }
-    if (i == 2) {
-      data[i] = datar[count];
+  else{
+    for (var i = 0; i < data.length; ++i) {
+      if (i == 0) {
+        data[i] = voice[count];
+      } 
+      if (i == 1) {
+        data[i] = capacity[count];
+      }
+      if (i == 2) {
+        data[i] = datar[count];
+      }
+      if (i == 3) {
+        data[i] = ip[count];
+      }
+      if (i == 4) {
+        data[i] = messaging[count];
+      }
+      if (i == 5) {
+        data[i] = network[count];
+      }
+      if (i == 6) {
+        data[i] = cloud[count];
+      }
+       if (i == 7) {
+        data[i] = hub[count];
+      }
     }
-    if (i == 3) {
-      data[i] = ip[count];
-    }
-    if (i == 4) {
-      data[i] = messaging[count];
-    }
-    if (i == 5) {
-      data[i] = network[count];
-    }
-    if (i == 6) {
-      data[i] = cloud[count];
-    }
-     if (i == 7) {
-      data[i] = hub[count];
-    }
+    count = count + 1;
   }
   
   myChart.setOption({
@@ -149,14 +164,14 @@ function run() {
       }
     ]
   });
-  count = count + 1;
+  
   // console.log(data)
   // console.log(count)
 
 }
 setTimeout(function () {
   run();
-}, 0);
+}, 10);
 setInterval(function () {
   run();
 }, 4000);
