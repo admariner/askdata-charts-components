@@ -38,6 +38,7 @@ var option;
 
 
 
+
 const data = [];
 // for (let i = 0; i < 2; ++i) {
 //   data.push(Math.round(Math.random() * 200));
@@ -64,10 +65,13 @@ data.push(cloud[0])
 data.push(hub[0])
 
 
+titles = ["Jan 21", "Feb 21", "Mar 21", "Apr 21", "Mag 21", "Giu 21", "Lug 21", "Ago 21", "Set 21", "Ott 21", "Nov 21", "Dic 21"]
+labb = titles[0]
 
 console.log(data)
 
 option = {
+  title: {text : labb, left: "center", top: 10},
   grid: {  left: 150 },
   xAxis: {
     max: 'dataMax',
@@ -153,6 +157,7 @@ function run() {
         data[i] = hub[count];
       }
     }
+    labb = titles[count]
     count = count + 1;
   }
   
@@ -162,7 +167,13 @@ function run() {
         type: 'bar',
         data
       }
-    ]
+    ],
+    title :[
+      {
+        text : labb
+        
+      }
+      ]
   });
   
   // console.log(data)
