@@ -1,0 +1,63 @@
+{
+	"configuration": [{
+        "code": "code",
+        "label": "Chart code",
+        "type": "string",
+        "viewType": "hidden",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "name",
+        "label": "Name",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "description",
+        "label": "Description",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
+        "readOnly": false,
+        "viewType": "dropdown",
+        "mandatory": false
+    }, {
+        "code": "settings.m1_id",
+        "label": "Measure",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the measures to be displayed"
+    }, {
+        "code": "settings.s1_id",
+        "label": "First Link",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the first custom icon"
+    }, {
+        "code": "settings.s2_id",
+        "label": "Second Link",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the second custom icon"
+    }, {
+        "code": "settings.s3_id",
+        "label": "Third Link",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the third custom icon"
+    }]
+}

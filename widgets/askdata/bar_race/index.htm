@@ -1,0 +1,198 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=bar-race
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+
+        
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+        <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/extension/dataTool.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/map/js/world.js"></script>
+        -->
+        <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/extension/bmap.min.js"></script>
+        -->
+
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+
+const data = [];
+// for (let i = 0; i < 2; ++i) {
+//   data.push(Math.round(Math.random() * 200));
+// }
+var count = 1
+
+var voice = [0, 37821154, 	46535284,	54203496,	47278433,	52157095,	59164867,47736691, 56165969,	54310078,	66218240,	51052400,	54078044]
+var datar =[0, 1389089,1336505,1318379,1631587,1480739,1432100,1716844,2188243,959739,	1200884,1862210,1942294]
+var ip = [0, 8925025,9281221,10827507,10410788,8996464,13033929,8856714,9068195,85,12615544,9051561,9135366,16571209]
+var messaging = [0, 2319710,	2077577,	2829129,	2342813,	2771483,	2225890,	2199349,	3196656,3256643,	3860252,	2559835,	2770564]
+var network = [0,3956017,	4240659,	4254764,	4216304,	4186877,	4252795,	5112524,	4934827,	4641680,	5045986,	5205126,	6666506]
+var cloud = [0,	532056,	508636,	571289,	556150,	596716,	670821,	475513,	737815,	639889,	692539,	487800,	765672,]
+var hub = [0,934161, 2707308, 1888744, 940142, 1032699, 1864678, 2655509, 1764213, 1093969, 1491784, 4026901, 1942294]
+var capacity = [0,8512759, 8663241,     9489589,   8468723, 9330673, 10783493, 9349694, 9195038,   13415540,    9368518,14850869, 17145107]
+
+
+data.push(voice[0]);
+data.push(capacity[0]);
+data.push(datar[0]);
+data.push(ip[0])
+data.push(messaging[0])
+data.push(network[0])
+data.push(cloud[0])
+data.push(hub[0])
+
+
+titles = ["0", "Jan 21", "Feb 21", "Mar 21", "Apr 21", "Mag 21", "Giu 21", "Lug 21", "Ago 21", "Set 21", "Ott 21", "Nov 21", "Dic 21"]
+labb = titles[0]
+
+
+console.log(data)
+
+option = {
+  title: {text : labb, left: "center", top: 10},
+  grid: {  left: 130, right:120 },
+  xAxis: {
+    max: 'dataMax',
+    
+        axisLabel: {
+        show: true,
+        position: 'right',
+        formatter: function (d) {
+          return String(d).replace(/(.)(?=(\d{3})+$)/g, '$1,') + ' €';
+        }
+      },
+    
+  },
+  yAxis: {
+    type: 'category',
+    inverse: true,
+    data: ['VOICE', "CAPACITY", 'DATA ROAMING \n & CONNECTIVITY', 'IP TRANSIT', 'MESSAGING', 'NETWORKING\n SOLUTIONS',  "SPARKLE CLOUD", 'LANDING AND\n CONNECTIVITY\n HUB'],
+    animationDuration: 300,
+    animationDurationUpdate: 300,
+    max: 4 // only the largest 3 bars will be displayed
+  },
+  series: [
+    {
+      realtimeSort: true,
+      name: 'X',
+      type: 'bar',
+      data: data,
+      color: "#0c5a93",
+      label: {
+        show: true,
+        position: 'right',
+        formatter: function (d) {
+          return String(d.value).replace(/(.)(?=(\d{3})+$)/g, '$1,') + ' €';
+        },
+        valueAnimation: true
+      }
+    }
+  ],
+  legend: {
+    show: false
+  },
+  animationDuration: 0,
+  animationDurationUpdate: 3000,
+  animationEasing: 'linear',
+  animationEasingUpdate: 'linear'
+};
+function run() {
+  
+  if (count == 12) {
+      data[0] = voice[count-1];
+      data[1] = capacity[count-1];
+      data[2] = datar[count-1];
+      data[3] = ip[count-1];
+      data[4] = messaging[count-1];
+      data[5] = network[count-1];
+      data[6] = cloud[count-1];
+      data[7] = hub[count-1];
+    }
+  else{
+    for (var i = 0; i < data.length; ++i) {
+      if (i == 0) {
+        data[i] = voice[count];
+      } 
+      if (i == 1) {
+        data[i] = capacity[count];
+      }
+      if (i == 2) {
+        data[i] = datar[count];
+      }
+      if (i == 3) {
+        data[i] = ip[count];
+      }
+      if (i == 4) {
+        data[i] = messaging[count];
+      }
+      if (i == 5) {
+        data[i] = network[count];
+      }
+      if (i == 6) {
+        data[i] = cloud[count];
+      }
+       if (i == 7) {
+        data[i] = hub[count];
+      }
+    }
+    labb = titles[count]
+    count = count + 1;
+  }
+  
+  myChart.setOption({
+    series: [
+      {
+        type: 'bar',
+        data
+      }
+    ],
+    title :[
+      {
+        text : labb
+        
+      }
+      ]
+  });
+  
+  // console.log(data)
+  // console.log(count)
+
+}
+setTimeout(function () {
+  run();
+}, 10);
+setInterval(function () {
+  run();
+}, 4000);
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    
