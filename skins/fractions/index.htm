@@ -268,7 +268,7 @@
 
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
     //environment_widget = "https://api-dev.askdata.com";
-    // environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
+     environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...
 
     // console.log("I'm going to request data");
     // Requesting agent data
@@ -340,7 +340,12 @@
                         chartWidth13: value13 * FULL_WIDTH / 20,
                         chartWidth14: value14 * FULL_WIDTH / 20
                     };
-
+                    if ( teamAway.toLowerCase() === 'juventus'){
+                            parsedData.rightTeamImage = `../_lib/images/teams/${teamAway}_2.png`
+                    };
+                    if ( teamHome.toLowerCase() === 'juventus'){
+                            parsedData.leftTeamImage = `../_lib/images/teams/${teamHome}_2.png`
+                    };
                     // replace of the content
                     document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
                 }
