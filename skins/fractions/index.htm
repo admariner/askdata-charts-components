@@ -120,33 +120,7 @@
         .team-image {
             height: 86px;
         }
-        .emoji-win {
-            border-radius: 100%;
-            background-color: #1535c7;
-            height: 100px;
-            width: 100px;
-            position: absolute;
-            top: 361px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            left: 488px;
-            z-index: 1;
-        }
-        .emoji-hard {
-            border-radius: 100%;
-            background: rgb(23,57,203);
-            background: linear-gradient(180deg, rgba(23,57,203,1) 0%, rgba(56,108,234,1) 100%);
-            height: 100px;
-            width: 100px;
-            position: absolute;
-            top: 492px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            left: 488px;
-            z-index: 1;
-        }
+
         .player-name {
             position: absolute;
             left: 446px;
@@ -181,11 +155,13 @@
             text-align: center;
             width: 250px;
             position: absolute;
+            text-transform: uppercase;
+            font-family: TIMSans;
             top: 220px;
-            left: 190px;
+            left: 159px;
         }
         .title{
-            font-size: 36px;
+            font-size: 33px;
             font-weight: bold;
             color:#fff;
         }
@@ -193,97 +169,36 @@
             text-align: center;
             width: 250px;
             position: absolute;
+            text-transform: uppercase;
+            font-family: TIMSans;
             top:220px;
-            left:640px;
+            left:675px;
         }
-        .value-wrapper-win {
+        .value-wrapper-1 {
             position: absolute;
-            top: 382px;
-            left: 156px;
+            top: 849px;
+            left: 160px;
             border-radius: 4px;
+            transform: rotatex(180deg);
+            transform-origin: top;
+        }
+        .chartHome {
+        background: rgb(253,188,148);
+        background: linear-gradient(360deg, rgba(253,188,148,1) 75%, rgba(182,125,162,1) 100%);
+        position: absolute;
+        width: 45px;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+        }
+        .chartAway {
+        background: rgb(59,215,181);
+        background: linear-gradient(360deg, rgba(59,215,181,1) 75%, rgba(43,147,180,1) 100%);
+        position: absolute;
+        left: 50px;
+        width: 45px;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
         }
 
-        .value-wrapper-hard {
-            position: absolute;
-            top: 511px;
-            left: 156px;
-            border-radius: 4px;
-        }
-        .hard{
-            top:476px;
-        }
-        .value-border {
-            border: 1px solid #75f5fa;
-            background: green;
-            padding: 0 7px;
-        }
 
-        .value-home {
-            font-family: TIMSans;
-            font-size: 31px;
-            font-weight: 900;
-            font-stretch: normal;
-            font-style: italic;
-            line-height: normal;
-            letter-spacing: normal;
-            text-align: start;
-            color: #ffffff;
-            margin-top: 10px;
-            margin-left: 13px;
-            transform: skew(-20deg); /* UNSKEW */
-
-        }
-        .value-away {
-            font-family: TIMSans;
-            font-size: 31px;
-            font-weight: 900;
-            font-stretch: normal;
-            font-style: italic;
-            line-height: normal;
-            letter-spacing: normal;
-            text-align: end;
-            color: #ffffff;
-            margin-top: 10px;
-            margin-right: 5px;
-            transform: skew(40deg); /* UNSKEW */
-
-        }
-        .chartWin {
-            position: absolute;
-            top: 2px;
-            height: 60px;
-            right: -350px;
-            justify-content: start;
-            transform: skew(20deg); /* SKEW */  
-            background: rgb(102,221,118);
-            background: linear-gradient(180deg, rgba(102,221,118,1) 0%, rgba(102,221,118,1) 70%, rgba(45,102,172,1) 100%);
-        }
-
-        .chart-text {
-            color: #0023b0;
-            font-weight: bold;
-            font-size: 36px;
-            position: relative;
-            background: #71faff;
-            padding: 13px 5px;
-            width: 65px;
-            text-align: center;
-        }
-
-        .chartHard {
-            position: absolute;
-            top: 2px;
-            height: 60px;
-            right: -350px;
-            justify-content: start;
-            transform: skew(20deg); /* SKEW */  
-            background: rgb(210,65,82);
-            background: linear-gradient(180deg, rgba(210,65,82,1) 0%, rgba(210,65,82,1) 70%, rgba(115,85,186,1) 100%);      
-        }
-        .away{
-            left: 285px;
-            transform: skew(-20deg); /* UNSKEW */  
-        }
     </style>
     <!-- Put your libaries here --->
 
@@ -306,20 +221,36 @@
             <div class="title">{{teamAway}}</div>
         </div>
         <!-- CHARTS -->
-        <div class="value-wrapper-win">
-                <div class="chartWin" style="width: {{chartWidthWinHome}}px"><div class="value-home">{{winHome}}%</div></div>
+
+        <div class="value-wrapper-1">
+            <div class="chartHome" style="height: {{chartWidth1}}px"></div>
+            <div class="chartAway" style="height: {{chartWidth2}}px"></div>
         </div>
-        <div class="emoji-win"><img src="../_lib/images/smile.png"/></div>
-        <div class="value-wrapper-hard">
-                <div class="chartHard" style="width: {{chartWidthHardHome}}px"><div class="value-home">{{hardHome}}%</div></div>
+        <div class="value-wrapper-1" style="left:270px">
+                <div class="chartHome" style="height: {{chartWidth3}}px"><div class="value-home"></div></div>
+                <div class="chartAway" style="height: {{chartWidth4}}px"><div class="value-home"></div></div>
         </div>
-        <div class="value-wrapper-win away">
-            <div class="chartWin away" style="width: {{chartWidthWinAway}}px"><div class="value-away">{{winAway}}%</div></div>
+        <div class="value-wrapper-1" style="position:absolute; left:383px">
+            <div class="chartHome" style="height: {{chartWidth5}}px"><div class="value-home"></div></div>
+            <div class="chartAway" style="height: {{chartWidth6}}px"><div class="value-home"></div></div>
         </div>
-        <div class="emoji-hard"><img src="../_lib/images/mah.png"/></div>
-        <div class="value-wrapper-hard away">
-            <div class="chartHard away" style="width: {{chartWidthHardAway}}px"><div class="value-away">{{hardAway}}%</div></div>
+        <div class="value-wrapper-1" style="position:absolute; left:496px">
+            <div class="chartHome" style="height: {{chartWidth7}}px"><div class="value-home"></div></div>
+            <div class="chartAway" style="height: {{chartWidth8}}px"><div class="value-home"></div></div>
         </div>
+        <div class="value-wrapper-1" style="position:absolute; left:609px">
+            <div class="chartHome" style="height: {{chartWidth9}}px"><div class="value-home"></div></div>
+            <div class="chartAway" style="height: {{chartWidth10}}px"><div class="value-home"></div></div>
+        </div>
+        <div class="value-wrapper-1" style="position:absolute; left:722px">
+            <div class="chartHome" style="height: {{chartWidth11}}px"><div class="value-home"></div></div>
+            <div class="chartAway" style="height: {{chartWidth12}}px"><div class="value-home"></div></div>
+        </div>
+        <div class="value-wrapper-1" style="position:absolute; left:834px">
+            <div class="chartHome" style="height: {{chartWidth13}}px"><div class="value-home"></div></div>
+            <div class="chartAway" style="height: {{chartWidth14}}px"><div class="value-home"></div></div>
+        </div>
+
         <!-- END CHARTS -->
     </div>
 </div>
@@ -333,26 +264,7 @@
         { pct: 1.0, color: { r: 0x31, g: 0xd9, b: 0x16 } }
     ];
 
-    function getColorForPercentage(pct) {
-        for (var i = 1; i < percentColors.length - 1; i++) {
-            if (pct < percentColors[i].pct) {
-                break;
-            }
-        }
-        const lower = percentColors[i - 1];
-        const upper = percentColors[i];
-        const range = upper.pct - lower.pct;
-        const rangePct = (pct - lower.pct) / range;
-        const pctLower = 1 - rangePct;
-        const pctUpper = rangePct;
-        const color = {
-            r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
-            g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
-            b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
-        };
-        return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
-        // or output as hex if preferred
-    }
+
 
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
     //environment_widget = "https://api-dev.askdata.com";
@@ -387,31 +299,53 @@
                         cardData = data[1].attachment.body[1].details;
                     }
                     console.log(cardData);
-                    const teamHome = cardData.rows[0][cardData.columns.indexOf('Team')];
-                    const winHome = cardData.rows[0][cardData.columns.indexOf('Win')];
-                    const hardHome = cardData.rows[0][cardData.columns.indexOf('Hard')];
-                    const teamAway = cardData.rows[1][cardData.columns.indexOf('Team')];
-                    const winAway = cardData.rows[1][cardData.columns.indexOf('Win')];
-                    const hardAway = cardData.rows[1][cardData.columns.indexOf('Hard')];
-                    const START_POS = 155;
-                    const FULL_WIDTH = 430;
+                    const teamHome = cardData.rows[0][cardData.columns.indexOf('team')];
+                    const teamAway = cardData.rows[1][cardData.columns.indexOf('team')];
+                    const value1 = cardData.rows[0][cardData.columns.indexOf('first')];
+                    const value2 = cardData.rows[1][cardData.columns.indexOf('first')];
+                    const value3 = cardData.rows[0][cardData.columns.indexOf('second')];
+                    const value4 = cardData.rows[1][cardData.columns.indexOf('second')];
+                    const value5 = cardData.rows[0][cardData.columns.indexOf('third')];
+                    const value6 = cardData.rows[1][cardData.columns.indexOf('third')];
+                    const value7 = cardData.rows[0][cardData.columns.indexOf('fourth')];
+                    const value8 = cardData.rows[1][cardData.columns.indexOf('fourth')];
+                    const value9 = cardData.rows[0][cardData.columns.indexOf('fifth')];
+                    const value10 = cardData.rows[1][cardData.columns.indexOf('fifth')];
+                    const value11 = cardData.rows[0][cardData.columns.indexOf('sixth')];
+                    const value12 = cardData.rows[1][cardData.columns.indexOf('sixth')];
+                    const value13 = cardData.rows[0][cardData.columns.indexOf('seventh')];
+                    const value14 = cardData.rows[1][cardData.columns.indexOf('seventh')];
+                    const FULL_WIDTH = 455;
                     const parsedData = {
                         teamHome,
-                        winHome,
-                        hardHome,
                         teamAway,
-                        winAway,
-                        hardAway,
+                        value1,
+                        value2,
                         leftTeamImage: `../_lib/images/teams/${teamHome}.png`,
                         rightTeamImage: `../_lib/images/teams/${teamAway}.png`,
-                        valuePositionLeft: START_POS + winHome * FULL_WIDTH / 100,
-                        valuePositionRight: START_POS + winAway * FULL_WIDTH / 100,
-                        chartWidthWinHome: winHome * FULL_WIDTH / 100,
-                        chartWidthWinAway: winAway * FULL_WIDTH / 100,
-                        chartWidthHardHome: hardHome * FULL_WIDTH / 100,
-                        chartWidthHardAway: hardAway * FULL_WIDTH / 100,
+                        // valuePositionLeft: START_POS + winHome * FULL_WIDTH / 100,
+                        // valuePositionRight: START_POS + winAway * FULL_WIDTH / 100,
+                        chartWidth1: value1 * FULL_WIDTH / 20,
+                        chartWidth2: value2 * FULL_WIDTH / 20,
+                        chartWidth3: value3 * FULL_WIDTH / 20,
+                        chartWidth4: value4 * FULL_WIDTH / 20,
+                        chartWidth5: value5 * FULL_WIDTH / 20,
+                        chartWidth6: value6 * FULL_WIDTH / 20,
+                        chartWidth7: value7 * FULL_WIDTH / 20,
+                        chartWidth8: value8 * FULL_WIDTH / 20,
+                        chartWidth9: value9 * FULL_WIDTH / 20,
+                        chartWidth10: value10 * FULL_WIDTH / 20,
+                        chartWidth11: value11 * FULL_WIDTH / 20,
+                        chartWidth12: value12 * FULL_WIDTH / 20,
+                        chartWidth13: value13 * FULL_WIDTH / 20,
+                        chartWidth14: value14 * FULL_WIDTH / 20
                     };
-
+                    if ( teamAway.toLowerCase() === 'juventus'){
+                            parsedData.rightTeamImage = `../_lib/images/teams/${teamAway}_2.png`
+                    };
+                    if ( teamHome.toLowerCase() === 'juventus'){
+                            parsedData.leftTeamImage = `../_lib/images/teams/${teamHome}_2.png`
+                    };
                     // replace of the content
                     document.getElementById('container').innerHTML = Mustache.render(template, parsedData);
                 }
