@@ -39,7 +39,7 @@
     },
     {
         "code": "settings.m1_id",
-        "label": "Measure 1",
+        "label": "Measure",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
