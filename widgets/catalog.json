@@ -12,19 +12,7 @@
 			"icon": "leaderboard/leath.PNG",
 			"description": "This widget supports a leaderboard with maximum 5 elements. You can provide a quantity, a measure and a custom title. Please be aware that the quantities should already be sorted accordingly.",
 			"guide": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{
-					"enabled": true
-				},
-				{
-					"dimensions": 1
-				},
-				{
-					"measures": 1
-				},
-				{
-					"records": 5
-				}
-			]
+			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"records": 5}]
 		},
 		{
 			"code": "rose-chart",
@@ -32,22 +20,7 @@
 			"icon": "rose-chart/rose.PNG",
 			"description": "This Rose Diagram constructor creates circular charts to display data that contain direction and magnitude variables. A rose diagram normally comprises of 8 or 16 radiating spokes, which could , for example, represent degrees of a circle or compass points North, East, South, West and their intermediate directions.",
 			"guide": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{
-					"enabled": true
-				},
-				{
-					"dimensions": 1
-				},
-				{
-					"measures": 1
-				},
-				{
-					"min-records": 2
-				},
-				{
-					"max-records": 10
-				}
-			]
+			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
 		},
 		{
 			"code": "pair-comparisons",
