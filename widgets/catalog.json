@@ -42,9 +42,7 @@
 			"icon": "gauge-metric/icon.png",
 			"description": "Also known as a speedometer chart or a dial chart, a gauge chart is one of the most commonly used visual tools to represent progressive values. Colors can be customized, blue is the default.",
 			"guide": "https://app.askdata.com/docs/available-widgets",
-			"constraints": {
-				"fields": 0
-			}
+			"constraints": [{"enabled": true}]
 		},
 		{
 			"code": "chart-trend-cumulative-run",
@@ -86,11 +84,8 @@
 			"name": "Card with 6 KPIs",
 			"icon": "stats_6_kpi/kpiblue.PNG",
 			"description": "Card with 6 slots dedicated to your stats to show. Could be used to highlight the difference w.r.t. to a fixed time frame. Colors can be fully customized.",
-			"guide": "https://app.askdata.com/docs/available-widgets",
-			"constraints": {
-				"fields": 6,
-				"records": 1
-			}
+			"guide": "https://app.askdata.com/docs/available-widgets"
+			
 		},
 		{
 			"code": "funnel",
@@ -161,12 +156,7 @@
 			"icon": "performance_comparison/prev.png",
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
 			"guide": "https://app.askdata.com/docs/available-widgets",
-			"constraints": {
-				"dimensions": 1,
-				"measures": 1,
-				"min-records": 2,
-				"max-records": 8
-			}
+			"constraints": [{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 8}]
 		},
 		{
 			"code": "bar_race",
