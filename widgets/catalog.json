@@ -42,7 +42,7 @@
 			"icon": "gauge-metric/icon.png",
 			"description": "Also known as a speedometer chart or a dial chart, a gauge chart is one of the most commonly used visual tools to represent progressive values. Colors can be customized, blue is the default.",
 			"guide": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": true}]
+			"constraints": [{"enabled": false}]
 		},
 		{
 			"code": "chart-trend-cumulative-run",
