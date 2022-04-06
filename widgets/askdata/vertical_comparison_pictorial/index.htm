@@ -50,9 +50,13 @@ var option;
 
 var nomi_x = data.fields.s7_id.data
 var numerical_measures = data.fields.m1_id.data
-var simboli = data.fields.s1_id.data
+
 var check = false
 
+try {
+  var simboli = data.fields.s1_id.data
+}
+catch (error) {var simboli= []}
 try {
 var sizes = data.fields.s2_id.data
 check = true

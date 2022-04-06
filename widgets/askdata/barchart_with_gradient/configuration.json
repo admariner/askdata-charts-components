@@ -58,7 +58,7 @@
         "type": "params",
         "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "true if the measure is a percentage, false if not"
     },{
         "code": "settings.s3_id",
