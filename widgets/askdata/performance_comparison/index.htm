@@ -94,11 +94,23 @@ success: function(data) {
       }
 
 
-      // var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Gen 21"]
-      // var quantities = [891, 1220, 660, 1670, 1000, 1000]
+
+      // var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Genaadsssd21"]
+      // var quantities = [891, 1220, 660, 1670.23, 1000, 1000].map(String)
+
+
 
       var dates = data.fields.s1_id.data
-      var quantities = data.fields.m1_id.data
+      var quantities = data.fields.m1_id.data.map(String)
+      
+      var quantities = quantities.map(item => item.replace(/[^\d.-]/g,''));
+
+      for (let s = 0; s < dates.length; s++){
+        if (dates[s].length>=13)
+          {dates[s] =  dates[s].substring(0, 4) + ".."}
+      }
+      
+
 
       var somma = quantities.reduce((partialSum, a) => partialSum + a, 0);
       var maxData = Math.max(...quantities) + Math.max(...quantities)*1/10 ;
