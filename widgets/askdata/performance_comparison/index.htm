@@ -51,7 +51,6 @@ success: function(data) {
 
 
 
-
       try{
         var icona = data.fields.s4_id.data
         var spirit ='image://' + icona
@@ -92,16 +91,41 @@ success: function(data) {
       catch(error){
         var siz = 18
       }
+      
+      try{
+        var siz = data.fields.s7_id.data
+      }
+      catch(error){
+        var label = ""
+      }
 
 
 
-      // var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Genaadsssd21"]
-      // var quantities = [891, 1220, 660, 1670.23, 1000, 1000].map(String)
 
 
+    // var dates = ['Ago 21', 'Sett 21', 'Ott 21', 'Nov 21', 'Dic 21', "Genaadsssd21"]
+    // var quantities = [101, 1220, 660, 670, 1670, 1000].map(String)
 
+
+      
       var dates = data.fields.s1_id.data
       var quantities = data.fields.m1_id.data.map(String)
+      
+      
+    var massimo = (Math.max(...quantities))
+    var quantities = quantities.map(String)
+    
+    for (let s = 0; s < quantities.length; s++){
+      var temp = quantities[s].substr(quantities[s].length-3, 1 )
+      var temp1 = quantities[s].substr(quantities[s].length-2, 1 )
+      if (temp == ","){quantities[s] = quantities[s].slice(0, -3);}
+      if (temp == "."){quantities[s] = quantities[s].slice(0, -3);}
+      if (temp1 == ","){quantities[s] = quantities[s].slice(0, -2);}
+      if (temp1 == "."){quantities[s] = quantities[s].slice(0, -2);}
+      }
+
+    
+      
       
       var quantities = quantities.map(item => item.replace(/[^\d.-]/g,''));
 
@@ -127,7 +151,12 @@ success: function(data) {
           },
         },
         backgroundColor: backgroundcolor,
-        tooltip: {},
+        tooltip: {
+        formatter: function (d) {
+                  return d.value + label;
+                },
+          
+        },
         xAxis: {
           
           max: maxData,
@@ -177,7 +206,9 @@ success: function(data) {
               label: {
                 opacity: 1,
                 color: colore,
-                formatter: 'max: {c}',
+                formatter: function (massimo) {
+                  return massimo.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + label;
+                },
                 position: 'start'
               },
               lineStyle: {
@@ -222,8 +253,6 @@ success: function(data) {
           }
         ]
       };
-
-
 
       if (option && typeof option === 'object') {
           myChart.setOption(option);
