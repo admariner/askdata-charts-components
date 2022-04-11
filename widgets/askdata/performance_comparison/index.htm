@@ -137,7 +137,15 @@ success: function(data) {
 
 
       var somma = quantities.reduce((partialSum, a) => partialSum + a, 0);
-      var maxData = Math.max(...quantities) + Math.max(...quantities)*1/10 ;
+
+      try{
+        var maxData = data.fields.s8_id.data
+      }
+      catch(error){
+        var maxData = Math.max(...quantities) + Math.max(...quantities)*1/10 ;
+      }
+
+      
 
       option = {
         title: {
