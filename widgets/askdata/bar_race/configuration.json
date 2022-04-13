@@ -32,6 +32,7 @@
         "label": "Measure",
         "type": "params",
         "viewType": "dropdown",
+        "multiple": true,
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the measures to be displayed"
