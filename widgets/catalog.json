@@ -74,7 +74,7 @@
 		{
 			"code": "radar_chart_normalized",
 			"name": "Radar Chart Normalized",
-			"icon": "radar_chart_normalized/radar_chart_normalized.PNG",
+			"icon": "radar_chart_normalized/radar_chart_normalized.png",
 			"description": "A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables. This widget can compare 7 different (normalized) measures over 3 different measures.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": true},{"max-dimensions": 1},{"fields": 6}, {"max-measures": 5},{"max-records": 5}]
