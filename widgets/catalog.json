@@ -1,8 +1,8 @@
 {
 	"widget": [{
-			"code": "card-with-3-measures",
+			"code": "card_with_3_measures",
 			"name": "Card with 3 measures",
-			"icon": "card-with-3-measures/card3.PNG",
+			"icon": "card_with_3_measures/card_3_measures.PNG",
 			"description": "Card with 3 KPIs, white background. Useful to compare 3 different quantities or a single quantity variation over time. Numbers are displayed in different fixed colors.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": true},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
@@ -10,71 +10,71 @@
 		{
 			"code": "leaderboard",
 			"name": "Leaderboard ",
-			"icon": "leaderboard/leath.PNG",
+			"icon": "leaderboard/leaderboard.PNG",
 			"description": "This widget supports a leaderboard with maximum 5 elements. You can provide a quantity, a measure and a custom title. Please be aware that the quantities should already be sorted accordingly.",
 			"doc": "https://app.askdata.com/docs/leaderboard",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"records": 5}]
 		},
 		{
-			"code": "rose-chart",
+			"code": "rose_chart",
 			"name": "Rose Chart",
-			"icon": "rose-chart/rose.PNG",
+			"icon": "rose_chart/rose.PNG",
 			"description": "This Rose Diagram constructor creates circular charts to display data that contain direction and magnitude variables. A rose diagram normally comprises of 8 or 16 radiating spokes, which could , for example, represent degrees of a circle or compass points North, East, South, West and their intermediate directions.",
 			"doc": "https://app.askdata.com/docs/rose-chart",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
 		},
 		{
-			"code": "pair-comparisons",
+			"code": "pair_comparisons",
 			"name": "Pair Comparisons",
-			"icon": "pair-comparisons/com.PNG",
+			"icon": "pair_comparisons/pair_comparison.PNG",
 			"description": "This widget allows to compare in an efficient way two different quantities (for example the difference in players performances that belong to two different teams). Colors can be customized. Please remove any duplicate between the two dimensions otherwise they will be collapsed.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
 		},
 		{
-			"code": "table-light-blue",
+			"code": "table_light_blue",
 			"name": "Table Light",
-			"icon": "table-light-blue/table.png",
+			"icon": "table_light_blue/table_light_blue.png",
 			"description": "Responsive table without a fixed number of rows but with restricted to 3 columns(mandatory). Blue is the default color.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"max-records": 1}]
 		},
 		{
-			"code": "gauge-metric",
+			"code": "gauge_metric",
 			"name": "Gauge Metric",
-			"icon": "gauge-metric/icon.png",
+			"icon": "gauge_metric/gauge_metric.png",
 			"description": "Also known as a speedometer chart or a dial chart, a gauge chart is one of the most commonly used visual tools to represent progressive values. Colors can be customized, blue is the default.",
 			"doc": "https://app.askdata.com/docs/gauge",
 			"constraints": [{"enabled": false}]
 		},
 		{
-			"code": "chart-trend-cumulative-run",
+			"code": "chart_trend_cumulative_run",
 			"name": "Trend Comulative Run",
-			"icon": "chart-trend-cumulative-run/trend_cum.png",
+			"icon": "chart_trend_cumulative_run/chart_trend_cumulative_run.png",
 			"description": "This widget allows to compare different quantities over time by drawing two different lines, one for each measure. Lines colors can be customized. One possible usage is for the comparison of stock prices over a fixed period of time.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
 		},
 		{
-			"code": "vertical-bar-with-trendline",
+			"code": "vertical_bar_with_trendline",
 			"name": "Chart Vertical Bar with Trendline",
-			"icon": "vertical-bar-with-trendline/bartrend.png",
+			"icon": "vertical_bar_with_trendline/vertical_bar_trendline.png",
 			"description": "This widget has two vertical barplots that can highlight the differences within two measures. It also provides a line that connects all the averages within the same interval. Colors of bars and line can be customized.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
 		},
 		{
-			"code": "bar-chart-with-icons",
+			"code": "bar_chart_with_icons",
 			"name": "Horizontal Bar Chart with custom icons",
-			"icon": "bar-chart-with-icons/baricons.png",
+			"icon": "bar_chart_with_icons/bar_chart_icons.png",
 			"description": "A Horizontal bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with lengths proportional to the values that they represent. Custom icons (displayed on the y-axis) can be added together with a custom color for the bars.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": true},{"max-dimensions": 1},{"fields": 2}, {"max-measures": 1},{"records": 5}]
 		},
 		{
-			"code": "radar-chart-normalized",
+			"code": "radar_chart_normalized",
 			"name": "Radar Chart Normalized",
-			"icon": "radar-chart-normalized/radar.PNG",
+			"icon": "radar_chart_normalized/radar_chart_normalized.PNG",
 			"description": "A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables. This widget can compare 7 different (normalized) measures over 3 different measures.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": true},{"max-dimensions": 1},{"fields": 6}, {"max-measures": 5},{"max-records": 5}]
@@ -90,7 +90,7 @@
 		{
 			"code": "stats_6_kpi",
 			"name": "Card with 6 KPIs",
-			"icon": "stats_6_kpi/kpiblue.PNG",
+			"icon": "stats_6_kpi/stats_6_kpi.PNG",
 			"description": "Card with 6 slots dedicated to your stats to show. Could be used to highlight the difference w.r.t. to a fixed time frame. Colors can be fully customized.",
 			"doc": "https://app.askdata.com/docs/6kpi",
 			"constraints": [{"enabled": true},{"max-dimensions": 6},{"fields": 6}, {"max-measures": 6},{"records": 1}]
@@ -106,7 +106,7 @@
 		{
 			"code": "multiple_barchart",
 			"name": "Multiple Barchart",
-			"icon": "multiple_barchart/multiple-bars.PNG",
+			"icon": "multiple_barchart/multiple_barchart.PNG",
 			"description": "Horizontal barchart with multiple rows. Each line is separated from the others by a label",
 			"doc": "https://app.askdata.com/docs/multiple-barchart",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
@@ -114,7 +114,7 @@
 		{
 			"code": "barchart_with_gradient",
 			"name": "Barchart With Gradient",
-			"icon": "barchart_with_gradient/info.PNG",
+			"icon": "barchart_with_gradient/barchart_gradient.PNG",
 			"description": "This horizontal barplot provides several information inside one graph. The length provides the value, the color the improvement/declination of the value w.r.t. to the total value (shown as a black vertical bar)",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
@@ -122,15 +122,15 @@
 		{
 			"code": "barchart_with_line_control",
 			"name": "Barchart With Line Control",
-			"icon": "barchart_with_line_control/info.PNG",
+			"icon": "barchart_with_line_control/barchart_line_control.PNG",
 			"description": "This horizontal barchart is ideal when you want to compare a main dimension with another dimension for the same metric. Default color is red. Automatically turn in red bars below the control line.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
 		},
 		{
-			"code": "scatter-with-regression",
+			"code": "scatter_with_regression",
 			"name": "Scatter with regression line",
-			"icon": "scatter-with-regression/scatter.png",
+			"icon": "scatter_with_regression/scatter_regression.png",
 			"description": "4 different Scatter plots with regression lines.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
@@ -138,31 +138,23 @@
 		{
 			"code": "vertical_comparison_pictorial",
 			"name": "Vertical Pictorial Comparison",
-			"icon": "vertical_comparison_pictorial/pictorial.png",
+			"icon": "vertical_comparison_pictorial/vertical_comparison_pictorial.png",
 			"description": "A visualisation method that allows you to compare different categories. For example, different kind of trasports. Colors and Icons can be customized.",
-			"doc": "https://app.askdata.com/docs/available-widgets",
+			"doc": "https://app.askdata.com/docs/pictorial-comparison",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
 		},
 		{
 			"code": "word_cloud",
 			"name": "Word Cloud",
-			"icon": "word_cloud/word.png",
+			"icon": "word_cloud/word_cloud.png",
 			"description": "A visualisation method that displays how frequently words appear in a given body of text, by making the size of each word proportional to its frequency.",
-			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
-		},
-		{
-			"code": "sankey_football_field",
-			"name": "New Sankey",
-			"icon": "sankey/sankey.png",
-			"description": "Sankey with football field as bg.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
 		},
 		{
 			"code": "info_card",
 			"name": "Info Card",
-			"icon": "info_card/welcome.png",
+			"icon": "info_card/info_card.png",
 			"description": "Info Card to guide new users through the Askdata platform. Background color and text can be customized.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false}]
@@ -170,7 +162,7 @@
 		{
 			"code": "performance_comparison",
 			"name": "Comparison Card",
-			"icon": "performance_comparison/prev.png",
+			"icon": "performance_comparison/performance_comparison.png",
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
 			"doc": "https://app.askdata.com/docs/comparison",
 			"constraints": [{"enabled": true}, {"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 8}]
@@ -178,7 +170,7 @@
 		{
 			"code": "bar_race",
 			"name": "Bar Race",
-			"icon": "bar_race/race.png",
+			"icon": "bar_race/bar_race.png",
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false}]
