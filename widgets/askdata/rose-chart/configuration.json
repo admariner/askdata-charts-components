@@ -25,6 +25,7 @@
         "label": "Queries",
         "type": "queryIds",
         "readOnly": false,
+        "multiple": true,
         "viewType": "dropdown",
         "mandatory": true
     }, {
@@ -39,6 +40,7 @@
         "code": "settings.s1_id",
         "label": "Dimension",
         "type": "params",
+        "multiple": true,
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
