@@ -40,7 +40,6 @@
         "label": "Dimension",
         "type": "params",
         "viewType": "dropdown",
-        "multiple": true,
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the dimension"

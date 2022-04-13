@@ -6,63 +6,63 @@
 			"name" : "Horizontal Bar",
 			"description" : "Horizontal Bar",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar",
-			"icon" : "horizontal_bar/horizontalBar.png"
+			"icon" : "horizontal_bar/horizontal_bar.png"
 		},
 		{
 			"code": "donut", 
 			"name" : "Donut Chart",
 			"description" : "Donut Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "donut/donutChart.png"
+			"icon" : "donut/donut.png"
 		},
 		{
 			"code": "line", 
 			"name" : "Line Chart",
 			"description" : "Line Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "line/lineChart.png"
+			"icon" : "line/line.png"
 		},
 		{
 			"code": "stacked_area", 
 			"name" : "Stacked Area",
 			"description" : "Stacked Area",
 			"doc" : "https://docs.askdata.com/docs/chart-stacked-area", 
-			"icon" : "stacked_area/stackedArea.png"
+			"icon" : "stacked_area/stacked_area.png"
 		},
 		{
 			"code": "pie", 
 			"name" : "Pie Chart",
 			"description" : "Pie Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-pie-chart", 
-			"icon" : "pie/pieChart.png"
+			"icon" : "pie/pie.png"
 		},
 		{
 			"code": "stacked_horizontal", 
 			"name" : "Stacked Horizontal",
 			"description" : "Stacked Horizontal",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "stacked_horizontal/stackedHorizontal.png"
+			"icon" : "stacked_horizontal/stacked_horizontal.png"
 		},
 		{
 			"code": "vertical_bar", 
 			"name" : "Vertical Bar",
 			"description" : "Vertical Bar",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "vertical_bar/verticalBar.png"
+			"icon" : "vertical_bar/vertical_bar.png"
 		},
 		{
 			"code": "stacked_vertical", 
 			"name" : "Stacked Vertical",
 			"description" : "Stacked Vertical Bar",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "stacked_vertical/stackedVertical.png"
+			"icon" : "stacked_vertical/stacked_vertical.png"
 		},
 		{
 			"code": "radar", 
 			"name" : "Radar Chart",
 			"description" : "Radar Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-radar", 
-			"icon" : "radar/radarChart.png"
+			"icon" : "radar/radar.png"
 		}
 	],
 	"base_url": "/charts/askdata",
