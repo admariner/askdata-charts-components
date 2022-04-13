@@ -1,0 +1,17 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 54L28 27L42 42.5L56 12" stroke="#5C6570" stroke-width="2"/>
+<rect x="10" y="49" width="10" height="10" rx="5" fill="#266FF2"/>
+<rect x="23" y="22" width="10" height="10" rx="5" fill="#78ACF8"/>
+<rect x="37" y="37" width="10" height="10" rx="5" fill="#A2C6FB"/>
+<rect x="51" y="7" width="10" height="10" rx="5" fill="#CEE2FF"/>
+<rect x="14" y="66" width="2" height="4" fill="#5C6570"/>
+<rect x="28" y="66" width="2" height="4" fill="#5C6570"/>
+<rect x="42" y="66" width="2" height="4" fill="#5C6570"/>
+<rect x="56" y="66" width="2" height="4" fill="#5C6570"/>
+<rect x="2" y="55" width="2" height="4" transform="rotate(-90 2 55)" fill="#5C6570"/>
+<rect x="2" y="41" width="2" height="4" transform="rotate(-90 2 41)" fill="#5C6570"/>
+<rect x="2" y="27" width="2" height="4" transform="rotate(-90 2 27)" fill="#5C6570"/>
+<rect x="2" y="13" width="2" height="4" transform="rotate(-90 2 13)" fill="#5C6570"/>
+<rect width="2" height="70" fill="#5C6570"/>
+<rect y="68" width="70" height="2" fill="#5C6570"/>
+</svg>

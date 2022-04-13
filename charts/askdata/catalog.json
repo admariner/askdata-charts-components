@@ -6,35 +6,35 @@
 			"name" : "Horizontal Bar",
 			"description" : "Horizontal Bar",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar",
-			"icon" : "_lib/icons/IcoChartHorBar.png"
+			"icon" : "horizontal_bar/horizontalBar.png"
 		},
 		{
 			"code": "donut", 
 			"name" : "Donut Chart",
 			"description" : "Donut Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "_lib/icons/IcoChartDonut.png"
+			"icon" : "donut/donutChart.png"
 		},
 		{
 			"code": "line", 
 			"name" : "Line Chart",
 			"description" : "Line Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "_lib/icons/IcoChartLine.png"
+			"icon" : "line/lineChart.png"
 		},
 		{
 			"code": "stacked_area", 
 			"name" : "Stacked Area",
 			"description" : "Stacked Area",
 			"doc" : "https://docs.askdata.com/docs/chart-stacked-area", 
-			"icon" : "_lib/icons/IcoChartStackedArea.png"
+			"icon" : "stacked_area/stackedArea.png"
 		},
 		{
 			"code": "pie", 
 			"name" : "Pie Chart",
 			"description" : "Pie Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-pie-chart", 
-			"icon" : "_lib/icons/IcoChartPie.png"
+			"icon" : "pie/pieChart.png"
 		},
 		{
 			"code": "stacked_horizontal", 
