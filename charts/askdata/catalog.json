@@ -41,28 +41,28 @@
 			"name" : "Stacked Horizontal",
 			"description" : "Stacked Horizontal",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "_lib/icons/IcoChartStackedHor.png"
+			"icon" : "stacked_horizontal/stackedHorizontal.png"
 		},
 		{
 			"code": "vertical_bar", 
 			"name" : "Vertical Bar",
 			"description" : "Vertical Bar",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "_lib/icons/IcoChartVertBar.png"
+			"icon" : "vertical_bar/verticalBar.png"
 		},
 		{
 			"code": "stacked_vertical", 
 			"name" : "Stacked Vertical",
 			"description" : "Stacked Vertical Bar",
 			"doc" : "https://docs.askdata.com/docs/chart-horizontal-bar", 
-			"icon" : "_lib/icons/IcoChartStackedVert.png"
+			"icon" : "stacked_vertical/stackedVertical.png"
 		},
 		{
 			"code": "radar", 
 			"name" : "Radar Chart",
 			"description" : "Radar Chart",
 			"doc" : "https://docs.askdata.com/docs/chart-radar", 
-			"icon" : "_lib/icons/IcoChartRadar.png"
+			"icon" : "radar/radarChart.png"
 		}
 	],
 	"base_url": "/charts/askdata",
