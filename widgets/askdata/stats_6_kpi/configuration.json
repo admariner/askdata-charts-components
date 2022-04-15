@@ -42,7 +42,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the KPI"
     }, {
         "code": "settings.m3_id",
@@ -50,7 +50,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the KPI"
     }, {
         "code": "settings.m4_id",
@@ -58,7 +58,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the KPI"
     }, {
         "code": "settings.m5_id",
@@ -66,7 +66,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the KPI"
     }, {
         "code": "settings.m6_id",
@@ -74,7 +74,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the KPI"
     }, {
         "code": "settings.s1_id",
