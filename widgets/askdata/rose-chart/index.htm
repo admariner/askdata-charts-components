@@ -68,9 +68,14 @@ success: function(data) {
             // obj.push({value: parseFloat(values[i].replace(".", "")), name: names[i]}); 
             // }
             
+            
+            for (let i = 0; i < values.length; i++){
+                values[i] = parseFloat(values[i].toFixed(2)).toLocaleString()
+            }
+
             for (let i = 0; i < values.length; i++)
             {
-                obj.push({value: parseFloat(values[i]), name: names[i]}); 
+                obj.push({value: values[i], name: names[i]}); 
             }
 
             
