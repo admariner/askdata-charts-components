@@ -52,20 +52,25 @@ success: function(data) {
             // var values = ["123.432,43",2,3].map(String)
             // var names = ["A", "B","C"]
 
-            var values = data.fields.m1_id.data.map(String)
+            var values = data.fields.m1_id.rawData
             var names = data.fields.s1_id.data
 
             var obj = [];
             
+            // for (let i = 0; i < values.length; i++)
+            // {
+            // var temp = values[i].substr(values[i].length-3, 1 )
+            // var temp1 = values[i].substr(values[i].length-2, 1 )
+            // if (temp == ","){values[i] = values[i].slice(0, -3);}
+            // if (temp == "."){values[i] = values[i].slice(0, -3);}
+            // if (temp1 == ","){values[i] = values[i].slice(0, -2);}
+            // if (temp1 == "."){values[i] = values[i].slice(0, -2);}
+            // obj.push({value: parseFloat(values[i].replace(".", "")), name: names[i]}); 
+            // }
+            
             for (let i = 0; i < values.length; i++)
             {
-            var temp = values[i].substr(values[i].length-3, 1 )
-            var temp1 = values[i].substr(values[i].length-2, 1 )
-            if (temp == ","){values[i] = values[i].slice(0, -3);}
-            if (temp == "."){values[i] = values[i].slice(0, -3);}
-            if (temp1 == ","){values[i] = values[i].slice(0, -2);}
-            if (temp1 == "."){values[i] = values[i].slice(0, -2);}
-            obj.push({value: parseFloat(values[i].replace(".", "")), name: names[i]}); 
+                obj.push({value: parseFloat(values[i]), name: names[i]}); 
             }
 
             
