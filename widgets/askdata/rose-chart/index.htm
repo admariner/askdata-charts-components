@@ -100,7 +100,7 @@ success: function(data) {
                         roseType: 'radius',
                         label: {
                             formatter: function (d) {
-                            return String(d.value).replace(/(.)(?=(\d{3})+$)/g, '$1,');
+                            return String(d.value);
                                 }
                                 },
                         itemStyle: {
