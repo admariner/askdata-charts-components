@@ -57,27 +57,21 @@ success: function(data) {
 
             var obj = [];
             
-            // for (let i = 0; i < values.length; i++)
-            // {
-            // var temp = values[i].substr(values[i].length-3, 1 )
-            // var temp1 = values[i].substr(values[i].length-2, 1 )
-            // if (temp == ","){values[i] = values[i].slice(0, -3);}
-            // if (temp == "."){values[i] = values[i].slice(0, -3);}
-            // if (temp1 == ","){values[i] = values[i].slice(0, -2);}
-            // if (temp1 == "."){values[i] = values[i].slice(0, -2);}
-            // obj.push({value: parseFloat(values[i].replace(".", "")), name: names[i]}); 
-            // }
-            
-            
-            for (let i = 0; i < values.length; i++){
-                values[i] = parseFloat(values[i].toFixed(2)).toLocaleString()
+
+            try
+            {
+            var label = values[i].slice(-1)
+            } 
+            catch (error) 
+            {
+            console.error(error);
+            var label = ""
             }
 
             for (let i = 0; i < values.length; i++)
             {
-                obj.push({value: values[i], name: names[i]}); 
+                obj.push({value: parseFloat(values[i].toFixed(2)), name: names[i]}); 
             }
-
             
            
             option = {
@@ -86,6 +80,9 @@ success: function(data) {
                 },
                 tooltip: {
                 show:true,
+                formatter: function (d) {
+                        return (d.value.toLocaleString()) + label;
+                        },
                 trigger: 'item'
                 },
                 toolbox: {
@@ -105,7 +102,7 @@ success: function(data) {
                         roseType: 'radius',
                         label: {
                             formatter: function (d) {
-                            return String(d.value);
+                            return String(d.value.toLocaleString()) + label;
                                 }
                                 },
                         itemStyle: {
