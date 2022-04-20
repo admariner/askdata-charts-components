@@ -155,7 +155,7 @@
 			"code": "info_card",
 			"name": "Info Card",
 			"icon": "info_card/info_card.png",
-			"description": "Info Card to guide new users through the Askdata platform. Background color and text can be customized.",
+			"description": "Info Card to guide new users through the Askdata platform. Background color and text can be fully customized.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false}]
 		},
