@@ -53,6 +53,7 @@ success: function(data) {
             // var names = ["A", "B","C"]
 
             var values = data.fields.m1_id.rawData
+            var values_format = data.fields.m1_id.data
             var names = data.fields.s1_id.data
 
             var obj = [];
@@ -60,7 +61,7 @@ success: function(data) {
 
             try
             {
-            var label = values[0].slice(-1)
+            var label = values_format[0].slice(-1)
             } 
             catch (error) 
             {
