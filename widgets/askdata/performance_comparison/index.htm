@@ -106,15 +106,16 @@ success: function(data) {
       var values_format = data.fields.m1_id.data
 
 
-      try
-        {
-        var label = values_format[0].slice(-1)
-        } 
-        catch (error) 
-        {
-        console.error(error);
-        var label = ""
-      }
+      function identify_label(value) {
+                labels = ["€", "$", "£", "%"];
+                for (let i = 0; i < labels.length; i++) {
+                    if(value.indexOf(labels[i]) > -1){
+                        return(labels[i])
+                    }}
+                        return("")
+                    };
+
+      var label = identify_label(values_format[0])
 
       for (let i = 0; i < quantities.length; i++)
         {

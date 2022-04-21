@@ -57,15 +57,17 @@ for (let i = 0; i < numerical_measures.length; i++)
   numerical_measures[i] = parseFloat(numerical_measures[i].toFixed(2)); 
 }
 
-try
-  {
-  var label = values_format[0].slice(-1)
-  } 
-  catch (error) 
-  {
-  console.error(error);
-  var label = ""
-  }
+
+function identify_label(value) {
+  labels = ["€", "$", "£", "%"];
+  for (let i = 0; i < labels.length; i++) {
+      if(value.indexOf(labels[i]) > -1){
+          return(labels[i])
+      }}
+          return("")
+      };
+
+var label = identify_label(values_format[0])
 
 var check = false
 

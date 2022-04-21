@@ -59,16 +59,16 @@ success: function(data) {
             var obj = [];
             
 
-            try
-            {
-            var label = values_format[0].slice(-1)
-            } 
-            catch (error) 
-            {
-            console.error(error);
-            var label = ""
-            }
+            function identify_label(value) {
+                labels = ["€", "$", "£", "%"];
+                for (let i = 0; i < labels.length; i++) {
+                    if(value.indexOf(labels[i]) > -1){
+                        return(labels[i])
+                    }}
+                        return("")
+                    };
 
+            var label = identify_label(values_format[0])
             for (let i = 0; i < values.length; i++)
             {
                 obj.push({value: parseFloat(values[i].toFixed(2)), name: names[i]}); 
