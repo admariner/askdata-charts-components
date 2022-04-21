@@ -37,46 +37,6 @@
         "mandatory": true,
         "tooltip": "Choose the KPI"
     }, {
-        "code": "settings.m2_id",
-        "label": "KPI 2",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the KPI"
-    }, {
-        "code": "settings.m3_id",
-        "label": "KPI 3",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the KPI"
-    }, {
-        "code": "settings.m4_id",
-        "label": "KPI 4",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the KPI"
-    }, {
-        "code": "settings.m5_id",
-        "label": "KPI 5",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the KPI"
-    }, {
-        "code": "settings.m6_id",
-        "label": "KPI 6",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the KPI"
-    }, {
         "code": "settings.s1_id",
         "label": "Box's Color",
         "type": "params",
