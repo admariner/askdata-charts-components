@@ -84,15 +84,7 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose the icon size (double)"
-    },    {
-        "code": "settings.s7_id",
-        "label": "Symbol",
-        "type": "params",
-        "viewType": "text",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the symbol to be displayed next to each label"
-    },    {
+    }, {
         "code": "settings.s8_id",
         "label": "Maximum value",
         "type": "params",
