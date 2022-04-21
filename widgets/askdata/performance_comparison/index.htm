@@ -170,6 +170,9 @@ success: function(data) {
             }
           },
           axisLabel: {
+            formatter: function () {
+                        return (value.toLocaleString()) + label;
+                        },
             color:colore,
             margin: 3
           }
