@@ -48,7 +48,7 @@
         "code": "settings.s2_id",
         "label": "Bar Color",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": false,
         "tooltip": "HTML code corresponding to the Bar Color"
@@ -56,7 +56,7 @@
         "code": "settings.s3_id",
         "label": "Label color",
         "type": "params",
-        "viewType": "dropdown",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": false,
         "tooltip": "HTML code corresponding to the Label color"

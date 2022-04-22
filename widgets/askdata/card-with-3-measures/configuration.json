@@ -33,23 +33,8 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
+        "multiple" : true,
         "mandatory": true,
         "tooltip": "Choose the first measure"
-    }, {
-        "code": "settings.m2_id",
-        "label": "Measure2",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the second measure"
-    }, {
-        "code": "settings.m3_id",
-        "label": "Measure3",
-        "type": "params",
-        "viewType": "dropdown",
-        "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the third measure"
     }]
 }
