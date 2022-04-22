@@ -82,6 +82,7 @@ function identify_label(value) {
       }
 
       var titles = data1.fields.s1_id.data
+      console.log(titles)
       try {
         var barcolor = data1.fields.s2_id.data;
       } catch (error) {
@@ -95,8 +96,6 @@ function identify_label(value) {
       }
 
 
-
-      console.log(categorie)
 
       try {
         var symbol = identify_label(data1.fields.m1_id[i].data);
