@@ -79,6 +79,7 @@ function identify_label(value) {
       for (var i = 0; i < data1.fields.m1_id.length; ++i) {
         categorie.push(data1.fields.m1_id[i].name);
         this["var_" + i] = data1.fields.m1_id[i].rawData;
+        console.log(this["var_" + i])
       }
 
       var titles = data1.fields.s1_id.data
@@ -130,7 +131,6 @@ function identify_label(value) {
 
       labb = "0"
       var count = 0
-      console.log(data)
 
 
 
