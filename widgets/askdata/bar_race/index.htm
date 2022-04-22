@@ -36,40 +36,91 @@ var app = {};
 
 var option;
 
+console.log(data)
+
+
+function identify_label(value) {
+    labels = ["€", "$", "£", "%"];
+    for (let i = 0; i < labels.length; i++) {
+        if(value.indexOf(labels[i]) > -1){
+            return(labels[i])
+        }}
+            return("")
+        };
 
 
 
-const data = [];
+// data = { "id": "626175ec781ee95d197e4dcc", "agentId": "3b687a55-af81-4c1a-9fa8-b6f7e626d548", "insightId": "e7768556-fb3c-4f75-a769-31eb1b3f57e3", "componentId": "wdg1", "queryId": "data1", "type": "stats_6_kpi", "fields": { "data1": { "code": "data1", "type": "query", "data": "data1" }, "s1_id": { "code": "data1", "name": "Column1", "type": "resultset", "data": [ "Gen 21","Feb 21", "Mar 21" ], "rawData": [ "Gen 21","Feb 21", "Mar 21" ] }, "m1_id": [ { "code": "COLUMN1", "name": "Column1", "type": "resultset", "data": [ "232","132" ], "rawData": [ 232,132 ] }, { "code": "COLUMN2", "name": "Column2", "type": "resultset", "data": [ "2323","424" ], "rawData": [ 2323,424 ] }, { "code": "COLUMN3", "name": "Column3", "type": "resultset", "data": [ "567","657" ], "rawData": [ 567,657 ] }, { "code": "COLUMN_4", "name": "Column 4", "type": "resultset", "data": [ "234", "974" ], "rawData": [ 234, 974 ] } ] }, "createdAt": "2022-04-21T15:19:08.290Z" };
+
+var data1 = data
+
+
+var data = [];
 // for (let i = 0; i < 2; ++i) {
 //   data.push(Math.round(Math.random() * 200));
 // }
-var count = 1
-
-var voice = [0, 37821154, 	46535284,	54203496,	47278433,	52157095,	59164867,47736691, 56165969,	54310078,	66218240,	51052400,	54078044]
-var datar =[0, 1389089,1336505,1318379,1631587,1480739,1432100,1716844,2188243,959739,	1200884,1862210,1942294]
-var ip = [0, 8925025,9281221,10827507,10410788,8996464,13033929,8856714,9068195,85,12615544,9051561,9135366,16571209]
-var messaging = [0, 2319710,	2077577,	2829129,	2342813,	2771483,	2225890,	2199349,	3196656,3256643,	3860252,	2559835,	2770564]
-var network = [0,3956017,	4240659,	4254764,	4216304,	4186877,	4252795,	5112524,	4934827,	4641680,	5045986,	5205126,	6666506]
-var cloud = [0,	532056,	508636,	571289,	556150,	596716,	670821,	475513,	737815,	639889,	692539,	487800,	765672,]
-var hub = [0,934161, 2707308, 1888744, 940142, 1032699, 1864678, 2655509, 1764213, 1093969, 1491784, 4026901, 1942294]
-var capacity = [0,8512759, 8663241,     9489589,   8468723, 9330673, 10783493, 9349694, 9195038,   13415540,    9368518, 14850869, 17145107]
 
 
-data.push(voice[0]);
-data.push(capacity[0]);
-data.push(datar[0]);
-data.push(ip[0])
-data.push(messaging[0])
-data.push(network[0])
-data.push(cloud[0])
-data.push(hub[0])
+var categorie = []
+
+for (var i = 0; i < data1.fields.m1_id.length; ++i) {
+  categorie.push(data1.fields.m1_id[i].name);
+  this["var_" + i] = data1.fields.m1_id[i].rawData;
+}
+
+var titles = data1.fields.s1_id.data
+try {
+  var barcolor = data1.fields.s2_id.data;
+} catch (error) {
+  var barcolor = '#0c5a93';
+}
+
+try {
+  var labelcolor = data1.fields.s3_id.data;
+} catch (error) {
+  var labelcolor = '#0c5a93';
+}
 
 
-titles = ["0", "Jan 21", "Feb 21", "Mar 21", "Apr 21", "Mag 21", "Giu 21", "Lug 21", "Ago 21", "Set 21", "Ott 21", "Nov 21", "Dic 21"]
-labb = titles[0]
+
+console.log(categorie)
+
+try {
+  var symbol = identify_label(data1.fields.m1_id[i].data);
+} catch (error) {
+  var symbol = "";
+}
 
 
+// var symbol = " €"
+// var cats =  ['VOICE', "CAPACITY", 'DATA ROAMING \n & CONNECTIVITY', 'IP TRANSIT', 'MESSAGING', 'NETWORKING\n SOLUTIONS',  "SPARKLE CLOUD", 'LANDING AND\n CONNECTIVITY\n HUB']
+
+// var voice = [37821154,  46535284, 54203496, 47278433, 52157095, 59164867,47736691, 56165969,  54310078, 66218240, 51052400, 54078044]
+// var datar =[1389089,1336505,1318379,1631587,1480739,1432100,1716844,2188243,959739, 1200884,1862210,1942294]
+// var ip = [8925025,9281221,10827507,10410788,8996464,13033929,8856714,9068195,12615544,9051561,9135366,16571209]
+// var messaging = [2319710, 2077577,  2829129,  2342813,  2771483,  2225890,  2199349,  3196656,3256643,  3860252,  2559835,  2770564]
+// var network = [3956017, 4240659,  4254764,  4216304,  4186877,  4252795,  5112524,  4934827,  4641680,  5045986,  5205126,  6666506]
+// var cloud = [532056,  508636, 571289, 556150, 596716, 670821, 475513, 737815, 639889, 692539, 487800, 765672,]
+// var hub = [934161, 2707308, 1888744, 940142, 1032699, 1864678, 2655509, 1764213, 1093969, 1491784, 4026901, 1942294]
+// var capacity = [8512759, 8663241,     9489589,   8468723, 9330673, 10783493, 9349694, 9195038,   13415540,    9368518, 14850869, 17145107]
+// titles = ["Jan 21", "Feb 21", "Mar 21", "Apr 21", "Mag 21", "Giu 21", "Lug 21", "Ago 21", "Set 21", "Ott 21", "Nov 21", "Dic 21"]
+
+
+
+
+
+for (var i = 0; i < categorie.length; ++i) {
+  data.push(0);
+}
+
+
+
+
+labb = "0"
+var count = 0
 console.log(data)
+
+
 
 option = {
   title: {text : labb, left: "center", top: 10},
@@ -80,8 +131,9 @@ option = {
         axisLabel: {
         show: true,
         position: 'right',
+        color: labelcolor,
         formatter: function (d) {
-          return String(d).replace(/(.)(?=(\d{3})+$)/g, '$1,') + ' €';
+          return String(d).replace(/(.)(?=(\d{3})+$)/g, '$1,') + symbol;
         }
       },
     
@@ -89,7 +141,10 @@ option = {
   yAxis: {
     type: 'category',
     inverse: true,
-    data: ['VOICE', "CAPACITY", 'DATA ROAMING \n & CONNECTIVITY', 'IP TRANSIT', 'MESSAGING', 'NETWORKING\n SOLUTIONS',  "SPARKLE CLOUD", 'LANDING AND\n CONNECTIVITY\n HUB'],
+    data: categorie,
+    axisLabel:{
+      color: labelcolor,
+    },
     animationDuration: 300,
     animationDurationUpdate: 300,
     max: 4 // only the largest 3 bars will be displayed
@@ -100,12 +155,13 @@ option = {
       name: 'X',
       type: 'bar',
       data: data,
-      color: "#0c5a93",
+      color: barcolor,
       label: {
         show: true,
         position: 'right',
+        color: labelcolor,
         formatter: function (d) {
-          return String(d.value).replace(/(.)(?=(\d{3})+$)/g, '$1,') + ' €';
+          return String(d.value).replace(/(.)(?=(\d{3})+$)/g, '$1,') + symbol;
         },
         valueAnimation: true
       }
@@ -120,43 +176,20 @@ option = {
   animationEasingUpdate: 'linear'
 };
 function run() {
-  
-  if (count == 12) {
-      data[0] = voice[count-1];
-      data[1] = capacity[count-1];
-      data[2] = datar[count-1];
-      data[3] = ip[count-1];
-      data[4] = messaging[count-1];
-      data[5] = network[count-1];
-      data[6] = cloud[count-1];
-      data[7] = hub[count-1];
+  console.log(count)
+  if (count == (titles.length) ) {
+    
+  for (var s = 0; i < data.length; ++s) {
+    
+    data[s] = this["var_" + s][count-1]
+    
+  }
+      labb = titles[count-1]
     }
   else{
     for (var i = 0; i < data.length; ++i) {
-      if (i == 0) {
-        data[i] = voice[count];
-      } 
-      if (i == 1) {
-        data[i] = capacity[count];
-      }
-      if (i == 2) {
-        data[i] = datar[count];
-      }
-      if (i == 3) {
-        data[i] = ip[count];
-      }
-      if (i == 4) {
-        data[i] = messaging[count];
-      }
-      if (i == 5) {
-        data[i] = network[count];
-      }
-      if (i == 6) {
-        data[i] = cloud[count];
-      }
-       if (i == 7) {
-        data[i] = hub[count];
-      }
+      
+      data[i] = this["var_" + i][count];
     }
     labb = titles[count]
     count = count + 1;
@@ -187,6 +220,13 @@ setTimeout(function () {
 setInterval(function () {
   run();
 }, 4000);
+
+
+
+
+
+
+
 
 if (option && typeof option === 'object') {
     myChart.setOption(option);

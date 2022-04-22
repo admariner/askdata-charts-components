@@ -34,31 +34,31 @@
         "viewType": "dropdown",
         "multiple": true,
         "readOnly": false,
-        "mandatory": false,
+        "mandatory": true,
         "tooltip": "Choose the measures to be displayed"
     }, {
         "code": "settings.s1_id",
-        "label": "First Link",
+        "label": "Dimension",
         "type": "params",
-        "viewType": "text",
+        "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the first custom icon"
+        "mandatory": true,
+        "tooltip": "Choose the dimension"
     }, {
         "code": "settings.s2_id",
-        "label": "Second Link",
+        "label": "Bar Color",
         "type": "params",
-        "viewType": "text",
+        "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the second custom icon"
+        "mandatory": true,
+        "tooltip": "HTML code corresponding to the Bar Color"
     }, {
         "code": "settings.s3_id",
-        "label": "Third Link",
+        "label": "Label color",
         "type": "params",
-        "viewType": "text",
+        "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": false,
-        "tooltip": "Choose the third custom icon"
+        "mandatory": true,
+        "tooltip": "HTML code corresponding to the Label color"
     }]
 }
