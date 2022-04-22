@@ -29,12 +29,12 @@
         "mandatory": true
     }, {
         "code": "settings.m1_id",
-        "label": "Measure1",
+        "label": "Measures",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
         "multiple" : true,
         "mandatory": true,
-        "tooltip": "Choose the first measure"
+        "tooltip": "Choose the measures"
     }]
 }
