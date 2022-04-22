@@ -65,8 +65,7 @@ function identify_label(value) {
 
       // data = { "id": "626175ec781ee95d197e4dcc", "agentId": "3b687a55-af81-4c1a-9fa8-b6f7e626d548", "insightId": "e7768556-fb3c-4f75-a769-31eb1b3f57e3", "componentId": "wdg1", "queryId": "data1", "type": "stats_6_kpi", "fields": { "data1": { "code": "data1", "type": "query", "data": "data1" }, "s1_id": { "code": "data1", "name": "Column1", "type": "resultset", "data": [ "Gen 21","Feb 21", "Mar 21" ], "rawData": [ "Gen 21","Feb 21", "Mar 21" ] }, "m1_id": [ { "code": "COLUMN1", "name": "Column1", "type": "resultset", "data": [ "232","132" ], "rawData": [ 232,132 ] }, { "code": "COLUMN2", "name": "Column2", "type": "resultset", "data": [ "2323","424" ], "rawData": [ 2323,424 ] }, { "code": "COLUMN3", "name": "Column3", "type": "resultset", "data": [ "567","657" ], "rawData": [ 567,657 ] }, { "code": "COLUMN_4", "name": "Column 4", "type": "resultset", "data": [ "234", "974" ], "rawData": [ 234, 974 ] } ] }, "createdAt": "2022-04-21T15:19:08.290Z" };
 
-      var data1 = data
-      
+      var data1 = Object.assign({},data);      
 
 
       var data = [];
@@ -130,7 +129,6 @@ function identify_label(value) {
       console.log(data)
 
 
-
       labb = "0"
       var count = 0
 
@@ -190,7 +188,6 @@ function identify_label(value) {
         animationEasingUpdate: 'linear'
       };
       function run() {
-        console.log(count)
         if (count == (titles.length) ) {
           
         for (var s = 0; i < data.length; ++s) {
