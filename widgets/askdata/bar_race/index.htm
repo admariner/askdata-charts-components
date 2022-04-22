@@ -69,9 +69,6 @@ function identify_label(value) {
 
 
       var data = [];
-      // for (let i = 0; i < 2; ++i) {
-      //   data.push(Math.round(Math.random() * 200));
-      // }
 
 
       var categorie = []
@@ -79,6 +76,10 @@ function identify_label(value) {
       for (var i = 0; i < data1.fields.m1_id.length; ++i) {
         categorie.push(data1.fields.m1_id[i].name);
         this["var_" + i] = data1.fields.m1_id[i].rawData;
+        console.log("variabile")
+        console.log(this["var_" + i])
+
+        
       }
 
       var titles = data1.fields.s1_id.data
