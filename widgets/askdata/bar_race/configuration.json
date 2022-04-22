@@ -50,7 +50,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "HTML code corresponding to the Bar Color"
     }, {
         "code": "settings.s3_id",
@@ -58,7 +58,7 @@
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "HTML code corresponding to the Label color"
     }]
 }
