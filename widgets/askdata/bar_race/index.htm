@@ -188,6 +188,7 @@ function identify_label(value) {
         animationEasing: 'linear',
         animationEasingUpdate: 'linear'
       };
+
       function run() {
         if (count == (titles.length) ) {
           
@@ -201,7 +202,9 @@ function identify_label(value) {
         else{
           for (var i = 0; i < data.length; ++i) {
             
-            data[i] = this["var_" + i][count];
+            // data[i] = this["var_" + i][count];
+            data[i] = 50;
+
           }
           labb = titles[count]
           count = count + 1;
@@ -221,11 +224,8 @@ function identify_label(value) {
             }
             ]
         });
-        
-        // console.log(data)
-        // console.log(count)
-
       }
+
       setTimeout(function () {
         run();
       }, 10);
