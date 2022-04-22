@@ -51,7 +51,6 @@ success: function(data) {
 
 
 
-
 function identify_label(value) {
     labels = ["€", "$", "£", "%"];
     for (let i = 0; i < labels.length; i++) {
@@ -59,7 +58,7 @@ function identify_label(value) {
             return(labels[i])
         }}
             return("")
-        };
+        }
 
 
 
@@ -69,27 +68,18 @@ function identify_label(value) {
 
 
       var data = [];
+      // for (let i = 0; i < 2; ++i) {
+      //   data.push(Math.round(Math.random() * 200));
+      // }
 
 
       var categorie = []
 
       for (var i = 0; i < data1.fields.m1_id.length; ++i) {
         categorie.push(data1.fields.m1_id[i].name);
-        this["var_" + i] = data1.fields.m1_id[i].rawData;
-        console.log(i)
-        console.log(this["var_" + i])
-
-        
       }
-      console.log("variabilee_0")
-
-      console.log(var_0)
-
 
       var titles = data1.fields.s1_id.data
-      console.log("variabile_1")
-
-      console.log(var_1)
 
 
       try {
@@ -131,8 +121,11 @@ function identify_label(value) {
 
 
       for (var i = 0; i < categorie.length; ++i) {
-        data.push(30);
+        data.push(0);
       }
+
+      console.log(data)
+
 
       labb = "0"
       var count = 0
@@ -192,13 +185,12 @@ function identify_label(value) {
         animationEasing: 'linear',
         animationEasingUpdate: 'linear'
       };
-
       function run() {
         if (count == (titles.length) ) {
           
         for (var s = 0; i < data.length; ++s) {
           
-          data[s] = this["var_" + s][count-1]
+          data[s] = data1.fields.m1_id[s].rawData[count-1]
           
         }
             labb = titles[count-1]
@@ -206,9 +198,7 @@ function identify_label(value) {
         else{
           for (var i = 0; i < data.length; ++i) {
             
-            // data[i] = this["var_" + i][count];
-            data[i] = 50;
-
+            data[i] = data1.fields.m1_id[i].rawData[count];
           }
           labb = titles[count]
           count = count + 1;
@@ -228,20 +218,17 @@ function identify_label(value) {
             }
             ]
         });
-      }
+        
+        // console.log(data)
+        // console.log(count)
 
+      }
       setTimeout(function () {
         run();
       }, 10);
       setInterval(function () {
         run();
       }, 4000);
-
-    
-
-
-
-
 
 
 
