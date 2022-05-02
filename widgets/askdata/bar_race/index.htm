@@ -113,7 +113,11 @@ function identify_label(value) {
       // var capacity = [8512759, 8663241,     9489589,   8468723, 9330673, 10783493, 9349694, 9195038,   13415540,    9368518, 14850869, 17145107]
       // titles = ["Jan 21", "Feb 21", "Mar 21", "Apr 21", "Mag 21", "Giu 21", "Lug 21", "Ago 21", "Set 21", "Ott 21", "Nov 21", "Dic 21"]
 
+      var bars_to_show = categorie.length
 
+      if (bars_to_show > 5){
+      bars_to_show = 5;
+      }
 
 
 
@@ -154,7 +158,7 @@ function identify_label(value) {
           },
           animationDuration: 300,
           animationDurationUpdate: 300,
-          max: 4 // only the largest 3 bars will be displayed
+          max: bars_to_show // only the largest 5 bars will be displayed
         },
         series: [
           {
