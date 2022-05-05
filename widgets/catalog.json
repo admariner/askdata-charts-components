@@ -177,7 +177,7 @@
 		},
 		{
 			"code": "parallel_line",
-			"name": "Bar Race",
+			"name": "Parallel Line",
 			"icon": "parallel_line/parallel_line.png",
 			"description": "Card to compare two measures over time.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
