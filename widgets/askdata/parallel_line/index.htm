@@ -100,7 +100,7 @@ success: function(data)
     },
     dataZoom: [
     {
-      show: true,
+      show: false,
       bottom: 7,
       height: 10,
       realtime: true,
@@ -167,6 +167,7 @@ success: function(data)
         type: 'line',
         symbolSize: 8,
         color: "red",
+        areaStyle: {opacity:0.25},
         smooth: true,
         // prettier-ignore
         data: serie1
@@ -177,6 +178,7 @@ success: function(data)
         xAxisIndex: 1,
         yAxisIndex: 1,
         color: "green",
+        areaStyle: {opacity:0.25},
         smooth: true,
         symbolSize: 8,
         // prettier-ignore
