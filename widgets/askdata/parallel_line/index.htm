@@ -71,8 +71,17 @@ success: function(data)
     var serie1 = data.fields.m1_id.data
     var serie2 = data.fields.m2_id.data
 
+    // var timeData = ["2020", "2021"]
+    // var title1 ="aa"
+    // var title2 = "bb"
+    // var serie1 = [1,2]
+    // var serie2 = [1,2]
 
-
+    if(Math.max(...a)>Math.max(...b)){
+    var massimo = Math.max(...serie1)
+    }else{
+    var massimo = Math.max(...serie2)
+    }
 
 
     timeData = timeData.map(function (str) {
@@ -151,14 +160,14 @@ success: function(data)
         {
         name: title1,
         type: 'value',
-        max: Math.max(...serie1) +2
+        max: massimo +2
         },
         {
         gridIndex: 1,
         name: title2,
         type: 'value',
         inverse: true,
-        max: Math.max(...serie2) +2
+        max: massimo +2
         }
     ],
     series: [
