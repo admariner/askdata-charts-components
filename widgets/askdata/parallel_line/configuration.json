@@ -42,7 +42,7 @@
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the measure associated with Dimension 1(upper graph)"
+        "tooltip": "Choose the first measure(upper graph)"
     },
     {
         "code": "settings.m2_id",
@@ -51,6 +51,6 @@
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the measure associated with Dimension 2(lower graph)"
+        "tooltip": "Choose the second measure(lower graph)"
         }]
 }
