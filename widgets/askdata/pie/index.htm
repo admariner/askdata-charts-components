@@ -1,0 +1,123 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=funnel
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
+    </head>
+
+
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+    </body>
+
+    
+        <script type="text/javascript">
+
+
+//environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+            console.log(data)      
+            
+
+            var dom = document.getElementById("container");
+            var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+            });
+            var app = {};
+
+            var option;
+
+
+            // var values = ["123.432,43",2,3].map(String)
+            // var names = ["A", "B","C"]
+
+            var values = data.fields.m1_id.rawData
+            var values_format = data.fields.m1_id.data
+            var names = data.fields.s1_id.data
+
+            var obj = [];
+            
+
+            function identify_label(value) {
+                labels = ["€", "$", "£", "%"];
+                for (let i = 0; i < labels.length; i++) {
+                    if(value.indexOf(labels[i]) > -1){
+                        return(labels[i])
+                    }}
+                        return("")
+                    };
+
+            var label = identify_label(values_format[0])
+            for (let i = 0; i < values.length; i++)
+            {
+                obj.push({value: parseFloat(values[i].toFixed(2)), name: names[i]}); 
+            }
+            
+           
+            option = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    top: '5%',
+                    left: 'center'
+                },
+                series: [
+                    {
+                    name: 'Access From',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    label: {
+                    position: "inside",
+                    formatter: function (d) {
+                    return String(d.value.toLocaleString());
+                        }
+                        },
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+
+                    labelLine: {
+                        show: false
+                    },
+                    data: obj
+                    }
+                ]
+                };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+            window.addEventListener('resize', myChart.resize);
+    }
+  });
+        </script>
+
+</html>
