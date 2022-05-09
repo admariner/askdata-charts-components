@@ -172,7 +172,7 @@
 			"name": "Bar Race",
 			"icon": "bar_race/bar_race.png",
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
-			"doc": "https://app.askdata.com/docs/available-widgets",
+			"doc": "https://app.askdata.com/docs/bar-race",
 			"constraints": [{"enabled": false}]
 		},
 		{
@@ -180,7 +180,7 @@
 			"name": "Parallel Line",
 			"icon": "parallel_line/parallel_line.png",
 			"description": "Card to compare two measures over time.",
-			"doc": "https://app.askdata.com/docs/available-widgets",
+			"doc": "https://app.askdata.com/docs/parallel-lines",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 2},{"min-records": 5}]
 		}
 	],
