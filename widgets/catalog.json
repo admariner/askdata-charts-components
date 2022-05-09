@@ -182,6 +182,14 @@
 			"description": "Card to compare two measures over time.",
 			"doc": "https://app.askdata.com/docs/parallel-lines",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 2},{"min-records": 5}]
+		},
+		{
+			"code": "pie",
+			"name": "Pie Chart",
+			"icon": "pie/pie.png",
+			"description": "This Rose Diagram constructor creates circular charts to display data that contain direction and magnitude variables. A rose diagram normally comprises of 8 or 16 radiating spokes, which could , for example, represent degrees of a circle or compass points North, East, South, West and their intermediate directions.",
+			"doc": "https://app.askdata.com/docs/rose-chart",
+			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
 		}
 	],
 	"background-color": "#CCCCCC"
