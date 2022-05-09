@@ -52,6 +52,7 @@ var nomi_x = data.fields.s7_id.data
 var numerical_measures = data.fields.m1_id.rawData
 var values_format = data.fields.m1_id.data
 
+
 for (let i = 0; i < numerical_measures.length; i++)
 {
   numerical_measures[i] = parseFloat(numerical_measures[i]).toFixed(2); 
@@ -169,6 +170,7 @@ option = {
     },
     {
       name: 'glyph',
+      label: {show :true, position: "outside", formatter: function (d) {return parseInt(d.value).toLocaleString() }},
       type: 'pictorialBar',
       barGap: '-100%',
       symbolPosition: 'end',
