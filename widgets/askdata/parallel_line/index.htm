@@ -80,17 +80,17 @@
 
             
             try {
-                var label1 = data1.fields.s2_id.data;
+                var label1 = data.fields.s2_id.data;
             } catch (error) {
                 var label1 = "Count"
             }
             try {
-                var label2 = data1.fields.s3_id.data;
+                var label2 = data.fields.s3_id.data;
             } catch (error) {
                 var label2 = "Count"
             }
             try {
-                var stacked = data1.fields.s4_id.data;
+                var stacked = data.fields.s4_id.data;
             } catch (error) {
                 var stacked = true 
             }
@@ -103,6 +103,7 @@
             var titles = []
             var massimo1 = 0
             var massimo2 = 0
+
             for (var i = 0; i < data.fields.m1_id.length; ++i) {                
                 obj.push({name: data.fields.m1_id[i].name, type: 'line', symbolSize: 8, stack: stacked, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m1_id[i].data}); 
                 titles.push(data.fields.m1_id[i].name)
@@ -133,91 +134,90 @@
             });
 
 
-            option = {
-                color: colorPalette,
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        animation: false
-                    }
-                },
-                legend: {
-                    data: titles,
-                    left: "center"
-                },
-                axisPointer: {
-                    link: [
-                        {
-                            xAxisIndex: 'all'
-                        }
-                    ]
-                },
-                dataZoom: [
-                    {
-                        show: false,
-                        bottom: 7,
-                        height: 10,
-                        realtime: true,
-                        start: 20,
-                        end: 100,
-                        xAxisIndex: [0, 1]
-                    },
-                    {
-                        type: 'inside',
-                        realtime: true,
-                        start: 30,
-                        end: 70,
-                        xAxisIndex: [0, 1]
-                    }
-                ],
-                grid: [
-                    {
-                        left: 60,
-                        right: 50,
-                        bottom: '50%',
-                        height: '40%'
-                    },
-                    {
-                        left: 60,
-                        right: 50,
-                        top: '50%',
-                        height: '40%'
-                    }
-                ],
-                xAxis: [
-                    {
-                        type: 'category',
-                        boundaryGap: false,
-                        axisLine: { onZero: true },
-                        data: timeData
-                    },
-                    {
-                        gridIndex: 1,
-                        type: 'category',
-                        show: false,
-                        boundaryGap: false,
-                        axisLine: { onZero: true },
-                        data: timeData,
-                        position: 'top'
-                    }
-                ],
-                yAxis: [
-                    {
-                        name: label1,
-                        type: 'value',
-                        max: massimo1 + 1/10 * massimo1
-                    },
-                    {
-                        gridIndex: 1,
-                        name: label2,
-                        type: 'value',
-                        inverse: true,
-                        max: massimo2 + 1/10 * massimo2
-                    }
-                ],
-                series: obj
-            };
-
+    option = {
+      color: colorPalette,
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+        animation: false
+        }
+    },
+    legend: {
+        data: titles,
+        left: "center"
+    },
+    axisPointer: {
+        link: [
+        {
+            xAxisIndex: 'all'
+        }
+        ]
+    },
+    dataZoom: [
+    {
+      show: false,
+      bottom: 7,
+      height: 10,
+      realtime: true,
+      start: 20,
+      end: 100,
+      xAxisIndex: [0, 1]
+    },
+        {
+        type: 'inside',
+        realtime: true,
+        start: 30,
+        end: 70,
+        xAxisIndex: [0, 1]
+        }
+    ],
+    grid: [
+        {
+        left: 60,
+        right: 50,
+        bottom: '50%',
+        height: '40%'
+        },
+        {
+        left: 60,
+        right: 50,
+        top: '50%',
+        height: '40%'
+        }
+    ],
+    xAxis: [
+        {
+        type: 'category',
+        boundaryGap: false,
+        axisLine: { onZero: true },
+        data: timeData
+        },
+        {
+        gridIndex: 1,
+        type: 'category',
+        show: false,
+        boundaryGap: false,
+        axisLine: { onZero: true },
+        data: timeData,
+        position: 'top'
+        }
+    ],
+    yAxis: [
+        {
+        name: label1,
+        type: 'value',
+        max: massimo +2
+        },
+        {
+        gridIndex: 1,
+        name: label2,
+        type: 'value',
+        inverse: true,
+        max: massimo +2
+        }
+    ],
+    series: obj
+    };
 
             if (option && typeof option === 'object') {
                 myChart.setOption(option);
