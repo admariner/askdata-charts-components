@@ -73,8 +73,8 @@
     }, {
         "code": "settings.s4_id",
         "label": "Stacked",
-        "type": "params",
-        "viewType": "dropdown",
+        "type": "string",
+        "viewType": "text",
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Choose if the lines should be stacked (default is true)"
