@@ -187,7 +187,7 @@
 			"code": "pie",
 			"name": "Pie Chart",
 			"icon": "pie/pie.png",
-			"description": "This Rose Diagram constructor creates circular charts to display data that contain direction and magnitude variables. A rose diagram normally comprises of 8 or 16 radiating spokes, which could , for example, represent degrees of a circle or compass points North, East, South, West and their intermediate directions.",
+			"description": "A donut chart is essentially a Pie Chart with an area of the centre cut out.",
 			"doc": "https://app.askdata.com/docs/rose-chart",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
 		}
