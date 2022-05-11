@@ -57,18 +57,18 @@
     }, {
         "code": "settings.s2_id",
         "label": "First Label",
-        "type": "params",
-        "viewType": "dropdown",
+        "type": "string",
+        "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the first label(upper graph)"
     }, {
         "code": "settings.s3_id",
         "label": "Second Label",
-        "type": "params",
-        "viewType": "dropdown",
+        "type": "string",
+        "viewType": "text",
         "readOnly": false,
-        "mandatory": true,
+        "mandatory": false,
         "tooltip": "Choose the second label(upper graph)"
     }, {
         "code": "settings.s4_id",

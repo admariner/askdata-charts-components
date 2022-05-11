@@ -92,7 +92,7 @@
             try {
                 var stacked = data1.fields.s4_id.data;
             } catch (error) {
-                var stacked = true = "Count"
+                var stacked = true 
             }
 
             var option;
@@ -104,7 +104,7 @@
             var massimo1 = 0
             var massimo2 = 0
             for (var i = 0; i < data.fields.m1_id.length; ++i) {                
-                obj.push({name: data.fields.m1_id[i].name, type: 'line', symbolSize: 8, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m1_id[i].data}); 
+                obj.push({name: data.fields.m1_id[i].name, type: 'line', symbolSize: 8, stack: stacked, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m1_id[i].data}); 
                 titles.push(data.fields.m1_id[i].name)
             }
 
