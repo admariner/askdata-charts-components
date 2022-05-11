@@ -91,7 +91,11 @@
             }
             try {
                 var stacked = data.fields.s4_id.data;
-                var stacked = false 
+                if(stacked == "false"){
+                var stacked = false }
+                else{
+                    var stacked = true 
+                }
 
             } catch (error) {
                 var stacked = true 
