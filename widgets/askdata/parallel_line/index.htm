@@ -117,25 +117,25 @@
                 titles.push(data.fields.m1_id[i].name)
             }
 
-            for (var i = 0; i < data.fields.m1_id.length; ++i) {                
-                var valore_maximo = Math.max(...data.fields.m1_id[i].rawData)
-                if (valore_maximo>massimo1){
-                    massimo1 = valore_maximo
-                }
-            }
+            // for (var i = 0; i < data.fields.m1_id.length; ++i) {                
+            //     var valore_maximo = Math.max(...data.fields.m1_id[i].rawData)
+            //     if (valore_maximo>massimo1){
+            //         massimo1 = valore_maximo
+            //     }
+            // }
             
             for (var i = 0; i < data.fields.m2_id.length; ++i) {                
                 obj.push({name: data.fields.m2_id[i].name, type: 'line', symbolSize: 8, xAxisIndex: 1, stack: stacked2, yAxisIndex: 1, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m2_id[i].rawData}); 
                 titles.push(data.fields.m2_id[i].name)
             }
 
-            for (var i = 0; i < data.fields.m2_id.length; ++i) {                
-                var valore_maximo = Math.max(...data.fields.m2_id[i].rawData)
-                if (valore_maximo>massimo2){
-                    massimo2 = valore_maximo
-                }
-            }          
-            console.log(obj)
+            // for (var i = 0; i < data.fields.m2_id.length; ++i) {                
+            //     var valore_maximo = Math.max(...data.fields.m2_id[i].rawData)
+            //     if (valore_maximo>massimo2){
+            //         massimo2 = valore_maximo
+            //     }
+            // }          
+            // console.log(obj)
 
             timeData = timeData.map(function (str) {
                 return str.replace('2022/', '');
@@ -214,14 +214,14 @@
         {
         name: label1,
         type: 'value',
-        max: massimo1 + 1/5 * massimo1
+        // max: massimo1 + 1/5 * massimo1
         },
         {
         gridIndex: 1,
         name: label2,
         type: 'value',
         inverse: true,
-        max: massimo2 + 1/5 * massimo2
+        // max: massimo2 + 1/5 * massimo2
         }
     ],
     series: obj
