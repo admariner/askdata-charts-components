@@ -94,11 +94,13 @@
                 if(stacked == "false"){
                 var stacked = false }
                 else{
-                    var stacked = true 
+                    var stacked1 = "TOTAL" 
+                    var stacked1 = "TOTAL1" 
                 }
 
             } catch (error) {
-                var stacked = true 
+                var stacked1 = "TOTAL" 
+                var stacked1 = "TOTAL1" 
             }
 
             var option;
@@ -111,7 +113,7 @@
             var massimo2 = 0
 
             for (var i = 0; i < data.fields.m1_id.length; ++i) {                
-                obj.push({name: data.fields.m1_id[i].name, type: 'line', symbolSize: 8, stack: stacked, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m1_id[i].data}); 
+                obj.push({name: data.fields.m1_id[i].name, type: 'line', symbolSize: 8, stack: stacked1, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m1_id[i].data}); 
                 titles.push(data.fields.m1_id[i].name)
             }
 
@@ -123,7 +125,7 @@
             }
             
             for (var i = 0; i < data.fields.m2_id.length; ++i) {                
-                obj.push({name: data.fields.m2_id[i].name, type: 'line', symbolSize: 8, xAxisIndex: 1, stack: stacked, yAxisIndex: 1, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m2_id[i].data}); 
+                obj.push({name: data.fields.m2_id[i].name, type: 'line', symbolSize: 8, xAxisIndex: 1, stack: stacked2, yAxisIndex: 1, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m2_id[i].data}); 
                 titles.push(data.fields.m2_id[i].name)
             }
 
