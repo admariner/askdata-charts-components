@@ -95,12 +95,12 @@
                 var stacked = false }
                 else{
                     var stacked1 = "TOTAL" 
-                    var stacked1 = "TOTAL1" 
+                    var stacked2 = "TOTAL1" 
                 }
 
             } catch (error) {
                 var stacked1 = "TOTAL" 
-                var stacked1 = "TOTAL1" 
+                var stacked2 = "TOTAL1" 
             }
 
             var option;
@@ -113,24 +113,24 @@
             var massimo2 = 0
 
             for (var i = 0; i < data.fields.m1_id.length; ++i) {                
-                obj.push({name: data.fields.m1_id[i].name, type: 'line', symbolSize: 8, stack: stacked1, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m1_id[i].data}); 
+                obj.push({name: data.fields.m1_id[i].name, type: 'line', symbolSize: 8, stack: stacked1, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m1_id[i].rawData}); 
                 titles.push(data.fields.m1_id[i].name)
             }
 
             for (var i = 0; i < data.fields.m1_id.length; ++i) {                
-                var valore_maximo = Math.max(...data.fields.m1_id[i].data)
+                var valore_maximo = Math.max(...data.fields.m1_id[i].rawData)
                 if (valore_maximo>massimo1){
                     massimo1 = valore_maximo
                 }
             }
             
             for (var i = 0; i < data.fields.m2_id.length; ++i) {                
-                obj.push({name: data.fields.m2_id[i].name, type: 'line', symbolSize: 8, xAxisIndex: 1, stack: stacked2, yAxisIndex: 1, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m2_id[i].data}); 
+                obj.push({name: data.fields.m2_id[i].name, type: 'line', symbolSize: 8, xAxisIndex: 1, stack: stacked2, yAxisIndex: 1, areaStyle: {opacity:0.35}, smooth: true, data: data.fields.m2_id[i].rawData}); 
                 titles.push(data.fields.m2_id[i].name)
             }
 
             for (var i = 0; i < data.fields.m2_id.length; ++i) {                
-                var valore_maximo = Math.max(...data.fields.m2_id[i].data)
+                var valore_maximo = Math.max(...data.fields.m2_id[i].rawData)
                 if (valore_maximo>massimo2){
                     massimo2 = valore_maximo
                 }
