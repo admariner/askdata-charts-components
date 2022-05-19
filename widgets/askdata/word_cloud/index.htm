@@ -45,11 +45,14 @@
 
             /* layout */
 
-            div.jqcloud {
-                overflow: hidden;
-                position: relative;
-                margin: 20px auto;
-            }
+            /* div.jqcloud {
+                /* overflow: hidden;
+                position: absolute;
+                 width: 50%; 
+                display: flex;
+                justify-content: center;
+                align-items: center; */
+            } */
 
             div.jqcloud span {
                 padding: 0;
@@ -71,8 +74,8 @@
     </head>
 
 
-    <body>
-        <div id="word-cloud"></div>
+    <body style="width: 100%;height: 100%;">
+        <div style="width:100%; height: 100%;display: flex; align-items: center;justify-content: center;" id="word-cloud"></div>
       <script>
  
  (function( $ ) {
@@ -85,11 +88,14 @@
 
     // Default options value
     var default_options = {
+      // width: $this.width(),
+      // height: $this.height(),
       width: $this.width(),
       height: $this.height(),
       center: {
-        x: ((options && options.width) ? options.width : $this.width()) / 2.0 - 80,
-        y: ((options && options.height) ? options.height : $this.height()) / 2.0 - 75
+        x: ((options && options.width) ? options.width : $this.width()) / 2.0,
+                y: ((options && options.height) ? options.height : $this.height()) / 2.0
+
       },
       delayedMode: word_array.length > 50,
       shape: false, // It defaults to elliptic shape
@@ -326,8 +332,8 @@
 
 
 // $("#word-cloud").jQCloud(word_arrays, {
-//     width: 1000,
-//     height: 500,
+//     width: 750,
+//     height: 375,
 //     afterCloudRender: function() {
 //       $('#word-cloud > span').on('click', function(e){
 //         e.preventDefault();
@@ -374,38 +380,37 @@ for (let i = 0; i < words.length; i++)
 
 
 
-// var word_arrays = [
-//     {text: "lost credit card", weight: 20, html: {class: "category credit"}},
-//     {text: "credit limit", weight: 100.5, html: {class: "category credit"}},
-//     {text: "news credit card", weight: 9.4, html: {class: "category credit"}},
-//     {text: "credit card fees", weight: 8, html: {class: "category credit"}},
-//     {text: "credit card stolen", weight: 7.5, html: {class: "category credit"}},
-//     {text: "credit card", weight: 40, html: {class: "category credit"}},
-//     {text: "card", weight: 6.8, html: {class: "category credit"}},
-//     {text: "debit card", weight: 6.1, html: {class: "category credit"}},
-//     {text: "card charges", weight: 15, html: {class: "category credit"}},
-//     {text: "new card", weight: 3, html: {class: "category credit"}},
-//     {text: "avoid fees", weight: 30, html: {class: "category credit"}},
-//     {text: "banking fees", weight: 2.8, html: {class: "category credit"}},
-//     {text: "withdraw fees", weight: 1.75, html: {class: "category credit"}},
-//     {text: "deposit fees", weight: 4, html: {class: "category credit"}},
-//     {text: "card fees", weight: 16, html: {class: "category credit"}},
-//     {text: "withdraw money", weight: 70, html: {class: "category credit"}},
-//     {text: "deposit money", weight: 1, html: {class: "category credit"}},
-//     {text: "lodge money", weight: 9, html: {class: "category credit"}},
-//     {text: "saving money", weight: 4, html: {class: "category credit"}},
-//     {text: "money security", weight: 12, html: {class: "category credit"}},
-//     {text: "atm withdraw", weight: 30, html: {class: "category credit"}},
-//     {text: "withdraw money", weight: 7, html: {class: "category credit"}},
-//     {text: "card card withdraw", weight: 3, html: {class: "category credit"}},
-//     {text: "debit card withdraw", weight: 4, html: {class: "category credit"}},
-//     {text: "withdraw", weight: 9.1, html: {class: "category credit"}},
-//   ];
-
+var word_arrays = [
+    {text: "lost credit card", weight: 20, html: {class: "category credit"}},
+    {text: "credit limit", weight: 100.5, html: {class: "category credit"}},
+    {text: "news credit card", weight: 9.4, html: {class: "category credit"}},
+    {text: "credit card fees", weight: 8, html: {class: "category credit"}},
+    {text: "credit card stolen", weight: 7.5, html: {class: "category credit"}},
+    {text: "credit card", weight: 40, html: {class: "category credit"}},
+    {text: "card", weight: 6.8, html: {class: "category credit"}},
+    {text: "debit card", weight: 6.1, html: {class: "category credit"}},
+    {text: "card charges", weight: 15, html: {class: "category credit"}},
+    {text: "new card", weight: 3, html: {class: "category credit"}},
+    {text: "avoid fees", weight: 30, html: {class: "category credit"}},
+    {text: "banking fees", weight: 2.8, html: {class: "category credit"}},
+    {text: "withdraw fees", weight: 1.75, html: {class: "category credit"}},
+    {text: "deposit fees", weight: 4, html: {class: "category credit"}},
+    {text: "card fees", weight: 16, html: {class: "category credit"}},
+    {text: "withdraw money", weight: 70, html: {class: "category credit"}},
+    {text: "deposit money", weight: 1, html: {class: "category credit"}},
+    {text: "lodge money", weight: 9, html: {class: "category credit"}},
+    {text: "saving money", weight: 4, html: {class: "category credit"}},
+    {text: "money security", weight: 12, html: {class: "category credit"}},
+    {text: "atm withdraw", weight: 30, html: {class: "category credit"}},
+    {text: "withdraw money", weight: 7, html: {class: "category credit"}},
+    {text: "card card withdraw", weight: 3, html: {class: "category credit"}},
+    {text: "debit card withdraw", weight: 4, html: {class: "category credit"}},
+    {text: "withdraw", weight: 9.1, html: {class: "category credit"}},
+  ];
 
   $("#word-cloud").jQCloud(word_arrays, {
-    width: 800,
-    height: 450,
+    width: 725,
+    height: 350,
     afterCloudRender: function() {
       $('#word-cloud > span').on('click', function(e){
         e.preventDefault();
@@ -414,7 +419,6 @@ for (let i = 0; i < words.length; i++)
       });
     }
   });
-
 
 
  //To here

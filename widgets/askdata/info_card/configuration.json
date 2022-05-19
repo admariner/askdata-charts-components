@@ -14,12 +14,12 @@
         "readOnly": false,
         "mandatory": false
     }, {
-        "code": "description",
-        "label": "Description",
-        "type": "string",
-        "viewType": "text",
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
         "readOnly": false,
-        "mandatory": false
+        "viewType": "dropdown",
+        "mandatory": true
     },
     {
         "code": "settings.s2_id",
@@ -40,6 +40,30 @@
         "tooltip": "Queries tab"
     },
     {
+        "code": "settings.s4_id",
+        "label": "Feeds Tab",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Feeds tab"
+    },{
+        "code": "settings.s5_id",
+        "label": "Dataset Tab",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Dataset tab"
+    },{
+        "code": "settings.s6_id",
+        "label": "Tab Names",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Tab Names"
+    }, {
         "code": "settings.s1_id",
         "label": "Background Color",
         "type": "params",

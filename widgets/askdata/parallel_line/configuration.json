@@ -37,20 +37,46 @@
         "tooltip": "Choose the temporal dimension"
     }, {
         "code": "settings.m1_id",
-        "label": "Measure 1",
+        "label": "Measures",
         "type": "params",
         "viewType": "dropdown",
+        "multiple": true,
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the first measure(upper graph)"
+        "tooltip": "Choose the measures(upper graph)"
     },
     {
         "code": "settings.m2_id",
-        "label": "Measure 2",
+        "label": "Measures",
         "type": "params",
         "viewType": "dropdown",
         "readOnly": false,
+        "multiple": true,
         "mandatory": true,
-        "tooltip": "Choose the second measure(lower graph)"
-        }]
+        "tooltip": "Choose the measures(lower graph)"
+    }, {
+        "code": "settings.s2_id",
+        "label": "First Label",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the first label(upper graph)"
+    }, {
+        "code": "settings.s3_id",
+        "label": "Second Label",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose the second label(upper graph)"
+    }, {
+        "code": "settings.s4_id",
+        "label": "Stacked",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Choose if the lines should be stacked (default is true)"
+    }]
 }

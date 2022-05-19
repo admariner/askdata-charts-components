@@ -5,7 +5,7 @@
 			"icon": "card-with-3-measures/card_3_measures.PNG",
 			"description": "Card with 3 KPIs, white background. Useful to compare 3 different quantities or a single quantity variation over time. Numbers are displayed in different fixed colors.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": true},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
+			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1}]
 		},
 		{
 			"code": "leaderboard",
@@ -172,7 +172,7 @@
 			"name": "Bar Race",
 			"icon": "bar_race/bar_race.png",
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
-			"doc": "https://app.askdata.com/docs/available-widgets",
+			"doc": "https://app.askdata.com/docs/bar-race",
 			"constraints": [{"enabled": false}]
 		},
 		{
@@ -180,8 +180,16 @@
 			"name": "Parallel Line",
 			"icon": "parallel_line/parallel_line.png",
 			"description": "Card to compare two measures over time.",
-			"doc": "https://app.askdata.com/docs/available-widgets",
+			"doc": "https://app.askdata.com/docs/parallel-lines",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 2},{"min-records": 5}]
+		},
+		{
+			"code": "pie",
+			"name": "Pie Chart",
+			"icon": "pie/pie.png",
+			"description": "A donut chart is essentially a Pie Chart with an area of the centre cut out.",
+			"doc": "https://app.askdata.com/docs/rose-chart",
+			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
 		}
 	],
 	"background-color": "#CCCCCC"
