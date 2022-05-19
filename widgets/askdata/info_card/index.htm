@@ -289,7 +289,7 @@
           <div id="wrapper">
             <div id="left-side">
               <ul>
-                <li class="choose active">
+                <li id="first_icon" class="choose active">
                   <div class="icon active">
                     <svg viewBox="0 0 200 220">
                       <g filter="">
@@ -297,9 +297,8 @@
                       </g>
                     </svg>
                   </div>
-                  Welcome
                 </li>
-                <li class="pay">
+                <li id="second_icon" class="pay">
                   <div class="icon">
                     <svg viewBox="0 -5 29 50">
                       <g filter="">
@@ -307,9 +306,8 @@
                       </g>
                     </svg>
                   </div>
-                  Query
                 </li>
-                <li class="wrap">
+                <li id="third_icon"  class="wrap">
                   <div class="icon">
                     <svg viewBox="1 0 29 42">
                       <g filter="">
@@ -317,9 +315,8 @@
                       </g>
                     </svg>
                   </div>
-                  Feeds
                 </li>
-                <li class="ship">
+                <li id="fourth_icon" class="ship">
                   <div class="icon">
                     <svg viewBox="-0.5 -2 21 42">
                       <g filter="">
@@ -327,7 +324,6 @@
                       </g>
                     </svg>
                   </div>
-                  Dataset
                 </li>
               </ul>
             </div>
@@ -564,6 +560,24 @@ try
     var s5 = "Configure Dataset"
     }
 
+    try
+    {
+    var s6 = data.fields.s6_id.data
+    } 
+    catch (error) 
+    {
+    var s6 = ["Welcome", "Query", "Feeds", "Dataset"]
+    }
+
+    var div = document.getElementById('first_icon');
+    div.innerHTML += s6[0];
+    var div = document.getElementById('second_icon');
+    div.innerHTML += s6[1];
+    var div = document.getElementById('third_icon');
+    div.innerHTML += s6[2];
+    var div = document.getElementById('fourth_icon');
+    div.innerHTML += s6[3];
+
 
     // Welcome
     var div = document.getElementById('first');
@@ -577,7 +591,7 @@ try
     div.innerHTML += s4;
 
     var div = document.getElementById('fourth');
-    div.innerHTML += s4;
+    div.innerHTML += s5;
 
     document.getElementById("container").style.backgroundColor = col1    
     }

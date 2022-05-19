@@ -55,6 +55,14 @@
         "readOnly": false,
         "mandatory": false,
         "tooltip": "Dataset tab"
+    },{
+        "code": "settings.s6_id",
+        "label": "Tab Names",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Tab Names"
     }, {
         "code": "settings.s1_id",
         "label": "Background Color",
