@@ -14,12 +14,12 @@
         "readOnly": false,
         "mandatory": false
     }, {
-        "code": "description",
-        "label": "Description",
-        "type": "string",
-        "viewType": "text",
+        "code": "queryIds",
+        "label": "Queries",
+        "type": "queryIds",
         "readOnly": false,
-        "mandatory": false
+        "viewType": "dropdown",
+        "mandatory": true
     },
     {
         "code": "settings.s2_id",
