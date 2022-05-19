@@ -364,11 +364,11 @@
                     </g>
                   </svg>
                 </div>
-          
+<!--           
                 <h1>Feeds</h1>
                 
                 <p>A Feed is a curated group of Askdata Data Cards, the simplest piece of content that can be exchanged on Askdata.. You can create your own Feeds or follow Feeds created by others. Viewing a Feed timeline will show you a stream of Data Cards from only the accounts on that List. <br> <br> You can access the Feeds Section by clicking <b>Feed</b> on the left. </p>
-          
+           -->
               </div>
               <div id="fourth">
                 <div class="icon big">
@@ -378,11 +378,11 @@
                     </g>
                   </svg>
                 </div>
-          
+<!--           
                 <h1>Dataset</h1>
           
                 <p>You can connect different data sources to your workspace from multiple data sources. Every datasource has its own special features. You can connect your datasource and start querying using Natural Language. Our team developed clever algorithms that will automatically transform your words into the result you were looking for!<br> <br> Head over to the Dataset section and add yours! </p>
-          
+           -->
               </div>
             </div>
           </div>
@@ -521,7 +521,6 @@ success: function(data) {
     } 
     catch (error) 
     {
-    console.error(error);
     var col1 = "#71a0f6"
     }
 
@@ -545,6 +544,27 @@ try
     var s3 = "Configure Queries"
     }
 
+
+    try
+    {
+    var s4 = data.fields.s4_id.data
+    } 
+    catch (error) 
+    {
+    var s4 = "Configure Feeds"
+    }
+
+
+    try
+    {
+    var s5 = data.fields.s5_id.data
+    } 
+    catch (error) 
+    {
+    var s5 = "Configure Dataset"
+    }
+
+
     // Welcome
     var div = document.getElementById('first');
     div.innerHTML += s2;
@@ -552,6 +572,12 @@ try
     // #queries
     var div = document.getElementById('second');
     div.innerHTML += s3;
+
+    var div = document.getElementById('third');
+    div.innerHTML += s4;
+
+    var div = document.getElementById('fourth');
+    div.innerHTML += s4;
 
     document.getElementById("container").style.backgroundColor = col1    
     }

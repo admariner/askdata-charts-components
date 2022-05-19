@@ -40,6 +40,22 @@
         "tooltip": "Queries tab"
     },
     {
+        "code": "settings.s4_id",
+        "label": "Feeds Tab",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Feeds tab"
+    },{
+        "code": "settings.s5_id",
+        "label": "Dataset Tab",
+        "type": "params",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false,
+        "tooltip": "Dataset tab"
+    }, {
         "code": "settings.s1_id",
         "label": "Background Color",
         "type": "params",
