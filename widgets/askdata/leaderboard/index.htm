@@ -296,68 +296,57 @@
 <script>
 
 
-  function hex (c) {
-  var s = "0123456789abcdef";
-  var i = parseInt (c);
-  if (i == 0 || isNaN (c))
-    return "00";
-  i = Math.round (Math.min (Math.max (0, i), 255));
-  return s.charAt ((i - i % 16) / 16) + s.charAt (i % 16);
-}
+    function getHexNumber(color) {
+        const stringCharacters = "0123456789abcdef";
+        let index = parseInt(color);
+        if (index === 0 || isNaN(color)) {
+            return "00";
+        }
+        index = Math.round(Math.min(Math.max(0, index), 255));
+        return stringCharacters.charAt((index - index % 16) / 16) + stringCharacters.charAt(index % 16);
+    }
 
-/* Convert an RGB triplet to a hex string */
-function convertToHex (rgb) {
-  return hex(rgb[0]) + hex(rgb[1]) + hex(rgb[2]);
-}
+    function convertToHexColor(rgbString) {
+        return getHexNumber(rgbString[0]) + getHexNumber(rgbString[1]) + getHexNumber(rgbString[2]);
+    }
 
-/* Remove '#' in color hex string */
-function trim (s) { return (s.charAt(0) == '#') ? s.substring(1, 7) : s }
+    function trimHexNumber(stringNumber) {
+        return (stringNumber.charAt(0) === '#') ? stringNumber.substring(1, 7) : stringNumber;
+    }
 
-/* Convert a hex string to an RGB triplet */
-function convertToRGB (hex) {
-  var color = [];
-  color[0] = parseInt ((trim(hex)).substring (0, 2), 16);
-  color[1] = parseInt ((trim(hex)).substring (2, 4), 16);
-  color[2] = parseInt ((trim(hex)).substring (4, 6), 16);
-  return color;
-}
+    function convertToRGBColor(hexString) {
+        const finalRGBColor = [];
+        finalRGBColor[0] = parseInt((trimHexNumber(hexString)).substring(0, 2), 16);
+        finalRGBColor[1] = parseInt((trimHexNumber(hexString)).substring(2, 4), 16);
+        finalRGBColor[2] = parseInt((trimHexNumber(hexString)).substring(4, 6), 16);
+        return finalRGBColor;
+    }
 
-function generateColor(colorStart,colorEnd,colorCount){
+    function createColor(initialColor, finalColor, gradientStepCount) {
+        const gradientStart = convertToRGBColor(initialColor);
+        const gradientEnd = convertToRGBColor(finalColor);
+        const length = gradientStepCount;
+        let alphaValue = 0.0;
+        const finalColorWithAlpha = [];
 
-	// The beginning of your gradient
-	var start = convertToRGB (colorStart);    
+        for (let index = 0; index < length; index++) {
+            const colorAtStep = [];
+            alphaValue += (1.0 / length);
 
-	// The end of your gradient
-	var end   = convertToRGB (colorEnd);    
+            colorAtStep[0] = gradientStart[0] * alphaValue + (1 - alphaValue) * gradientEnd[0];
+            colorAtStep[1] = gradientStart[1] * alphaValue + (1 - alphaValue) * gradientEnd[1];
+            colorAtStep[2] = gradientStart[2] * alphaValue + (1 - alphaValue) * gradientEnd[2];
 
-	// The number of colors to compute
-	var len = colorCount;
+            finalColorWithAlpha.push(convertToHexColor(colorAtStep));
+        }
 
-	//Alpha blending amount
-	var alpha = 0.0;
-
-	var saida = [];
-	
-	for (i = 0; i < len; i++) {
-		var c = [];
-		alpha += (1.0/len);
-		
-		c[0] = start[0] * alpha + (1 - alpha) * end[0];
-		c[1] = start[1] * alpha + (1 - alpha) * end[1];
-		c[2] = start[2] * alpha + (1 - alpha) * end[2];
-
-		saida.push(convertToHex (c));
-		
-	}
-	
-	return saida;
-	
-}
+        return finalColorWithAlpha;
+    }
 
 // Exemplo de como usar
 
 
-// var tmp = generateColor('#001d9b','#123fff',10);
+// var tmp = createColor('#001d9b','#123fff',10);
 
 // console.log(tmp)
 
@@ -438,7 +427,7 @@ success: function(data)
 
 
 
-    var tmp = generateColor(end_color,start_color,10);
+    const tmp = createColor(end_color, start_color, 10);
 
 		document.getElementById("title").textContent +=  title;
     // to be added, true if you want trophy in title
