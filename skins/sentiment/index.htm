@@ -327,33 +327,6 @@
 
 <!-- BEGINNING OF THE DATA LOADER SNIPPET -->
 <script type="text/javascript">
-    const percentColors = [
-        { pct: 0.0, color: { r: 0xfe, g: 0x25, b: 0x00 } },
-        { pct: 0.5, color: { r: 0xee, g: 0xe8, b: 0x00 } },
-        { pct: 1.0, color: { r: 0x31, g: 0xd9, b: 0x16 } }
-    ];
-
-    function getColorForPercentage(pct) {
-        for (var i = 1; i < percentColors.length - 1; i++) {
-            if (pct < percentColors[i].pct) {
-                break;
-            }
-        }
-        const lower = percentColors[i - 1];
-        const upper = percentColors[i];
-        const range = upper.pct - lower.pct;
-        const rangePct = (pct - lower.pct) / range;
-        const pctLower = 1 - rangePct;
-        const pctUpper = rangePct;
-        const color = {
-            r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
-            g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
-            b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
-        };
-        return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
-        // or output as hex if preferred
-    }
-
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
     //environment_widget = "https://api-dev.askdata.com";
      environment_widget = "https://api.askdata.com";  // prod  da togliere quando porto su...

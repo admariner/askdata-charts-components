@@ -235,31 +235,30 @@
 
 <!-- BEGINNING OF THE DATA LOADER SNIPPET -->
 <script type="text/javascript">
-    const percentColors = [
+    const colorsForPercentage = [
         { pct: 0.0, color: { r: 0xfe, g: 0x25, b: 0x00 } },
         { pct: 0.5, color: { r: 0xee, g: 0xe8, b: 0x00 } },
         { pct: 1.0, color: { r: 0x31, g: 0xd9, b: 0x16 } }
     ];
 
-    function getColorForPercentage(pct) {
-        for (var i = 1; i < percentColors.length - 1; i++) {
-            if (pct < percentColors[i].pct) {
+    function getRGBColorForValue(value) {
+        for (let index = 1; index < colorsForPercentage.length - 1; index++) {
+            if (value < colorsForPercentage[index].pct) {
                 break;
             }
         }
-        const lower = percentColors[i - 1];
-        const upper = percentColors[i];
-        const range = upper.pct - lower.pct;
-        const rangePct = (pct - lower.pct) / range;
-        const pctLower = 1 - rangePct;
-        const pctUpper = rangePct;
-        const color = {
-            r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
-            g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
-            b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
+        const lowerData = colorsForPercentage[i - 1];
+        const upperData = colorsForPercentage[i];
+        const range = upperData.pct - lowerData.pct;
+        const rangeValue = (value - lowerData.pct) / range;
+        const lowerValue = 1 - rangeValue;
+        const upperValue = rangeValue;
+        const finalColor = {
+            r: Math.floor(lowerData.color.r * lowerValue + upperData.color.r * upperValue),
+            g: Math.floor(lowerData.color.g * lowerValue + upperData.color.g * upperValue),
+            b: Math.floor(lowerData.color.b * lowerValue + upperData.color.b * upperValue)
         };
-        return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
-        // or output as hex if preferred
+        return 'rgb(' + [finalColor.r, finalColor.g, finalColor.b].join(',') + ')';
     }
 
     // Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
@@ -312,7 +311,7 @@
                         buzzValue,
                         playerNumber,
                         valuePosition: START_POS + value * FULL_WIDTH / 100,
-                        valueBackground: getColorForPercentage(value/100)
+                        valueBackground: getRGBColorForValue(value/100)
                     };
 
                     // replace of the content
