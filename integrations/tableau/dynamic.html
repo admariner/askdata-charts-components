@@ -56,26 +56,38 @@
         success: function(data) {
 
             // Define function that parses CSV
-            function csvToArray(text) {
-                let p = '', row = [''], ret = [row], i = 0, r = 0, s = !0, l;
-                for (l of text) {
-                    if ('"' === l) {
-                        if (s && l === p) row[i] += l;
-                        s = !s;
-                    } else if (',' === l && s) l = row[++i] = '';
-                    else if ('\n' === l && s) {
-                        if ('\r' === p) row[i] = row[i].slice(0, -1);
-                        row = ret[++r] = [l = '']; i = 0;
-                    } else row[i] += l;
-                    p = l;
+            function parseCSVToArray(textData) {
+                let pData = '';
+                let rowData = [''];
+                let finalArray = [rowData];
+                let index = 0;
+                let rIndex = 0;
+                let sFlag = !0;
+                let character;
+                for (character of textData) {
+                    if ('"' === character) {
+                        if (sFlag && character === pData) {
+                            rowData[index] += character;
+                        }
+                        sFlag = !sFlag;
+                    } else if (',' === character && sFlag) {
+                        character = rowData[++index] = '';
+                    } else if ('\n' === character && sFlag) {
+                        if ('\r' === pData) {
+                            rowData[index] = rowData[index].slice(0, -1);
+                        }
+                        rowData = finalArray[++rIndex] = [character = ''];
+                        index = 0;
+                    } else rowData[index] += character;
+                    pData = character;
                 }
-                return ret;
-            };
+                return finalArray;
+            }
 
             console.log("raw CSV")
             console.log(data)
             
-            var parsed_csv = csvToArray(data);
+            var parsed_csv = parseCSVToArray(data);
             
             console.log("parsed CSV")
             console.log(parsed_csv);
