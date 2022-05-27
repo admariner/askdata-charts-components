@@ -59,6 +59,15 @@ success: function(data) {
             var obj = [];
             
 
+
+            var result = arr
+                .map(function (x) {
+                    if ((x == null)||(x == "N/A")) {
+                    return (0) ;
+                    }
+
+                    return x;
+                });
             function identify_label(value) {
                 labels = ["€", "$", "£", "%"];
                 for (let i = 0; i < labels.length; i++) {
