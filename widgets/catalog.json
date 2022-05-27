@@ -184,10 +184,10 @@
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 2},{"min-records": 5}]
 		},
 		{
-			"code": "pie",
-			"name": "Pie Chart",
-			"icon": "pie/pie.png",
-			"description": "A donut chart is essentially a Pie Chart with an area of the centre cut out.",
+			"code": "donut",
+			"name": "Donut Chart",
+			"icon": "donut/donut.png",
+			"description": "A Donut chart is essentially a Pie Chart with an area of the centre cut out.",
 			"doc": "https://app.askdata.com/docs/rose-chart",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
 		}
