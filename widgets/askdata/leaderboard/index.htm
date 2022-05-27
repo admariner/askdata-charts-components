@@ -387,6 +387,16 @@ success: function(data)
 		var scores = data.fields.m1_id.data
 		var title = data.fields.s2_id.data
 
+    // Clean null and N/A values
+    var scores = scores
+    .map(function (x) {
+        if ((x == null)||(x == "N/A")) {
+        return (0) ;
+        }
+
+        return x;
+    });
+
     try {
       var positions = data.fields.s3_id.data
     }

@@ -51,6 +51,16 @@ var dataAxis = data.fields.s1_id.data;
 var datas = data.fields.m1_id.data;
 var yMax = 100;
 
+var datas = datas
+                .map(function (x) {
+                    if ((x == null)||(x == "N/A")) {
+                    return (0) ;
+                    }
+
+                    return x;
+                });
+
+
 try {
     var perc =  data.fields.s2_id.data;
 }

@@ -14,13 +14,6 @@
         "readOnly": false,
         "mandatory": false
     }, {
-        "code": "description",
-        "label": "Description",
-        "type": "string",
-        "viewType": "text",
-        "readOnly": false,
-        "mandatory": false
-    }, {
         "code": "settings.m1_id",
         "label": "Value",
         "type": "params",

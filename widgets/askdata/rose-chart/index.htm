@@ -59,7 +59,7 @@ success: function(data) {
             var obj = [];
             
 
-
+            // Clean null and N/A values
             var values = values
                 .map(function (x) {
                     if ((x == null)||(x == "N/A")) {

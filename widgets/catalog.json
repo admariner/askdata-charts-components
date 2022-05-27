@@ -5,7 +5,7 @@
 			"icon": "card-with-3-measures/card_3_measures.PNG",
 			"description": "Card with 3 KPIs, white background. Useful to compare 3 different quantities or a single quantity variation over time. Numbers are displayed in different fixed colors.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1}]
+			"constraints": [{"enabled": false},{"dimensions": 1},{"measures": 1}]
 		},
 		{
 			"code": "leaderboard",
@@ -69,7 +69,7 @@
 			"icon": "bar-chart-with-icons/bar_chart_icons.png",
 			"description": "A Horizontal bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with lengths proportional to the values that they represent. Custom icons (displayed on the y-axis) can be added together with a custom color for the bars.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": true},{"max-dimensions": 1},{"fields": 2}, {"max-measures": 1},{"records": 5}]
+			"constraints": [{"enabled": false},{"max-dimensions": 1},{"fields": 2}, {"max-measures": 1},{"records": 5}]
 		},
 		{
 			"code": "radar-chart-normalized",
@@ -77,7 +77,7 @@
 			"icon": "radar-chart-normalized/radar_chart_normalized.png",
 			"description": "A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables. This widget can compare 7 different (normalized) measures over 3 different measures.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": true},{"max-dimensions": 1},{"fields": 6}, {"max-measures": 5},{"max-records": 5}]
+			"constraints": [{"enabled": false},{"max-dimensions": 1},{"fields": 6}, {"max-measures": 5},{"max-records": 5}]
 		},
 		{
 			"code": "sankey",
@@ -90,7 +90,7 @@
 		{
 			"code": "stats_6_kpi",
 			"name": "Card with 6 KPIs",
-			"icon": "stats_6_kpi/stats_6_kpi.PNG",
+			"icon": "stats_6_kpi/stats_6_kpi_icon.PNG",
 			"description": "Card with 6 slots dedicated to your stats to show. Could be used to highlight the difference w.r.t. to a fixed time frame. Colors can be fully customized.",
 			"doc": "https://app.askdata.com/docs/6kpi",
 			"constraints": [{"enabled": true},{"max-dimensions": 6},{"fields": 6}, {"max-measures": 6},{"records": 1}]
@@ -101,7 +101,7 @@
 			"icon": "funnel/funnel.png",
 			"description": "A funnel chart is a specialized chart type that demonstrates the flow of users through a business or sales process. ",
 			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": true},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
+			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
 		},
 		{
 			"code": "multiple_barchart",
@@ -117,7 +117,7 @@
 			"icon": "barchart_with_gradient/barchart_gradient.PNG",
 			"description": "This horizontal barplot provides several information inside one graph. The length provides the value, the color the improvement/declination of the value w.r.t. to the total value (shown as a black vertical bar)",
 			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": true},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
+			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
 		},
 		{
 			"code": "barchart_with_line_control",
@@ -138,15 +138,15 @@
 		{
 			"code": "vertical_comparison_pictorial",
 			"name": "Vertical Pictorial Comparison",
-			"icon": "vertical_comparison_pictorial/vertical_comparison_pictorial.png",
+			"icon": "vertical_comparison_pictorial/vertical_comparison_pictorial_icon.png",
 			"description": "A visualisation method that allows you to compare different categories. For example, different kind of trasports. Colors and Icons can be customized.",
 			"doc": "https://app.askdata.com/docs/pictorial-comparison",
-			"constraints": [{"enabled": true},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
+			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
 		},
 		{
 			"code": "word_cloud",
 			"name": "Word Cloud",
-			"icon": "word_cloud/word_cloud.png",
+			"icon": "word_cloud/word_cloud_icon.png",
 			"description": "A visualisation method that displays how frequently words appear in a given body of text, by making the size of each word proportional to its frequency.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
@@ -165,20 +165,20 @@
 			"icon": "performance_comparison/performance_comparison.png",
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
 			"doc": "https://app.askdata.com/docs/comparison",
-			"constraints": [{"enabled": true}, {"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 8}]
+			"constraints": [{"enabled": false}, {"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 8}]
 		},
 		{
 			"code": "bar_race",
 			"name": "Bar Race",
-			"icon": "bar_race/bar_race.png",
+			"icon": "bar_race/bar_race_icon.png",
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
 			"doc": "https://app.askdata.com/docs/bar-race",
-			"constraints": [{"enabled": false}]
+			"constraints": [{"enabled": true}, {"dimensions": 1},{"min-measures": 2}]
 		},
 		{
 			"code": "parallel_line",
 			"name": "Parallel Line",
-			"icon": "parallel_line/parallel_line.png",
+			"icon": "parallel_line/parallel_line_icon.png",
 			"description": "Card to compare two measures over time.",
 			"doc": "https://app.askdata.com/docs/parallel-lines",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 2},{"min-records": 5}]
@@ -189,7 +189,7 @@
 			"icon": "donut/donut.png",
 			"description": "A Donut chart is essentially a Pie Chart with an area of the centre cut out.",
 			"doc": "https://app.askdata.com/docs/rose-chart",
-			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
+			"constraints": [{"enabled": false},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
 		}
 	],
 	"background-color": "#CCCCCC"
