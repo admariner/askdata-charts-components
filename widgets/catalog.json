@@ -90,7 +90,7 @@
 		{
 			"code": "stats_6_kpi",
 			"name": "Card with 6 KPIs",
-			"icon": "stats_6_kpi/stats_6_kpi_icon.PNG",
+			"icon": "stats_6_kpi/stats_6_kpi_icon.png",
 			"description": "Card with 6 slots dedicated to your stats to show. Could be used to highlight the difference w.r.t. to a fixed time frame. Colors can be fully customized.",
 			"doc": "https://app.askdata.com/docs/6kpi",
 			"constraints": [{"enabled": true},{"max-dimensions": 6},{"fields": 6}, {"max-measures": 6},{"records": 1}]
@@ -106,7 +106,7 @@
 		{
 			"code": "multiple_barchart",
 			"name": "Multiple Barchart",
-			"icon": "multiple_barchart/multiple_barchart.PNG",
+			"icon": "multiple_barchart/multiple_barchart_icon.png",
 			"description": "Horizontal barchart with multiple rows. Each line is separated from the others by a label",
 			"doc": "https://app.askdata.com/docs/multiple-barchart",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
