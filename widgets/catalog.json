@@ -10,7 +10,7 @@
 		{
 			"code": "leaderboard",
 			"name": "Leaderboard ",
-			"icon": "leaderboard/leaderboard.PNG",
+			"icon": "leaderboard/leaderboard_icon.PNG",
 			"description": "This widget supports a leaderboard with maximum 5 elements. You can provide a quantity, a measure and a custom title. Please be aware that the quantities should already be sorted accordingly.",
 			"doc": "https://app.askdata.com/docs/leaderboard",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"records": 5}]
@@ -18,7 +18,7 @@
 		{
 			"code": "rose-chart",
 			"name": "Rose Chart",
-			"icon": "rose-chart/rose.PNG",
+			"icon": "rose-chart/rose_chart_icon.PNG",
 			"description": "This Rose Diagram constructor creates circular charts to display data that contain direction and magnitude variables. A rose diagram normally comprises of 8 or 16 radiating spokes, which could , for example, represent degrees of a circle or compass points North, East, South, West and their intermediate directions.",
 			"doc": "https://app.askdata.com/docs/rose-chart",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
@@ -42,7 +42,7 @@
 		{
 			"code": "gauge-metric",
 			"name": "Gauge Metric",
-			"icon": "gauge-metric/gauge_metric.png",
+			"icon": "gauge-metric/gauge_icon.png",
 			"description": "Also known as a speedometer chart or a dial chart, a gauge chart is one of the most commonly used visual tools to represent progressive values. Colors can be customized, blue is the default.",
 			"doc": "https://app.askdata.com/docs/gauge",
 			"constraints": [{"enabled": false}]
