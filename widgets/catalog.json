@@ -120,14 +120,6 @@
 			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
 		},
 		{
-			"code": "barchart_with_line_control",
-			"name": "Barchart With Line Control",
-			"icon": "barchart_with_line_control/barchart_line_control_icon.png",
-			"description": "This horizontal barchart is ideal when you want to compare a main dimension with another dimension for the same metric. Default color is red. Automatically turn in red bars below the control line.",
-			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
-		},
-		{
 			"code": "scatter-with-regression",
 			"name": "Scatter with regression line",
 			"icon": "scatter-with-regression/scatter_regression_icon.png",
@@ -166,6 +158,14 @@
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
 			"doc": "https://app.askdata.com/docs/comparison",
 			"constraints": [{"enabled": false}, {"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 8}]
+		},
+		{
+			"code": "barchart_with_line_control",
+			"name": "Barchart With Line Control",
+			"icon": "barchart_with_line_control/barchart_line_control_icon.png",
+			"description": "This horizontal barchart is ideal when you want to compare a main dimension with another dimension for the same metric. Default color is red. Automatically turn in red bars below the control line.",
+			"doc": "https://app.askdata.com/docs/available-widgets",
+			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
 		},
 		{
 			"code": "bar_race",
