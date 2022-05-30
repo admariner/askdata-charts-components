@@ -2,7 +2,7 @@
 	"widget": [{
 			"code": "card-with-3-measures",
 			"name": "Card with 3 measures",
-			"icon": "card-with-3-measures/card_3_measures.PNG",
+			"icon": "card-with-3-measures/card_3_measures_icon.png",
 			"description": "Card with 3 KPIs, white background. Useful to compare 3 different quantities or a single quantity variation over time. Numbers are displayed in different fixed colors.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"measures": 1}]
@@ -26,15 +26,15 @@
 		{
 			"code": "pair-comparisons",
 			"name": "Pair Comparisons",
-			"icon": "pair-comparisons/pair_comparison.PNG",
-			"description": "This widget allows to compare in an efficient way two different quantities (for example the difference in players performances that belong to two different teams). Colors can be customized. Please remove any duplicate between the two dimensions otherwise they will be collapsed.",
+			"icon": "pair-comparisons/pair_comparison_icon.png",
+			"description": "This widget allows to compare in an efficient way two different quantities . Colors can be customized. Please remove any duplicate between the two dimensions otherwise they will be collapsed.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
 		},
 		{
 			"code": "table-light-blue",
 			"name": "Table Light",
-			"icon": "table-light-blue/table_light_blue.png",
+			"icon": "table-light-blue/table_light_blue_icon.png",
 			"description": "Responsive table without a fixed number of rows but with restricted to 3 columns(mandatory). Blue is the default color.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"max-records": 1}]
@@ -50,15 +50,15 @@
 		{
 			"code": "chart-trend-cumulative-run",
 			"name": "Trend Comulative Run",
-			"icon": "chart-trend-cumulative-run/chart_trend_cumulative_run.png",
-			"description": "This widget allows to compare different quantities over time by drawing two different lines, one for each measure. Lines colors can be customized. One possible usage is for the comparison of stock prices over a fixed period of time.",
+			"icon": "chart-trend-cumulative-run/chart_trend_cumulative_run_icon.png",
+			"description": "This widget allows to compare different quantities over time by drawing two different lines, one for each measure. One possible usage is for the comparison of stock prices over a fixed period of time.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
 		},
 		{
 			"code": "vertical-bar-with-trendline",
 			"name": "Chart Vertical Bar with Trendline",
-			"icon": "vertical-bar-with-trendline/vertical_bar_trendline.png",
+			"icon": "vertical-bar-with-trendline/vertical_bar_trendline_icon.png",
 			"description": "This widget has two vertical barplots that can highlight the differences within two measures. It also provides a line that connects all the averages within the same interval. Colors of bars and line can be customized.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
@@ -66,7 +66,7 @@
 		{
 			"code": "bar-chart-with-icons",
 			"name": "Horizontal Bar Chart with custom icons",
-			"icon": "bar-chart-with-icons/bar_chart_icons.png",
+			"icon": "bar-chart-with-icons/bar_chart_icons_icon.png",
 			"description": "A Horizontal bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with lengths proportional to the values that they represent. Custom icons (displayed on the y-axis) can be added together with a custom color for the bars.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 1},{"fields": 2}, {"max-measures": 1},{"records": 5}]
@@ -74,7 +74,7 @@
 		{
 			"code": "radar-chart-normalized",
 			"name": "Radar Chart Normalized",
-			"icon": "radar-chart-normalized/radar_chart_normalized.png",
+			"icon": "radar-chart-normalized/radar_chart_normalized_icon.png",
 			"description": "A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables. This widget can compare 7 different (normalized) measures over 3 different measures.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 1},{"fields": 6}, {"max-measures": 5},{"max-records": 5}]
@@ -82,7 +82,7 @@
 		{
 			"code": "sankey",
 			"name": "Sankey",
-			"icon": "sankey/sankey.png",
+			"icon": "sankey/sankey_icon.png",
 			"description": "Sankey diagrams emphasize the major transfers or flows within a system. They help locate the most important contributions to a flow. Number of layers is fixed to 4",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
@@ -98,7 +98,7 @@
 		{
 			"code": "funnel",
 			"name": "Funnel",
-			"icon": "funnel/funnel.png",
+			"icon": "funnel/funnel_icon.png",
 			"description": "A funnel chart is a specialized chart type that demonstrates the flow of users through a business or sales process. ",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
@@ -114,7 +114,7 @@
 		{
 			"code": "barchart_with_gradient",
 			"name": "Barchart With Gradient",
-			"icon": "barchart_with_gradient/barchart_gradient.PNG",
+			"icon": "barchart_with_gradient/barchart_gradient_icon.PNG",
 			"description": "This horizontal barplot provides several information inside one graph. The length provides the value, the color the improvement/declination of the value w.r.t. to the total value (shown as a black vertical bar)",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
@@ -122,7 +122,7 @@
 		{
 			"code": "barchart_with_line_control",
 			"name": "Barchart With Line Control",
-			"icon": "barchart_with_line_control/barchart_line_control.PNG",
+			"icon": "barchart_with_line_control/barchart_line_control_icon.PNG",
 			"description": "This horizontal barchart is ideal when you want to compare a main dimension with another dimension for the same metric. Default color is red. Automatically turn in red bars below the control line.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
@@ -130,7 +130,7 @@
 		{
 			"code": "scatter-with-regression",
 			"name": "Scatter with regression line",
-			"icon": "scatter-with-regression/scatter_regression.png",
+			"icon": "scatter-with-regression/scatter_regression_icon.png",
 			"description": "4 different Scatter plots with regression lines.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"fields": 2}, {"measures": 1},{"min-records": 1}, {"max-records": 10}]
@@ -154,7 +154,7 @@
 		{
 			"code": "info_card",
 			"name": "Info Card",
-			"icon": "info_card/info_card.png",
+			"icon": "info_card/info_card_icon.png",
 			"description": "Info Card to guide new users through the Askdata platform. Background color and text can be fully customized.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false}]
@@ -162,7 +162,7 @@
 		{
 			"code": "performance_comparison",
 			"name": "Comparison Card",
-			"icon": "performance_comparison/performance_comparison.png",
+			"icon": "performance_comparison/performance_comparison_icon.png",
 			"description": "Card to compare performances. Background color, icon and text can be customized.",
 			"doc": "https://app.askdata.com/docs/comparison",
 			"constraints": [{"enabled": false}, {"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 8}]
@@ -186,7 +186,7 @@
 		{
 			"code": "donut",
 			"name": "Donut Chart",
-			"icon": "donut/donut.png",
+			"icon": "donut/donut_icon.png",
 			"description": "A Donut chart is essentially a Pie Chart with an area of the centre cut out.",
 			"doc": "https://app.askdata.com/docs/rose-chart",
 			"constraints": [{"enabled": false},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
