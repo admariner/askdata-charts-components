@@ -5,7 +5,7 @@
 			"icon": "card-with-3-measures/card_3_measures_icon.png",
 			"description": "Card with 3 KPIs, white background. Useful to compare 3 different quantities or a single quantity variation over time. Numbers are displayed in different fixed colors.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
-			"constraints": [{"enabled": false},{"dimensions": 1},{"measures": 1}]
+			"constraints": [{"enabled": true}, {"dimensions": 0}, {"measures": 3}, {"records": 1}]
 		},
 		{
 			"code": "leaderboard",
