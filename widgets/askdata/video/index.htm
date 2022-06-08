@@ -31,7 +31,7 @@
     <body style="width: 100%;height: 100%;">
         
         <div id="container" style="width:100%; height: 100%;display: flex; align-items: center;justify-content: center;">
-        <iframe id="videoframe" style="position: absolute; width:0; height:0; border:0;" width="100%" height="100%" src="test" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="videoframe" style="position: absolute; width:0; height:0; border:0;" src="https://www.youtube.com/embed/IxqDIGusjko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
         <div id = "toremove">
         <center><h2>
@@ -93,6 +93,9 @@ success: function(data) {
     
     document.getElementById("toremove").remove();
     document.getElementById("videoframe").src = link;
+    document.getElementById("videoframe").width = "100%";
+    document.getElementById("videoframe").height = "100%";
+
     document.getElementById("videoframe").removeAttribute("style");
     }
 
