@@ -1,0 +1,25 @@
+{
+	"configuration": [{
+        "code": "code",
+        "label": "Chart code",
+        "type": "string",
+        "viewType": "hidden",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "name",
+        "label": "Name",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": false
+    }, {
+        "code": "settings.s1_id",
+        "label": "Video Link",
+        "type": "string",
+        "viewType": "text",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Provide the video link, please use the embedded one!"
+    }]
+}

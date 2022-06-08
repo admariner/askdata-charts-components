@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        <!-- These imports are required -->
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <!-- Roboto font -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+        <!-- You can leave this library import if you use eCharts library otherwise you can remove it -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        
+        <!-- You can leave this library import if you use JQuery. Beware that this example uses JQuery -->
+        <script src="/lib/scripts/jquery.min.js"></script>
+
+        <!-- You can leave this library import if you use Mustache library otherwise you can remove it -->
+        <script src="https://unpkg.com/mustache@latest"></script>
+
+        <!-- Default styling -->
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        
+        <!-- Other JS libraries or CSS import-->
+        <!-- Put your libaries here --->
+    </head>
+
+    <body style="width: 100%;height: 100%;">
+        
+        <div id="container" style="width:100%; height: 100%;display: flex; align-items: center;justify-content: center;">
+            <div id = "toremove">
+            
+            
+            <center><h2>
+            Please enter the Embedded link of your video.
+            
+            </h2></center>
+            </div>
+    <!--             
+                <iframe id="videoframe" width="100%" height="100%" src="test" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 -->
+            </div>
+
+    </body>
+
+
+
+<!-- BEGINNING OF THE DATA LOADER SNIPPET -->
+<script type="text/javascript">
+
+// Uncomment to test on localhost after the publish on DEV before the approval in QA and/or PROD
+//environment_widget = "https://api-dev.askdata.com";
+//environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+console.log("I'm going to request data");
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+
+    console.log("Requesting data if the WS answers 200");
+    /// PUT YOUR CODE THAT RENDER THE WIDGET RESULTS
+
+    //Log data repsonse
+    console.log(data);
+
+    // Select the HTML to render as temple
+    var template = document.getElementById('container').innerHTML;
+    
+    // Rendering of the template
+    var rendered = Mustache.render(template, data);
+    
+    // replace of the SVG
+    document.getElementById('container').innerHTML = rendered;
+
+    try
+    {
+    var link = data.fields.s1_id.data
+    
+    } 
+
+    catch (error) 
+    {
+    console.log("link not found")
+    }
+    var iframe = document.createElement('iframe');
+    iframe.style.width = "100%"
+    iframe.src = link;
+    document.getElementById("container").appendChild(iframe); 
+
+     document.getElementById("toremove").remove(); 
+        
+    }
+
+  });
+</script>
+<!-- END OF THE DATA LOADER SNIPPET -->
+
+</html>
+    
