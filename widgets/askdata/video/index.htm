@@ -89,15 +89,27 @@ success: function(data) {
     console.log("link not found")
     link = ""
     }
-    if(link!=""){
-    
-    document.getElementById("toremove").remove();
-    document.getElementById("videoframe").src = link+ "?hl=en";
-    document.getElementById("videoframe").width = "100%";
-    document.getElementById("videoframe").height = "100%";
 
-    document.getElementById("videoframe").removeAttribute("style");
-    }
+
+
+
+    if(link!=""){
+
+        if (link.includes("/embed/")){
+            link = link + "?hl=en"
+        }
+        else
+        {
+            link = "https://www.youtube-nocookie.com/embed/" + link.split("=")[1].split("&")[0] + "?hl=en"
+        }
+                
+        document.getElementById("toremove").remove();
+        document.getElementById("videoframe").src = link;
+        document.getElementById("videoframe").width = "100%";
+        document.getElementById("videoframe").height = "100%";
+
+        document.getElementById("videoframe").removeAttribute("style");
+        }
 
 
 

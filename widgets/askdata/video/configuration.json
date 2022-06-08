@@ -27,6 +27,6 @@
         "viewType": "text",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Provide the video link, please use the embedded one!"
+        "tooltip": "Provide the video link, preferably the embedded one!"
     }]
 }
