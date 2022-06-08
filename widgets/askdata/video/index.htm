@@ -31,18 +31,17 @@
     <body style="width: 100%;height: 100%;">
         
         <div id="container" style="width:100%; height: 100%;display: flex; align-items: center;justify-content: center;">
-            <div id = "toremove">
-            
-            
-            <center><h2>
-            Please enter the Embedded link of your video.
-            
-            </h2></center>
-            </div>
-    <!--             
-                <iframe id="videoframe" width="100%" height="100%" src="test" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                 -->
-            </div>
+                <iframe id="videoframe" style="position: absolute; width:0; height:0; border:0;" width="100%" height="100%" src="test" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id = "toremove">
+        
+        
+        <center><h2>
+        Please enter the Embedded link of your video.
+
+        </h2></center>
+        </div>
+
+        </div>
 
     </body>
 
@@ -80,7 +79,7 @@ success: function(data) {
     
     // replace of the SVG
     document.getElementById('container').innerHTML = rendered;
-
+ 
     try
     {
     var link = data.fields.s1_id.data
@@ -90,14 +89,17 @@ success: function(data) {
     catch (error) 
     {
     console.log("link not found")
+    link = "a"
     }
-    var iframe = document.createElement('iframe');
-    iframe.style.width = "100%"
-    iframe.src = link;
-    document.getElementById("container").appendChild(iframe); 
+    if(link!=""){
+    
+    document.getElementById("toremove").remove();
+    document.getElementById("videoframe").src = link;
+    document.getElementById("videoframe").removeAttribute("style");
+    }
 
-     document.getElementById("toremove").remove(); 
-        
+
+
     }
 
   });
