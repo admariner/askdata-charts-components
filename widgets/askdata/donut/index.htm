@@ -87,14 +87,14 @@ success: function(data) {
             data: data_for_series,
             labelLine:{length:30},
             label: {
-                fontSize:12,
+                fontSize:11,
                 formatter: function (value) {
                 return (
                     value.name +
-                    '\n\n\n\n' +
+                    '\n\n\n' +
                     'Valore Assoluto: ' +
-                    value.value +
-                    '\n\n\n\n' +
+                    value.value.toLocaleString() +
+                    '\n\n\n' +
                     'Valore %: ' + value.data.valore_perc
                 );
                 }
