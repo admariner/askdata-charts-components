@@ -74,10 +74,10 @@ success: function(data) {
         option = {
         tooltips: {enabled: false},
         legend: {
-            padding: 0,
             orient: 'horizontal',
             left: 'center',
-            bottom: 0
+            top: "2",
+            padding: 0
         },
         series: [
             {
@@ -89,7 +89,8 @@ success: function(data) {
             data: data_for_series,
             labelLine:{length:30},
             label: {
-                fontSize:11,
+                fontSize:10,
+                fontFamily: "Roboto",
                 formatter: function (value) {
                 return (
                     value.name +
@@ -97,7 +98,7 @@ success: function(data) {
                     'Valore Assoluto: ' +
                     value.value.toLocaleString() +
                     '\n\n' +
-                    'Valore %: ' + value.data.valore_perc
+                    'Valore Percentuale: ' + value.data.valore_perc
                 );
                 }
             }
