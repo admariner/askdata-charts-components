@@ -81,11 +81,11 @@ success: function(data) {
         },
         series: [
             {
-            center: ['50%', '48%'],
+            center: ['50%', '50%'],
             color: colorPalette,
             name: '',
             type: 'pie',
-            radius: ['40%', '70%'],
+            radius: ['40%', '65%'],
             data: data_for_series,
             labelLine:{length:30},
             label: {
@@ -93,10 +93,10 @@ success: function(data) {
                 formatter: function (value) {
                 return (
                     value.name +
-                    '\n\n\n' +
+                    '\n\n' +
                     'Valore Assoluto: ' +
                     value.value.toLocaleString() +
-                    '\n\n\n' +
+                    '\n\n' +
                     'Valore %: ' + value.data.valore_perc
                 );
                 }
