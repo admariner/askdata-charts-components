@@ -85,16 +85,16 @@ success: function(data) {
             type: 'pie',
             radius: ['40%', '70%'],
             data: data_for_series,
-            labelLine:{length:20},
+            labelLine:{length:30},
             label: {
                 fontSize:12,
                 formatter: function (value) {
                 return (
                     value.name +
-                    '\n\n' +
+                    '\n\n\n\n' +
                     'Valore Assoluto: ' +
                     value.value +
-                    '\n\n' +
+                    '\n\n\n\n' +
                     'Valore %: ' + value.data.valore_perc
                 );
                 }
