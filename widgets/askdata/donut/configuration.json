@@ -34,7 +34,15 @@
         "viewType": "dropdown",
         "readOnly": false,
         "mandatory": true,
-        "tooltip": "Choose the measure"
+        "tooltip": "Choose the absolute measure"
+    }, {
+        "code": "settings.m2_id",
+        "label": "Measure",
+        "type": "params",
+        "viewType": "dropdown",
+        "readOnly": false,
+        "mandatory": true,
+        "tooltip": "Choose the percentage measure"
     }, {
         "code": "settings.s1_id",
         "label": "Dimension",

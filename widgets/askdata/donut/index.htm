@@ -55,64 +55,56 @@ success: function(data) {
             // var values = ["123.432,43",2,3].map(String)
             // var names = ["A", "B","C"]
 
-            var values = data.fields.m1_id.rawData
-            var values_format = data.fields.m1_id.data
-            var names = data.fields.s1_id.data
-
-            var obj = [];
             
+        var colorPalette = ['#339966', '#ffa31a'];
+        var labels =  data.fields.s1_id.data;
+        var valori_perc = data.fields.m2_id.data;
+        var valori = data.fields.m1_id.rawData;
 
-            function identify_label(value) {
-                labels = ["€", "$", "£", "%"];
-                for (let i = 0; i < labels.length; i++) {
-                    if(value.indexOf(labels[i]) > -1){
-                        return(labels[i])
-                    }}
-                        return("")
-                    };
+        data_for_series = [];
 
-            var label = identify_label(values_format[0])
-            for (let i = 0; i < values.length; i++)
+        for (let s = 0; s < labels.length; s++) {
+        data_for_series.push({
+            value: valori[s],
+            name: labels[s],
+            valore_perc: valori_perc[s]
+        });
+        }
+
+        option = {
+        tooltips: {enabled: false},
+        legend: {
+            orient: 'horizontal',
+            left: 'center',
+            bottom: 0
+        },
+        series: [
             {
-                obj.push({value: parseFloat(values[i].toFixed(2)), name: names[i]}); 
+            color: colorPalette,
+            name: '',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            data: data_for_series,
+            labelLine:{length:20},
+            label: {
+                fontSize:12,
+                formatter: function (value) {
+                return (
+                    value.name +
+                    '\n\n' +
+                    'Valore Assoluto: ' +
+                    value.value +
+                    '\n\n' +
+                    'Valore %: ' + value.data.valore_perc
+                );
+                }
             }
-            
-           
-            option = {
-                tooltip: {
-                    trigger: 'item'
-                },
-                legend: {
-                    top: '5%',
-                    left: 'center'
-                },
-                series: [
-                    {
-                    name: 'Access From',
-                    type: 'pie',
-                    radius: ['40%', '70%'],
-                    label: {
-                    position: "inside",
-                    formatter: function (d) {
-                    return String(d.value.toLocaleString());
-                        }
-                        },
-                    avoidLabelOverlap: false,
-                    itemStyle: {
-                        borderRadius: 10,
-                        borderColor: '#fff',
-                        borderWidth: 2
-                    },
+            }
+        ]
+        };
 
-                    labelLine: {
-                        show: false
-                    },
-                    data: obj
-                    }
-                ]
-                };
 
-            if (option && typeof option === 'object') {
+    if (option && typeof option === 'object') {
                 myChart.setOption(option);
             }
             window.addEventListener('resize', myChart.resize);
