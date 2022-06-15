@@ -107,13 +107,12 @@ success: function(data) {
 
 
             option = {
-            responsive: true,
-            maintainAspectRatio: true,
             series: [
             {
             type: 'gauge',
             startAngle: 90,
             endAngle: -270,
+            radius:"95%",
             max: Math.max(...values),
             pointer: {
                 show: false
