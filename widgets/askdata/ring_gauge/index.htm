@@ -112,6 +112,7 @@ success: function(data) {
             type: 'gauge',
             startAngle: 90,
             endAngle: -270,
+            max: Math.max(...values),
             pointer: {
                 show: false
             },
