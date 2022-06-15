@@ -198,6 +198,14 @@
 			"description": "This widget allows you to incorporate a video into your card. You just have the provide the embedded link.",
 			"doc": "https://app.askdata.com/docs/rose-chart",
 			"constraints": [{"enabled": false}]
+		},
+		{
+			"code": "ring_gauge",
+			"name": "Ring Gauge",
+			"icon": "ring_gauge/ring_gauge_icon.png",
+			"description": "A Ring Gauge is similar to the gauge Chart,one of the most commonly used visual tools to represent progressive values. Can compare 3 different values.",
+			"doc": "https://app.askdata.com/docs/rose-chart",
+			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"records": 3}]
 		}
 	],
 	"background-color": "#CCCCCC"

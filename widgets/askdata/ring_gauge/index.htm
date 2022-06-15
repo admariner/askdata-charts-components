@@ -1,0 +1,177 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=funnel
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script src="/lib/scripts/utils.js"></script>
+        <script src="/lib/scripts/env.js"></script>
+        <script src="/lib/scripts/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/lib/styles/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/lib/styles/style.css">
+        <script src="https://unpkg.com/mustache@latest"></script>
+    </head>
+
+
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+    </body>
+
+    
+        <script type="text/javascript">
+
+
+//environment_widget = "https://api-dev.askdata.com";
+// environment_widget = "https://api-qa.askdata.com"
+// environment_widget = "https://api.askdata.com"  // prod  da togliere quando porto su...
+
+
+$.ajax({
+
+url: environment_widget +"/smartinsight/widgets/" + getUrlParameter('widgetId'),
+type: "GET",
+async: false,
+beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + getToken() 
+ ).setRequestHeader('Content-Type','application/json')},
+success: function(data) { 
+            console.log(data)      
+            
+
+            var dom = document.getElementById("container");
+            var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+            });
+            var app = {};
+
+            var option;
+
+            function identify_label(value) {
+                labels = ["€", "$", "£", "%"];
+                for (let i = 0; i < labels.length; i++) {
+                    if(value.indexOf(labels[i]) > -1){
+                        return(labels[i])
+                    }}
+                        return("")
+                    };
+
+            var names = data.fields.s1_id.data
+            var values = data.fields.m1_id.rawData
+            var label = identify_label(values[0])
+            var values = values
+                .map(function (x) {
+                    if ((x == null)||(x == "N/A")) {
+                    return (0) ;
+                    }
+
+                    return x;
+                });
+
+
+
+            var label = 
+            var gaugeData = [];
+
+            gaugeData.push({
+            value: values[0],
+            name: names[0],
+            title: { offsetCenter: ['0%', '-30%'] },
+            detail: {
+            valueAnimation: true,
+            offsetCenter: ['0%', '-20%']
+            }
+            });
+
+            gaugeData.push({
+            value: values[1],
+            name: names[1],
+            title: { offsetCenter: ['0%', '0%'] },
+            detail: {
+            valueAnimation: true,
+            offsetCenter: ['0%', '10%']
+            }
+            });
+
+            gaugeData.push({
+            value: values[2],
+            name: names[2],
+            title: { offsetCenter: ['0%', '30%'] },
+            detail: {
+            valueAnimation: true,
+            offsetCenter: ['0%', '40%']
+            }
+            });
+
+
+            option = {
+            series: [
+            {
+            type: 'gauge',
+            startAngle: 90,
+            endAngle: -270,
+            pointer: {
+                show: false
+            },
+            progress: {
+                show: true,
+                overlap: false,
+                roundCap: true,
+                clip: false,
+                itemStyle: {
+                borderWidth: 1,
+                borderColor: '#464646'
+                }
+            },
+            axisLine: {
+                lineStyle: {
+                width: 40
+                }
+            },
+            splitLine: {
+                show: false,
+                distance: 0,
+                length: 10
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                show: false,
+                distance: 50
+            },
+            data: gaugeData,
+            title: {
+                fontSize: 14
+            },
+            detail: {
+                width: 75,
+                height: 10,
+                fontSize: 14,
+                padding: 5,
+                color: 'auto',
+                borderColor: 'auto',
+                borderRadius: 20,
+                borderWidth: 1,
+                formatter: function (value) {
+                return (value.toLocaleString() + label);
+                }              
+
+            }
+            }
+            ]
+            };
+
+    if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+            window.addEventListener('resize', myChart.resize);
+    }
+  });
+        </script>
+
+</html>
