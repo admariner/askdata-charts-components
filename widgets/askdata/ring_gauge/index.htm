@@ -62,7 +62,7 @@ success: function(data) {
 
             var names = data.fields.s1_id.data
             var values = data.fields.m1_id.rawData
-            var label = identify_label(values[0])
+            var label = identify_label(data.fields.m1_id.data[0])
             var values = values
                 .map(function (x) {
                     if ((x == null)||(x == "N/A")) {
