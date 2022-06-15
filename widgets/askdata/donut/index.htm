@@ -87,17 +87,17 @@ success: function(data) {
             type: 'pie',
             radius: ['50%', '65%'],
             data: data_for_series,
-            labelLine:{length:30},
+            labelLine:{length:20},
             label: {
                 fontSize:13,
                 fontFamily: "Roboto",
                 formatter: function (value) {
                 return (
                     value.name +
-                    '\n\n' +
+                    '\n' +
                     'Valore Assoluto: ' +
                     value.value.toLocaleString() +
-                    '\n\n' +
+                    '\n' +
                     'Valore Percentuale: ' + value.data.valore_perc
                 );
                 }
