@@ -94,7 +94,7 @@ function identify_label(value) {
 
 
       try {
-        var symbol = identify_label(data1.fields.m1_id[0].data);
+        var symbol = identify_label(data1.fields.m1_id[0].data[0]);
       } catch (error) {
         var symbol = "";
       }
@@ -172,7 +172,7 @@ function identify_label(value) {
               position: 'right',
               color: labelcolor,
               formatter: function (d) {
-                return String(d.value).replace(/(.)(?=(\d{3})+$)/g, '$1,') + symbol;
+                return String(d.value).replace(/(.)(?=(\d{3})+$)/g, '$1,').toLocaleString() + symbol;
               },
               valueAnimation: true
             }
