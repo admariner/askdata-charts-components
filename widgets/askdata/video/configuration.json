@@ -7,13 +7,6 @@
         "readOnly": false,
         "mandatory": false
     }, {
-        "code": "queryIds",
-        "label": "Queries",
-        "type": "queryIds",
-        "readOnly": false,
-        "viewType": "dropdown",
-        "mandatory": true
-    }, {
         "code": "name",
         "label": "Name",
         "type": "string",
