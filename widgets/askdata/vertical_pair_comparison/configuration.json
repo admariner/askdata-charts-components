@@ -35,7 +35,7 @@
         "readOnly": false,
         "mandatory": true,
         "tooltip": "Choose the dimension (for example, Timestamp)"
-    } {
+    }, {
         "code": "settings.m1_id",
         "label": "Measure 1",
         "type": "params",
