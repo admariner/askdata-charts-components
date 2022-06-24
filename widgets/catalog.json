@@ -208,9 +208,9 @@
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"records": 3}]
 		},
 		{
-			"code": "vertical_pair_comparisons",
-			"name": "Vertical Pair Comparisons",
-			"icon": "vertical_pair_comparisons/vertical_pair_comparison_icon.png",
+			"code": "vertical_pair_comparison",
+			"name": "Vertical Pair Comparison",
+			"icon": "vertical_pair_comparison/vertical_pair_comparison_icon.png",
 			"description": "This widget allows to compare in an efficient way two different quantities over a single dimension.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": true},{"dimensions": 1}, {"measures": 2}]
