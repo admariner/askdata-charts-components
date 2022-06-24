@@ -88,12 +88,21 @@
                 return '';
             }
 
-            m1_data_label = data.fields.m1_id.data
-            var label = identify_label(m1_data_label[0].toString())
-            m1_data = data.fields.m1_id.rawData
+            m1_data = data.fields.m1_id.data
+            var label = identify_label(m1_data[0].toString())
             m1_label = data.fields.m1_id.name
-            m2_data = data.fields.m2_id.rawData
+            m2_data = data.fields.m2_id.data
             m2_label = data.fields.m2_id.name
+
+
+            for(var i = 0; i < m1_data.length; i++)
+            {
+                m1_data[i] = parseInt(m1_data[i].toString().replace(' %', ''));
+                m2_data[i] = parseInt(m2_data[i].toString().replace(' %', ''));
+            }
+
+
+
 
             massimo1 = Math.max(...m1_data);
             massimo2 = Math.max(...m2_data);
