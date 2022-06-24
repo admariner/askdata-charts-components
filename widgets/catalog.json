@@ -24,9 +24,9 @@
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"min-records": 2},{"max-records": 10}]
 		},
 		{
-			"code": "pair-comparisons",
+			"code": "horizontal-pair-comparisons",
 			"name": "Pair Comparisons",
-			"icon": "pair-comparisons/pair_comparison_icon.png",
+			"icon": "horizontal-pair-comparisons/horizontal-pair_comparison_icon.png",
 			"description": "This widget allows to compare in an efficient way two different quantities . Colors can be customized. Please remove any duplicate between the two dimensions otherwise they will be collapsed.",
 			"doc": "https://app.askdata.com/docs/available-widgets",
 			"constraints": [{"enabled": false},{"max-dimensions": 3},{"fields": 3}, {"max-measures": 3},{"records": 1}]
@@ -206,6 +206,14 @@
 			"description": "A Ring Gauge is similar to the gauge Chart,one of the most commonly used visual tools to represent progressive values. Can compare 3 different values.",
 			"doc": "https://app.askdata.com/docs/rose-chart",
 			"constraints": [{"enabled": true},{"dimensions": 1},{"measures": 1},{"records": 3}]
+		},
+		{
+			"code": "vertical-pair-comparisons",
+			"name": "Vertical Pair Comparisons",
+			"icon": "vertical_pair_comparisons/vertical_pair_comparison_icon.png",
+			"description": "This widget allows to compare in an efficient way two different quantities over a single dimension.",
+			"doc": "https://app.askdata.com/docs/available-widgets",
+			"constraints": [{"enabled": true},{"dimensions": 1}, {"measures": 2}]
 		}
 	],
 	"background-color": "#CCCCCC"
