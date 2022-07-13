@@ -195,7 +195,6 @@ success: function(data) {
     // Rendering of the template
     var rendered = Mustache.render(template, data);
     
-    // replace of the SVG
     document.getElementById('container').innerHTML = rendered;
 
     try
